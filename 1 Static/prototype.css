@@ -1,0 +1,1163 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("fonts/Roboto_Condensed/Roboto_Condensed.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Merriweather";
+  font-weight: bold;
+  src: url("fonts/Merriweather/Merriweather-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Merriweather";
+  font-weight: 900;
+  src: url("fonts/Merriweather/Merriweather-Black.ttf") format("ttf");
+}
+
+/* Style */
+
+body {
+	margin: 0;
+	font-family: "Roboto Condensed", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 7pt;
+	color: #707070 !important;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 24cm;
+	height: 100%;
+}
+
+.page {
+	margin: 0;
+	padding: 1cm;
+}
+
+@media screen {
+	body {
+		background: #e0e0e0;
+		background: linear-gradient(to right, #c0c0c0 0%,#e0e0e0 50%,#c0c0c0 100%);
+		padding-bottom: 2cm;
+	}
+	main {
+		max-width: 22cm;
+	}
+	.page {
+		box-shadow: 0 0 1cm rgba(0,0,0,0.1);
+		background: white;
+		min-height: 27cm;
+		margin: 1cm 0;
+	}
+}
+
+@media print {
+	@page {
+		margin: 0;
+	}
+	html, body {
+		height: 100%;
+	}
+	.page {
+		min-height: 100%;
+		box-sizing: border-box;
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+	/* footer#copyright {
+		position: fixed;
+		bottom: 0;
+		left: 1cm;
+		height: 1cm;
+		right: 1cm;
+	} 
+	.watermark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		
+		font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+		font-weight: bold;
+		font-size: 80pt;
+
+		opacity: 0.1;
+		transform: rotate(60deg);
+	} */
+}
+
+@media print and (min-width: 212mm) {
+	.a4-only {
+		display: none;
+	}
+}
+
+
+/* Layout */
+
+.page {
+	display: grid;
+	grid-gap: 0.1cm 0.5cm;
+}
+
+.layout {
+	display: grid;
+	grid-gap: 0.1cm 0.3cm;
+}
+
+.layout-2e {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "a b";
+}
+
+.layout-2l {
+	grid-template-columns: 5fr 8fr;
+	grid-template-areas: "left right";
+}
+
+.layout-2r {
+	grid-template-columns: 8fr 5fr;
+	grid-template-areas: "left right";
+}
+
+.layout-2l2r {
+	grid-template-columns: 5fr 3fr 5fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		"a b b"
+		"c c d";
+}
+
+.layout-2r2l {
+	grid-template-columns: 5fr 3fr 5fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		"a a b"
+		"c d d";
+}
+
+.layout-alignment {
+	grid-template-columns: auto 1.8cm;
+	grid-template-areas: "a b";
+	align-items: center;
+}
+
+.layout-level {
+	grid-template-columns: 1cm auto;
+	grid-template-areas: "a b";
+	align-items: center;
+}
+
+.layout-3e {
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: "a b c";
+}
+
+.layout-inventory {
+	grid-template-columns: 5fr 4fr 4fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas:
+		"a b c"
+		"a d d"
+		"a e f";
+}
+
+.column {
+	display: flex !important;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	grid-area: auto;
+}
+
+.column-a { grid-area: a; }
+.column-b { grid-area: b; }
+.column-c { grid-area: c; }
+.column-d { grid-area: d; }
+.column-e { grid-area: e; }
+.column-f { grid-area: f; }
+
+.column--left {
+	grid-area: left;
+}
+
+.column--right {
+	grid-area: right;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+
+	break-inside: avoid;
+	page-break-inside: avoid;
+
+	flex: 1 0 auto;
+	margin-bottom: 2pt;
+}
+
+section > * {
+	flex: 1 0 auto;
+}
+
+.section--primary {
+	margin-top: 0.4cm;
+	background-color: white;
+	/*background: url(images/primarybox.svg);*/
+	border: 2pt solid #808080;
+	border-top: 0 none;
+	padding: 0 3pt 3pt 3pt;
+}
+
+.section--primary > h3 {
+	margin-top: -0.4cm;
+	margin-left: -5pt;
+	margin-right: -5pt;
+}
+
+.fill, .section--fill {
+	flex: 100 0 auto;
+}
+
+.nofill {
+	flex: 0 0 auto;
+}
+
+section section {
+	padding-bottom: 3pt;
+	border-bottom: 1pt solid #909090;
+	margin-bottom: 3pt;
+}
+
+section section:last-child {
+	padding-bottom: 0;
+	border-bottom: 0 none;
+	margin-bottom: 0;
+}
+
+.page > .column > *:last-child, .page > *:last-child > .column > *:last-child {
+	padding-bottom: 2pt;
+	border-bottom: 2pt solid #808080;
+}
+
+.column.column--non-final > * {
+	padding-bottom: 0 !important;
+	border-bottom: 0 none !important;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left label, .align-left input, .align-left output {
+	text-align: left !important;
+}
+
+.align-right label, .align-right input, .align-right output {
+	text-align: right !important;
+}
+
+.align-centre label, .align-centre legend, .align-centre input, .align-centre output {
+	text-align: center !important;
+}
+
+
+
+
+/* Element Style */
+
+h1, h2, h3, h4, h5, legend {
+	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
+
+	-webkit-print-color-adjust: exact !important;
+	color-adjust: exact !important;
+}
+
+h1 {
+	text-align: center;
+	margin: 0 0 4pt 0;
+	break-after: avoid;
+
+	text-transform: uppercase;
+	font-size: 18pt;
+}
+
+h1 img {
+	max-height: 1.4cm;
+}
+
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 1em;
+	font-size: 14pt;
+}
+
+h3 {
+	margin: 0 0 2pt 0;
+	text-align: center;
+	flex: 0 0 auto;
+
+	font-size: 9pt;
+	height: 0.45cm;
+	line-height: 0.45cm;
+	text-transform: uppercase;
+
+	background: url(images/h3.svg) !important;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: 100% 0.45cm;
+
+	color: white;
+	break-after: avoid;
+}
+
+h4 {
+	background: #c0c0c0 !important;
+	font-size: 8pt;
+	height: 0.36cm;
+	line-height: 0.36cm;
+
+	text-transform: uppercase;
+	text-align: left;
+
+	position: relative;
+	color: #303030;
+	margin: 3pt 0;
+	padding: 1pt 6pt;
+	flex: 0 0;
+}
+
+h4::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -0.2pt;
+	height: 100%;
+	width: 3pt;
+
+	border-radius: 3pt / 50%;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	background: white;
+}
+
+h5 {
+	font-size: 8pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	color: #808080;
+	margin: 2pt 0 1pt 0;
+}
+
+h6 {
+	font-size: 10pt;
+	line-height: 20pt;
+	height: 20pt;
+	font-weight: normal;
+	text-align: left;
+	margin: 0;
+	white-space: nowrap;
+}
+
+h3 + h4, article > h4 {
+	margin-top: -2pt;
+}
+
+h3 + article, h4 + article {
+	border-top: 0 none;
+}
+
+article {
+	border-top: 2pt solid #c0c0c0;
+	min-height: 0.7cm;
+	position: relative;
+}
+
+article > .level {
+	height: 100%;
+}
+
+/*article > h4 {
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: -2pt 0 0 0;
+
+	padding: 1pt 8pt;
+	text-align: left;
+}*/
+
+article > h5 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: -2pt 0 0 0;
+	
+	background: #c0c0c0;
+	color: #303030;
+	padding: 1pt 7pt 1pt 2pt;
+}
+
+article > h5::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -11pt;
+	border-left: 11pt solid transparent;
+	border-top: 11pt solid #c0c0c0;
+}
+
+article > h5::after, h4::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -0.2pt;
+	height: 100%;
+	width: 3pt;
+
+	border-radius: 3pt / 50%;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background: white;
+}
+
+.portrait {
+	min-height: 4cm;
+}
+
+p, ul {
+	font-size: 9pt;
+	margin-top: 4pt;
+	margin-bottom: 4pt;
+}
+
+li {
+	margin-top: 2pt;
+	margin-bottom: 2pt;
+}
+
+table {
+	width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table tr.hr td, table tr.hr th {
+	border-top: 1pt solid #a0a0a0;
+}
+
+/*.table--zebra tbody td, .table--zebra tbody th {
+	border-bottom: 0.5pt solid #e8e8e8;
+}*/
+.table--zebra tbody tr:nth-child(2n+1) td, .table--zebra tbody tr:nth-child(2n+1) th {
+	background: #f8f8f8;
+}
+
+th, td {
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+hr {
+	margin: 5pt 0;
+	border: 0 none;
+	border-top: 1px solid #a0a0a0;
+}
+
+hr.hr--narrow {
+	margin: 1pt 0;
+}
+
+.level {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	width: 1cm;
+	padding-top: 0.3cm;
+	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+.level::before {
+	content: "Level";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+
+	font-family: "Roboto Condensed", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight: normal;
+	font-size: 8pt;
+}
+
+.icon {
+	margin: 4pt 4pt 1pt 0;
+	width: auto;
+	height: 0.7cm;
+	opacity: 0.6;
+}
+
+.icon--small {
+	margin: 1pt 0;
+	width: auto;
+	height: 0.5cm;
+	opacity: 0.6;
+}
+
+/* Form Style */
+
+fieldset {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+}
+
+label {
+	margin: 3pt 0 1pt 0;
+	display: block;
+}
+
+.field--mod label {
+	font-size: 6pt;
+}
+
+input, output {
+	height: 0.6cm;
+	line-height: 0.6cm;
+	text-align: center;
+	font-family: "Roboto Condensed", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 11pt;
+	color: #707070;
+	width: 1cm;
+	max-width: 4em;
+	/*padding: 0 2pt;*/
+	margin: 1pt 0;
+	background: none;
+	/*box-sizing: border-box;*/
+}
+
+input {
+	border: 0 none;
+	border-bottom: 0.5pt solid #707070;
+}
+
+input + input {
+	margin-left: -2pt;
+}
+
+.field--wide input + input {
+	margin-top: 1pt;
+	margin-left: 0;
+}
+
+legend {
+	font-size: 9pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.field {
+	display: inline-block;
+	white-space: nowrap;
+	position: relative;
+	padding-top: 0.35cm;
+	flex: 0 0 auto;
+}
+
+.field--unlabelled {
+	padding-top: 0;
+}
+
+th .field, td .field {
+	padding-top: 0.1cm;
+}
+
+th span, td span {
+	font-size: 12pt;
+}
+
+.field legend {
+	position: absolute;
+	top: -2pt;
+	left: 0;
+	text-align: left;
+}
+
+.field label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.field--temp input {
+	/*margin: 4pt 0;*/
+	height: 0.75cm;
+	border: 3px solid #b0b0b0 !important;
+	border-radius: 4.5pt !important;
+}
+
+.field--temp.field--icon input {
+	border-left: 0 none !important;
+}
+
+.field--temp.field--icon::after {
+	bottom: 5pt;
+}
+
+.field.field--temp .overlay {
+	bottom: 1pt;
+	right: 5pt;
+}
+
+.field--ref input {
+	border-bottom: 1pt dashed #707070;
+	font-weight: bold;
+}
+
+.field--narrow input, .field--narrow output {
+	width: 0.5cm;
+}
+
+.field output {
+	display: inline-block;
+	border: 1pt solid #707070;
+	border-radius: 2pt;
+	text-align: center;
+	min-width: 2em;
+}
+
+label + .field {
+	margin-top: -1pt;
+}
+
+span {
+	font-size: 11pt;
+	height: 0.7cm;
+	line-height: 0.7cm;
+}
+
+.field--double {
+	flex: 2 0 auto;
+}
+
+.field--double input, .field--double output {
+	width: 2.5cm;
+}
+
+.field--triple {
+	flex: 3 0 auto;
+}
+
+.field--triple input, .field--triple output {
+	width: 4cm;
+}
+
+.field--wide {
+	display: block;
+	width: 100% !important;
+	box-sizing: border-box;
+}
+
+.field--wide input {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+}
+
+
+.field--em output {
+	border-width: 1.25pt;
+}
+.field--em input {
+	border-bottom-width: 1.25pt;
+}
+.field--em .overlay, .field--em .mid-overlay {
+	font-weight: bold;
+}
+
+.field--box input {
+	border: 1px solid #808080 !important;
+}
+
+.field .overlay {
+	position: absolute;
+	bottom: 0pt;
+	right: 4pt;
+	font-size: 9pt;
+}
+
+.field .start-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 4pt;
+	font-size: 9pt;
+}
+
+.field .mid-overlay {
+	position: absolute;
+	bottom: 0pt;
+	right: 50%;
+	font-size: 9pt;
+}
+
+.field--icon .mid-overlay {
+	right: 41%;
+}
+
+.field .underlay {
+	position: absolute;
+	bottom: 0.3pt;
+	right: 0;
+	left: 0;
+	text-align: center;
+	font-size: 10pt;
+	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: 900;
+	color: #000000;
+	opacity: 0.2;
+}
+
+.field--icon .underlay {
+	left: 0.27cm;
+}
+
+.field--ref input, .field--ref output {
+	border-style: dashed;
+}
+
+.field--misc label, .label--misc {
+	color: #a0a0a0;
+}
+
+.field--misc input, .field--misc output {
+	border-color: #909090 !important;
+}
+
+.field--horizontal {
+	padding-top: 0;
+	padding-left: 2cm;
+}
+
+/* Checkboxes and Radio buttons */
+
+input[type=checkbox] {
+	width: 5pt;
+	height: 5pt;
+	visibility: hidden;
+	position: relative;
+}
+
+input[type=checkbox]::before {
+	content: "";
+	display: inline-block;
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 5pt;
+	height: 5pt;
+	border: 0.75pt solid #808080;
+
+	cursor: pointer;
+}
+input[type=checkbox]:checked::before {
+	background: #808080;
+}
+
+
+input[type=radio] {
+	width: 8pt;
+	height: 8pt;
+	visibility: hidden;
+	position: relative;
+}
+
+input[type=radio]::before {
+	content: "";
+	display: inline-block;
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 6pt;
+	height: 6pt;
+	border-radius: 50%;
+	border: 0.75pt solid #808080;
+
+	cursor: pointer;
+}
+
+input[type=radio]:checked::before {
+	background: #808080;
+}
+
+td input[type=checkbox], td input[type=radio] {
+	margin: 6pt 4pt 8.6pt 3pt;
+}
+
+
+/* Check grids */
+
+.field--checkgrid {
+	display: block;
+	text-align: right;
+}
+
+.field--checkgrid__grid {
+	display: inline-flex;
+	flex-flow: column wrap;
+
+	margin: 1pt 4pt;
+	height: 28pt;
+	width: 30pt;
+
+	justify-content: center;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+
+.field--checkgrid__grid input[type=checkbox] {
+	margin: 2pt;
+	flex: 0 0 auto;
+}
+
+/* Icon fields */
+
+.field--icon {
+	display: inline-block;
+	padding-left: 0.26cm;
+	position: relative;
+}
+
+.field--icon label, .label--icon {
+	padding-left: 0.2cm;
+}
+
+.field--icon input, .field--icon output {
+	padding-left: 0.2cm;
+	border-radius: 2.5pt;
+	border-left-width: 0;
+}
+
+.field--icon input {
+	border-bottom: 1pt solid #707070;
+}
+
+.field--icon p {
+	padding-left: 0.35cm;
+}
+
+.field--icon::after {
+	content: "";
+	position: absolute;
+	bottom: 3.25pt;
+	left: 0pt;
+	width: 0.525cm;
+	height: 0.525cm;
+	/*background-color: white;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 0.45cm;
+	opacity: 0.6;
+
+	/* Make sure SVG background images actually print */
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+}
+
+.field--icon.field--bonus::after {
+	background-image: url(images/icon-d20.svg);
+	background-size: auto 0.4cm;
+}
+
+.field--icon.field--proficiency::after {
+	background-image: url(images/icon-proficiency.svg);
+	background-size: auto 0.525cm;
+}
+
+.field--icon.field--proficiency.field--proficiency--trained::after {
+	background-image: url(images/icon-proficiency-trained.svg);
+}
+.field--icon.field--proficiency.field--proficiency--expert::after {
+	background-image: url(images/icon-proficiency-expert.svg);
+}
+.field--icon.field--proficiency.field--proficiency--master::after {
+	background-image: url(images/icon-proficiency-master.svg);
+}
+.field--icon.field--proficiency.field--proficiency--legendary::after {
+	background-image: url(images/icon-proficiency-legendary.svg);
+}
+
+.field--icon.field--gender::after {
+	background-image: url(images/icon-gender.svg);
+}
+
+.field--icon.field--hp::after {
+	background-image: url(images/icon-hp.svg);
+}
+
+.field--icon.field--damage::after {
+	background-image: url(images/icon-damage.svg);
+}
+
+.field--icon.field--size::after {
+	background-image: url(images/icon-size.svg);
+	background-size: auto 0.5cm;
+}
+
+.field--icon.field--dc::after,
+.field--icon.field--modifier::after {
+	background-image: url(images/icon-dc.svg);
+}
+
+.field--icon.field--ac::after {
+	background-image: url(images/icon-ac.svg);
+}
+
+.field--icon.field--tac::after {
+	background-image: url(images/icon-tac.svg);
+}
+
+/* Field groups */
+
+/*.row > * {
+	display: inline-block;
+	margin: 0 2pt;
+}*/
+
+.row {
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end
+}
+
+.spacer {
+	flex: 100 0 auto !important;
+}
+
+.row > * {
+	flex: 1 0 auto;
+}
+
+.row > * + * {
+	margin-left: 3pt;
+}
+
+.row > .field--wide {
+	width: auto !important;
+	flex: 100 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+
+
+.field label.below {
+	bottom: 0;
+	top: auto;
+}
+
+.field.with-below, .row.with-below .field {
+	padding-bottom: 9pt;
+}
+
+.field--icon.with-below::after, .row.with-below .field--icon::after {
+	bottom: 12.75pt;
+}
+
+.row fieldset.calc {
+	margin: 0;
+}
+.row fieldset.calc + * {
+	margin-left: 4pt;
+}
+
+/* Calculations */
+
+fieldset.calc {
+	margin: 2pt 0;
+	display: block;
+	white-space: nowrap;
+}
+
+fieldset.calc > * {
+	display: inline-block;
+	margin: 0 2pt;
+}
+
+fieldset.calc > *:first-child {
+	margin-left: 0;
+}
+
+fieldset.calc--2lines .field, .row--2lines .field {
+	padding-top: 0.6cm;
+}
+
+.calc > span {
+	/*font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;*/
+	font-size: 12pt;
+	display: inline-block;
+	height: 18pt;
+	line-height: 18pt; 
+}
+
+.calc--inline > label {
+	display: inline-block;
+	text-align: center;
+	height: 18pt;
+}
+
+/* Special fields */
+
+fieldset.field--alignment {
+	display: block;
+	position: relative;
+	width: 1.6cm;
+	height: 1.6cm;
+}
+
+.field--alignment__grid {
+	position: absolute;
+
+	background-image: url(images/alignment-grid.svg);
+	background-position: center;
+	background-size: 100% 100%;
+
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+
+	opacity: 0.6;
+	z-index: 2;
+	top: 0.3cm;
+	left: 0.3cm;
+	width: 1cm;
+	height: 1cm;
+}
+
+label.field--alignment__good,
+label.field--alignment__evil,
+label.field--alignment__lawful,
+label.field--alignment__chaotic {
+	position: absolute;
+	text-transform: uppercase;
+	font-size: 5pt;
+	text-align: center;
+	z-index: 6;
+	color: black;
+}
+
+label.field--alignment__good {
+	transform: rotate(-45deg) translate(0, 10pt);
+}
+
+label.field--alignment__evil {
+	transform: rotate(-45deg) translate(1pt, 1.35cm);
+}
+
+label.field--alignment__lawful {
+	transform: rotate(45deg) translate(0.8cm, -0.45cm);
+}
+
+label.field--alignment__chaotic {
+	transform: rotate(45deg) translate(0.75cm, 0.6cm);
+}
+
+.field--alignment__good-icon,
+.field--alignment__evil-icon,
+.field--alignment__lawful-icon,
+.field--alignment__chaotic-icon {
+	position: absolute;
+	z-index: 4;
+	width: 0.6cm;
+	height: 0.6cm;
+	opacity: 0.2;
+	background-size: 100% 100%;
+
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+}
+
+.field--alignment__good-icon {
+	background-image: url(images/icon-good.svg);
+	top: 0;
+	left: 0;
+}
+.field--alignment__evil-icon {
+	background-image: url(images/icon-evil.svg);
+	bottom: 0;
+	right: 0;
+}
+.field--alignment__lawful-icon {
+	background-image: url(images/icon-lawful.svg);
+	top: 0;
+	right: 0;
+}
+.field--alignment__chaotic-icon {
+	background-image: url(images/icon-chaotic.svg);
+	bottom: 0;
+	left: 0;
+}
+
+/* Non-printing elements */
+
+@media screen {
+	#screen-buttons {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		background: rgba(255,255,255,0.7);
+		padding: 0.5cm;
+		box-shadow: 0 0 1cm rgba(0,0,0,0.3);
+
+		text-align: center;
+	}
+
+	button {
+		background: #2020d0;
+		color: white;
+		font-weight: bold;
+		width: 4cm;
+		padding: 5pt;
+		border: 0 none;
+		border-radius: 2pt;
+		cursor: pointer;
+		box-shadow: 0 2pt 10pt rgba(0,0,0,0.4);
+	}
+}
+
+@media print {
+	#screen-buttons, #screen-meta {
+		display: none;
+	}
+}

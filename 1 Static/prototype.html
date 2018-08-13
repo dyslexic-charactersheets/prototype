@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pathfinder Playtest Character Sheet</title>
+	<link href="prototype.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" href="images/favicon.png" />
+</head>
+
+<body>
+
+<main>
+
+<div class='page'>
+
+	<div class='layout layout-2l nofill'>
+		<div class='column'>
+			<h2>Build a character</h2>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Character Concept</h3>
+				<fieldset class='field field--wide align-left'>
+					<label>I'm awesome because...</label>
+					<input>
+					<!-- <input> -->
+				</fieldset>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step one</h3>
+				<p>Pick your race and where your character comes from.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Ancestry</h3>
+				
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='ancestry-name'>Ancestry</label>
+							<input name='ancestry-name' type='text'>
+						</fieldset>
+					</div>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='ancestry-ethnicity'>Ethnicity</label>
+							<input name='ancestry-ethnicity' type='text'>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<div class='row'>
+							<fieldset class='field field--icon field--hp'>
+								<label>Hit Points</label>
+								<input type='number'>
+							</fieldset>
+
+							<fieldset class='field field--icon field--size'>
+								<label>Size</label>
+								<input type='text'>
+							</fieldset>
+
+							<fieldset class='field'>
+								<label>Speed</label>
+								<input type='text'>
+								<input type='text'>
+								<span class='mid-overlay'>ft</span>
+								<span class='overlay'>sq</span>
+							</fieldset>
+						</div>
+					</div>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='ancestry-feat'>Ancestry Feat</label>
+							<input name='ancestry-feat' type='text'>
+						</fieldset>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step two</h3>
+				<p>Decide how your character grew up.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Background</h3>
+
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='background-name'>Background</label>
+							<input name='background-name' type='text'>
+						</fieldset>
+					</div>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='ancestry-feat'>Skill Feat</label>
+							<input name='ancestry-feat' type='text'>
+						</fieldset>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step three</h3>
+				<p>Pick from one of the main classes.</p>
+				<p>Depending on your class, you will likely need to pick a specialisation at the same time. These include a Sorcerer's bloodline, a Cleric's domain or a Barbarian's totem.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Class</h3>
+				
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='class-name'>Class</label>
+							<input name='class-name' type='text'>
+						</fieldset>
+					</div>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='class-specialisation'>Specialisation</label>
+							<input name='class-specialisation' type='text'>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<div class='row'>
+							<fieldset class='field field--icon field--hp'>
+								<label>Hit Points</label>
+								<input type='number'>
+							</fieldset>
+
+							<fieldset class='field field--double'>
+								<label>Key Ability</label>
+								<input>
+							</fieldset>
+
+							<fieldset class='field field--icon field--proficiency'>
+								<p>Perception</p>
+							</fieldset>
+						</div>
+					</div>
+
+					<div class='column'>
+						<div class='row'>
+							<fieldset class='field field--icon field--proficiency'>
+								<p>Fortitude</p>
+							</fieldset>
+
+							<fieldset class='field field--icon field--proficiency'>
+								<p>Reflex</p>
+							</fieldset>
+
+							<fieldset class='field field--icon field--proficiency'>
+								<p>Will</p>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step four</h3>
+
+				<h4>Ability Scores</h4>
+				<p>Add up the ability score bonuses you get from your ancestry, background and class, each of which provides +2 or -2 to a number of abilities.</p>
+				<p>You also get four free ability boosts to allocate as you wish. Each provides a +2 or -2 to a different ability.</p>
+				<p>No ability score may be above 18 at level one.</p>
+
+				<fieldset class='calc calc--inline'>
+					<label>Ability<br>Modifier</label>
+					<span>= (</span>
+					<label>Ability<br>Score</label>
+					<span>- 10 ) &divide; 2</span>
+				</fieldset>
+
+				<p>Your key ability comes from your class, and is used to determine your class DC.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Details</h3>
+
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+							<th><label>Ancestry</label></th>
+							<th><label>Background</label></th>
+							<th><label>Class</label></th>
+							<th><label>Free</label></th>
+							<th></th>
+							<th><label>Ability<br>Score</label></th>
+							<th><label class='label--icon'>Ability<br>Modifier</label></th>
+							<th>Key<br>Ability</th>
+						</tr>
+					</thead>
+					<tr>
+						<th><h6>Strength</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>STR</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Dexterity</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>DEX</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Constitution</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>CON</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Intelligence</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>INT</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Wisdom</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>WIS</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Charisma</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><fieldset class='field'><input></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>CHA</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<h4>Health</h4>
+			<p>Calculate your starting hit points.</p>
+		</div>
+		<div class='column'>
+			<fieldset class='calc'>
+				<fieldset class='field field--icon field--hp field--double'>
+					<label>Hit points</label>
+					<output>&nbsp;</output>
+				</fieldset>
+				<span>=</span>
+				<fieldset class='field'>
+					<label>Ancestry</label>
+					<input>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field'>
+					<label>Class</label>
+					<input>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field field--ref field--mod'>
+					<label>CON</label>
+					<input>
+					<span class='underlay'>CON</span>
+				</fieldset>
+			</fieldset>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<h4>Proficiencies</h4>
+			<p>Refer to your ancestry, background, class and feats to determine what your initial proficiencies are.</p>
+			<p>Then spend the skill proficiencies your class provides to upgrade skills.</p>
+
+			<fieldset class='calc'>
+				<fieldset class='field'>
+					<label>Skill Ranks</label>
+					<output>&nbsp;</output>
+				</fieldset>
+				<span>=</span>
+				<fieldset class='field'>
+					<label>Ancestry</label>
+					<input>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field field--ref field--mod'>
+					<input>
+					<span class='underlay'>INT</span>
+				</fieldset>
+			</fieldset>
+
+		</div>
+		<div class='column'>
+			<section>
+				<table>
+					<tr>
+						<th><h6>Weapon and Armour &nbsp;</h6></th>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr><td></td><td colspan='2'><hr></td></tr>
+					<tr>
+						<th><h6>Skills</h6></th>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step five</h3>
+				<p>Work out what your character owns at the start of the game, including clothes and weapons.</p>
+				<h5>Starting money</h5>
+				<h6>150 sp</h6>
+				<div class='spacer'></div>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Equipment</h3>
+				
+				<table>
+					<tr>
+						<th><h6>Weapon</h6></th>
+						<td>
+							<fieldset class='field field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<th><h6>Armour</h6></th>
+						<td>
+							<fieldset class='field field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<th><h6>Gear</h6></th>
+						<td>
+							<fieldset class='field field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</div>
+</div>
+
+<div class='page layout-2l'>
+	<div class='column column--narrow'>
+
+		<header>
+			<h1><img src='images/logo.png'></h1>
+		</header>
+
+		<section class='section--untitled'>
+			<fieldset class='field field--wide align-left'>
+				<label for='player'>Player</label>
+				<input type='text' name='player'>
+			</fieldset>
+
+
+			<div class='layout layout-2r'>
+				<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='campaign'>Campaign</label>
+							<input type='text' name='campaign'>
+						</fieldset>
+				</div>
+				<div class='column'>
+					<fieldset class='field field--wide align-right'>
+						<label for='xp'>XP</label>
+						<input type='number' name='xp'>
+						<span class='underlay'>XP</span>
+					</fieldset>
+				</div>
+			</div>
+		</section>
+
+		<section class='section--primary section--fill'>
+			<h3>Character</h3>
+			<div class='portrait fill'></div>
+
+			<section>
+
+				<div class='layout layout-alignment'>
+					<div class='column'>
+						<div>
+							<fieldset class='field field--wide align-left'>
+								<legend>Name</legend>
+								<input type='text'>
+							</fieldset>
+						</div>
+						<div class='row'>
+							<fieldset class='field field--icon field--gender field--triple'>
+								<label>Gender</label>
+								<input>
+							</fieldset>
+							<fieldset class='field field--double'>
+								<label>Age</label>
+								<input>
+							</fieldset>
+							<div class='spacer'></div>
+						</div>
+					</div>
+
+					<div class='column'>
+						<fieldset class='field--alignment'>
+							<span class='field--alignment__grid'></span>
+							<span class='field--alignment__good-icon'></span>
+							<span class='field--alignment__evil-icon'></span>
+							<span class='field--alignment__lawful-icon'></span>
+							<span class='field--alignment__chaotic-icon'></span>
+
+							<label class='field--alignment__good'>Good</label>
+							<label class='field--alignment__evil'>Evil</label>
+							<label class='field--alignment__lawful'>Lawful</label>
+							<label class='field--alignment__chaotic'>Chaotic</label>
+						</fieldset>
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<section>
+			<h3>Ability Scores</h3>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th><label>Ability<br>Score</label></th>
+						<th><label class='label--icon'>Ability<br>Modifier</label></th>
+						<th><label>Key<br>Ability</label></th>
+					</tr>
+				</thead>
+				<tr class='calc'>
+					<th><h6>Strength</h6></th>
+					<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>STR</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='str'></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Dexterity</h6></th>
+					<td><fieldset class='field'><input name='dexterity-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='DEX' data-calc="({dexterity-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='dex'></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Constitution</h6></th>
+					<td><fieldset class='field'><input name='constitution-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='CON' data-calc="({constitution-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>CON</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='con'></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Intelligence</h6></th>
+					<td><fieldset class='field'><input name='intelligence-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='INT' data-calc="({intelligence-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='int'></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Wisdom</h6></th>
+					<td><fieldset class='field'><input name='wisdom-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='WIS' data-calc="({wisdom-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='wis'></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Charisma</h6></th>
+					<td><fieldset class='field'><input name='charisma-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='CHA' data-calc="({charisma-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='cha'></td>
+				</tr>
+			</table>
+
+			<fieldset class='calc calc--inline'>
+				<label>Ability<br>Modifier</label>
+				<span>= (</span>
+				<label>Ability<br>Score</label>
+				<span>- 10 ) &divide; 2</span>
+			</fieldset>
+		</section>
+
+		<section>
+			<h3>Proficiency</h3>
+			
+			<table>
+				<tr>
+					<th><label class='label--icon'>Untrained</label></th>
+					<th><label class='label--icon'>Trained</label></th>
+					<th><label class='label--icon'>Expert</label></th>
+					<th><label class='label--icon'>Master</label></th>
+					<th><label class='label--icon'>Legendary</label></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--narrow field--proficiency'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--trained'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--expert'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--master'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--legendary'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+				</tr>
+				<tr>
+					<td><label class='label--icon'>Level<br>-2</label></td>
+					<td><label class='label--icon'>Level<br>&nbsp;</label></td>
+					<td><label class='label--icon'>Level<br>+1</label></td>
+					<td><label class='label--icon'>Level<br>+2</label></td>
+					<td><label class='label--icon'>Level<br>+3</label></td>
+				</tr>
+			</table>
+		</section>
+
+		<section>
+			<h3>Languages</h3>
+			<fieldset class='field field--wide field--unlabelled align-left'>
+				<input type='text'>
+				<input type='text'>
+			</fieldset>
+		</section>
+
+	</div>
+	<div class='column column--wide'>
+
+		<section>
+			<h3>Ancestry</h3>
+
+			<div class='layout layout-2e'>
+				<div class='column'>
+					<fieldset class='field field--wide align-left'>
+						<label for='ancestry-name'>Ancestry</label>
+						<input name='ancestry-name' type='text'>
+					</fieldset>
+				</div>
+				<div class='column'>
+					<fieldset class='field field--wide align-left'>
+						<label for='ancestry-ethnicity'>Ethnicity</label>
+						<input name='ancestry-ethnicity' type='text'>
+					</fieldset>
+				</div>
+			</div>
+
+			<div class='row'>
+				<fieldset class='field field--icon field--size field--double'>
+					<label>Size</label>
+					<input type='text'>
+				</fieldset>
+
+				<fieldset class='field field--double'>
+					<label>Speed</label>
+					<input type='text'>
+					<input type='text'>
+					<span class='mid-overlay'>ft</span>
+					<span class='overlay'>sq</span>
+				</fieldset>
+
+				<fieldset class='field field--wide'>
+					<label>Abilities</label>
+					<input>
+				</fieldset>
+			</div>
+		</section>
+
+		<section>
+			<h3>Background</h3>
+			
+			<fieldset class='field field--wide align-left'>
+				<label for='background-name'>Background</label>
+				<input name='background-name' type='text'>
+			</fieldset>
+		</section>
+
+		<section>
+			<h3>Class</h3>
+
+			<div class='row with-below'>
+				<fieldset class='field field--wide align-left'>
+					<label for='class-name'>Class</label>
+					<input name='class-name' type='text'>
+				</fieldset>
+
+				<fieldset class='field field--icon field--hp'>
+					<label>Hit Points</label>
+					<input>
+					<label class='below'>per level</label>
+				</fieldset>
+
+				<fieldset class='field'>
+					<label>Skills</label>
+					<input>
+					<label class='below'>per level</label>
+				</fieldset>
+
+				<fieldset class='field field--box'>
+					<label>Level</label>
+					<input>
+				</fieldset>
+			</div>
+
+			<h4>Archetypes</h4>
+			<fieldset class='field field--wide align-left field--unlabelled'>
+				<input name='class-archetype-name' type='text'>
+				<input name='class-archetype-name' type='text'>
+			</fieldset>
+		</section>
+
+		<section class='fill'>
+			<h3>Skills</h3>
+
+			<table class='table--skills table--zebra'>
+				<thead>
+					<th colspan='2'><label class='align-left'>Signature<br>Skill</label></th>
+					<th><label class='label--icon'>Skill<br>Bonus</label></th>
+					<th></th>
+					<th><label>Ability<br>Modifier</label></th>
+					<th><label class='label--icon'>Profiency</label></th>
+					<th><label>Ancestry<br>Background<br>Class</label></th>
+					<th><label>Feats<br>Misc</label></th>
+					<th><label>Armor<br>Check<br>Penalty</label></th>
+				</thead>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Acrobatics</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Arcana</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Athletics</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>STR</label><input rel='STR'>
+						<span class='underlay'>STR</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Crafting</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Deception</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Diplomacy</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Intimidation</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Medicine</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Nature</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Occultism</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Performance</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Religion</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Society</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Stealth</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Survival</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Thievery</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr class='hr'>
+					<td><input type='checkbox'></td>
+					<th><h6>Lore</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td><input type='checkbox'></td>
+					<th><h6>Lore</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr class='a4-only'>
+					<td><input type='checkbox'></td>
+					<th><h6>Lore</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr class='a4-only'>
+					<td><input type='checkbox'></td>
+					<th><h6>Lore</h6></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td></td>
+				</tr>
+			</table>
+			<p>Foo</p>
+		</section>
+	</div>
+</div>
+
+<div class='page layout-2l2r'>
+	<div class='column column-a column--narrow column--non-final'>
+		<section>
+			<h3>Class DC</h3>
+
+			<fieldset class='calc'>
+
+				<fieldset class='field field--icon field--dc field--double'>
+					<legend>Class DC</legend>
+					<output name='perception-bonus'>&nbsp;</output>
+					<span class='underlay'>DC</span>
+				</fieldset>
+
+				<span>=</span>
+
+				<fieldset class='field field--ref field--mod'>
+					<label>Key Ability</label>
+					<input>
+				</fieldset>
+
+				<fieldset class='field field--icon field--proficiency'>
+					<label>Proficiency</label>
+					<input>
+				</fieldset>
+
+				<fieldset class='field'>
+					<label>Item</label>
+					<input>
+				</fieldset>
+			</fieldset>
+		</section>
+
+		<section>
+			<h3>Speed</h3>
+			<div class='row'>
+				<fieldset class='field field--em'>
+					<legend>Speed</legend>
+					<input type='text'>
+					<input type='text'>
+					<span class='mid-overlay'>ft</span>
+					<span class='overlay'>sq</span>
+				</fieldset>
+				<div class='spacer'></div>
+				<fieldset class='field field--ref'>
+					<label>Speed with Armour</label>
+					<input type='text'>
+					<input type='text'>
+					<span class='mid-overlay'>ft</span>
+					<span class='overlay'>sq</span>
+				</fieldset>
+			</div>
+			<div class='row'>
+				<fieldset class='field'>
+					<label>Swim Speed</label>
+					<input type='text'>
+					<input type='text'>
+					<span class='mid-overlay'>ft</span>
+					<span class='overlay'>sq</span>
+				</fieldset>
+				<div class='spacer'></div>
+				<fieldset class='field'>
+					<label>Climb Speed</label>
+					<input type='text'>
+					<input type='text'>
+					<span class='mid-overlay'>ft</span>
+					<span class='overlay'>sq</span>
+				</fieldset>
+				<div class='spacer'></div>
+				<fieldset class='field'>
+					<label>Fly Speed</label>
+					<input type='text'>
+					<input type='text'>
+					<span class='mid-overlay'>ft</span>
+					<span class='overlay'>sq</span>
+				</fieldset>
+			</div>
+		</section>
+
+		<section>
+			<h3>Perception</h3>
+
+			<fieldset class='calc calc--2lines'>
+				<fieldset class='field field--icon field--bonus field--double'>
+					<label for='perception-bonus'>Perception<br>Bonus</label>
+					<output name='perception-bonus'>&nbsp;</output>
+				</fieldset>
+
+				<span>=</span>
+
+				<fieldset class='field field--ref field--mod'>
+					<label class='ruby'>WIS</label>
+					<input>
+					<span class='underlay'>WIS</span>
+				</fieldset>
+
+				<fieldset class='field field--icon field--proficiency'>
+					<label>Proficiency</label>
+					<input>
+				</fieldset>
+
+				<fieldset class='field'>
+					<label>Item</label>
+					<input>
+				</fieldset>
+
+				<fieldset class='field field--misc'>
+					<label>Misc</label>
+					<input>
+				</fieldset>
+			</fieldset>
+		</section>
+
+		<section>
+			<h3>Saving Throws</h3>
+			
+			<table>
+				<thead>
+					<th></th>
+					<th></th>
+					<th><label>Ability<br>Modifier<label></th>
+					<th><label>Proficiency</label></th>
+					<th><label>Item</label></th>
+					<th><label class='label--misc'>Misc</label></th>
+				</thead>
+
+				<tr>
+					<th colspan='4'><h5>Fortitude Save</h5></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--bonus field--double'>
+						<output>&nbsp;</output>
+						<span class='underlay'>FORT</span>
+					</fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>CON</label><input rel='CON'>
+						<span class='underlay'>CON</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<th colspan='4'><h5>Reflex Save</h5></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--bonus field--double'>
+						<output>&nbsp;</output>
+						<span class='underlay'>REF</span>
+					</fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<th colspan='4'><h5>Will Save</h5></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--bonus field--double'>
+						<output>&nbsp;</output>
+						<span class='underlay'>WILL</span>
+					</fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+				</tr>
+			</table>
+		</section>
+	</div>
+
+	<div class='column column-b column--wide column--non-final'>
+		<section>
+			<h3>Weapons</h3>
+
+			<article class='article--weapon'>
+				<div class='row'>
+					<fieldset class='field field--icon field--proficiency'>
+						<label>Item Quality</label>
+						<input>
+					</fieldset>
+					<fieldset class='field field--wide'>
+						<input>
+					</fieldset>
+					<fieldset class='field'>
+						<label>Range</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+				</div>
+
+				<div class='row'>
+					<fieldset class='calc'>
+						<fieldset class='field field--icon field--bonus field--triple'>
+							<label>Attack Bonus</label>
+							<output name='attack-bonus'>&nbsp;</output>
+						</fieldset>
+
+						<span>=</span>
+
+						<fieldset class='field field--ref field--mod'>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Proficiency</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Item</label>
+							<input>
+						</fieldset>
+					</fieldset>
+
+					<fieldset class='field field--icon field--damage field--double'>
+						<label>Damage</label>
+						<output name='damage'>&nbsp;</output>
+						<span class='mid-overlay'>d</span>
+					</fieldset>
+
+					<fieldset class='field'>
+						<label>Type</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field field--triple'>
+						<label>Critical Effect</label>
+						<input>
+					</fieldset>
+				</div>
+			</article>
+
+			<article class='article--weapon'>
+				<div class='row'>
+					<fieldset class='field field--icon field--proficiency'>
+						<label>Item Quality</label>
+						<input>
+					</fieldset>
+					<fieldset class='field field--wide'>
+						<input>
+					</fieldset>
+					<fieldset class='field'>
+						<label>Range</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+				</div>
+
+				<div class='row'>
+					<fieldset class='calc'>
+						<fieldset class='field field--icon field--bonus field--triple'>
+							<label>Attack Bonus</label>
+							<output name='attack-bonus'>&nbsp;</output>
+						</fieldset>
+
+						<span>=</span>
+
+						<fieldset class='field field--ref field--mod'>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Proficiency</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Item</label>
+							<input>
+						</fieldset>
+					</fieldset>
+
+					<fieldset class='field field--icon field--damage field--double'>
+						<label>Damage</label>
+						<output name='damage'>&nbsp;</output>
+						<span class='mid-overlay'>d</span>
+					</fieldset>
+
+					<fieldset class='field'>
+						<label>Type</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field field--triple'>
+						<label>Critical Effect</label>
+						<input>
+					</fieldset>
+				</div>
+			</article>
+			<article class='article--weapon'>
+				<div class='row'>
+					<fieldset class='field field--icon field--proficiency'>
+						<label>Item Quality</label>
+						<input>
+					</fieldset>
+					<fieldset class='field field--wide'>
+						<input>
+					</fieldset>
+					<fieldset class='field'>
+						<label>Range</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+				</div>
+
+				<div class='row'>
+					<fieldset class='calc'>
+						<fieldset class='field field--icon field--bonus field--triple'>
+							<label>Attack Bonus</label>
+							<output name='attack-bonus'>&nbsp;</output>
+						</fieldset>
+
+						<span>=</span>
+
+						<fieldset class='field field--ref field--mod'>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Proficiency</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Item</label>
+							<input>
+						</fieldset>
+					</fieldset>
+
+					<fieldset class='field field--icon field--damage field--double'>
+						<label>Damage</label>
+						<output name='damage'>&nbsp;</output>
+						<span class='mid-overlay'>d</span>
+					</fieldset>
+
+					<fieldset class='field'>
+						<label>Type</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field field--triple'>
+						<label>Critical Effect</label>
+						<input>
+					</fieldset>
+				</div>
+			</article>
+			<article class='article--weapon'>
+				<div class='row'>
+					<fieldset class='field field--icon field--proficiency'>
+						<label>Item Quality</label>
+						<input>
+					</fieldset>
+					<fieldset class='field field--wide'>
+						<input>
+					</fieldset>
+					<fieldset class='field'>
+						<label>Range</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+				</div>
+
+				<div class='row'>
+					<fieldset class='calc'>
+						<fieldset class='field field--icon field--bonus field--triple'>
+							<label>Attack Bonus</label>
+							<output name='attack-bonus'>&nbsp;</output>
+						</fieldset>
+
+						<span>=</span>
+
+						<fieldset class='field field--ref field--mod'>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Proficiency</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Item</label>
+							<input>
+						</fieldset>
+					</fieldset>
+
+					<fieldset class='field field--icon field--damage field--double'>
+						<label>Damage</label>
+						<output name='damage'>&nbsp;</output>
+						<span class='mid-overlay'>d</span>
+					</fieldset>
+
+					<fieldset class='field'>
+						<label>Type</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field field--triple'>
+						<label>Critical Effect</label>
+						<input>
+					</fieldset>
+				</div>
+			</article>
+
+			<article>
+				<h4>Ammunition</h4>
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+						<hr class='hr--narrow'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+					</div>
+					<div class='column'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+						<hr class='hr--narrow'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</article>
+		</section>
+	</div>
+
+	<div class='column column-c column--wide'>
+		<section>
+			<h3>Health</h3>
+
+			<fieldset class='calc'>
+				<fieldset class='field field--icon field--hp field--double'>
+					<legend>Hit points</legend>
+					<output>&nbsp;</output>
+					<span class='overlay'>hp</span>
+				</fieldset>
+				<span>=</span>
+				<fieldset class='field'>
+					<label>Ancestry</label>
+					<input>
+				</fieldset>
+				<span>+ (</span>
+				<fieldset class='field'>
+					<label>Class</label>
+					<input>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field field--ref field--mod'>
+					<label>CON</label>
+					<input>
+					<span class='underlay'>CON</span>
+				</fieldset>
+				<span>) &times;</span>
+				<fieldset class='field field--ref'>
+					<label>Level</label>
+					<input>
+				</fieldset>
+			</fieldset>
+
+			<div class='row'>
+				<div class='spacer'></div>
+				<!-- <span>Dying</span> -->
+				<span><input type='checkbox'></span>
+				<span>&rsaquo;</span>
+				<span><input type='checkbox'></span>
+				<span>&rsaquo;</span>
+				<span><input type='checkbox'></span>
+				<span>&rsaquo;</span>
+				<img src='images/icon-evil.svg' class='icon icon--small'>
+			</div>
+
+			<fieldset class='field field--temp field--icon field--hp field--wide'>
+				<label>Current Hit Points</label>
+				<input>
+				<span class='overlay'>hp</span>
+			</fieldset>
+		</section>
+
+		<section>
+			<h3>Armour Class</h3>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th><label>DEX</label></th>
+						<th></th>
+						<th><label>Proficiency</label></th>
+						<th></th>
+						<th><label>Armour<br>Bonus</label></th>
+						<th></th>
+						<th><label>Shield<br>Bonus</label></th>
+						<th></th>
+						<th><label class='label--misc'>Misc</label></th>
+						<th></th>
+					</tr>
+				</thead>
+
+				<tr>
+					<th colspan='3'><h5>Armour Class</h5></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--ac field--double'>
+						<output>&nbsp;</output>
+						<span class='underlay'>AC</span>
+					</fieldset></td>
+
+					<td><span>= 10 +</span></td>
+
+					<td><fieldset class='field field--ref field--mod'>
+						<input rel='DEX'>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--proficiency'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--ac'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--misc'>
+						<input>
+					</fieldset></td>
+				</tr>
+
+				<tr>
+					<th colspan='3'><h5>Touch AC</h5></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--tac field--double'>
+						<output>&nbsp;</output>
+						<span class='underlay'>TAC</span>
+					</fieldset></td>
+
+					<td><span>= 10 +</span></td>
+
+					<td><fieldset class='field field--ref field--mod'>
+						<input rel='DEX'>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--proficiency'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--tac'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--misc'>
+						<input>
+					</fieldset></td>
+				</tr>
+			</table>
+		</section>
+
+		<div class='layout layout-2e'>
+			<div class='column'>
+				<section>
+					<h4>Armour</h4>
+
+					<fieldset class='field field--wide field--unlabelled'>
+						<input>
+					</fieldset>
+
+					<div class='row'>
+						<fieldset class='field field--icon field--ac field--double'>
+							<label>AC Bonus</label>
+							<input>
+							<span class='underlay'>AC</span>
+						</fieldset>
+
+						<fieldset class='field field--icon field--tac field--double'>
+							<label>TAC Bonus</label>
+							<input>
+							<span class='underlay'>TAC</span>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field'>
+							<label>Bulk</label>
+							<input>
+						</fieldset>
+					</div>
+
+					<div class='row row--2lines'>
+						<fieldset class='field field--double'>
+							<label>Max DEX<br>to AC</label>
+							<input>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field'>
+							<label>Speed<br>Penalty</label>
+							<input>
+							<input>
+							<span class='mid-overlay'>ft</span>
+							<span class='overlay'>sq</span>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field field--double'>
+							<label>Armor Check<br>Penalty</label>
+							<input>
+							<span class='start-overlay'>&ndash;</span>
+						</fieldset>
+					</div>
+
+					<fieldset class='field field--wide align-left'>
+						<label>Properties</label>
+						<input>
+						<input>
+					</fieldset>
+				</section>
+			</div>
+			<div class='column'>
+				<section>
+					<h4>Shield</h4>
+
+					<fieldset class='field field--wide field--unlabelled'>
+						<input>
+					</fieldset>
+
+					<div class='row'>
+						<fieldset class='field field--icon field--ac field--double'>
+							<label>AC Bonus</label>
+							<input>
+							<span class='underlay'>AC</span>
+						</fieldset>
+
+						<fieldset class='field field--icon field--tac field--double'>
+							<label>TAC Bonus</label>
+							<input>
+							<span class='underlay'>TAC</span>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field'>
+							<label>Bulk</label>
+							<input>
+						</fieldset>
+					</div>
+
+					<div class='row row--2lines'>
+						<fieldset class='field field--double'>
+							<label>Armor Check<br>Penalty</label>
+							<input>
+							<span class='start-overlay'>&ndash;</span>
+						</fieldset>
+						<div class='spacer'></div>
+					</div>
+
+					<fieldset class='field field--wide align-left'>
+						<label>Properties</label>
+						<input>
+						<input>
+					</fieldset>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<div class='column column-d column--narrow'>
+		<section>
+			<h3>Actions</h3>
+			
+			<article class='article--action'>
+				<img src='images/icon-action13.svg' class='icon'>
+			</article>
+			<article class='article--action'>
+				<img src='images/icon-action13.svg' class='icon'>
+			</article>
+			<article class='article--action'>
+				<img src='images/icon-action13.svg' class='icon'>
+			</article>
+			<article class='article--action'>
+				<img src='images/icon-action13.svg' class='icon'>
+			</article>
+			<article class='article--action'>
+				<img src='images/icon-action13.svg' class='icon'>
+			</article>
+			<article class='article--action'>
+				<img src='images/icon-action13.svg' class='icon'>
+			</article>
+			<h4>Reactions</h4>
+			<article class='article--reaction'>
+				<img src='images/icon-reaction.svg' class='icon'>
+			</article>
+			<article class='article--reaction'>
+				<img src='images/icon-reaction.svg' class='icon'>
+			</article>
+			<article class='article--reaction'>
+				<img src='images/icon-reaction.svg' class='icon'>
+			</article>
+		</section>
+	</div>
+</div>
+
+<div class='page layout-inventory'>
+	<div class='column column-a column--narrow'>
+		<section>
+			<h3>Ancestry Feats</h3>
+
+			<article class='article--feat layout-level'>
+				<div class='level'>1</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>5</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>9</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>13</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>17</div>
+			</article>
+			<h3>Skill Feats</h3>
+			<article class='article--feat layout-level'>
+				<div class='level'>1</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>2</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>4</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>6</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>8</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>10</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>12</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>14</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>16</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>18</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>20</div>
+			</article>
+			<h3>General Feats</h3>
+			<article class='article--feat layout-level'>
+				<div class='level'>3</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>7</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>11</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>15</div>
+			</article>
+			<article class='article--feat layout-level'>
+				<div class='level'>19</div>
+			</article>
+		</section>
+	</div>
+	<div class='column column-b column--narrow column--non-final'>
+		<div class='portrait fill'>
+		</div>
+		<p>...</p>
+	</div>
+	<div class='column column-c column--narrow column--non-final'>
+		<section>
+			<h3>Inventory</h3>
+		</section>
+	</div>
+	<div class='column column-d column--non-final'>
+		<section>
+			<h3>Resonance</h3>
+			<div class='layout layout-2r'>
+				<div class='column'>
+					<fieldset class='calc'>
+						<fieldset class='field field--double'>
+							<legend>Resonance</legend>
+							<output>&nbsp;</output>
+							<span class='overlay'>rp</span>
+						</fieldset>
+						<span>=</span>
+						<fieldset class='field field--ref field--mod'>
+							<label>CHA</label>
+							<input>
+							<span class='underlay'>CHA</span>
+						</fieldset>
+						<span>+</span>
+						<fieldset class='field field--ref'>
+							<label>Level</label>
+							<input>
+						</fieldset>
+						<span>+</span>
+						<fieldset class='field field--misc'>
+							<label>Misc</label>
+							<input>
+						</fieldset>
+					</fieldset>
+				</div>
+				<div class='column'>
+					<fieldset class='field field--temp field--wide'>
+						<label>Current Resonance</label>
+						<input>
+					</fieldset>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class='column column-e'>
+		<section>
+			<h3>Inventory</h3>
+		</section>
+	</div>
+	<div class='column column-f'>
+		<section>
+			<h3>Inventory</h3>
+		</section>
+	</div>
+</div>
+
+<div class='page layout-2l'>
+	<div class='column'>
+		<h2>Sorcerer</h2>
+
+		<section class='section--primary'>
+			<h3>Bloodline</h3>
+
+			<fieldset class='field field--wide'>
+				<input>
+			</fieldset>
+			<fieldset class='field field--wide align-left'>
+				<label>Spell List</label>
+				<input>
+			</fieldset>
+
+			<article class='article--power'>
+				<h5>Power 1</h5>
+			</article>
+
+			<article class='article--power layout layout-level'>
+				<h5>Power 6</h5>
+				<div class='level'>6</div>
+				<div></div>
+			</article>
+
+			<article class='article--power layout layout-level'>
+				<h5>Power 10</h5>
+				<div class='level'>10</div>
+				<div></div>
+			</article>
+
+		</section>
+
+		<section>
+			<h3>Spell Points</h3>
+			<!-- <div class='layout layout-2l'>
+				<div class='column'>
+				</div>
+			</div> -->
+			<fieldset class='calc calc--2lines'>
+				<fieldset class='field field--double'>
+					<label>Spell Points<br>per day</label>
+					<output>&nbsp;</output>
+				</fieldset>
+				<span>=</span>
+				<fieldset class='field field--ref field--mod'>
+					<label>CHA</label>
+					<input>
+					<span class='underlay'>CHA</span>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field field--misc'>
+					<label>Bonus<br>points</label>
+					<input>
+				</fieldset>
+			</fieldset>
+			<p>Gain bonus spell points with each bloodline power.</p>
+
+			<div class='row row--2lines'>
+				<fieldset class='field field--temp field--wide'>
+					<label>Spell Points<br>today</label>
+					<input>
+				</fieldset>
+			</div>
+		</section>
+
+		<section>
+			<h3>Spells</h3>
+		</section>
+	</div>
+
+	<div class='column'>
+		<section>
+			<h3>Cantrips</h3>
+		</section>
+
+		<section>
+			<h3>Spells</h3>
+		</section>
+
+		<section>
+			<h3>Sorcerer Feats</h3>
+		</section>
+	</div>
+</div>
+
+<div class='page layout-1'>
+	<div class='align-center'>
+		<h2>Spellbook</h2>
+	</div>
+	<div class='layout layout-3e'>
+		<div class='column'>
+			<div class='align-center'>
+				<fieldset class='field field--double'>
+					<label>Spell level</label>
+					<output>&nbsp;</output>
+				</fieldset>
+			</div>
+
+			<article class='article--spell'>
+				<fieldset>
+					
+				</fieldset>
+			</article>
+			<article class='article--spell'>
+				
+			</article>
+			<article class='article--spell'>
+				
+			</article>
+			<article class='article--spell'>
+				
+			</article>
+			<article class='article--spell'>
+				
+			</article>
+		</div>
+		<div class='column'>
+		</div>
+		<div class='column'>
+		</div>
+	</div>
+</div>
+
+</main>
+
+<nav id='screen-buttons'>
+<button onclick="window.print();return false;">Print</button>
+</nav>
+
+</body>
