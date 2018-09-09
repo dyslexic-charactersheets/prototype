@@ -2,17 +2,22 @@
 
 @font-face {
   font-family: "Roboto Condensed";
-  src: url("fonts/Roboto_Condensed/Roboto_Condensed.ttf") format("ttf");
+  src: url("fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  src: url("fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf");
 }
 @font-face {
   font-family: "Merriweather";
   font-weight: bold;
-  src: url("fonts/Merriweather/Merriweather-Bold.ttf") format("ttf");
+  src: url("fonts/Merriweather/Merriweather-Bold.ttf");
 }
 @font-face {
   font-family: "Merriweather";
   font-weight: 900;
-  src: url("fonts/Merriweather/Merriweather-Black.ttf") format("ttf");
+  src: url("fonts/Merriweather/Merriweather-Black.ttf");
 }
 
 /* Style */
@@ -47,7 +52,7 @@ main {
 	.page {
 		box-shadow: 0 0 1cm rgba(0,0,0,0.1);
 		background: white;
-		min-height: 27cm;
+		min-height: 26cm;
 		margin: 1cm 0;
 	}
 }
@@ -55,6 +60,10 @@ main {
 @media print {
 	@page {
 		margin: 0;
+	}
+	* {
+		-webkit-print-color-adjust: exact;
+		color-adjust: exact !important;
 	}
 	html, body {
 		height: 100%;
@@ -151,6 +160,12 @@ main {
 	align-items: center;
 }
 
+.layout-action {
+	grid-template-columns: 1.5cm auto;
+	grid-template-areas: "a b";
+	align-items: center;
+}
+
 .layout-3e {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas: "a b c";
@@ -163,6 +178,11 @@ main {
 		"a b c"
 		"a d d"
 		"a e f";
+}
+
+.layout-spells-list {
+	grid-template-columns: 1fr 1cm 1fr;
+	grid-template-areas: "a level b";
 }
 
 .column {
@@ -178,6 +198,19 @@ main {
 .column-d { grid-area: d; }
 .column-e { grid-area: e; }
 .column-f { grid-area: f; }
+
+.column-level { grid-area: level; }
+.column-level .spell-level {
+	height: 100%;
+	line-height: 1.1cm;
+}
+
+.spell-level {
+	text-align: center; 
+	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
+	font-size: 12pt;
+}
 
 .column--left {
 	grid-area: left;
@@ -260,15 +293,15 @@ section section:last-child {
 	text-align: center;
 }
 
-.align-left label, .align-left input, .align-left output {
+.align-left label, .align-left input, .align-left output, label.align-left {
 	text-align: left !important;
 }
 
-.align-right label, .align-right input, .align-right output {
+.align-right label, .align-right input, .align-right output, label.align-right {
 	text-align: right !important;
 }
 
-.align-centre label, .align-centre legend, .align-centre input, .align-centre output {
+.align-centre label, .align-centre legend, .align-centre input, .align-centre output, label.align-center {
 	text-align: center !important;
 }
 
@@ -303,7 +336,7 @@ h2 {
 	text-transform: uppercase;
 	margin-top: 0;
 	margin-bottom: 1em;
-	font-size: 14pt;
+	font-size: 15pt;
 }
 
 h3 {
@@ -355,7 +388,7 @@ h4::before {
 	background: white;
 }
 
-h5 {
+h5, legend {
 	font-size: 8pt;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -366,8 +399,8 @@ h5 {
 
 h6 {
 	font-size: 10pt;
-	line-height: 20pt;
-	height: 20pt;
+	line-height: 0.55cm;
+	height: 0.55cm;
 	font-weight: normal;
 	text-align: left;
 	margin: 0;
@@ -388,19 +421,21 @@ article {
 	position: relative;
 }
 
-article > .level {
-	height: 100%;
+.articles article:first-child {
+	border-top: 0 none;
 }
 
-/*article > h4 {
-	top: 0;
-	left: 0;
-	right: 0;
-	margin: -2pt 0 0 0;
+.articles--zebra article:nth-last-child(2n), .articles--zebra-b article:nth-last-child(2n+1) {
+	background: #f8f8f8;
+}
 
-	padding: 1pt 8pt;
-	text-align: left;
-}*/
+.articles--fields article, article.article--fields {
+	padding-bottom: 2pt;
+}
+
+article > .level, article .action {
+	align-content: center;
+}
 
 article > h5 {
 	position: absolute;
@@ -437,7 +472,7 @@ article > h5::after, h4::after {
 }
 
 .portrait {
-	min-height: 4cm;
+	min-height: 3cm;
 }
 
 p, ul {
@@ -468,13 +503,25 @@ table tr.hr td, table tr.hr th {
 	background: #f8f8f8;
 }
 
+.field--zebra input:nth-child(2n+1) {
+	background: #f8f8f8;
+}
+
 th, td {
 	font-weight: normal;
 	margin: 0;
-	padding: 0;
+	padding: 1pt;
 	text-align: center;
 	vertical-align: bottom;
 }
+
+.table--narrow th, .table--narrow td {
+	padding: 0;
+}
+
+/*th:first-child, td:first-child {
+	text-align: left;
+}*/
 
 hr {
 	margin: 5pt 0;
@@ -551,9 +598,10 @@ input, output {
 	width: 1cm;
 	max-width: 4em;
 	/*padding: 0 2pt;*/
-	margin: 1pt 0;
+	margin: 0;
 	background: none;
-	/*box-sizing: border-box;*/
+
+	box-sizing: border-box;
 }
 
 input {
@@ -569,13 +617,13 @@ input + input {
 	margin-top: 1pt;
 	margin-left: 0;
 }
-
+/*
 legend {
 	font-size: 9pt;
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: left;
-}
+}*/
 
 .field {
 	display: inline-block;
@@ -585,12 +633,13 @@ legend {
 	flex: 0 0 auto;
 }
 
-.field--unlabelled {
+.field--unlabelled, .row--unlabelled .field, .table--unlabelled .field {
 	padding-top: 0;
 }
 
-th .field, td .field {
-	padding-top: 0.1cm;
+.field--unlined input, .field--merge-bottom input:last-child {
+	border-bottom: 0 none;
+	margin-bottom: 0;
 }
 
 th span, td span {
@@ -616,17 +665,24 @@ th span, td span {
 
 .field--temp input {
 	/*margin: 4pt 0;*/
-	height: 0.75cm;
+	/*height: 0.75cm;*/
+	border-bottom: 3px solid #b0b0b0 !important;
+	/*border-radius: 4.5pt !important;*/
+}
+
+.field--temp.field--box input {
 	border: 3px solid #b0b0b0 !important;
+	height: 0.75cm;
 	border-radius: 4.5pt !important;
 }
 
 .field--temp.field--icon input {
 	border-left: 0 none !important;
+	border-radius: 4.5pt !important;
 }
 
 .field--temp.field--icon::after {
-	bottom: 5pt;
+	bottom: 2pt;
 }
 
 .field.field--temp .overlay {
@@ -657,8 +713,8 @@ label + .field {
 
 span {
 	font-size: 11pt;
-	height: 0.7cm;
-	line-height: 0.7cm;
+	height: 0.5cm;
+	line-height: 0.5cm;
 }
 
 .field--double {
@@ -702,7 +758,7 @@ span {
 }
 
 .field--box input {
-	border: 1px solid #808080 !important;
+	border: 0.75px solid #808080 !important;
 }
 
 .field .overlay {
@@ -732,9 +788,12 @@ span {
 
 .field .underlay {
 	position: absolute;
-	bottom: 0.3pt;
+	bottom: 0;
 	right: 0;
 	left: 0;
+	height: 0.6cm;
+	line-height: 0.6cm;
+
 	text-align: center;
 	font-size: 10pt;
 	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
@@ -764,11 +823,18 @@ span {
 	padding-left: 2cm;
 }
 
+.field--horizontal label {
+	bottom: 0;
+	left: 0;
+	right: auto;
+	top: auto;
+}
+
 /* Checkboxes and Radio buttons */
 
 input[type=checkbox] {
-	width: 5pt;
-	height: 5pt;
+	width: 4pt;
+	height: 4pt;
 	visibility: hidden;
 	position: relative;
 }
@@ -781,9 +847,9 @@ input[type=checkbox]::before {
 	top: 0;
 	left: 0;
 
-	width: 5pt;
-	height: 5pt;
-	border: 0.75pt solid #808080;
+	width: 4pt;
+	height: 4pt;
+	border: 0.5pt solid #808080;
 
 	cursor: pointer;
 }
@@ -793,8 +859,8 @@ input[type=checkbox]:checked::before {
 
 
 input[type=radio] {
-	width: 8pt;
-	height: 8pt;
+	width: 7pt;
+	height: 7pt;
 	visibility: hidden;
 	position: relative;
 }
@@ -807,10 +873,10 @@ input[type=radio]::before {
 	top: 0;
 	left: 0;
 
-	width: 6pt;
-	height: 6pt;
+	width: 5pt;
+	height: 5pt;
 	border-radius: 50%;
-	border: 0.75pt solid #808080;
+	border: 0.5pt solid #808080;
 
 	cursor: pointer;
 }
@@ -819,8 +885,38 @@ input[type=radio]:checked::before {
 	background: #808080;
 }
 
-td input[type=checkbox], td input[type=radio] {
-	margin: 6pt 4pt 8.6pt 3pt;
+td input[type=checkbox] {
+	margin: 0 4pt 6pt 3pt;
+}
+
+td input[type=radio] {
+	margin: 0 4pt 5pt 3pt;
+}
+
+
+.field--checkbox {
+	margin: 0 6pt 0 3pt;
+}
+
+.field--checkbox input[type=checkbox] {
+	margin: 0 3pt 6pt 0;
+	top: -2pt;
+}
+
+.field--checkbox label {
+	display: inline-block;
+	font-size: 9pt;
+	position: relative;
+	height: 0.7cm;
+	line-height: 0.7cm;
+}
+
+.row .field--checkbox {
+	flex: 0 0 auto;
+}
+
+.field--checkbox.field--proficiency {
+	padding-left: 0.45cm;
 }
 
 
@@ -836,8 +932,8 @@ td input[type=checkbox], td input[type=radio] {
 	flex-flow: column wrap;
 
 	margin: 1pt 4pt;
-	height: 28pt;
-	width: 30pt;
+	height: 22pt;
+	width: 24pt;
 
 	justify-content: center;
 	align-content: flex-start;
@@ -845,15 +941,33 @@ td input[type=checkbox], td input[type=radio] {
 }
 
 .field--checkgrid__grid input[type=checkbox] {
-	margin: 2pt;
+	margin: 1.4pt;
 	flex: 0 0 auto;
+}
+
+/* Side-labelled fields */
+
+.field--h-label {
+	padding-left: 4pt;
+}
+.field--h-label label {
+	left: 3pt;
+	top: 0;
+	bottom: 0;
+	right: auto;
+
+	transform: rotate(-90deg);
+}
+
+.field--h-label .underlay {
+	left: 4pt;
 }
 
 /* Icon fields */
 
 .field--icon {
 	display: inline-block;
-	padding-left: 0.26cm;
+	padding-left: 0.25cm;
 	position: relative;
 }
 
@@ -878,10 +992,10 @@ td input[type=checkbox], td input[type=radio] {
 .field--icon::after {
 	content: "";
 	position: absolute;
-	bottom: 3.25pt;
+	bottom: 0pt;
 	left: 0pt;
-	width: 0.525cm;
-	height: 0.525cm;
+	width: 0.5cm;
+	height: 0.6cm;
 	/*background-color: white;*/
 	background-repeat: no-repeat;
 	background-position: center;
@@ -900,7 +1014,7 @@ td input[type=checkbox], td input[type=radio] {
 
 .field--icon.field--proficiency::after {
 	background-image: url(images/icon-proficiency.svg);
-	background-size: auto 0.525cm;
+	background-size: auto 0.5cm;
 }
 
 .field--icon.field--proficiency.field--proficiency--trained::after {
@@ -955,9 +1069,14 @@ td input[type=checkbox], td input[type=radio] {
 
 .row {
 	margin: 0;
+	min-height: 1.1cm;
 	display: flex;
 	flex-direction: row;
 	align-items: flex-end
+}
+
+.row--unlabelled {
+	min-height: 0.6cm;
 }
 
 .spacer {
@@ -997,7 +1116,7 @@ td input[type=checkbox], td input[type=radio] {
 	margin: 0;
 }
 .row fieldset.calc + * {
-	margin-left: 4pt;
+	margin-left: 2pt;
 }
 
 /* Calculations */
@@ -1010,7 +1129,7 @@ fieldset.calc {
 
 fieldset.calc > * {
 	display: inline-block;
-	margin: 0 2pt;
+	margin: 0 1pt;
 }
 
 fieldset.calc > *:first-child {
