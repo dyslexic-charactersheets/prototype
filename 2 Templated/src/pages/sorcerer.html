@@ -1,0 +1,404 @@
+<div class='page layout-2l'>
+	<div class='column'>
+		<h2>Sorcerer</h2>
+
+		<section class='section--primary'>
+			<h3>Bloodline</h3>
+
+			<fieldset class='field field--wide'>
+				<input>
+			</fieldset>
+			<fieldset class='field field--wide align-left'>
+				<label>Spell List</label>
+				<input>
+			</fieldset>
+
+			<article class='article--power'>
+				<h5>Power 1</h5>
+				<fieldset class='field field--wide field--merge-bottom'>
+					<input>
+					<input>
+					<input>
+					<input>
+				</fieldset>
+			</article>
+
+			<article class='article--power layout layout-level'>
+				<h5>Power 6</h5>
+				<div class='level'>6</div>
+				<fieldset class='field field--wide field--merge-bottom'>
+					<input>
+					<input>
+					<input>
+					<input>
+				</fieldset>
+			</article>
+
+			<article class='article--power layout layout-level'>
+				<h5>Power 10</h5>
+				<div class='level'>10</div>
+				<fieldset class='field field--wide field--merge-bottom'>
+					<input>
+					<input>
+					<input>
+					<input>
+				</fieldset>
+			</article>
+
+		</section>
+
+		<section>
+			<h3>Spell Points</h3>
+			<fieldset class='calc calc--2lines'>
+				<fieldset class='field field--double'>
+					<label>Spell Points<br>per day</label>
+					<output>&nbsp;</output>
+				</fieldset>
+				<span>=</span>
+				<fieldset class='field field--ref field--mod'>
+					<label>CHA</label>
+					<input>
+					<span class='underlay'>CHA</span>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field field--misc'>
+					<label>Bonus<br>points</label>
+					<input>
+				</fieldset>
+			</fieldset>
+			<p>Gain bonus spell points with each bloodline power.</p>
+
+			<div class='row row--2lines'>
+				<fieldset class='field field--temp field--box field--wide'>
+					<label>Spell Points<br>today</label>
+					<input>
+				</fieldset>
+			</div>
+		</section>
+
+		<section>
+			<h3>Spells</h3>
+
+			<table class='table--unlabelled table--zebra'>
+				<thead>
+					<tr>
+						<th><label>Spells<br>known</label></th>
+						<th><label>Spell<br>Level</label></th>
+						<th><label>Spells<br>per day</label></th>
+					</tr>
+				</thead>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>1</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>2</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>3</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>4</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>5</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>6</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>7</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>8</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td class='spell-level'>9</td>
+					<td><fieldset class='field'><input></fieldset></td>
+				</tr>
+			</table>
+		</section>
+	</div>
+
+	<div class='column'>
+		<section>
+			<h3>Cantrips</h3>
+
+			<div class='layout layout-2e'>
+				<div class='column column-a field--unlabelled field--wide'>
+					<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Cantrip</label><input></fieldset>
+					<fieldset class='field field--unlabelled'><input></fieldset>
+					<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+				</div>
+
+				<div class='column column-b field--unlabelled field--wide'>
+					<fieldset class='field field--unlabelled'><input></fieldset>
+					<fieldset class='field field--unlabelled'><input></fieldset>
+					<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Spells</h3>
+
+			<div class='articles articles--zebra'>
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>1</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>2</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>3</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>4</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>5</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>6</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>7</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>8</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+
+				<article class='layout layout-spells-list'>
+					<div class='column column-level'><div class='spell-level'>9</div></div>
+
+					<div class='column column-a field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><label class='align-right'>Bloodline Spell</label><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+
+					<div class='column column-b field--unlabelled field--wide'>
+						<fieldset class='field field--unlabelled'><input></fieldset>
+						<fieldset class='field field--unlabelled field--merge-bottom'><input></fieldset>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section>
+			<h3>Sorcerer Feats</h3>
+
+			<div class='layout layout-2e'>
+				<div class='column'>
+					<div class='articles articles--zebra'>
+						<article class='article--feat layout layout-level'>
+							<div class='level'>2</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>6</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>10</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>14</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>18</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+					</div>
+				</div>
+
+				<div class='column'>
+
+					<div class='articles articles--zebra'>
+						<article class='article--feat layout layout-level'>
+							<div class='level'>4</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>8</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>12</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>16</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+
+						<article class='article--feat layout layout-level'>
+							<div class='level'>20</div>
+							<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+								<input>
+								<input>
+								<input>
+							</fieldset>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

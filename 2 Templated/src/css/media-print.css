@@ -1,0 +1,53 @@
+/* Print styles */
+
+@page {
+    margin: 0;
+}
+* {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact !important;
+}
+html, body {
+    height: 100%;
+}
+
+main {
+	max-width: 24cm;
+	height: 100%;
+}
+
+.page {
+    min-height: 100%;
+    box-sizing: border-box;
+    page-break-before: always;
+    page-break-inside: avoid;
+}
+/* footer#copyright {
+    position: fixed;
+    bottom: 0;
+    left: 1cm;
+    height: 1cm;
+    right: 1cm;
+} 
+.watermark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    
+    font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 80pt;
+
+    opacity: 0.1;
+    transform: rotate(60deg);
+} */
+
+
+/* Non-printing elements */
+
+#screen-buttons, #screen-meta {
+    display: none;
+}

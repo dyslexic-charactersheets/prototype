@@ -1,0 +1,892 @@
+<div id='page-combat' class='page layout-2l2r'>
+	<div class='column column-a column--narrow column--non-final'>
+		<section>
+			<h3>Class DC</h3>
+
+			<div class='g'>
+				<fieldset class='calc'>
+
+					<fieldset class='field field--icon field--dc field--double'>
+						<legend>Class DC</legend>
+						<output name='perception-bonus'>&nbsp;</output>
+						<span class='underlay'>DC</span>
+					</fieldset>
+
+					<span>=</span>
+
+					<fieldset class='field field--ref field--mod'>
+						<label>Key Ability</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field field--ref'>
+						<label>Level</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field'>
+						<label>Item</label>
+						<input>
+					</fieldset>
+				</fieldset>
+			</div>
+		</section>
+
+		<section>
+			<h3>Speed</h3>
+			<div class='g'>
+				<div class='row'>
+					<fieldset class='field field--em'>
+						<legend>Speed</legend>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+					<div class='spacer'></div>
+					<fieldset class='field field--ref'>
+						<label>Speed with Armour</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+				</div>
+				<div class='row'>
+					<fieldset class='field'>
+						<label>Swim Speed</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+					<div class='spacer'></div>
+					<fieldset class='field'>
+						<label>Climb Speed</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+					<div class='spacer'></div>
+					<fieldset class='field'>
+						<label>Fly Speed</label>
+						<input type='text'>
+						<input type='text'>
+						<span class='mid-overlay'>ft</span>
+						<span class='overlay'>sq</span>
+					</fieldset>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Perception</h3>
+
+			<div class='g'>
+				<fieldset class='calc calc--2lines'>
+					<fieldset class='field field--icon field--bonus field--double'>
+						<label for='perception-bonus'>Perception<br>Bonus</label>
+						<output name='perception-bonus'>&nbsp;</output>
+					</fieldset>
+
+					<span>=</span>
+
+					<fieldset class='field field--ref field--mod'>
+						<label class='ruby'>WIS</label>
+						<input>
+						<span class='underlay'>WIS</span>
+					</fieldset>
+
+					<fieldset class='field field--icon field--proficiency'>
+						<label>Proficiency</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field'>
+						<label>Item</label>
+						<input>
+					</fieldset>
+
+					<fieldset class='field field--misc'>
+						<label>Misc</label>
+						<input>
+					</fieldset>
+				</fieldset>
+
+				<div class='row row--unlabelled'>
+					<fieldset class='field field--checkbox'>
+						<label><input type='checkbox'>
+						Low-light vision</label>
+					</fieldset>
+					<fieldset class='field field--checkbox'>
+						<label><input type='checkbox'>
+						Darkvision</label>
+					</fieldset>
+					<fieldset class='field field--checkbox'>
+						<label><input type='checkbox'>
+						Scent</label>
+					</fieldset>
+					<div class='spacer'></div>
+				</div>
+				<fieldset class='field field--wide field--unlabelled'>
+					<input>
+				</fieldset>
+			</div>
+		</section>
+
+		<section>
+			<h3>Saving Throws</h3>
+			
+			<table>
+				<thead>
+					<th></th>
+					<th></th>
+					<th><label>Ability<br>Modifier<label></th>
+					<th><label>Proficiency</label></th>
+					<th><label>Item</label></th>
+					<th><label class='label--misc'>Misc</label></th>
+				</thead>
+
+				<tr>
+					<td><fieldset class='field field--icon field--bonus field--double'>
+						<legend>Fortitude</legend>
+						<output>&nbsp;</output>
+						<span class='underlay'>FORT</span>
+					</fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>CON</label><input rel='CON'>
+						<span class='underlay'>CON</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field field--icon field--bonus field--double'>
+						<legend>Reflex</legend>
+						<output>&nbsp;</output>
+						<span class='underlay'>REF</span>
+					</fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+				</tr>
+
+				<tr>
+					<td><fieldset class='field field--icon field--bonus field--double'>
+						<legend>Will</legend>
+						<output>&nbsp;</output>
+						<span class='underlay'>WILL</span>
+					</fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field'><input></fieldset></td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+				</tr>
+			</table>
+		</section>
+	</div>
+
+	<div class='column column-b column--wide column--non-final'>
+		<section>
+			<h3>Weapons</h3>
+
+			<div class='articles articles--zebra articles--fields'>
+				<article class='article--weapon'>
+					<div class='row'>
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Item Quality</label>
+							<input>
+						</fieldset>
+						<fieldset class='field field--wide'>
+							<input>
+						</fieldset>
+						<fieldset class='field'>
+							<label>Range</label>
+							<input type='text'>
+							<input type='text'>
+							<span class='mid-overlay'>ft</span>
+							<span class='overlay'>sq</span>
+						</fieldset>
+					</div>
+
+					<div class='row'>
+						<fieldset class='calc'>
+							<fieldset class='field field--icon field--bonus field--triple'>
+								<label>Attack Bonus</label>
+								<output name='attack-bonus'>&nbsp;</output>
+							</fieldset>
+
+							<span>=</span>
+
+							<fieldset class='field field--ref field--mod'>
+								<input>
+							</fieldset>
+
+							<fieldset class='field field--icon field--proficiency'>
+								<label>Proficiency</label>
+								<input>
+							</fieldset>
+
+							<fieldset class='field'>
+								<label>Item</label>
+								<input>
+							</fieldset>
+						</fieldset>
+
+						<fieldset class='field field--icon field--damage field--double'>
+							<label>Damage</label>
+							<output name='damage'>&nbsp;</output>
+							<span class='mid-overlay'>d</span>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Type</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--triple'>
+							<label>Critical Effect</label>
+							<input>
+						</fieldset>
+					</div>
+				</article>
+
+				<article class='article--weapon'>
+					<div class='row'>
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Item Quality</label>
+							<input>
+						</fieldset>
+						<fieldset class='field field--wide'>
+							<input>
+						</fieldset>
+						<fieldset class='field'>
+							<label>Range</label>
+							<input type='text'>
+							<input type='text'>
+							<span class='mid-overlay'>ft</span>
+							<span class='overlay'>sq</span>
+						</fieldset>
+					</div>
+
+					<div class='row'>
+						<fieldset class='calc'>
+							<fieldset class='field field--icon field--bonus field--triple'>
+								<label>Attack Bonus</label>
+								<output name='attack-bonus'>&nbsp;</output>
+							</fieldset>
+
+							<span>=</span>
+
+							<fieldset class='field field--ref field--mod'>
+								<input>
+							</fieldset>
+
+							<fieldset class='field field--icon field--proficiency'>
+								<label>Proficiency</label>
+								<input>
+							</fieldset>
+
+							<fieldset class='field'>
+								<label>Item</label>
+								<input>
+							</fieldset>
+						</fieldset>
+
+						<fieldset class='field field--icon field--damage field--double'>
+							<label>Damage</label>
+							<output name='damage'>&nbsp;</output>
+							<span class='mid-overlay'>d</span>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Type</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--triple'>
+							<label>Critical Effect</label>
+							<input>
+						</fieldset>
+					</div>
+				</article>
+				<article class='article--weapon'>
+					<div class='row'>
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Item Quality</label>
+							<input>
+						</fieldset>
+						<fieldset class='field field--wide'>
+							<input>
+						</fieldset>
+						<fieldset class='field'>
+							<label>Range</label>
+							<input type='text'>
+							<input type='text'>
+							<span class='mid-overlay'>ft</span>
+							<span class='overlay'>sq</span>
+						</fieldset>
+					</div>
+
+					<div class='row'>
+						<fieldset class='calc'>
+							<fieldset class='field field--icon field--bonus field--triple'>
+								<label>Attack Bonus</label>
+								<output name='attack-bonus'>&nbsp;</output>
+							</fieldset>
+
+							<span>=</span>
+
+							<fieldset class='field field--ref field--mod'>
+								<input>
+							</fieldset>
+
+							<fieldset class='field field--icon field--proficiency'>
+								<label>Proficiency</label>
+								<input>
+							</fieldset>
+
+							<fieldset class='field'>
+								<label>Item</label>
+								<input>
+							</fieldset>
+						</fieldset>
+
+						<fieldset class='field field--icon field--damage field--double'>
+							<label>Damage</label>
+							<output name='damage'>&nbsp;</output>
+							<span class='mid-overlay'>d</span>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Type</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--triple'>
+							<label>Critical Effect</label>
+							<input>
+						</fieldset>
+					</div>
+				</article>
+				<article class='article--weapon'>
+					<div class='row'>
+						<fieldset class='field field--icon field--proficiency'>
+							<label>Item Quality</label>
+							<input>
+						</fieldset>
+						<fieldset class='field field--wide'>
+							<input>
+						</fieldset>
+						<fieldset class='field'>
+							<label>Range</label>
+							<input type='text'>
+							<input type='text'>
+							<span class='mid-overlay'>ft</span>
+							<span class='overlay'>sq</span>
+						</fieldset>
+					</div>
+
+					<div class='row'>
+						<fieldset class='calc'>
+							<fieldset class='field field--icon field--bonus field--triple'>
+								<label>Attack Bonus</label>
+								<output name='attack-bonus'>&nbsp;</output>
+							</fieldset>
+
+							<span>=</span>
+
+							<fieldset class='field field--ref field--mod'>
+								<input>
+							</fieldset>
+
+							<fieldset class='field field--icon field--proficiency'>
+								<label>Proficiency</label>
+								<input>
+							</fieldset>
+
+							<fieldset class='field'>
+								<label>Item</label>
+								<input>
+							</fieldset>
+						</fieldset>
+
+						<fieldset class='field field--icon field--damage field--double'>
+							<label>Damage</label>
+							<output name='damage'>&nbsp;</output>
+							<span class='mid-overlay'>d</span>
+						</fieldset>
+
+						<fieldset class='field'>
+							<label>Type</label>
+							<input>
+						</fieldset>
+
+						<fieldset class='field field--triple'>
+							<label>Critical Effect</label>
+							<input>
+						</fieldset>
+					</div>
+				</article>
+			</div>
+
+			<article>
+				<h4>Ammunition</h4>
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+						<hr class='hr--narrow'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+					</div>
+					<div class='column'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+						<hr class='hr--narrow'>
+						<fieldset class='field field--horizontal field--checkgrid'>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+							<div class='field--checkgrid__grid'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+								<input type='checkbox'>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</article>
+		</section>
+	</div>
+
+	<div class='column column-c column--wide'>
+		<section>
+			<h3>Health</h3>
+
+			<div class='g'>
+				<div class='row'>
+					<fieldset class='calc'>
+						<fieldset class='field field--icon field--hp field--double'>
+							<legend>Hit points</legend>
+							<output>&nbsp;</output>
+							<span class='overlay'>hp</span>
+						</fieldset>
+						<span>=</span>
+						<fieldset class='field'>
+							<label>Ancestry</label>
+							<input>
+						</fieldset>
+						<span>+ (</span>
+						<fieldset class='field'>
+							<label>Class</label>
+							<input>
+						</fieldset>
+						<span>+</span>
+						<fieldset class='field field--ref field--mod'>
+							<label>CON</label>
+							<input>
+							<span class='underlay'>CON</span>
+						</fieldset>
+						<span>) &times;</span>
+						<fieldset class='field field--ref'>
+							<label>Level</label>
+							<input>
+						</fieldset>
+					</fieldset>
+
+					<fieldset class='field field--progression field--dying'>
+						<label>Dying</label>
+						<fieldset class='field field--checkbox'>
+						<input type='checkbox'>
+						</fieldset>
+						<span>&rsaquo;</span>
+						<fieldset class='field field--checkbox'>
+						<input type='checkbox'>
+						</fieldset>
+						<span>&rsaquo;</span>
+						<fieldset class='field field--checkbox'>
+							<input type='checkbox'>
+						</fieldset>
+						<span>&rsaquo;</span>
+						<i class='icon icon--small icon-evil'></i>
+					</fieldset>
+				</div>
+
+				<fieldset class='field field--temp field--box field--icon field--hp field--wide'>
+					<label>Current Hit Points</label>
+					<input>
+					<span class='overlay'>hp</span>
+				</fieldset>
+			</div>
+
+		</section>
+
+		<section>
+			<h3>Armour Class</h3>
+			<table class='table--unlabelled'>
+				<thead>
+					<tr>
+						<th></th>
+						<th></th>
+						<th><label>DEX</label></th>
+						<th></th>
+						<th><label>Proficiency</label></th>
+						<th></th>
+						<th><label>Armour<br>Bonus</label></th>
+						<th></th>
+						<th><label>Shield<br>Bonus</label></th>
+						<th></th>
+						<th><label class='label--misc'>Misc</label></th>
+						<th></th>
+					</tr>
+				</thead>
+
+				<tr>
+					<th colspan='3'><h5>Armour Class</h5></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--ac field--double'>
+						<output>&nbsp;</output>
+						<span class='underlay'>AC</span>
+					</fieldset></td>
+
+					<td><span>= 10 +</span></td>
+
+					<td><fieldset class='field field--ref field--mod'>
+						<input rel='DEX'>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--proficiency'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--ac'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--misc'>
+						<input>
+					</fieldset></td>
+				</tr>
+
+				<tr>
+					<th colspan='3'><h5>Touch AC</h5></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--tac field--double'>
+						<output>&nbsp;</output>
+						<span class='underlay'>TAC</span>
+					</fieldset></td>
+
+					<td><span>= 10 +</span></td>
+
+					<td><fieldset class='field field--ref field--mod'>
+						<input rel='DEX'>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--proficiency'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--icon field--tac'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field'>
+						<input>
+					</fieldset></td>
+
+					<td><span>+</span></td>
+					<td><fieldset class='field field--misc'>
+						<input>
+					</fieldset></td>
+				</tr>
+			</table>
+		</section>
+
+		<div class='layout layout-2e'>
+			<div class='column'>
+				<section>
+					<h4>Armour</h4>
+
+					<fieldset class='field field--wide field--unlabelled'>
+						<input>
+					</fieldset>
+
+					<div class='row'>
+						<fieldset class='field field--icon field--ac field--double'>
+							<label>AC Bonus</label>
+							<input>
+							<span class='underlay'>AC</span>
+						</fieldset>
+
+						<fieldset class='field field--icon field--tac field--double'>
+							<label>TAC Bonus</label>
+							<input>
+							<span class='underlay'>TAC</span>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field'>
+							<label>Bulk</label>
+							<input>
+						</fieldset>
+					</div>
+
+					<div class='row row--2lines'>
+						<fieldset class='field field--double'>
+							<label>Max DEX<br>to AC</label>
+							<input>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field'>
+							<label>Speed<br>Penalty</label>
+							<input>
+							<input>
+							<span class='mid-overlay'>ft</span>
+							<span class='overlay'>sq</span>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field field--double'>
+							<label>Armor Check<br>Penalty</label>
+							<input>
+							<span class='start-overlay'>&ndash;</span>
+						</fieldset>
+					</div>
+
+					<fieldset class='field field--wide align-left field--merge-bottom'>
+						<label>Properties</label>
+						<input>
+						<input>
+					</fieldset>
+				</section>
+			</div>
+			<div class='column'>
+				<section>
+					<h4>Shield</h4>
+
+					<fieldset class='field field--wide field--unlabelled'>
+						<input>
+					</fieldset>
+
+					<div class='row'>
+						<fieldset class='field field--icon field--ac field--double'>
+							<label>AC Bonus</label>
+							<input>
+							<span class='underlay'>AC</span>
+						</fieldset>
+
+						<fieldset class='field field--icon field--tac field--double'>
+							<label>TAC Bonus</label>
+							<input>
+							<span class='underlay'>TAC</span>
+						</fieldset>
+
+						<div class='spacer'></div>
+						<fieldset class='field'>
+							<label>Bulk</label>
+							<input>
+						</fieldset>
+					</div>
+
+					<div class='row row--2lines'>
+						<fieldset class='field field--double'>
+							<label>Armor Check<br>Penalty</label>
+							<input>
+							<span class='start-overlay'>&ndash;</span>
+						</fieldset>
+						<div class='spacer'></div>
+						<fieldset class='field field--double'>
+							<label>Shield<br>Hardness</label>
+							<input>
+						</fieldset>
+					</div>
+
+					<fieldset class='field field--wide align-left field--merge-bottom'>
+						<label>Properties</label>
+						<input>
+						<input>
+					</fieldset>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<div class='column column-d column--narrow'>
+		<section>
+			<h3>Actions</h3>
+			
+			<div class='articles articles--zebra'>
+				<article class='article--with-icon article--with-icon--triple article--action'>
+					<i class='icon icon-small icon-action-template'></i>
+					<h4></h4>
+					<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+						<input>
+						<input>
+					</fieldset>
+				</article>
+				<article class='article--with-icon article--with-icon--triple article--action'>
+					<i class='icon icon-small icon-action-template'></i>
+					<h4></h4>
+					<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+						<input>
+						<input>
+					</fieldset>
+				</article>
+				<article class='article--with-icon article--with-icon--triple article--action'>
+					<i class='icon icon-small icon-action-template'></i>
+					<h4></h4>
+					<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+						<input>
+						<input>
+					</fieldset>
+				</article>
+				<article class='article--with-icon article--with-icon--triple article--action'>
+					<i class='icon icon-small icon-action-template'></i>
+					<h4></h4>
+					<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+						<input>
+						<input>
+					</fieldset>
+				</article>
+				<article class='article--with-icon article--with-icon--triple article--action'>
+					<i class='icon icon-small icon-action-template'></i>
+					<h4></h4>
+					<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+						<input>
+						<input>
+					</fieldset>
+				</article>
+				<article class='article--with-icon article--with-icon--triple article--action'>
+					<i class='icon icon-small icon-action-template'></i>
+					<h4></h4>
+					<fieldset class='field field--wide field--unlabelled field--merge-bottom'>
+						<input>
+						<input>
+					</fieldset>
+				</article>
+			</div>
+		</section>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #column {
+                width: 200px;
+                height: 400px;
+                padding: 10px;
+
+                display: flex;
+                flex-direction: column;
+                background: #aaa;
+            }
+
+            #column > *, #row > * {
+                flex: 1 0 auto;
+            }
+
+            #row {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .item {
+                min-height: 40px;
+                min-width: 40px;
+            }
+
+            #i1 { background: #808; }
+            #i2 { background: #880; }
+            #i3 { background: #088; }
+            #i4 { background: #800; }
+            #i5 { background: #080; }
+            #i6 { background: #008; }
+            #i7 { background: #086; }
+        </style>
+    </head>
+
+    <body>
+
+        <div id='column'>
+            <div class='item' id='i1'></div>
+            <div class='row'>
+                <div class='item' id='i2'></div>
+                <div class='item' id='i3'></div>
+            </div>
+            <div class='item' id='i4'></div>
+        </div>
+    </body>
+</html>

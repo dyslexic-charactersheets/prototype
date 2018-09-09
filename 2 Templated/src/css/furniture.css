@@ -1,0 +1,167 @@
+/* Column Borders */
+
+.page > .column > *:last-child, .page > *:last-child > .column > *:last-child {
+	padding-bottom: 2pt;
+	border-bottom: 2pt solid #808080;
+}
+
+.column.column--non-final > * {
+	padding-bottom: 0 !important;
+	border-bottom: 0 none !important;
+}
+
+
+
+/* Sections */
+
+section {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+
+	break-inside: avoid;
+	page-break-inside: avoid;
+
+	flex: 1 0 auto;
+	margin-bottom: 2pt;
+}
+
+section > * {
+	flex: 1 0 auto;
+}
+
+
+/* Primary section */
+
+.section--primary {
+	margin-top: 0.4cm;
+	background-color: white;
+	/*background: url(images/primarybox.svg);*/
+	border: 2pt solid #808080;
+	border-top: 0 none;
+	padding: 0 3pt 3pt 3pt;
+}
+
+.section--primary > h3 {
+	margin-top: -0.4cm;
+	margin-left: -5pt;
+	margin-right: -5pt;
+}
+
+/* Nested sections */
+
+section section {
+	padding-bottom: 3pt;
+	border-bottom: 1pt solid #909090;
+	margin-bottom: 3pt;
+}
+
+section section:last-child {
+	padding-bottom: 0;
+	border-bottom: 0 none;
+	margin-bottom: 0;
+}
+
+
+
+/* Article */
+
+article {
+	border-top: 2pt solid #c0c0c0;
+	min-height: 0.7cm;
+	position: relative;
+}
+
+article > h4 {
+	margin-top: -2pt;
+}
+
+h3 + article, h4 + article {
+	border-top: 0 none;
+}
+
+h3 + article > h4 {
+    margin-top: 0;
+}
+
+.articles article:first-child {
+	border-top: 0 none;
+}
+
+.articles--zebra article:nth-last-child(2n), .articles--zebra-b article:nth-last-child(2n+1) {
+	background: #f8f8f8;
+}
+
+.articles--fields article, article.article--fields {
+	padding-bottom: 2pt;
+}
+
+article > .level, article .action {
+	align-content: center;
+}
+
+article > h5 {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: -2pt 0 0 0;
+	
+	background: #c0c0c0;
+	color: #303030;
+	padding: 1pt 7pt 1pt 2pt;
+}
+
+article > h5::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -11pt;
+	border-left: 11pt solid transparent;
+	border-top: 11pt solid #c0c0c0;
+}
+
+article > h5::after, h4::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -0.2pt;
+	height: 100%;
+	width: 3pt;
+
+	border-radius: 3pt / 50%;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	background: white;
+}
+
+article.article--action {
+	border-top: 0 none;
+}
+
+article.article--with-icon {
+	padding-top: 6pt;
+	position: relative;
+}
+
+article.article--with-icon > .icon {
+	position: absolute;
+	margin: 0 !important;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	opacity: 1;
+}
+
+article.article--with-icon > .icon.icon--small {
+	top: -3pt;
+}
+
+article.article--with-icon > h4 {
+	margin-left: 0.3cm;
+	padding-left: 0.5cm;
+	margin-bottom: 5pt;
+}
+
+article.article--with-icon--triple > h4 {
+	margin-left: 1.3cm;
+}

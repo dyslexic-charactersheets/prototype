@@ -1,0 +1,620 @@
+<div id='page-core' class='page layout-2l'>
+	<div class='column column--narrow'>
+
+		<header>
+			<h1 class='logo'></h1>
+		</header>
+
+		<section class='section--untitled'>
+			<fieldset class='field field--wide align-left'>
+				<label for='player'>Player</label>
+				<input type='text' name='player'>
+			</fieldset>
+
+
+			<div class='layout layout-2r'>
+				<div class='column'>
+					<fieldset class='field field--wide align-left'>
+						<label for='campaign'>Campaign</label>
+						<input type='text' name='campaign'>
+					</fieldset>
+				</div>
+				<div class='column'>
+					<fieldset class='field field--wide align-right'>
+						<label for='xp'>XP</label>
+						<input type='number' name='xp'>
+						<span class='underlay'>XP</span>
+					</fieldset>
+				</div>
+			</div>
+		</section>
+
+		<section class='section--primary section--fill'>
+			<h3>Character</h3>
+			<div class='portrait fill'></div>
+
+			<section>
+
+				<div class='layout layout-alignment'>
+					<div class='column'>
+						<div>
+							<fieldset class='field field--wide align-left'>
+								<legend>Name</legend>
+								<input type='text'>
+							</fieldset>
+						</div>
+						<div class='row'>
+							<fieldset class='field field--icon field--gender field--triple'>
+								<label>Gender</label>
+								<input>
+							</fieldset>
+							<fieldset class='field field--double'>
+								<label>Age</label>
+								<input>
+							</fieldset>
+							<div class='spacer'></div>
+						</div>
+					</div>
+
+					<div class='column'>
+						<fieldset class='field--alignment'>
+							<span class='field--alignment__grid'></span>
+							<span class='field--alignment__good-icon'></span>
+							<span class='field--alignment__evil-icon'></span>
+							<span class='field--alignment__lawful-icon'></span>
+							<span class='field--alignment__chaotic-icon'></span>
+
+							<label class='field--alignment__good'>Good</label>
+							<label class='field--alignment__evil'>Evil</label>
+							<label class='field--alignment__lawful'>Lawful</label>
+							<label class='field--alignment__chaotic'>Chaotic</label>
+						</fieldset>
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<section>
+			<h3>Ability Scores</h3>
+			<table class='table--unlabelled'>
+				<thead>
+					<tr>
+						<th></th>
+						<th><label>Ability<br>Score</label></th>
+						<th><label class='label--icon'>Ability<br>Modifier</label></th>
+						<th><label>Key<br>Ability</label></th>
+						<th><label class='label--misc'>Temporary<br>Adjustment</label></th>
+					</tr>
+				</thead>
+				<tr class='calc'>
+					<th><h6>Strength</h6></th>
+					<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>STR</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='str'></td>
+					<td><fieldset class='field field--temp'><input></fieldset></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Dexterity</h6></th>
+					<td><fieldset class='field'><input name='dexterity-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='DEX' data-calc="({dexterity-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='dex'></td>
+					<td><fieldset class='field field--temp'><input></fieldset></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Constitution</h6></th>
+					<td><fieldset class='field'><input name='constitution-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='CON' data-calc="({constitution-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>CON</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='con'></td>
+					<td><fieldset class='field field--temp'><input></fieldset></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Intelligence</h6></th>
+					<td><fieldset class='field'><input name='intelligence-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='INT' data-calc="({intelligence-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='int'></td>
+					<td><fieldset class='field field--temp'><input></fieldset></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Wisdom</h6></th>
+					<td><fieldset class='field'><input name='wisdom-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='WIS' data-calc="({wisdom-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='wis'></td>
+					<td><fieldset class='field field--temp'><input></fieldset></td>
+				</tr>
+				<tr class='calc'>
+					<th><h6>Charisma</h6></th>
+					<td><fieldset class='field'><input name='charisma-score'></fieldset></td>
+					<td><fieldset class='field field--icon field--modifier'><output name='CHA' data-calc="({charisma-score} - 10) / 2">&nbsp;</output>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td><input type='radio' name='key-ability' value='cha'></td>
+					<td><fieldset class='field field--temp'><input></fieldset></td>
+				</tr>
+			</table>
+
+			<fieldset class='calc calc--inline'>
+				<label>Ability<br>Modifier</label>
+				<span>= (</span>
+				<label>Ability<br>Score</label>
+				<span>- 10 ) &divide; 2</span>
+			</fieldset>
+		</section>
+
+		<section>
+			<h3>Proficiency</h3>
+			
+			<table class='table--unlabelled'>
+				<tr>
+					<th><label class='label--icon'>Untrained</label></th>
+					<th><label class='label--icon'>Trained</label></th>
+					<th><label class='label--icon'>Expert</label></th>
+					<th><label class='label--icon'>Master</label></th>
+					<th><label class='label--icon'>Legendary</label></th>
+				</tr>
+				<tr>
+					<td><fieldset class='field field--icon field--narrow field--proficiency'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--trained'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--expert'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--master'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+					<td><fieldset class='field field--icon field--narrow field--proficiency field--proficiency--legendary'>
+						<output>&nbsp;</output>
+					</fieldset></td>
+				</tr>
+				<tr>
+					<td><label class='label--icon'>Level<br>-2</label></td>
+					<td><label class='label--icon'>Level<br>&nbsp;</label></td>
+					<td><label class='label--icon'>Level<br>+1</label></td>
+					<td><label class='label--icon'>Level<br>+2</label></td>
+					<td><label class='label--icon'>Level<br>+3</label></td>
+				</tr>
+			</table>
+		</section>
+
+		<section>
+			<h3>Languages</h3>
+			<fieldset class='field field--wide field--unlabelled field--merge-bottom align-left'>
+				<input type='text'>
+				<input type='text'>
+			</fieldset>
+		</section>
+
+	</div>
+	<div class='column column--wide'>
+
+		<section>
+			<h3>Ancestry</h3>
+
+			<div class='g'>
+				<div class='layout layout-2e'>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='ancestry-name'>Ancestry</label>
+							<input name='ancestry-name' type='text'>
+						</fieldset>
+					</div>
+					<div class='column'>
+						<fieldset class='field field--wide align-left'>
+							<label for='ancestry-ethnicity'>Ethnicity</label>
+							<input name='ancestry-ethnicity' type='text'>
+						</fieldset>
+					</div>
+				</div>
+
+				<div class='row'>
+					<fieldset class='field field--icon field--size field--double'>
+						<label>Size</label>
+						<input type='text'>
+					</fieldset>
+
+					<fieldset class='field field--wide'>
+						<label>Abilities</label>
+						<input>
+					</fieldset>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h3>Background</h3>
+			
+			<fieldset class='field field--wide align-left'>
+				<label for='background-name'>Background</label>
+				<input name='background-name' type='text'>
+			</fieldset>
+		</section>
+
+		<section>
+			<h3>Class</h3>
+
+			<div class='row with-below'>
+				<fieldset class='field field--wide align-left'>
+					<label for='class-name'>Class</label>
+					<input name='class-name' type='text'>
+				</fieldset>
+
+				<fieldset class='field field--box'>
+					<label>Level</label>
+					<input>
+				</fieldset>
+			</div>
+
+			<h4>Archetypes</h4>
+			<fieldset class='field field--wide align-left field--unlabelled field--merge-bottom'>
+				<input name='class-archetype-name' type='text'>
+				<input name='class-archetype-name' type='text'>
+			</fieldset>
+		</section>
+
+		<section class='fill'>
+			<h3>Skills</h3>
+
+			<table class='table--skills table--zebra table--unlabelled'>
+				<thead>
+					<th></th>
+					<th><label class='align-right'>Assurance</label></th>
+					<th><label class='label--icon'>Skill<br>Bonus</label></th>
+					<th></th>
+					<th><label>Ability<br>Modifier</label></th>
+					<th><label class='label--icon'>Profiency</label></th>
+					<th><label class='label--misc'>Feats<br>Misc</label></th>
+					<th><label>Armor<br>Check<br>Penalty</label></th>
+				</thead>
+
+				<tr>
+					<th><h6>Acrobatics</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr>
+					<th><h6>Arcana</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Athletics</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>STR</label><input rel='STR'>
+						<span class='underlay'>STR</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr>
+					<th><h6>Crafting</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Deception</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Diplomacy</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Intimidation</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Medicine</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Nature</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Occultism</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Performance</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>CHA</label><input rel='CHA'>
+						<span class='underlay'>CHA</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Religion</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Society</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Stealth</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr>
+					<th><h6>Survival</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>WIS</label><input rel='WIS'>
+						<span class='underlay'>WIS</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th><h6>Thievery</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>DEX</label><input rel='DEX'>
+						<span class='underlay'>DEX</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td><fieldset class='field field--box field--ref'><input>
+						<span class='start-overlay'>&ndash;</span></fieldset></td>
+				</tr>
+
+				<tr class='hr'>
+					<th><h6>Lore</h6></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><label>INT</label><input rel='INT'>
+						<span class='underlay'>INT</span></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><input></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><input></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><input></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<th></td>
+					<td class='align-right'><input type='checkbox'></td>
+					<td><fieldset class='field field--icon field--bonus'><output>&nbsp;</output></fieldset></td>
+					<td><span>=</span></td>
+					<td><fieldset class='field field--ref field--mod field--h-label'><input></fieldset></td>
+					<td>
+						<fieldset class='field field--icon field--proficiency'>
+							<input>
+						</fieldset>
+					</td>
+					<td><fieldset class='field field--misc'><input></fieldset></td>
+					<td></td>
+				</tr>
+			</table>
+			<div class='spacer'></div>
+			<div class='row row--unlabelled'>
+				<div class='level'>7</div>
+				<span>Master in skills</span>
+				<div class='level'>15</div>
+				<span>Legendary in skills</span>
+			</div>
+		</section>
+	</div>
+</div>

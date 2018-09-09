@@ -1,0 +1,470 @@
+<div id='page-build' class='page'>
+	<div class='layout layout-2l nofill'>
+		<div class='column'>
+			<h2>Build a character</h2>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Character Concept</h3>
+				<fieldset class='field field--wide align-left'>
+					<label>I'm awesome because...</label>
+					<input>
+					<!-- <input> -->
+				</fieldset>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step one</h3>
+				<p>Pick your race and where your character comes from.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Ancestry</h3>
+				
+				<div class='g'>
+					<div class='layout layout-2e'>
+						<div class='column'>
+							<fieldset class='field field--wide align-left'>
+								<label for='ancestry-name'>Ancestry</label>
+								<input name='ancestry-name' type='text'>
+							</fieldset>
+						</div>
+						<div class='column'>
+							<fieldset class='field field--wide align-left'>
+								<label for='ancestry-ethnicity'>Ethnicity</label>
+								<input name='ancestry-ethnicity' type='text'>
+							</fieldset>
+						</div>
+					</div>
+
+					<div class='layout layout-2e'>
+						<div class='column'>
+							<div class='row'>
+								<fieldset class='field field--icon field--hp'>
+									<label>Hit Points</label>
+									<input type='number'>
+								</fieldset>
+
+								<fieldset class='field field--icon field--size'>
+									<label>Size</label>
+									<input type='text'>
+								</fieldset>
+
+								<fieldset class='field'>
+									<label>Speed</label>
+									<input type='text'>
+									<input type='text'>
+									<span class='mid-overlay'>ft</span>
+									<span class='overlay'>sq</span>
+								</fieldset>
+							</div>
+						</div>
+						<div class='column'>
+							<fieldset class='field field--wide align-left'>
+								<label for='ancestry-feat'>Ancestry Feat</label>
+								<input name='ancestry-feat' type='text'>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step two</h3>
+				<p>Decide how your character grew up.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Background</h3>
+
+				<div class='g'>
+					<div class='layout layout-2e'>
+						<div class='column'>
+							<fieldset class='field field--wide align-left'>
+								<label for='background-name'>Background</label>
+								<input name='background-name' type='text'>
+							</fieldset>
+						</div>
+						<div class='column'>
+							<fieldset class='field field--wide align-left'>
+								<label for='ancestry-feat'>Skill Feat</label>
+								<input name='ancestry-feat' type='text'>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step three</h3>
+				<p>Pick from one of the main classes.</p>
+				<p>Depending on your class, you will likely need to pick a specialisation at the same time. These include a Sorcerer's bloodline, a Cleric's domain or a Barbarian's totem.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Class</h3>
+
+				<div class='g'>
+					<div class='layout layout-2e'>
+						<div class='column'>
+							<fieldset class='field field--wide align-left'>
+								<label for='class-name'>Class</label>
+								<input name='class-name' type='text'>
+							</fieldset>
+						</div>
+						<div class='column'>
+							<fieldset class='field field--wide align-left'>
+								<label for='class-specialisation'>Specialisation</label>
+								<input name='class-specialisation' type='text'>
+							</fieldset>
+						</div>
+					</div>
+
+					<div class='row'>
+						<fieldset class='field field--icon field--hp'>
+							<label>Hit Points</label>
+							<input type='number'>
+						</fieldset>
+
+						<fieldset class='field field--double'>
+							<label>Key Ability</label>
+							<input>
+						</fieldset>
+
+						<div class='spacer'></div>
+
+						<fieldset class='field field--icon field--checkbox field--proficiency'>
+							<label>Perception</label>
+						</fieldset>
+
+						<div class='spacer'></div>
+
+						<fieldset class='field field--icon field--checkbox field--proficiency'>
+							<label>Fortitude</label>
+						</fieldset>
+
+						<fieldset class='field field--icon field--checkbox field--proficiency'>
+							<label>Reflex</label>
+						</fieldset>
+
+						<fieldset class='field field--icon field--checkbox field--proficiency'>
+							<label>Will</label>
+						</fieldset>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step four</h3>
+
+				<h4>Ability Scores</h4>
+				<p>Add up the ability score bonuses you get from your ancestry, background and class, each of which provides +2 or -2 to a number of abilities. You also get four free ability boosts to allocate as you wish.</p>
+				<p>No ability score may be above 18 at level one.</p>
+
+				<fieldset class='calc calc--inline'>
+					<label>Ability<br>Modifier</label>
+					<span>= (</span>
+					<label>Ability<br>Score</label>
+					<span>- 10 ) &divide; 2</span>
+				</fieldset>
+
+				<p>Your key ability comes from your class, and is used to determine your class DC.</p>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Details</h3>
+
+				<table class='table--unlabelled'>
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+							<th><label>Ancestry<br>-2 &nbsp; +2</label></th>
+							<th><label>Background<br>-2 &nbsp; +2</label></th>
+							<th><label>Class<br>-2 &nbsp; +2</label></th>
+							<th><label>4 Free<br>&nbsp; +2</label></th>
+							<th></th>
+							<th><label>Ability<br>Score</label></th>
+							<th><label class='label--icon'>Ability<br>Modifier</label></th>
+							<th>Key<br>Ability</th>
+						</tr>
+					</thead>
+					<tr>
+						<th><h6>Strength</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>STR</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Dexterity</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>DEX</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Constitution</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>CON</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Intelligence</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>INT</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Wisdom</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>WIS</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+					<tr>
+						<th><h6>Charisma</h6></th>
+						<td><span>10+</span></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'><input type='checkbox' class='field--boost__minus'></fieldset></td>
+						<td><fieldset class='field field--boost'><input type='checkbox' class='field--boost__plus'></fieldset></td>
+						<td><h6>&#8658;</h6></td>
+						<td><fieldset class='field'><input name='strength-score'></fieldset></td>
+						<td><fieldset class='field field--icon field--modifier'><output name='STR' data-calc="({strength-score} - 10) / 2">&nbsp;</output>
+							<span class='underlay'>CHA</span></fieldset></td>
+						<td><input type='radio'></td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<h4>Health</h4>
+			<p>Calculate your starting hit points.</p>
+		</div>
+		<div class='column'>
+			<fieldset class='calc'>
+				<fieldset class='field field--icon field--hp field--double'>
+					<label>Hit points</label>
+					<output>&nbsp;</output>
+				</fieldset>
+				<span>=</span>
+				<fieldset class='field'>
+					<label>Ancestry</label>
+					<input>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field'>
+					<label>Class</label>
+					<input>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field field--ref field--mod'>
+					<label>CON</label>
+					<input>
+					<span class='underlay'>CON</span>
+				</fieldset>
+			</fieldset>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<h4>Proficiencies</h4>
+			<p>Refer to your ancestry, background, class and feats to determine what your initial proficiencies are.</p>
+			<p>Then spend the skill proficiencies your class provides to upgrade skills.</p>
+
+			<fieldset class='calc'>
+				<fieldset class='field'>
+					<label>Skill Ranks</label>
+					<output>&nbsp;</output>
+				</fieldset>
+				<span>=</span>
+				<fieldset class='field'>
+					<label>Ancestry</label>
+					<input>
+				</fieldset>
+				<span>+</span>
+				<fieldset class='field field--ref field--mod'>
+					<input>
+					<span class='underlay'>INT</span>
+				</fieldset>
+			</fieldset>
+
+		</div>
+		<div class='column'>
+			<section>
+				<table>
+					<tr>
+						<th><h6>Weapon and Armour &nbsp;</h6></th>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr><td></td><td colspan='2'><hr></td></tr>
+					<tr>
+						<th><h6>Skills</h6></th>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+						<td>
+							<fieldset class='field field--icon field--proficiency field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</div>
+
+	<div class='layout layout-2l'>
+		<div class='column'>
+			<section>
+				<h3>Step five</h3>
+				<p>Work out what your character owns at the start of the game, including clothes and weapons.</p>
+				<h5>Starting money</h5>
+				<h6>150 sp</h6>
+				<div class='spacer'></div>
+			</section>
+		</div>
+		<div class='column'>
+			<section>
+				<h3>Equipment</h3>
+				
+				<table>
+					<tr>
+						<th><h6>Weapon</h6></th>
+						<td>
+							<fieldset class='field field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<th><h6>Armour</h6></th>
+						<td>
+							<fieldset class='field field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<th><h6>Gear</h6></th>
+						<td>
+							<fieldset class='field field--wide align-left'>
+								<input type='text'>
+							</fieldset>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</div>
+</div>

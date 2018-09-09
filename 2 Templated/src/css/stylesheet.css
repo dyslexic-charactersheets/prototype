@@ -1,0 +1,41 @@
+{{{stylesheet "base"}}}
+{{{stylesheet "fonts"}}}
+
+{{{stylesheet "layout"}}}
+{{{stylesheet "furniture"}}}
+{{{stylesheet "elements"}}}
+{{{stylesheet "util"}}}
+{{{stylesheet "fields"}}}
+
+{{{stylesheet "portrait"}}}
+
+
+@media screen {
+	{{{stylesheet "media-screen"}}}
+}
+
+@media print {
+	{{{stylesheet "media-print"}}}
+}
+
+/*
+@media print and (min-width: 212mm) {
+	.a4-only {
+		display: none;
+	}
+}
+*/
+
+
+
+.spell-level {
+	text-align: center; 
+	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+
+/* body {
+	background: green !important;
+} */

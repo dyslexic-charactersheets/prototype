@@ -1,0 +1,16 @@
+{
+  "name": "stage2-prototype",
+  "version": "1.0.0",
+  "description": "Dyslexic Character Sheets stage 2 prototype",
+  "main": "src/make.js",
+  "scripts": {
+    "main": "nodejs src/make.js"
+  },
+  "author": "Marcus Downing",
+  "license": "ISC",
+  "dependencies": {
+    "buffer": "^5.2.1",
+    "handlebars": "^4.0.11",
+    "lodash": "^4.17.10"
+  }
+}

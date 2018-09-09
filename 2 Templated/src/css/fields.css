@@ -1,0 +1,693 @@
+
+/* Fields */
+
+fieldset {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+}
+
+.field {
+	display: inline-block;
+	white-space: nowrap;
+	position: relative;
+	padding-top: 0.35cm;
+	flex: 0 0 auto;
+}
+
+label {
+	margin: 3pt 0 1pt 0;
+	display: block;
+}
+
+.field--mod label {
+	font-size: 6pt;
+}
+
+.field input, .field output {
+	height: 0.6cm;
+	line-height: 0.6cm;
+	text-align: center;
+	font-family: "Roboto Condensed", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 11pt;
+	color: #202020;
+	width: 1cm;
+	max-width: 4em;
+	padding: 0 1pt;
+	margin: 0;
+	background: none;
+
+	box-sizing: border-box;
+}
+
+.field.field--big input, .field.field--big output {
+	font-size: 14pt;
+	height: 0.8cm;
+	line-height: 0.8cm;
+}
+
+.field input {
+	border: 0 none;
+	border-bottom: 0.5pt solid #707070;
+}
+
+.field input + input {
+	margin-left: -2pt;
+}
+
+.field--wide input + input {
+	margin-top: 1pt;
+	margin-left: 0;
+}
+
+.field legend {
+	line-height: 9.5pt;
+}
+
+label + .field {
+	margin-top: -1pt;
+}
+
+.field--unlabelled, .row--unlabelled .field, .table--unlabelled .field {
+	padding-top: 0;
+}
+
+.field--unlined input, .field--merge-bottom input:last-child {
+	border-bottom: 0 none;
+	margin-bottom: 0;
+}
+
+th span, td span {
+	font-size: 12pt;
+}
+
+.field legend {
+	position: absolute;
+	top: -2pt;
+	left: 0;
+	text-align: left;
+}
+
+.field label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.field--temp input {
+	/*margin: 4pt 0;*/
+	/*height: 0.75cm;*/
+	border-bottom: 3px solid #b0b0b0 !important;
+	/*border-radius: 4.5pt !important;*/
+}
+
+.field--temp.field--box input {
+	border: 3px solid #b0b0b0 !important;
+	height: 0.75cm;
+	border-radius: 4.5pt !important;
+}
+
+.field--temp.field--icon input {
+	border-left: 0 none !important;
+	border-radius: 4.5pt !important;
+}
+
+.field--temp.field--icon::after {
+	bottom: 2pt;
+}
+
+.field.field--temp .overlay {
+	bottom: 1pt;
+	right: 5pt;
+}
+
+.field--ref input {
+	border-bottom: 1pt dashed #707070;
+	/* font-weight: bold; */
+}
+
+.field--narrow input, .field--narrow output {
+	width: 0.5cm;
+}
+
+.field output {
+	display: inline-block;
+	border: 1pt solid #707070;
+	border-radius: 2pt;
+	text-align: center;
+	min-width: 2em;
+}
+
+
+.field--double {
+	flex: 2 0 auto;
+}
+
+.field--double input, .field--double output {
+	width: 2.5cm;
+}
+
+.field--triple {
+	flex: 3 0 auto;
+}
+
+.field--triple input, .field--triple output {
+	width: 4cm;
+}
+
+.field--wide {
+	display: block;
+	width: 100% !important;
+	box-sizing: border-box;
+}
+
+.field--wide input {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+}
+
+
+.field--em output {
+	border-width: 1.25pt;
+}
+.field--em input {
+	border-bottom-width: 1.25pt;
+}
+.field--em .overlay, .field--em .mid-overlay {
+	font-weight: bold;
+}
+
+.field--box input {
+	border: 0.75px solid #808080 !important;
+}
+
+.field .overlay {
+	position: absolute;
+	bottom: 0pt;
+	right: 4pt;
+	font-size: 9pt;
+}
+
+.field .start-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 4pt;
+	font-size: 9pt;
+}
+
+.field .mid-overlay {
+	position: absolute;
+	bottom: 0pt;
+	right: 50%;
+	font-size: 9pt;
+}
+
+.field--icon .mid-overlay {
+	right: 41%;
+}
+
+.field .underlay {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 0.6cm;
+	line-height: 0.6cm;
+
+	text-align: center;
+	font-size: 10pt;
+	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: 900;
+	color: #000000;
+	opacity: 0.2;
+}
+
+.field--icon .underlay {
+	left: 0.27cm;
+}
+
+.field--ref input, .field--ref output {
+	border-style: dashed;
+}
+
+.field--misc label, .label--misc {
+	color: #a0a0a0;
+}
+
+.field--misc input, .field--misc output {
+	border-color: #909090 !important;
+}
+
+.field--horizontal {
+	padding-top: 0;
+	padding-left: 2cm;
+}
+
+.field--horizontal label {
+	bottom: 0;
+	left: 0;
+	right: auto;
+	top: auto;
+}
+
+/* Checkboxes and Radio buttons */
+
+input[type=checkbox] {
+	width: 4pt;
+	height: 4pt;
+	visibility: hidden;
+	position: relative;
+}
+
+input[type=checkbox]::before {
+	content: "";
+	display: inline-block;
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 4pt;
+	height: 4pt;
+	border: 0.5pt solid #808080;
+
+	cursor: pointer;
+}
+input[type=checkbox]:checked::before {
+	background: #808080;
+}
+
+
+input[type=radio] {
+	width: 7pt;
+	height: 7pt;
+	visibility: hidden;
+	position: relative;
+}
+
+input[type=radio]::before {
+	content: "";
+	display: inline-block;
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 5pt;
+	height: 5pt;
+	border-radius: 50%;
+	border: 0.5pt solid #808080;
+
+	cursor: pointer;
+}
+
+input[type=radio]:checked::before {
+	background: #808080;
+}
+
+td input[type=checkbox] {
+	margin: 0 4pt 6pt 3pt;
+}
+
+td input[type=radio] {
+	margin: 0 4pt 5pt 3pt;
+}
+
+
+.field--checkbox {
+	margin: 0 6pt 0 3pt;
+}
+
+.field--checkbox input[type=checkbox] {
+	margin: 0 3pt 6pt 0;
+	top: -2pt;
+}
+
+.field--checkbox label {
+	display: inline-block;
+	font-size: 9pt;
+	position: relative;
+	height: 0.7cm;
+	line-height: 0.7cm;
+}
+
+.row > .field--checkbox {
+	flex: 0 0 auto;
+}
+
+.field--checkbox.field--proficiency {
+	padding-left: 0.45cm;
+}
+
+.field--boost {
+	position: relative;
+	width: 14pt;
+	height: 14pt;
+	margin: 0 auto;
+	display: block;
+}
+
+.field--boost .field--boost__plus {
+	position: absolute;
+	left: 8pt;
+	bottom: 8pt;
+	margin: 0;
+}
+
+.field--boost .field--boost__minus {
+	position: absolute;
+	left: 1pt;
+	bottom: 1pt;
+	margin: 0;
+}
+
+.field--progression {
+    display: inline-block;
+}
+
+.field--progression > * {
+    margin: 0;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.field--progression .field--checkbox {
+    margin: 0;
+    padding: 0;
+    height: 0.5cm;
+}
+
+.field--progression .field--checkbox input[type=checkbox] {
+    margin: 7pt 2pt 0 1pt;
+}
+
+.field--progression > span {
+	height: 0.5cm;
+	line-height: 0.5cm;
+}
+
+.field--progression > .icon {
+}
+
+.field--progression > .field {
+}
+
+
+/* Check grids */
+
+.field--checkgrid {
+	display: block;
+	text-align: right;
+}
+
+.field--checkgrid__grid {
+	display: inline-flex;
+	flex-flow: column wrap;
+
+	margin: 1pt 4pt;
+	height: 22pt;
+	width: 24pt;
+
+	justify-content: center;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+
+.field--checkgrid__grid input[type=checkbox] {
+	margin: 1.4pt;
+	flex: 0 0 auto;
+}
+
+/* Side-labelled fields */
+
+.field--h-label {
+	padding-left: 4pt;
+}
+.field--h-label label {
+	left: 3pt;
+	top: 0;
+	bottom: 0;
+	right: auto;
+
+	transform: rotate(-90deg);
+}
+
+.field--h-label .underlay {
+	left: 4pt;
+}
+
+/* Icon fields */
+
+.field--icon {
+	display: inline-block;
+	padding-left: 0.25cm;
+	position: relative;
+}
+
+.field--icon label, .label--icon {
+	padding-left: 0.2cm;
+}
+
+.field--icon input, .field--icon output {
+	padding-left: 0.2cm;
+	border-radius: 2.5pt;
+	border-left-width: 0;
+}
+
+.field--icon input {
+	border-bottom: 1pt solid #707070;
+}
+
+.field--icon p {
+	padding-left: 0.35cm;
+}
+
+.field--icon::after {
+	content: "";
+	position: absolute;
+	bottom: 0pt;
+	left: 0pt;
+	width: 0.5cm;
+	height: 0.6cm;
+	/*background-color: white;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 0.45cm;
+	opacity: 0.6;
+
+	/* Make sure SVG background images actually print */
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+}
+
+.field--icon.field--bonus::after {
+	background-image: url('{{{dataurl "images/icon-d20.svg"}}}');
+	background-size: auto 0.4cm;
+}
+
+.field--icon.field--proficiency::after, .icon-proficiency {
+	background-image: url('{{{dataurl "images/icon-proficiency.svg"}}}');
+	background-size: auto 0.5cm;
+}
+
+.field--icon.field--proficiency.field--proficiency--trained::after, .icon-proficiency--trained {
+	background-image: url('{{{dataurl "images/icon-proficiency-trained.svg"}}}');
+}
+.field--icon.field--proficiency.field--proficiency--expert::after, .icon-proficiency--expert {
+	background-image: url('{{{dataurl "images/icon-proficiency-expert.svg"}}}');
+}
+.field--icon.field--proficiency.field--proficiency--master::after, .icon-proficiency--master {
+	background-image: url('{{{dataurl "images/icon-proficiency-master.svg"}}}');
+}
+.field--icon.field--proficiency.field--proficiency--legendary::after, .icon-proficiency--legendary {
+	background-image: url('{{{dataurl "images/icon-proficiency-legendary.svg"}}}');
+}
+
+.field--icon.field--gender::after {
+	background-image: url('{{{dataurl "images/icon-gender.svg"}}}');
+}
+
+.field--icon.field--hp::after {
+	background-image: url('{{{dataurl "images/icon-hp.svg"}}}');
+}
+
+.field--icon.field--damage::after {
+	background-image: url('{{{dataurl "images/icon-damage.svg"}}}');
+}
+
+.field--icon.field--size::after {
+	background-image: url('{{{dataurl "images/icon-size.svg"}}}');
+	background-size: auto 0.5cm;
+}
+
+.field--icon.field--dc::after,
+.field--icon.field--modifier::after {
+	background-image: url('{{{dataurl "images/icon-dc.svg"}}}');
+}
+
+.field--icon.field--ac::after {
+	background-image: url('{{{dataurl "images/icon-ac.svg"}}}');
+}
+
+.field--icon.field--tac::after {
+	background-image: url('{{{dataurl "images/icon-tac.svg"}}}');
+}
+
+
+
+/* Field groups */
+
+
+.field label.below {
+	bottom: 0;
+	top: auto;
+}
+
+.field.with-below, .row.with-below .field {
+	padding-bottom: 9pt;
+}
+
+.field--icon.with-below::after, .row.with-below .field--icon::after {
+	bottom: 12.75pt;
+}
+
+.row fieldset.calc {
+	margin: 0;
+}
+.row fieldset.calc + * {
+	margin-left: 2pt;
+}
+
+/* Calculations */
+
+fieldset.calc {
+	margin: 2pt 0;
+	display: block;
+	white-space: nowrap;
+}
+
+fieldset.calc > * {
+	display: inline-block;
+	margin: 0 1pt;
+}
+
+fieldset.calc > *:first-child {
+	margin-left: 0;
+}
+
+fieldset.calc--2lines .field, .row--2lines .field {
+	padding-top: 0.7cm;
+}
+
+.calc > span {
+	/*font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;*/
+	font-size: 12pt;
+	display: inline-block;
+	height: 18pt;
+	line-height: 18pt; 
+}
+
+.calc--inline > label {
+	display: inline-block;
+	text-align: center;
+	height: 18pt;
+}
+
+/* Special fields */
+
+fieldset.field--alignment {
+	display: block;
+	position: relative;
+	width: 1.6cm;
+	height: 1.6cm;
+}
+
+.field--alignment__grid {
+	position: absolute;
+
+	background-image: url('{{{dataurl "images/alignment-grid.svg"}}}');
+	background-position: center;
+	background-size: 100% 100%;
+
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+
+	opacity: 0.6;
+	z-index: 2;
+	top: 0.3cm;
+	left: 0.3cm;
+	width: 1cm;
+	height: 1cm;
+}
+
+label.field--alignment__good,
+label.field--alignment__evil,
+label.field--alignment__lawful,
+label.field--alignment__chaotic {
+	position: absolute;
+	text-transform: uppercase;
+	font-size: 5pt;
+	text-align: center;
+	z-index: 6;
+	color: black;
+}
+
+label.field--alignment__good {
+	transform: rotate(-45deg) translate(0, 10pt);
+}
+
+label.field--alignment__evil {
+	transform: rotate(-45deg) translate(1pt, 1.35cm);
+}
+
+label.field--alignment__lawful {
+	transform: rotate(45deg) translate(0.8cm, -0.45cm);
+}
+
+label.field--alignment__chaotic {
+	transform: rotate(45deg) translate(0.75cm, 0.6cm);
+}
+
+.field--alignment__good-icon,
+.field--alignment__evil-icon,
+.field--alignment__lawful-icon,
+.field--alignment__chaotic-icon {
+	position: absolute;
+	z-index: 4;
+	width: 0.6cm;
+	height: 0.6cm;
+	opacity: 0.2;
+	background-size: 100% 100%;
+
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+}
+
+.field--alignment__good-icon {
+	background-image: url('{{{dataurl "images/icon-good.svg"}}}');
+	top: 0;
+	left: 0;
+}
+.field--alignment__evil-icon, .icon-evil {
+	background-image: url('{{{dataurl "images/icon-evil.svg"}}}');
+	bottom: 0;
+	right: 0;
+}
+.field--alignment__lawful-icon {
+	background-image: url('{{{dataurl "images/icon-lawful.svg"}}}');
+	top: 0;
+	right: 0;
+}
+.field--alignment__chaotic-icon {
+	background-image: url('{{{dataurl "images/icon-chaotic.svg"}}}');
+	bottom: 0;
+	left: 0;
+}
+
