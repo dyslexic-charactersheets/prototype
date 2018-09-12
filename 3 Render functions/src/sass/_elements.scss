@@ -1,0 +1,267 @@
+/* Headings Style */
+
+
+h1 {
+	text-align: center;
+	margin: 0 0 4pt 0;
+	break-after: avoid;
+
+	text-transform: uppercase;
+	font-size: 18pt;
+	min-height: 1.5cm;	
+}
+
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 0.3cm;
+	font-size: 15pt;
+}
+
+h3 {
+	margin: 0;
+	text-align: center;
+	flex: 0 0 auto !important;
+
+	break-after: avoid;
+}
+
+h4 {
+	background: #c0c0c0 !important;
+	font-size: 8pt;
+	height: 0.36cm;
+	line-height: 0.36cm;
+
+	text-transform: uppercase;
+	text-align: left;
+
+	position: relative;
+	color: #303030;
+	margin: 0;
+	padding: 1pt 6pt;
+	flex: 0 0 auto !important;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -0.2pt;
+		height: 100%;
+		width: 3pt;
+
+		border-radius: 3pt / 50%;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		background: white;
+	}
+}
+
+h5, legend {
+	font-size: 8pt;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	color: #808080;
+	margin: 2pt 0 1pt 0;
+}
+
+h6 {
+	font-size: 10pt;
+	line-height: 0.55cm;
+	height: 0.55cm;
+	font-weight: normal;
+	text-align: left;
+	margin: 0;
+	white-space: nowrap;
+}
+
+
+
+
+
+/* Common elements */
+
+.portrait {
+	margin: 1em;
+	min-height: 3cm;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.level-hr {
+	margin-top: 3pt;
+	border-top: 1pt solid #808080;
+	padding-top: 3pt;
+}
+
+p, ul {
+	font-size: 11pt;
+	margin-top: 3pt;
+	margin-bottom: 3pt;
+}
+
+h5 + p {
+	margin-top: 0;
+}
+
+li {
+	margin-top: 2pt;
+	margin-bottom: 2pt;
+}
+
+span {
+	font-size: 11pt;
+	height: 0.5cm;
+	line-height: 0.5cm;
+}
+
+
+.logo {
+	background-image: url('{{{dataurl "images/logo.png"}}}');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+}
+
+/* Icons */
+
+.icon {
+	margin: 4pt 4pt 1pt 0;
+	width: auto;
+	min-width: 0.7cm;
+	height: 0.7cm;
+	opacity: 0.6;
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	&.icon--small {
+		margin: 1pt 0;
+		width: auto;
+		height: 0.5cm;
+		min-width: 0.5cm;
+		opacity: 0.6;
+	}
+
+	&.icon-action {
+		background-image: url('{{{dataurl "images/icon-action.svg"}}}');
+	}
+
+	&.icon-action2 {
+		background-image: url('{{{dataurl "images/icon-action2.svg"}}}');
+		width: 1.05cm;
+	}
+
+	&.icon-action3 {
+		background-image: url('{{{dataurl "images/icon-action3.svg"}}}');
+		width: 1.4cm;
+	}
+
+	&.icon-reaction {
+		background-image: url('{{{dataurl "images/icon-reaction.svg"}}}');
+	}
+
+	&.icon-action-template {
+		background-image: url('{{{dataurl "images/icon-action-template.svg"}}}');
+		width: 1.4cm;
+	}
+}
+
+
+
+
+/* Tables */
+
+table {
+	width: 100%;
+    border-collapse: separate;
+	border-spacing: 0;
+
+	th, td {
+		font-weight: normal;
+		margin: 0;
+		padding: 1pt;
+		text-align: center;
+		vertical-align: bottom;
+		
+		span, span {
+			font-size: 12pt;
+		}
+	}
+
+	tr.hr {
+		td, th {
+			border-top: 1pt solid #a0a0a0;
+		}
+	}
+
+	&.table--zebra {
+		tbody tr:nth-child(2n+1) {
+			td, th {
+				background: #f8f8f8;
+			}
+		}
+		
+	}
+
+	&.table--narrow {
+		td, th {
+			padding: 0;
+		}
+	}
+}
+
+
+/* Horizontal divider */
+
+hr {
+	margin: 5pt 0;
+	border: 0 none;
+	border-top: 1pt solid #a0a0a0;
+
+	&.hr--swash {
+		position: relative;
+		height: 5mm;
+		border-top: 0 none;
+
+		background: url('{{{dataurl "images/swash.svg"}}}') no-repeat 50% 50%;
+		
+		background-size: 15mm 5mm;
+
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 2.5mm;
+			margin-top: -0.5pt;
+			border-top: 1pt solid #9f9f9f;
+			height: 0;
+		}
+
+		&::before {
+			left: 0;
+			right: 50%;
+			margin-right: 7mm;
+		}
+		
+		&::after {
+			right: 0;
+			left: 50%;
+			margin-left: 7mm;
+		}
+	}
+
+	&.hr--narrow {
+		margin: 1pt 0;
+	}
+}
+
+
+.spell-level {
+	text-align: center; 
+	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+	font-weight: bold;
+	font-size: 12pt;
+}

@@ -1,0 +1,35 @@
+
+
+.fill, .section--fill {
+	flex: 100 0 auto;
+}
+
+.nofill {
+	flex: 0 0 auto;
+}
+
+
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left label, .align-left input, .align-left output, label.align-left {
+	text-align: left !important;
+}
+
+.align-right label, .align-right input, .align-right output, label.align-right {
+	text-align: right !important;
+}
+
+.align-centre label, .align-centre legend, .align-centre input, .align-centre output, label.align-center {
+	text-align: center !important;
+}
+
