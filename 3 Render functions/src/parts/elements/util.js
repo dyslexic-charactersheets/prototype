@@ -15,6 +15,13 @@ global.right = "right";
 global.double = 2;
 global.triple = 3;
 
+global.gargantuan = "gargantuan";
+global.huge = "huge";
+global.large = "large";
+global.medium = "medium";
+global.small = "small";
+global.tiny = "tiny";
+
 global.repeat_item = function (num, item) {
     return Array(num).fill(item);
 }

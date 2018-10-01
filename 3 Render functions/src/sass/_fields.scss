@@ -10,46 +10,63 @@ fieldset {
 label {
 	margin: 3pt 0 1pt 0;
 	display: block;
+	font-size: 7pt;
 }
 
 .field {
 	display: inline-block;
-	white-space: nowrap;
 	position: relative;
+	white-space: nowrap;
 	padding-top: 0.35cm;
 	flex: 0 0 auto;
 
+	.field__inner {
+		flex: 0 0 auto;
+		min-height: 0.55cm;
+		position: relative;
+		border-bottom: 0.5pt solid #707070;
+	}
+
+	.field__item {
+		flex: 0 0 auto;
+		height: 0.55cm;
+		display: inline-block;
+		position: relative;
+	}
+
+	&.field--box {
+		.field__inner {
+			border: 0.75pt solid #808080; // !important;
+			border-radius: 2pt;
+			background: rgba(255,255,255,0.9);
+		}
+	}
+
 	input, output {
-		height: 0.6cm;
-		line-height: 0.6cm;
+		height: 0.55cm;
+		line-height: 0.55cm;
 		text-align: center;
-		font-family: "Roboto Condensed", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		font-size: 11pt;
 		color: #202020;
 		width: 1cm;
 		max-width: 4em;
 		padding: 0 1pt;
 		margin: 0;
-		background: none;
 	
 		box-sizing: border-box;
+		position: relative;
+		z-index: 20;
 	}
 
 	input {
 		border: 0 none;
-		border-bottom: 0.5pt solid #707070;
-
-		// + input {
-		// 	margin-left: -2pt;
-		// }
+		background: none;
 	}
 
 	output {
 		display: inline-block;
-		border: 1pt solid #707070;
-		border-radius: 2pt;
-		text-align: center;
-		min-width: 2em;
+		border: 0 none;
+		background: none;
 	}
 
 	legend {
@@ -70,6 +87,44 @@ label {
 		text-align: center;
 	}
 
+	.underlay {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		height: 0.55cm;
+		line-height: 0.55cm;
+
+		text-align: center;
+		font-size: 10pt;
+		font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+		font-weight: 900;
+		color: #000000;
+		opacity: 0.2;
+	}
+
+	/* Size */
+
+	&.field--large {
+		.field__inner, .field__item, input, output {
+			height: 0.75cm;
+		}
+		input, output {
+			font-size: 12.5pt;
+			line-height: 0.75cm;
+		}
+	}
+
+	&.field--huge {
+		.field__inner, .field__item, input, output {
+			height: 0.9cm;
+		}
+		input, output {
+			font-size: 14pt;
+			line-height: 0.9cm;
+		}
+	}
+
 
 	/* Subfields */
 
@@ -85,6 +140,40 @@ label {
 
 
 	/* Field modifiers */
+
+	&.field--width-tiny {
+		input, output {
+			width: 0.5cm;
+		}
+	}
+
+	&.field--width-small {
+		input, output {
+			width: 0.75cm;
+		}
+	}
+
+	&.field--width-large {
+		flex: 2 0 auto;
+		input, output {
+			width: 2.5cm;
+		}
+	}
+	
+	&.field--width-huge {
+		flex: 3 0 auto;
+		input, output {
+			width: 4cm;
+		}
+	}
+
+	&.field--width-gargantuan {
+		flex: 4 0 auto;
+		input, output {
+			width: 6cm;
+		}
+	}
+
 
 	&.field--mod {
 		label {
@@ -104,11 +193,12 @@ label {
 		padding-top: 0;
 		padding-left: 2cm;
 
-		label {
-			bottom: 0;
+		> label {
+			bottom: 2pt;
 			left: 0;
 			right: auto;
 			top: auto;
+			font-size: 8pt;
 		}
 	}
 	
@@ -116,48 +206,68 @@ label {
 
 	&.field--h-label {
 		padding-left: 4pt;
+		.field__inner {
+			padding-left: 1pt;
+		}
 
 		label {
-			left: 3pt;
+			left: 2pt;
 			top: 0;
-			bottom: 0;
+			bottom: 1pt;
 			right: auto;
 
 			transform: rotate(-90deg);
 		}
 
-		.underlay {
-			left: 4pt;
-		}
+		// .underlay {
+		// 	left: 2pt;
+		// }
 	}
 
 	&.field--wide {
 		display: block;
-		// width: 100% !important;
 		box-sizing: border-box;
+		// flex: 100 0 auto;
 
-		input, output {
-			margin-top: 1pt;
-			margin-left: 0;
+		.field__inner, .field__item {
+			// width: 100%;
+			flex: 100 0 auto !important;
+			display: flex;
+			flex-direction: row;
 		}
 
-		input {
+		input, output {
+			flex: 100 0 auto !important;
+			margin-top: 1pt;
+			margin-left: 0;
 			display: block;
 			box-sizing: border-box;
-			width: 100%;
+			// width: 100%;
 			max-width: 100%;
 		}
 	}
 
-	&.field--narrow {
-		input, output {
-			width: 0.5cm;
+	&.field--multiline {
+		.field__inner {
+			display: block;
+
+			input, output {
+				border-bottom: 0.5pt solid #707070;
+			}
+			.field__item {
+
+				&:last-child {
+					input, output {
+						border-bottom: 0 none;
+					}
+				}
+			}
 		}
 	}
 
 	&.field--temp {
-		input {
-			border-bottom: 3px solid #b0b0b0 !important;
+		.field__inner {
+			border-bottom: 2pt solid #b0b0b0 !important;
 		}
 
 		.overlay {
@@ -166,15 +276,15 @@ label {
 		}
 
 		&.field--box {
-			input {
-				border: 3px solid #b0b0b0 !important;
-				height: 0.75cm;
+			.field__inner {
+				border: 2pt solid #b0b0b0 !important;
+				// height: 0.75cm;
 				border-radius: 4.5pt !important;
 			}
 		}
 
 		&.field--icon {
-			input {
+			.field__inner {
 				border-left: 0 none !important;
 				border-radius: 4.5pt !important;
 			}
@@ -187,6 +297,26 @@ label {
 	
 	&.field--zebra input:nth-child(2n+1) {
 		background: #f8f8f8;
+	}
+
+	&.field--checkbox, &.field--radio {
+		// margin: 0 6pt 0 3pt;
+
+		.field__inner {
+			border-bottom: 0 none;
+		}
+
+		input[type=checkbox], input[type=radio] {
+			// margin: 0 3pt 5pt 0;
+		}
+
+		// label {
+		// 	display: inline-block;
+		// 	font-size: 9pt;
+		// 	position: relative;
+		// 	height: 0.7cm;
+		// 	line-height: 0.7cm;
+		// }
 	}
 
 	/* Progression */
@@ -203,11 +333,10 @@ label {
 		.field--checkbox {
 			margin: 0;
 			padding: 0;
-			height: 0.5cm;
-		}
 
-		.field--checkbox input[type=checkbox] {
-			margin: 7pt 2pt 0 1pt;
+			input[type=checkbox] {
+				margin: 7pt 2pt 0 1pt;
+			}
 		}
 
 		> span {
@@ -220,43 +349,59 @@ label {
 
 	&.field--icon {
 		position: relative;
-		padding-left: 0.25cm;
+		padding-left: 0.2cm;
+
+		.field__inner {
+			padding-left: 0.1cm;
+			border-width: 0.75pt;
+			border-left: 0 none !important;
+			border-radius: 2.5pt;
+		}
+
 		i {
 			position: absolute;
+			bottom: 0pt;
+			left: -0.25cm;
+			width: 0.5cm;
+			height: 0.55cm;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto 0.4cm;
+			opacity: 0.6;
 		}
 
 		label {
 			padding-left: 0.2cm;
 		}
 
-		input, output {
-			padding-left: 0.2cm;
-			border-radius: 2.5pt;
-			border-left-width: 0;
-		}
-
-		input {
-			border-bottom: 1pt solid #707070;
-		}
-
 		p {
 			padding-left: 0.35cm;
 		}
+	}
 
-		i {
-			position: absolute;
-			bottom: 0pt;
-			left: 0pt;
-			width: 0.5cm;
-			height: 0.6cm;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: auto 0.45cm;
-			opacity: 0.6;
 
-			/* Make sure SVG background images actually print */
-			// -webkit-print-color-adjust: exact;
-			// color-adjust: exact !important;
+	/* Check grids */
+
+	&.field--checkgrid {
+		display: block;
+		text-align: right;
+
+		.field--checkgrid__grid {
+			display: inline-flex;
+			flex-flow: column wrap;
+
+			margin: 1pt 4pt;
+			height: 22pt;
+			width: 24pt;
+
+			justify-content: center;
+			align-content: flex-start;
+			align-items: flex-start;
+		}
+
+		.field--checkgrid__grid input[type=checkbox] {
+			margin: 1.4pt;
+			flex: 0 0 auto;
 		}
 	}
 
@@ -273,7 +418,7 @@ label + .field {
 	margin-top: -1pt;
 }
 
-.field--unlabelled, .row--unlabelled .field, .table--unlabelled .field {
+.field--unlabelled, .row--unlabelled .field, .calc--inline .field, .table--unlabelled .field {
 	padding-top: 0;
 }
 
@@ -282,27 +427,9 @@ label + .field {
 	margin-bottom: 0;
 }
 
-.field--ref input {
-	border-bottom: 1pt dashed #707070;
-	/* font-weight: bold; */
+.field--ref .field__inner {
+	border-bottom: 0.75pt dashed #707070;
 }
-
-.field--double {
-	flex: 2 0 auto;
-}
-
-.field--double input, .field--double output {
-	width: 2.5cm;
-}
-
-.field--triple {
-	flex: 3 0 auto;
-}
-
-.field--triple input, .field--triple output {
-	width: 4cm;
-}
-
 
 .field--em output {
 	border-width: 1.25pt;
@@ -312,10 +439,6 @@ label + .field {
 }
 .field--em .overlay, .field--em .mid-overlay {
 	font-weight: bold;
-}
-
-.field--box input {
-	border: 0.75px solid #808080 !important;
 }
 
 .field .overlay {
@@ -343,26 +466,6 @@ label + .field {
 	right: 41%;
 }
 
-.field .underlay {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	height: 0.6cm;
-	line-height: 0.6cm;
-
-	text-align: center;
-	font-size: 10pt;
-	font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
-	font-weight: 900;
-	color: #000000;
-	opacity: 0.2;
-}
-
-.field--icon .underlay {
-	left: 0.27cm;
-}
-
 .field--ref input, .field--ref output {
 	border-style: dashed;
 }
@@ -379,18 +482,13 @@ label + .field {
 /* Checkboxes and Radio buttons */
 
 input[type=checkbox] {
-	width: 4pt;
-	height: 4pt;
+	width: 0 !important;
+	height: 0 !important;
 	visibility: hidden;
-	position: relative;
-	
-	&::before {
-		content: "";
+
+	+ label {
 		display: inline-block;
-		visibility: visible;
-		position: absolute;
-		top: 0;
-		left: 0;
+		position: relative;
 
 		width: 4pt;
 		height: 4pt;
@@ -399,24 +497,19 @@ input[type=checkbox] {
 		cursor: pointer;
 	}
 
-	&:checked::before {
+	&:checked + label {
 		background: #808080;
 	}
 }
 
 input[type=radio] {
-	width: 7pt;
-	height: 7pt;
+	width: 0 !important;
+	height: 0 !important;
 	visibility: hidden;
-	position: relative;
 
-	&::before {
-		content: "";
+	+ label {
 		display: inline-block;
-		visibility: visible;
-		position: absolute;
-		top: 0;
-		left: 0;
+		position: relative;
 	
 		width: 5pt;
 		height: 5pt;
@@ -426,37 +519,19 @@ input[type=radio] {
 		cursor: pointer;
 	}
 	
-	&:checked::before {
+	&:checked + label {
 		background: #808080;
 	}
 }
 
 
-td input[type=checkbox] {
-	margin: 0 4pt 6pt 3pt;
-}
+// td input[type=checkbox] {
+// 	margin: 0 4pt 3pt 3pt;
+// }
 
-td input[type=radio] {
-	margin: 0 4pt 5pt 3pt;
-}
-
-
-.field--checkbox {
-	margin: 0 6pt 0 3pt;
-}
-
-.field--checkbox input[type=checkbox] {
-	margin: 0 3pt 6pt 0;
-	top: -2pt;
-}
-
-.field--checkbox label {
-	display: inline-block;
-	font-size: 9pt;
-	position: relative;
-	height: 0.7cm;
-	line-height: 0.7cm;
-}
+// td input[type=radio] {
+// 	margin: 0 4pt 3pt 3pt;
+// }
 
 .row > .field--checkbox {
 	flex: 0 0 auto;
@@ -466,6 +541,7 @@ td input[type=radio] {
 	padding-left: 0.45cm;
 }
 
+/*
 .field--boost {
 	position: relative;
 	width: 14pt;
@@ -487,33 +563,8 @@ td input[type=radio] {
 	bottom: 1pt;
 	margin: 0;
 }
+*/
 
-
-
-/* Check grids */
-
-.field--checkgrid {
-	display: block;
-	text-align: right;
-}
-
-.field--checkgrid__grid {
-	display: inline-flex;
-	flex-flow: column wrap;
-
-	margin: 1pt 4pt;
-	height: 22pt;
-	width: 24pt;
-
-	justify-content: center;
-	align-content: flex-start;
-	align-items: flex-start;
-}
-
-.field--checkgrid__grid input[type=checkbox] {
-	margin: 1.4pt;
-	flex: 0 0 auto;
-}
 
 
 
@@ -532,6 +583,10 @@ td input[type=radio] {
 
 .field--icon.with-below::after, .row.with-below .field--icon::after {
 	bottom: 12.75pt;
+}
+
+.row .field--wide {
+	flex: 100 0 auto;
 }
 
 .row fieldset.calc {
@@ -566,14 +621,21 @@ fieldset.calc {
 		line-height: 18pt; 
 	}
 
-	&.calc--inline > label {
-		display: inline-block;
-		text-align: center;
-		height: 18pt;
+	&.calc--inline {
+		label {
+			top: auto;
+			bottom: 1pt;
+		}
+		.field__inner {
+			border: 0 none !important;
+		}
+		input, output {
+			visibility: hidden;
+		}
 	}
 }
 
-fieldset.calc--2lines .field, .row--2lines .field {
+fieldset.calc--2-lines .field, .row--2-lines .field {
 	padding-top: 0.7cm;
 }
 

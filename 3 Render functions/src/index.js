@@ -12,13 +12,14 @@ require('./parts/elements/layout.js');
 require('./parts/elements/furniture.js');
 require('./parts/elements/fields.js');
 require('./parts/elements/table.js');
+require('./parts/elements/blocks.js');
 
 require('./parts/pages/build.js');
 require('./parts/pages/cover.js');
 require('./parts/pages/core.js');
 require('./parts/pages/combat.js');
 require('./parts/pages/inventory.js');
-require('./parts/pages/rogue.js');
+require('./parts/pages/bard.js');
 
 require('./parts/base.js');
 
@@ -36,12 +37,11 @@ var sassResult = sass.renderSync({
     file: 'src/sass/main.scss',
     outputStyle: 'compressed',
 });
-// var cssTemplate = Handlebars.compile(sassResult.css);
 
 data.waitForAll(() => {
     var embed = [];
-    ['portrait', 'fonts', 'style-pathfinder' ].forEach(mod => {
-        var file = 'sass/mod-'+mod+'.scss';
+    ['fonts', 'style-pathfinder', 'logo-playtest', 'portrait' ].forEach(mod => {
+        var file = 'sass/mod-'+mod+'.css';
         var source = data.getSource(file);
         var template = Handlebars.compile(source);
         embed.push(template({}));
@@ -56,6 +56,8 @@ data.waitForAll(() => {
             render_cover_page(), 
             render_core_page(),
             render_combat_page(),
+            render_inventory_page(),
+            render_bard_page(),
         ]
     );
 

@@ -4,7 +4,7 @@ global.render_core_page = function() {
     return render_page('core', [
         render_layout('2l', [
             render_items([ // left column
-                "<header><h1 class='logo'></h1></header>",
+                render_logo(),
                 render_section__untitled([
                     render_field('player-name', {
                         label: "Player",
@@ -20,7 +20,7 @@ global.render_core_page = function() {
                         render_field('xp', {
                             label: "XP",
                             underlay: "XP",
-                            width: double,
+                            width: large,
                         }),
                     ])
                 ]),
@@ -51,16 +51,18 @@ global.render_core_page = function() {
                             icon: 'modifier',
                             underlay: row.short,
                         }),
-                        render_field(null, {
+                        render_field('key-ability', {
                             template: 'radio',
+                            value: row.short,
                         }),
                         render_field(row.short+"_temp", {
                             temp: true
                         })
                     ]),
-
+                    render_hr(),
                     render_calc({
-                        inline: true
+                        inline: true,
+                        // lines: 2,
                     }, [
                         render_field(null, {
                             label: "Ability\nModifier"
@@ -108,7 +110,7 @@ global.render_core_page = function() {
                                 proficiency: "legendary",
                             }),
                         ], [
-                            '<label>Level<br>-2</label>',
+                            '<label>Level<br>-4</label>',
                             '<label>Level<br>&nbsp;</label>',
                             '<label>Level<br>+1</label>',
                             '<label>Level<br>+2</label>',
@@ -118,12 +120,14 @@ global.render_core_page = function() {
                     render_table({
                         unlabelled: true,
                         zebra: true,
+                        narrow: true,
                     }, [
                         "Ability",
                         "Proficiency"
-                    ], repeat_item(8, {}), row => [
+                    ], repeat_item(14, {}), row => [
                         render_field(null, {
                             wide: true,
+                            align: left,
                         }),
                         render_field(null, {
                             template: "proficiency",
@@ -136,7 +140,7 @@ global.render_core_page = function() {
                             output: true,
                             label: "Perception",
                             icon: "bonus",
-                            width: double,
+                            width: large,
                         }),
                         render_span("="),
                         render_field({
@@ -160,15 +164,20 @@ global.render_core_page = function() {
                     render_row({
                         unlabelled: true,
                     }, [
-                        render_field({
+                        render_field('perception-low-light', {
+                            horizontal: true,
                             template: 'checkbox',
                             label: "Low-light vision",
                         }),
-                        render_field({
+                        render_spacer(),
+                        render_field('perception-darkvision', {
+                            horizontal: true,
                             template: 'checkbox',
                             label: "Darkvision",
                         }),
-                        render_field({
+                        render_spacer(),
+                        render_field('perception-scent', {
+                            horizontal: true,
                             template: 'checkbox',
                             label: "Scent",
                         }),
@@ -176,6 +185,7 @@ global.render_core_page = function() {
                     render_field({
                         unlabelled: true,
                         wide: true,
+                        align: left,
                     })
                 ]),
                 render_section('Languages', [
@@ -188,7 +198,7 @@ global.render_core_page = function() {
             ]),
             render_items([ // right column
                 
-                render_section__primary('Character', [
+                render_section('Character', [
                     render_layout('alignment', [
                         render_g([
                             render_field('character-name', {
@@ -200,11 +210,16 @@ global.render_core_page = function() {
                                 render_field('gender', {
                                     label: 'Gender',
                                     icon: 'gender',
-                                    width: 3,
+                                    width: huge,
                                 }),
                                 render_field('age', {
                                     label: 'Age',
-                                    width: 2,
+                                    width: large,
+                                }),
+                                render_field('ancestry-size', {
+                                    label: "Size",
+                                    icon: 'size',
+                                    width: large,
                                 }),
                                 render_spacer(),
                             ]),
@@ -212,36 +227,27 @@ global.render_core_page = function() {
                         render_field('alignment', {
                             template: 'alignment'
                         })
-                    ])
-                ]),
-
-                render_section('Ancestry', [
-                    render_layout('2e', [
-                        render_field('ancestry-name', {
-                            align: left,
-                            label: "Ancestry",
-                            wide: true,
-                        }),
-                        render_field('ancestry-ethnicity', {
-                            align: left,
-                            label: "Ethnicity",
-                            wide: true,
-                        }),
                     ]),
+                    render_hr(),
                     render_row([
-                        render_field('ancestry-abilities', {
-                            label: "Abilities",
+                        render_field({
+                            label: "Ancestry",
                             align: left,
                             wide: true,
                         }),
-                        render_field('ancestry-size', {
-                            label: "Size",
-                            icon: 'size',
+                        render_field({
+                            label: "Ethnicity",
+                            align: left,
+                            wide: true,
+                        }),
+                        render_field('class-hp', {
+                            label: 'Hit Points',
+                            overlay: 'hp',
+                            icon: 'hp',
+                            width: large,
                         }),
                     ]),
-                ]),
-                render_section('Background', [
-                    render_field('background-name', {
+                    render_field({
                         label: "Background",
                         align: left,
                         wide: true,
@@ -250,29 +256,61 @@ global.render_core_page = function() {
                 render_section('Class', [
                     render_row([
                         render_field('class-name', {
-                            label: "Class",
+                            legend: "Class",
                             align: left,
                             wide: true,
                         }),
+                        render_field('class-hp', {
+                            label: 'Hit Points',
+                            overlay: 'hp',
+                            icon: 'hp',
+                            width: large,
+                        }),
                         render_field('class-level', {
                             label: 'Level',
-                            box: true
+                            box: true,
                         })
                     ]),
-                    render_h4('Archetypes'),
-                    render_field('archetype', {
-                        unlabelled: true,
-                        rows: 2,
-                        wide: true,
-                    })
+                    render_h5("Archetypes"),
+                    repeat_item(2, render_row({
+                        unlabelled: true
+                    }, [
+                        render_field({
+                            wide: true,
+                        }),
+                        render_field({
+                            template: 'progression',
+                            separator: '&rsaquo;',
+                            parts: [
+                                render_field({
+                                    unlabelled: true,
+                                    template: 'checkbox',
+                                }),
+                                render_field({
+                                    unlabelled: true,
+                                    template: 'checkbox',
+                                }),
+                                render_field({
+                                    unlabelled: true,
+                                    template: 'checkbox',
+                                }),
+                            ]
+                        })
+                    ])).join("\n"),
+                    // render_field('archetype', {
+                    //     legend: "Archetypes",
+                    //     rows: 2,
+                    //     wide: true,
+                    // })
                 ]),
                 render_section('Skills', [
                     // skills table
                     render_table({
                         unlabelled: true,
                         zebra: true,
+                        narrow: true,
                     }, [
-                        null,
+                        { width: '30%' },
                         "Assurance",
                         "Skill\nBonus",
                         null,
@@ -299,6 +337,12 @@ global.render_core_page = function() {
                         { skill: "Lore", ability: "INT" },
                         { skill: "", ability: "INT" },
                         { skill: "", ability: "INT" },
+                        { skill: "", ability: "" },
+                        { skill: "", ability: "" },
+                        { skill: "", ability: "" },
+                        { skill: "", ability: "" },
+                        { skill: "", ability: "" },
+                        { skill: "", ability: "" },
                     ], row => [
                         render_h6(row.skill),
                         render_field(row.skill+'_assurance', {
@@ -312,6 +356,7 @@ global.render_core_page = function() {
                         render_field(null, {
                             ref: row.ability,
                             label: row.ability,
+                            ref: true,
                             mod: true,
                             h_label: true,
                             underlay: row.ability
@@ -328,8 +373,10 @@ global.render_core_page = function() {
                             }) 
                             : null
                     ]),
-                    render_row([
-                        
+                    render_hr(),
+                    render_layout('2e', [
+                        render_level_block(7, [ render_span('Master in skills') ]),
+                        render_level_block(15, [ render_span('Legendary in skills') ]),
                     ])
                 ]),
             ])

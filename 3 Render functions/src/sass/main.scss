@@ -1,11 +1,14 @@
 @import 'base';
+@import 'util';
+
 @import 'fonts';
 
 @import 'layout';
 @import 'furniture';
 @import 'elements';
-@import 'util';
+@import 'blocks';
 @import 'fields';
+@import 'table';
 
 
 @media screen {

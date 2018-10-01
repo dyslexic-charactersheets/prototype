@@ -8,7 +8,73 @@ body {
 .page {
 	margin: 0;
 	padding: 1cm;
+	position: relative;
+	
+	.page-number {
+		position: absolute;
+		bottom: 0.4cm;
+		right: 0.5cm;
+		width: 1cm;
+		text-align: center;
+		font-size: 13pt;
+	}
+
+	.copyright-attribution {
+		position: absolute;
+		left: 1cm;
+		right: 1.3cm;
+		bottom: 0;
+		height: 0.95cm;
+		overflow: hidden;
+
+		p {
+			margin: 0;
+		}
+
+		&, p, span {
+			font-size: 5pt;
+			line-height: 7pt;
+		}
+
+		a {
+			// text-decoration: none;
+			color: #707070;
+		}
+
+		b {
+			font-size: 6pt;
+			font-weight: normal;
+			// text-decoration: none;
+			margin-right: 0.2cm;
+		}
+	}
+
+	&.page--balanced {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.page-contents {
+			// flex: 1 1 100%;
+			width: 100%;
+			height: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		
+		.layout {
+			flex: 1 1 100%;;
+			// flex-basis: 100%;
+
+			// &:last-child {
+			// 	flex: 0 1 auto;
+			// }
+		}
+	}
 }
+
 
 * {
 	-webkit-print-color-adjust: exact !important;

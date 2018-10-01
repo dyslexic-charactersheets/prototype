@@ -1,0 +1,56 @@
+.spells {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .spells__level {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-top: 2pt solid #c0c0c0;
+
+        &:first-child {
+            border-top: 0 none;
+        }
+    }
+
+    .spells__col {
+        display: flex;
+        flex-direction: column;
+
+        > .field:last-child {
+            .field__inner {
+                border-bottom: 0 none !important;
+                margin-bottom: -2pt;
+            }
+        }
+    }
+
+    .spells__level-marker {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .level-marker {
+            flex: 0 0 auto;
+        }
+    }
+}
+
+.build-proficiency {
+    height: 0.6cm;
+
+    .icon {
+        margin: 0;
+        height: 0.6cm;
+        width: 0.5cm;
+        vertical-align: bottom;
+        // display: inline-block;
+    }
+    h6 {
+        margin-left: 0;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}

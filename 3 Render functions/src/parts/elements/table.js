@@ -8,24 +8,38 @@ global.render_table = function (args, columns, rows, template = null) {
     var table_class = '';
     if (_.has(args, "zebra") && args.zebra) table_class += " table--zebra";
     if (_.has(args, "unlabelled") && args.unlabelled) table_class += " table--unlabelled";
+    if (_.has(args, "narrow") && args.narrow) table_class += " table--narrow";
 
     // header
+    var cols = [];
     var thead;
     if (_.isEmpty(columns)) {
         thead = '';
     } else {
         var thead_cells = [];
         columns.forEach(col => {
-            if (_.isNull(col) || col == "")
+            if (_.isString(col)) {
+                col = { label: col };
+            } else if (_.isNull(col)) {
+                col = {};
+            }
+
+            // cols
+            var label = _.has(col, "label") ? col.label : '';
+
+            if (label == "")
                 thead_cells.push('<th></th>');
             else {
-                col = col.replace("\n", "<br>");
-                thead_cells.push(`<th><label>${col}</label></th>`);
+                label = label.replace(/\n/g, "<br>");
+                thead_cells.push(`<th><label>${label}</label></th>`);
             }
         });
         var thead = `<thead><tr>
     ${thead_cells.join("\n")}
-    </tr></thead>`
+    </tr></thead>`;
+        if (!_.isEmpty(cols)) {
+            thead = `<colgroup>${cols.join("\n")}</colgroup>${thead}`;
+        }
     }
 
 

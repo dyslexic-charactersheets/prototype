@@ -1,12 +1,11 @@
 /* Layout */
 
-.page {
-	display: grid;
-	grid-gap: 0.1cm 0.5cm;
-}
-
 .layout {
 	display: grid;
+	grid-gap: 0.25cm 0.5cm;
+}
+
+.layout--narrow, .layout-spells-list {
 	grid-gap: 0.1cm 0.3cm;
 }
 
@@ -47,12 +46,6 @@
 	align-items: center;
 }
 
-.layout-level {
-	grid-template-columns: 1cm auto;
-	grid-template-areas: "a b";
-	align-items: center;
-}
-
 .layout-action {
 	grid-template-columns: 0.7cm auto;
 	grid-template-areas: "a b";
@@ -61,6 +54,11 @@
 
 .layout-3e {
 	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: "a b c";
+}
+
+.layout-3lr {
+	grid-template-columns: 5fr 3fr 5fr;
 	grid-template-areas: "a b c";
 }
 
@@ -83,6 +81,10 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	grid-area: auto;
+}
+
+.page--unbalanced > .layout > .column {
+	display: block !important;
 }
 
 .column-a { grid-area: a; }
@@ -110,7 +112,7 @@
 
 /* Grouping elements */
 .g {
-	flex: 1 0 auto;
+	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
@@ -142,11 +144,11 @@ span.g {
 .spacer {
 	margin: 0 !important;
 	height: 0 !important;
-	flex: 100 0 auto !important;
+	flex: 100 100 auto !important;
 }
 
 .row > * {
-	flex: 1 0 auto;
+	flex: 1 1 auto;
 }
 
 .row > * + * {
@@ -155,14 +157,14 @@ span.g {
 
 .row > .field--wide {
 	width: auto !important;
-	flex: 100 0 auto;
+	flex: 100 1 auto;
 	display: flex;
 	flex-direction: row;
 }
 
 
 
-
+/*
 .level {
 	display: inline-block;
 	position: relative;
@@ -186,3 +188,35 @@ span.g {
 	font-weight: normal;
 	font-size: 8pt;
 }
+*/
+
+
+.layout-level {
+	grid-template-columns: 1cm auto;
+	grid-template-areas: "a b";
+	align-items: center;
+	justify-items: start;
+}
+
+.level-marker {
+	text-align: center;
+	width: 1cm;
+
+	.level-marker__label {
+		font-family: "Roboto Condensed", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-weight: normal;
+		font-size: 8pt;
+	}
+	.level-marker__level {
+		font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+		font-weight: bold;
+		font-size: 12pt;
+	}
+}
+
+// .layout-level, .layout-spells-list {
+// 	.level-marker {
+// 		height: 100%;
+// 		padding-top: 50%;
+// 	}
+// }

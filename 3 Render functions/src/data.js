@@ -35,6 +35,7 @@ function preloadDataURL(filename, raw) {
         switch (ext) {
             case '.svg': mimeType = 'image/svg+xml'; base64 = false; break;
 			case '.png': mimeType = 'image/png'; break;
+			case '.jpg': mimeType = 'image/jpeg'; break;
 			case '.woff': mimeType = 'application/font-woff;charset=utf-8'; break;
 			case '.woff2': mimeType = 'application/font-woff2;charset=utf-8'; break;
         }
@@ -57,6 +58,7 @@ function preloadDataURL(filename, raw) {
 								data = data.replace(/^(.|[\r\n])*?<svg/, '<svg');
 								data = data.replace(/\s*$/, '');
 							}
+							data = data.replace(/#/g, '%23');
 						}
                         var dataURL = "data:"+mimeType+","+data;
                         dataURLs[filename] = dataURL;
@@ -67,7 +69,8 @@ function preloadDataURL(filename, raw) {
 				console.log("Loading pre-encoded file", filename+".base64");
 				if (!raw) {
 					base64data = base64data.replace(/\n$/, '');
-					base64data = base64data.replace(/\n/g, '\\\n');
+					// base64data = base64data.replace(/\n/g, '\\\n');
+					base64data = base64data.replace(/[\r\n]/g, '');
 				}
 				var dataURL = "data:"+mimeType+";base64,"+base64data;
                 dataURLs[filename] = dataURL;
@@ -81,23 +84,11 @@ function preloadDataURL(filename, raw) {
 
 
 const sourceFiles = [
-	// core template
-	// 'base.html.h',
-
-	// pages
-	// 'pages/build.html',
-	// 'pages/cover.html',
-	// 'pages/core.html', 
-	// 'pages/combat.html', 
-	// 'pages/inventory.html', 
-	// 'pages/spellbook.html',
-	// 'pages/sorcerer.html', 
-	// 'pages/monk.html',
-
 	// css modules
-    'sass/mod-portrait.scss',
-    'sass/mod-fonts.scss',
-    'sass/mod-style-pathfinder.scss',
+    'sass/mod-logo-playtest.css',
+    'sass/mod-portrait.css',
+    'sass/mod-fonts.css',
+    'sass/mod-style-pathfinder.css',
 ];
 
 const rawDataURLFiles = [
@@ -134,6 +125,8 @@ const dataURLFiles = [
 	
 	'images/generic.svg',
 	'images/logo.png',
+	'images/20180716-Lem.jpg',
+	'images/bard.png',
 	
 	// fonts
 	'fonts/RobotoCondensed-Regular.woff',

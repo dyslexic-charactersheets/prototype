@@ -27,7 +27,12 @@ global.render_combat_page = () => render_page('core', [
                         misc: true,
                         label: "Item",
                     })
-                ])
+                ]),
+                render_field({
+                    label: "Conditional",
+                    align: left,
+                    wide: true,
+                }),
             ]),
             render_section('Speed', [
                 render_table({}, [], [
@@ -57,54 +62,6 @@ global.render_combat_page = () => render_page('core', [
                         }),
                     ]
                 ])
-            ]),
-            render_section('Perception', [
-                render_calc([
-                    render_field({
-                        output: true,
-                        label: "Perception",
-                        icon: "bonus",
-                        width: double,
-                    }),
-                    render_span("="),
-                    render_field({
-                        label: "WIS",
-                        mod: true,
-                        ref: true,
-                        underlay: "WIS",
-                    }),
-                    render_field({
-                        template: "proficiency",
-                        label: "Proficiency",
-                    }),
-                    render_field({
-                        label: "Item",
-                    }),
-                    render_field({
-                        misc: true,
-                        label: "Misc",
-                    })
-                ]),
-                render_row({
-                    unlabelled: true,
-                }, [
-                    render_field({
-                        template: 'checkbox',
-                        label: "Low-light vision",
-                    }),
-                    render_field({
-                        template: 'checkbox',
-                        label: "Darkvision",
-                    }),
-                    render_field({
-                        template: 'checkbox',
-                        label: "Scent",
-                    }),
-                ]),
-                render_field({
-                    unlabelled: true,
-                    wide: true,
-                })
             ]),
             render_section('Saving Throws', [
                 render_table({}, [
@@ -136,12 +93,68 @@ global.render_combat_page = () => render_page('core', [
                     render_field({
                         misc: true,
                     })
-                ])
+                ]),
+                render_field({
+                    label: "Conditional",
+                    align: left,
+                    wide: true,
+                    rows: 2,
+                }),
             ])
         ]),
         render_g([
             render_section('Attacks', [
+                render_articles({
+                    zebra: true
+                }, 4, n => render_article({
 
+                }, [
+                    render_row([
+                        render_field({
+                            template: "proficiency",
+                            label: "Item Bonus",
+                        }),
+                        render_field({
+                            align: left,
+                            wide: true,
+                        })
+                    ]),
+                    render_row([
+                        render_calc([
+                            render_field({
+                                output: true,
+                                label: "Attack Bonus",
+                                width: triple,
+                                icon: "bonus",
+                            }),
+                            render_span("="),
+                            render_field({
+                                ref: true,
+                            }),
+                            render_field({
+                                template: "proficiency",
+                                label: "Proficiency",
+                            }),
+                            render_field({
+                                label: "Item",
+                            })
+                        ]),
+                        render_field({
+                            label: "Damage",
+                            template: "damage",
+                            box: true,
+                            icon: "damage",
+                        }),
+                        render_field({
+                            label: "Type",
+                        }),
+                        render_field({
+                            label: "Critical Effect",
+                            wide: true,
+                        })
+                    ])
+                ])),
+                /* Ammo */
             ])
         ])
     ]),
@@ -155,6 +168,7 @@ global.render_combat_page = () => render_page('core', [
                             legend: "Hit Points",
                             icon: "hp",
                             width: double,
+                            overlay: "hp",
                         }),
                         render_span("="),
                         render_field({
@@ -178,6 +192,24 @@ global.render_combat_page = () => render_page('core', [
                     render_field({
                         template: 'progression',
                         label: "Dying",
+                        separator: '&rsaquo;',
+                        parts: [
+                            render_field({
+                                unlabelled: true,
+                                template: 'checkbox',
+                            }),
+                            render_field({
+                                unlabelled: true,
+                                template: 'checkbox',
+                            }),
+                            render_field({
+                                unlabelled: true,
+                                template: 'checkbox',
+                            }),
+                            render_icon('evil', {
+                                small: true,
+                            })
+                        ]
                     })
                 ]),
                 render_field({
@@ -186,6 +218,7 @@ global.render_combat_page = () => render_page('core', [
                     temp: true,
                     box: true,
                     icon: "hp",
+                    overlay: "hp",
                 })
             ]),
             render_section('Armour Class', [
@@ -199,6 +232,7 @@ global.render_combat_page = () => render_page('core', [
                         output: true,
                         legend: row.legend,
                         icon: row.icon,
+                        width: large,
                     }),
                     render_span("= 10 +"),
                     render_field({
@@ -214,21 +248,129 @@ global.render_combat_page = () => render_page('core', [
                     }),
                     render_field({
                         misc: true,
-                    })
+                    }),
+                    ''
                 ]),
+                render_field({
+                    label: "Conditional",
+                    wide: true,
+                    align: left,
+                }),
                 render_layout('2e', [
-                    render_article('Armour', [
-
+                    render_article({
+                        title: 'Armour'
+                    }, [
+                        render_field({
+                            // unlabelled: true,
+                            wide: true,
+                        }),
+                        render_row([
+                            render_field({
+                                label: "AC Bonus",
+                                icon: "ac",
+                                width: double,
+                            }),
+                            render_field({
+                                label: "TAC Bonus",
+                                icon: "tac",
+                                width: double,
+                            }),
+                            render_spacer(),
+                            render_field({
+                                label: "Bulk",
+                            }),
+                        ]),
+                        render_row({
+                            lines: double,
+                        }, [
+                            render_field({
+                                label: "Max DEX\nto AC",
+                                width: double,
+                            }),
+                            render_spacer(),
+                            render_field({
+                                label: "Speed\nPenalty",
+                                template: 'speed',
+                            }),
+                            render_spacer(),
+                            render_field({
+                                label: "Armour Check\nPenalty",
+                                width: double,
+                            })
+                        ]),
+                        render_field({
+                            label: "Properties",
+                            align: left,
+                            wide: true,
+                            rows: 2,
+                        }),
                     ]),
-                    render_article('Shield', [
-
+                    render_article({
+                        title: 'Shield'
+                    }, [
+                        render_field({
+                            // unlabelled: true,
+                            wide: true,
+                        }),
+                        render_row([
+                            render_field({
+                                label: "AC Bonus",
+                                icon: "ac",
+                                width: double,
+                            }),
+                            render_field({
+                                label: "TAC Bonus",
+                                icon: "tac",
+                                width: double,
+                            }),
+                            render_spacer(),
+                            render_field({
+                                label: "Bulk",
+                            }),
+                        ]),
+                        render_row({
+                            lines: double,
+                        }, [
+                            render_field({
+                                label: "Max DEX\nto AC",
+                                width: double,
+                            }),
+                            render_spacer(),
+                            render_field({
+                                label: "Speed\nPenalty",
+                                template: 'speed',
+                            }),
+                            render_spacer(),
+                            render_field({
+                                label: "Armour Check\nPenalty",
+                                width: double,
+                            })
+                        ]),
+                        render_field({
+                            label: "Properties",
+                            align: left,
+                            wide: true,
+                            rows: 2,
+                        }),
                     ])
                 ])
             ])
         ]),
         render_g([
             render_section('Actions', [
-
+                render_articles({
+                    zebra: true,
+                }, 7, n => render_article({
+                    icon: "action-template",
+                    inset: true,
+                }, [
+                    render_field({
+                        unlabelled: true,
+                        rows: 2,
+                        wide: true,
+                        multiline: true,
+                    })
+                ]))
             ])
         ])
     ]),
