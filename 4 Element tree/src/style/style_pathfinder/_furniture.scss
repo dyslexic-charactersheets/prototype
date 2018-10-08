@@ -1,0 +1,34 @@
+
+/* Column Borders */
+
+.page > .layout:last-child > * > *:last-child {
+/* .page-contents > .column > *:last-child, .page-contents > *:last-child > .column > *:last-child { */
+    padding-bottom: 2pt;
+    border-bottom: 2pt solid #808080;
+}
+
+.column.column--non-final > * {
+    padding-bottom: 0 !important;
+    border-bottom: 0 none !important;
+}
+
+h3 {
+    font-size: 9pt;
+    height: 0.45cm;
+    line-height: 0.45cm;
+    
+	margin: 0;
+	text-align: center;
+    
+    background-image: url('{{{dataurl "images/h3.svg"}}}');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 0.45cm;
+    
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0 0 1px #707070;
+}
+
+.hr--swash { background-image: url('{{{dataurl "images/swash.svg"}}}'); }
+

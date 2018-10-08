@@ -1,0 +1,154 @@
+/* Icons */
+
+i.icon-action {
+    background-image: url('{{{dataurl "images/icon-action.svg"}}}');
+}
+
+i.icon-action2 {
+    background-image: url('{{{dataurl "images/icon-action2.svg"}}}');
+    width: 1.05cm;
+}
+
+i.icon-action3 {
+    background-image: url('{{{dataurl "images/icon-action3.svg"}}}');
+    width: 1.4cm;
+}
+
+i.icon-reaction {
+    background-image: url('{{{dataurl "images/icon-reaction.svg"}}}');
+}
+
+i.icon-action-template {
+    background-image: url('{{{dataurl "images/icon-action-template.svg"}}}');
+    width: 1.4cm;
+}
+
+.field--icon.field--icon--dc i, .field--icon.field--icon--modifier i { background-image: url('{{{dataurl "images/icon-dc.svg"}}}'); }
+
+.field--icon.field--icon--ac i { background-image: url('{{{dataurl "images/icon-ac.svg"}}}'); }
+
+.field--icon.field--icon--tac i { background-image: url('{{{dataurl "images/icon-tac.svg"}}}'); }
+
+.field--icon.field--icon--size i {
+    background-image: url('{{{dataurl "images/icon-size.svg"}}}');
+    background-size: auto 0.5cm;
+}
+
+
+/* Proficiency */
+
+.field--proficiency i, i.icon-proficiency {
+    background-image: url('{{{dataurl "images/icon-proficiency.svg"}}}'); 
+    background-size: auto 0.5cm;
+}
+
+.field--proficiency--trained i, .field--proficiency > .proficiency-trained:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-trained.svg"}}}'); }
+.field--proficiency--expert i, .field--proficiency > .proficiency-trained:checked ~ .proficiency-expert:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-expert.svg"}}}'); }
+.field--proficiency--master i, .field--proficiency > .proficiency-trained:checked ~ .proficiency-expert:checked ~ .proficiency-master:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-master.svg"}}}'); }
+.field--proficiency--legendary i, .field--proficiency > .proficiency-trained:checked ~ .proficiency-expert:checked ~ .proficiency-master:checked ~ .proficiency-legendary:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-legendary.svg"}}}'); }
+
+.field--icon.field--icon--bonus i {
+    background-image: url('{{{dataurl "images/icon-d20.svg"}}}');
+    background-size: auto 0.38cm;
+}
+
+.field--icon.field--icon--gender i { background-image: url('{{{dataurl "images/icon-gender.svg"}}}'); }
+.field--icon.field--icon--hp i { background-image: url('{{{dataurl "images/icon-hp.svg"}}}'); }
+.field--icon.field--icon--damage i { background-image: url('{{{dataurl "images/icon-damage.svg"}}}'); }
+
+
+/* Alignment */
+
+fieldset.field--alignment {
+    display: block;
+    position: relative;
+    width: 1.6cm;
+    height: 1.6cm;
+}
+
+.field--alignment__grid {
+    position: absolute;
+
+    background-image: url('{{{dataurl "images/alignment-grid.svg"}}}');
+    background-position: center;
+    background-size: 100% 100%;
+
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact !important;
+
+    opacity: 0.6;
+    z-index: 2;
+    top: 0.3cm;
+    left: 0.3cm;
+    width: 1cm;
+    height: 1cm;
+}
+
+label.field--alignment__good,
+label.field--alignment__evil,
+label.field--alignment__lawful,
+label.field--alignment__chaotic {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 5pt;
+    text-align: center;
+    z-index: 6;
+    color: black;
+}
+
+label.field--alignment__good {
+    transform: rotate(-45deg) translate(0, 10pt);
+}
+
+label.field--alignment__evil {
+    transform: rotate(-45deg) translate(1pt, 1.35cm);
+}
+
+label.field--alignment__lawful {
+    transform: rotate(45deg) translate(0.8cm, -0.45cm);
+}
+
+label.field--alignment__chaotic {
+    transform: rotate(45deg) translate(0.75cm, 0.6cm);
+}
+
+.field--alignment__good-icon,
+.field--alignment__evil-icon,
+.field--alignment__lawful-icon,
+.field--alignment__chaotic-icon {
+    position: absolute;
+    z-index: 4;
+    width: 0.6cm;
+    height: 0.6cm;
+    opacity: 0.2;
+    background-size: 100% 100%;
+
+    // -webkit-print-color-adjust: exact;
+    // color-adjust: exact !important;
+}
+
+.field--alignment__good-icon {
+    background-image: url('{{{dataurl "images/icon-good.svg"}}}');
+    top: 0;
+    left: 0;
+}
+.field--alignment__evil-icon, .icon-evil {
+    background-image: url('{{{dataurl "images/icon-evil.svg"}}}');
+    bottom: 0;
+    right: 0;
+}
+.field--alignment__lawful-icon {
+    background-image: url('{{{dataurl "images/icon-lawful.svg"}}}');
+    top: 0;
+    right: 0;
+}
+.field--alignment__chaotic-icon {
+    background-image: url('{{{dataurl "images/icon-chaotic.svg"}}}');
+    bottom: 0;
+    left: 0;
+}
+
+
+/* Classes */
+
+.class-icon--bard { background-image: url('{{{dataurl "images/bard.png"}}}'); }

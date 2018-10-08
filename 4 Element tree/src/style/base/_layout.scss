@@ -1,0 +1,110 @@
+/* Layout */
+
+.layout {
+	display: grid;
+	grid-gap: 0.25cm 0.5cm;
+
+    &.layout--narrow, &.layout-spells-list {
+        grid-gap: 0.1cm 0.3cm;
+    }
+
+    &--layout_2e {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "a b";
+    }
+
+    &--layout_2l {
+        grid-template-columns: 5fr 8fr;
+        grid-template-areas: "left right";
+    }
+
+    &--layout_2r {
+        grid-template-columns: 8fr 5fr;
+        grid-template-areas: "left right";
+    }
+
+    // &--layout_2l2r {
+    //     grid-template-columns: 5fr 3fr 5fr;
+    //     grid-template-rows: auto auto;
+    //     grid-template-areas:
+    //         "a b b"
+    //         "c c d";
+    // }
+
+    // &--layout_2r2l {
+    //     grid-template-columns: 5fr 3fr 5fr;
+    //     grid-template-rows: auto auto;
+    //     grid-template-areas:
+    //         "a a b"
+    //         "c d d";
+    // }
+
+    &--layout_alignment {
+        grid-template-columns: auto 1.8cm;
+        grid-template-areas: "a b";
+        align-items: center;
+    }
+
+    // &.layout-action {
+    //     grid-template-columns: 0.7cm auto;
+    //     grid-template-areas: "a b";
+    //     align-items: center;
+    // }
+
+    &--layout_3e {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "a b c";
+    }
+
+    &--layout_3lr {
+        grid-template-columns: 5fr 3fr 5fr;
+        grid-template-areas: "a b c";
+    }
+
+    // &.layout_inventory {
+    //     grid-template-columns: 5fr 4fr 4fr;
+    //     grid-template-rows: auto auto auto;
+    //     grid-template-areas:
+    //         "a b c"
+    //         "a d d"
+    //         "a e f";
+    // }
+
+    &--layout_spells-list {
+        grid-template-columns: 1fr 1cm 1fr;
+        grid-template-areas: "a level b";
+    }
+    
+    // .column {
+    //     display: flex !important;
+    //     flex-direction: column;
+    //     flex-wrap: nowrap;
+    //     grid-area: auto;
+    // }
+    
+    // .column-a { grid-area: a; }
+    // .column-b { grid-area: b; }
+    // .column-c { grid-area: c; }
+    // .column-d { grid-area: d; }
+    // .column-e { grid-area: e; }
+    // .column-f { grid-area: f; }
+
+    // .column-level { grid-area: level; }
+    // .column-level .spell-level {
+    // 	height: 100%;
+    // 	line-height: 1.1cm;
+    // }
+
+    // .column--left {
+    // 	grid-area: left;
+    // }
+
+    // .column--right {
+    // 	grid-area: right;
+    // }
+}
+
+
+.page--unbalanced > .layout > .column {
+	display: block !important;
+}
