@@ -143,25 +143,137 @@
             ]
         },
 
+
+
+
+
+
+
+
+
+
+
         {
             "type": "page",
             "id": "cover",
-            "layout": "2e",
             "contents": [
                 {
-                    "type": "g",
+                    "type": "layout",
+                    "layout": "2e",
                     "contents": [
-
-                    ]
-                },
-                {
-                    "type": "g",
-                    "contents": [
-
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "field",
+                                    "id": "cover-name",
+                                    "size": "huge",
+                                    "legend": "Name",
+                                    "width": "stretch",
+                                    "align": "left"
+                                },
+                                {
+                                    "type": "layout",
+                                    "layout": "alignment",
+                                    "contents": [
+                                        {
+                                            "type": "g",
+                                            "contents": [
+                                                    {
+                                                        "type": "field",
+                                                        "id": "cover-ancestry",
+                                                        "label": "Ancestry",
+                                                        "width": "stretch",
+                                                        "align": "left"
+                                                    },
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-background",
+                                                    "label": "Background",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "g",
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "alignment",
+                                                    "frame": "none",
+                                                    "control": "alignment"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "row",
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "gender",
+                                                    "icon": "gender",
+                                                    "label": "Gender"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "age",
+                                                    "label": "Age"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "size",
+                                                    "icon": "size",
+                                                    "label": "Size"
+                                                }
+                                            ]   
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "row",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "cover-class",
+                                            "label": "Class",
+                                            "width": "stretch",
+                                            "size": "large",
+                                            "align": "left"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "class-level",
+                                            "output": true,
+                                            "size": "large",
+                                            "label": "Level"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "portrait",
+                                    "overprint": true
+                                }
+                            ]
+                        }
                     ]
                 }
             ]
         },
+
+
+
+
+
+
+
+
+
 
         {
             "type": "page",
@@ -187,6 +299,7 @@
                                             "type": "field",
                                             "id": "player-name",
                                             "label": "Player",
+                                            "align": "left",
                                             "width": "stretch"
                                         },
                                         {
@@ -215,9 +328,10 @@
                                     "contents": [
                                         {
                                             "type": "table",
+                                            "width": "stretch",
                                             "columns": [ 
-                                                "", "Ability\nScore", 
-                                                { "label": "Ability\nModifier", "icon": true },
+                                                { "align": "left" }, "Ability\nScore", 
+                                                { "type": "label", "label": "Ability\nModifier", "icon": true },
                                                 "Key\nAbility", "Temporary\nAdjustment"
                                             ],
                                             "rows": [
@@ -242,6 +356,8 @@
                                                 {
                                                     "type": "field",
                                                     "id": "#{short}",
+                                                    "output": true,
+                                                    "icon": "modifier",
                                                     "underlay": "#{short}"
                                                 },
                                                 {
@@ -260,11 +376,11 @@
                                         {
                                             "type": "calc",
                                             "inline": true,
-                                            "product": {
+                                            "output": {
                                                 "type": "label",
                                                 "label": "Ability\nModifier"
                                             },
-                                            "parts": [
+                                            "inputs": [
                                                 "(",
                                                 {
                                                     "type": "label",
@@ -281,25 +397,90 @@
                                     "title": "Proficiency",
                                     "contents": [
                                         {
-                                            "type": "table"
+                                            "type": "layout",
+                                            "layout": "5e",
+                                            "narrow": true,
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-untrained",
+                                                    "output": true,
+                                                    "control": "proficiency"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-trained",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "trained"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-expert",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "expert"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-master",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "master"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-legendary",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "legendary"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n-4",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n+1",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n+2",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n+3",
+                                                    "align": "center"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "table",
-                                            "columns": [ "Ability", "Proficiency" ],
-                                            "repeat": 10,
-                                            "template": {
-                                                "type": "row",
-                                                "contents": [
-                                                    {
-                                                        "type": "field",
-                                                        "width": "stretch"
-                                                    },
-                                                    {
-                                                        "type": "field",
-                                                        "icon": "proficiency"
-                                                    }
-                                                ]
-                                            }
+                                            "columns": [ 
+                                                { "type": "label", "label": "Ability", "align": "left" }, 
+                                                "Proficiency" 
+                                            ],
+                                            "rows": 10,
+                                            "template": [
+                                                {
+                                                    "type": "field",
+                                                    "width": "stretch"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "control": "proficiency"
+                                                }
+                                            ],
+                                            "collapse": true,
+                                            "field_frame": "none"
                                         }
                                     ]
                                 },
@@ -310,13 +491,13 @@
                                     "contents": [
                                         {
                                             "type": "calc",
-                                            "product": {
+                                            "output": {
                                                 "type": "field",
                                                 "id": "perception",
                                                 "icon": "bonus",
                                                 "legend": "Perception"
                                             },
-                                            "parts": [
+                                            "inputs": [
                                                 {
                                                     "type": "field",
                                                     "ref": "WIS",
@@ -344,21 +525,21 @@
                                                 {
                                                     "type": "field",
                                                     "id": "perception-low-light",
-                                                    "frame": "inline",
+                                                    "frame": "right",
                                                     "control": "checkbox",
                                                     "label": "Low-light vision"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "perception-darkvision",
-                                                    "frame": "inline",
+                                                    "frame": "right",
                                                     "control": "checkbox",
                                                     "label": "Dark vision"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "perception-scent",
-                                                    "frame": "inline",
+                                                    "frame": "right",
                                                     "control": "checkbox",
                                                     "label": "Scent"
                                                 }
@@ -424,7 +605,8 @@
                                                                 {
                                                                     "type": "field",
                                                                     "id": "character-size",
-                                                                    "label": "size"
+                                                                    "icon": "size",
+                                                                    "label": "Size"
                                                                 }
                                                             ]
                                                         }
@@ -433,6 +615,7 @@
                                                 {
                                                     "type": "field",
                                                     "id": "character-alignment",
+                                                    "frame": "none",
                                                     "control": "alignment"
                                                 }
                                             ]
@@ -513,7 +696,89 @@
                                     "title": "Skills",
                                     "contents": [
                                         {
-                                            "type": "table"
+                                            "type": "table",
+                                            "collapse": true,
+                                            "zebra": true,
+                                            "field_frame": "none",
+                                            "columns": [
+                                                null,
+                                                { "type": "label", "label": "Assurance", "align": "right" },
+                                                "Skill\nBonus",
+                                                null,
+                                                "Ability\nModifier",
+                                                "Proficiency",
+                                                "Feats\nMisc",
+                                                "Armor\nCheck\nPenalty"
+                                            ],
+                                            "rows": [
+                                                { "skill": "Acrobatics", "ability": "DEX", "acp": true },
+                                                { "skill": "Arcana", "ability": "INT" },
+                                                { "skill": "Athletics", "ability": "STR", "acp": true },
+                                                { "skill": "Crafting", "ability": "INT" },
+                                                { "skill": "Deception", "ability": "CHA" },
+                                                { "skill": "Intimidation", "ability": "CHA" },
+                                                { "skill": "Medicine", "ability": "WIS" },
+                                                { "skill": "Nature", "ability": "WIS" },
+                                                { "skill": "Occultism", "ability": "INT" },
+                                                { "skill": "Performance", "ability": "CHA" },
+                                                { "skill": "Religion", "ability": "WIS" },
+                                                { "skill": "Society", "ability": "INT" },
+                                                { "skill": "Stealth", "ability": "DEX", "acp": true },
+                                                { "skill": "Survival", "ability": "WIS" },
+                                                { "skill": "Thievery", "ability": "DEX", "acp": true },
+                                                { "skill": "Lore", "ability": "INT" },
+                                                { "skill": "", "ability": "INT" },
+                                                { "skill": "", "ability": "INT" },
+                                                { "skill": "", "ability": "" },
+                                                { "skill": "", "ability": "" },
+                                                { "skill": "", "ability": "" },
+                                                { "skill": "", "ability": "" },
+                                                { "skill": "", "ability": "" },
+                                                { "skill": "", "ability": "" }
+                                            ],
+                                            "template": [
+                                                {
+                                                    "type": "h6",
+                                                    "title": "#{skill}"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-assurance",
+                                                    "control": "checkbox",
+                                                    "align": "right"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-bonus",
+                                                    "output": true,
+                                                    "icon": "bonus"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "="
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "ref": "#{ability}",
+                                                    "underlay": "#{ability}"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-proficiency",
+                                                    "control": "proficiency"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-misc",
+                                                    "misc": true
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "ref": "acp",
+                                                    "box": true,
+                                                    "exists": "#{acp}"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

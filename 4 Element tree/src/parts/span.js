@@ -2,5 +2,5 @@ register('span', {
     content: '',
 }, args => {
     var cls = elementClass('span');
-    return `<p${cls}>${esc(args.content)}</p>`;
+    return `<span${cls}>${esc(args.content, true)}</span>`;
 });

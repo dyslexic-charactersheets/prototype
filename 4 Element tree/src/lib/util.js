@@ -1,11 +1,15 @@
 const _ = require('lodash');
 
 
-global.esc = function(content) {
+global.esc = function(content, newlines = false) {
     content = _.escape(content);
     content = content.replace(/’/g, '&rsquo;').replace(/‘/g, '&lsquo;');
     content = content.replace(/—/g, '&mdash;');
     content = content.replace(/&amp;(.+);/, '&$1;');
+
+    if (newlines) {
+        content = content.replace(/[\n\r]+/g, '<br>');
+    }
     return content;
 }
 
@@ -34,7 +38,7 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
     if (!_.isNull(element)) {
         prefix = `${block}__${element}`;
     }
-    // console.log("[class] Prefix:", prefix);
+    // console.log("["+block+" class] Prefix:", prefix);
 
     // built-in elements don't need to repeat that in their class
     switch (prefix) {
@@ -63,7 +67,7 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
 
     // mods are single-word adjectives, eg
     mods = pickMods(args, modKeys);
-    // console.log("[class] Mods:", mods);
+    // console.log("["+block+" class] Mods:", mods);
     _.each(mods, function (mod) {
         switch (mod) {
             // global mods that don't need a prefix
@@ -77,8 +81,33 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
 
     // attribs are key-values, eg align=left
     attribs = pickAttribs(args, attribKeys);
-    // console.log("[class] Attribs:", attribs);
+    // console.log("["+block+" class] Attribs:", attribs);
+    // _(attribs).toPairs().each((value, key) => {
+    //     // some default values can be skipped
+    //     switch (key) {
+    //         case 'frame': if (value == 'normal') return;
+    //         case 'control': if (value == 'input') return;
+    //     }
+
+    //     switch (key) {
+    //         // global attributes that don't need a prefix
+    //         case 'align':
+    //             cls.push(`${key}_${value}`);
+    //             break;
+    //         default:
+    //             cls.push(`${prefix}--${key}_${value}`);
+    //             break;
+    //     }
+    // });
+
+
     _.forOwn(attribs, function(value, key) {
+        // some default values can be skipped
+        switch (key) {
+            case 'frame': if (value == 'normal') return;
+            case 'control': if (value == 'input') return;
+        }
+
         switch (key) {
             // global attributes that don't need a prefix
             case 'align':
@@ -95,4 +124,35 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
         return '';
     }
     return ` class='${cls.join(" ")}'`;
+};
+
+global.interpolate = function (template, values) {
+    // console.log("Interpolate", template);
+
+    if (_.isNull(template))
+        return null;
+
+    if (_.isString(template)) {
+        return template.replace(/#\{(.*?)\}/g, function (tag) {
+            var match = tag.match(/#\{(.*?)\}/);
+            var index = match[1];
+            if (_.has(values, index))
+                return values[index];
+            return match;
+        });
+    }
+
+    if (_.isArray(template)) {
+        return template.map(item => interpolate(item, values));
+    }
+
+    if (_.isPlainObject(template)) {
+        var pairs = _.toPairs(template);
+        // console.log(" - value pairs", pairs);
+        pairs = pairs.map(pair => [pair[0], interpolate(pair[1], values)]);
+        // console.log(" - processed pairs", pairs);
+        return _.fromPairs(pairs);
+    }
+
+    return template;
 };

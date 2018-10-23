@@ -1,0 +1,723 @@
+
+/* Fields */
+
+label {
+	margin: 3pt 0 1pt 0;
+	display: block;
+	font-size: 7pt;
+}
+
+.field {
+	margin: 2pt 0;
+	border: 0 none;
+	padding: 0;
+	
+	display: inline-block;
+	position: relative;
+	white-space: nowrap;
+	padding-top: 0.35cm;
+	flex: 0 0 auto;
+
+	.field__inner {
+		flex: 0 0 auto;
+		min-height: 0.55cm;
+		position: relative;
+		border-bottom: 0.5pt solid #707070;
+	}
+
+	.field__item {
+		flex: 0 0 auto;
+		height: 0.55cm;
+		display: inline-block;
+		position: relative;
+	}
+
+	&.field--output {
+		.field__inner {
+			border: 0.75pt solid #808080; // !important;
+			border-radius: 2pt;
+			background: rgba(255,255,255,0.9);
+		}
+	}
+
+	input, output {
+		height: 0.55cm;
+		line-height: 0.55cm;
+		text-align: center;
+		font-size: 11pt;
+		color: #202020;
+		width: 1cm;
+		max-width: 4em;
+		padding: 0 1pt;
+		margin: 0;
+	
+		box-sizing: border-box;
+		position: relative;
+		z-index: 20;
+	}
+
+	input {
+		border: 0 none;
+		background: none;
+	}
+
+	output {
+		display: inline-block;
+		border: 0 none;
+		background: none;
+	}
+
+	legend {
+		line-height: 9.5pt;
+		position: absolute;
+		// top: -2pt;
+		top: 0;
+		left: 0;
+		text-align: left;
+	}
+
+	label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	.underlay {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		height: 0.55cm;
+		line-height: 0.55cm;
+
+		text-align: center;
+		font-size: 10pt;
+		font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+		font-weight: 900;
+		color: #000000;
+		opacity: 0.2;
+	}
+
+	/* Size */
+
+	&.field--large {
+		.field__inner, .field__item, input, output {
+			height: 0.75cm;
+		}
+		input, output {
+			font-size: 12.5pt;
+			line-height: 0.75cm;
+		}
+	}
+
+	&.field--huge {
+		.field__inner, .field__item, input, output {
+			height: 0.9cm;
+		}
+		input, output {
+			font-size: 14pt;
+			line-height: 0.9cm;
+		}
+	}
+
+
+	/* Subfields */
+
+	.subfield {
+		display: inline-block;
+		position: relative;
+
+		+ .subfield {
+			margin-left: -2pt;
+		}
+	}
+
+
+
+	/* Field modifiers */
+
+	&--width_tiny {
+		input, output {
+			width: 0.5cm;
+		}
+	}
+
+	&--width_small {
+		input, output {
+			width: 0.75cm;
+		}
+	}
+
+	&--width_large {
+		// flex: 2 0 auto;
+		input, output {
+			width: 2.5cm;
+		}
+	}
+	
+	&--width_huge {
+		// flex: 3 0 auto;
+		input, output {
+			width: 4cm;
+		}
+	}
+
+	&--width_gargantuan {
+		// flex: 4 0 auto;
+		input, output {
+			width: 6cm;
+		}
+	}
+
+	&--width_stretch {
+		display: block;
+		box-sizing: border-box;
+		flex: 10 0 auto;
+
+		.field__inner, .field__item {
+			// width: 100%;
+			flex: 100 0 auto !important;
+			display: flex;
+			flex-direction: row;
+		}
+
+		input, output {
+			flex: 100 0 auto !important;
+			margin-top: 1pt;
+			margin-left: 0;
+			display: block;
+			box-sizing: border-box;
+			// width: 100%;
+			max-width: 100%;
+		}
+	}
+
+	&--size_small {
+		.field__item {
+			height: 0.5cm;
+		}
+		input, output {
+			font-size: 10pt;
+			height: 0.5cm;
+			line-height: 0.5cm;
+		}
+	}
+
+	&--size_large {
+		.field__item {
+			height: 0.6cm;
+		}
+		input, output {
+			font-size: 13pt;
+			height: 0.6cm;
+			line-height: 0.6cm;
+		}
+	}
+
+	&--size_huge {
+		.field__item {
+			height: 0.6cm;
+		}
+		input, output {
+			font-size: 15pt;
+			height: 0.6cm;
+			line-height: 0.6cm;
+		}
+	}
+
+
+
+	&.field--mod {
+		label {
+			font-size: 6pt;
+		}
+	}
+
+	&.field--big {
+		input, output {
+			font-size: 14pt;
+			height: 0.8cm;
+			line-height: 0.8cm;
+		}
+	}
+
+	&.field--horizontal {
+		padding-top: 0;
+		padding-left: 2cm;
+
+		> label {
+			bottom: 2pt;
+			left: 0;
+			right: auto;
+			top: auto;
+			font-size: 8pt;
+		}
+	}
+	
+	/* Side-labelled fields */
+
+	&.field--h-label {
+		padding-left: 4pt;
+		.field__inner {
+			padding-left: 1pt;
+		}
+
+		label {
+			left: 2pt;
+			top: 0;
+			bottom: 1pt;
+			right: auto;
+
+			transform: rotate(-90deg);
+		}
+
+		// .underlay {
+		// 	left: 2pt;
+		// }
+	}
+
+	&.field--multiline {
+		.field__inner {
+			display: block;
+
+			input, output {
+				border-bottom: 0.5pt solid #707070;
+			}
+			.field__item {
+
+				&:last-child {
+					input, output {
+						border-bottom: 0 none;
+					}
+				}
+			}
+		}
+	}
+
+	&.field--temp {
+		.field__inner {
+			border-bottom: 2pt solid #b0b0b0 !important;
+		}
+
+		.overlay {
+			bottom: 1pt;
+			right: 5pt;
+		}
+
+		&.field--box {
+			.field__inner {
+				border: 2pt solid #b0b0b0 !important;
+				// height: 0.75cm;
+				border-radius: 4.5pt !important;
+			}
+		}
+
+		&.field--icon {
+			.field__inner {
+				border-left: 0 none !important;
+				border-radius: 4.5pt !important;
+			}
+
+			&::after {
+				bottom: 2pt;
+			}
+		}
+	}
+	
+	&.field--zebra input:nth-child(2n+1) {
+		background: #f8f8f8;
+	}
+
+	&.field--checkbox, &.field--radio {
+		// margin: 0 6pt 0 3pt;
+
+		.field__inner {
+			border-bottom: 0 none;
+		}
+
+		input[type=checkbox], input[type=radio] {
+			// margin: 0 3pt 5pt 0;
+		}
+
+		// label {
+		// 	display: inline-block;
+		// 	font-size: 9pt;
+		// 	position: relative;
+		// 	height: 0.7cm;
+		// 	line-height: 0.7cm;
+		// }
+	}
+
+	/* Progression */
+	
+	&.field--progression {
+		display: inline-block;
+
+		> * {
+			margin: 0;
+			display: inline-block;
+			vertical-align: bottom;
+		}
+
+		.field--checkbox {
+			margin: 0;
+			padding: 0;
+
+			input[type=checkbox] {
+				margin: 7pt 2pt 0 1pt;
+			}
+		}
+
+		> span {
+			height: 0.5cm;
+			line-height: 0.5cm;
+		}
+	}
+
+	/* Icon fields */
+
+	&.field--icon, &.field--control_proficiency {
+		position: relative;
+		padding-left: 0.2cm;
+
+		.field__inner {
+			padding-left: 0.1cm;
+			border-width: 0.75pt;
+			border-left: 0 none !important;
+			border-radius: 2.5pt;
+		}
+
+		i {
+			position: absolute;
+			bottom: 0pt;
+			left: -0.25cm;
+			width: 0.5cm;
+			height: 0.55cm;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto 0.4cm;
+			opacity: 0.6;
+		}
+
+		label {
+			padding-left: 0.2cm;
+		}
+
+		p {
+			padding-left: 0.35cm;
+		}
+	}
+
+
+	/* Check grids */
+
+	&.field--checkgrid {
+		display: block;
+		text-align: right;
+
+		.field--checkgrid__grid {
+			display: inline-flex;
+			flex-flow: column wrap;
+
+			margin: 1pt 4pt;
+			height: 22pt;
+			width: 24pt;
+
+			justify-content: center;
+			align-content: flex-start;
+			align-items: flex-start;
+		}
+
+		.field--checkgrid__grid input[type=checkbox] {
+			margin: 1.4pt;
+			flex: 0 0 auto;
+		}
+	}
+
+	/* Proficiency */
+
+	&.field--control_proficiency {
+		input[type=checkbox] {
+			display: none;
+		}
+	}
+}
+
+label + .field {
+	margin-top: -1pt;
+}
+
+.field--unlabelled, .row--unlabelled .field, .calc--inline .field, .table--unlabelled .field {
+	padding-top: 0;
+}
+
+.field--unlined input, .field--merge-bottom input:last-child {
+	border-bottom: 0 none;
+	margin-bottom: 0;
+}
+
+.field--ref .field__inner {
+	border-bottom: 0.75pt dashed #707070;
+}
+
+.field--em output {
+	border-width: 1.25pt;
+}
+.field--em input {
+	border-bottom-width: 1.25pt;
+}
+.field--em .overlay, .field--em .mid-overlay {
+	font-weight: bold;
+}
+
+.field .overlay {
+	position: absolute;
+	bottom: 0pt;
+	right: 4pt;
+	font-size: 9pt;
+}
+
+.field .start-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 4pt;
+	font-size: 9pt;
+}
+
+.field .mid-overlay {
+	position: absolute;
+	bottom: 0pt;
+	right: 50%;
+	font-size: 9pt;
+}
+
+.field--icon .mid-overlay {
+	right: 41%;
+}
+
+.field--ref input, .field--ref output {
+	border-style: dashed;
+}
+
+.field--misc label, .label--misc {
+	color: #a0a0a0;
+}
+
+.field--misc input, .field--misc output {
+	border-color: #909090 !important;
+}
+
+
+/* Checkboxes and Radio buttons */
+
+input[type=checkbox] {
+	width: 0 !important;
+	height: 0 !important;
+	visibility: hidden;
+
+	+ label {
+		display: inline-block;
+		position: relative;
+
+		width: 4pt;
+		height: 4pt;
+		border: 0.5pt solid #808080;
+
+		cursor: pointer;
+	}
+
+	&:checked + label {
+		background: #808080;
+	}
+}
+
+input[type=radio] {
+	width: 0 !important;
+	height: 0 !important;
+	visibility: hidden;
+
+	+ label {
+		display: inline-block;
+		position: relative;
+	
+		width: 5pt;
+		height: 5pt;
+		border-radius: 50%;
+		border: 0.5pt solid #808080;
+	
+		cursor: pointer;
+	}
+	
+	&:checked + label {
+		background: #808080;
+	}
+}
+
+
+// td input[type=checkbox] {
+// 	margin: 0 4pt 3pt 3pt;
+// }
+
+// td input[type=radio] {
+// 	margin: 0 4pt 3pt 3pt;
+// }
+
+.row > .field--checkbox {
+	flex: 0 0 auto;
+}
+
+.field--checkbox.field--proficiency {
+	padding-left: 0.45cm;
+}
+
+/*
+.field--boost {
+	position: relative;
+	width: 14pt;
+	height: 14pt;
+	margin: 0 auto;
+	display: block;
+}
+
+.field--boost .field--boost__plus {
+	position: absolute;
+	left: 8pt;
+	bottom: 8pt;
+	margin: 0;
+}
+
+.field--boost .field--boost__minus {
+	position: absolute;
+	left: 1pt;
+	bottom: 1pt;
+	margin: 0;
+}
+*/
+
+
+
+
+
+/* Field groups */
+
+
+.field label.below {
+	bottom: 0;
+	top: auto;
+}
+
+.field.with-below, .row.with-below .field {
+	padding-bottom: 9pt;
+}
+
+.field--icon.with-below::after, .row.with-below .field--icon::after {
+	bottom: 12.75pt;
+}
+
+.row .field--wide {
+	flex: 100 0 auto;
+}
+
+.row fieldset.calc {
+	margin: 0;
+}
+.row fieldset.calc + * {
+	margin-left: 2pt;
+}
+
+
+/* Special fields */
+
+fieldset.field--alignment {
+	display: block;
+	position: relative;
+	width: 1.6cm;
+	height: 1.6cm;
+}
+
+.field--alignment__grid {
+	position: absolute;
+
+	background-image: url('{{{dataurl "images/alignment-grid.svg"}}}');
+	background-position: center;
+	background-size: 100% 100%;
+
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+
+	opacity: 0.6;
+	z-index: 2;
+	top: 0.3cm;
+	left: 0.3cm;
+	width: 1cm;
+	height: 1cm;
+}
+
+label.field--alignment__good,
+label.field--alignment__evil,
+label.field--alignment__lawful,
+label.field--alignment__chaotic {
+	position: absolute;
+	text-transform: uppercase;
+	font-size: 5pt;
+	text-align: center;
+	z-index: 6;
+	color: black;
+}
+
+label.field--alignment__good {
+	transform: rotate(-45deg) translate(0, 10pt);
+}
+
+label.field--alignment__evil {
+	transform: rotate(-45deg) translate(1pt, 1.35cm);
+}
+
+label.field--alignment__lawful {
+	transform: rotate(45deg) translate(0.8cm, -0.45cm);
+}
+
+label.field--alignment__chaotic {
+	transform: rotate(45deg) translate(0.75cm, 0.6cm);
+}
+
+.field--alignment__good-icon,
+.field--alignment__evil-icon,
+.field--alignment__lawful-icon,
+.field--alignment__chaotic-icon {
+	position: absolute;
+	z-index: 4;
+	width: 0.6cm;
+	height: 0.6cm;
+	opacity: 0.2;
+	background-size: 100% 100%;
+
+	-webkit-print-color-adjust: exact;
+	color-adjust: exact !important;
+}
+
+.field--alignment__good-icon {
+	background-image: url('{{{dataurl "images/icon-good.svg"}}}');
+	top: 0;
+	left: 0;
+}
+.field--alignment__evil-icon, .icon-evil {
+	background-image: url('{{{dataurl "images/icon-evil.svg"}}}');
+	bottom: 0;
+	right: 0;
+}
+.field--alignment__lawful-icon {
+	background-image: url('{{{dataurl "images/icon-lawful.svg"}}}');
+	top: 0;
+	right: 0;
+}
+.field--alignment__chaotic-icon {
+	background-image: url('{{{dataurl "images/icon-chaotic.svg"}}}');
+	bottom: 0;
+	left: 0;
+}
+

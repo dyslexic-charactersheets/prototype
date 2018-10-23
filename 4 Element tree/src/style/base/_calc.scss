@@ -1,0 +1,45 @@
+
+/* Calculations */
+
+fieldset.calc {
+	margin: 2pt 0;
+	border: 0 none;
+	padding: 0;
+	display: block;
+	white-space: nowrap;
+
+	> * {
+		display: inline-block;
+		margin: 0 1pt;
+	}
+
+	> *:first-child {
+		margin-left: 0;
+	}
+
+	> span {
+		/*font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+		font-weight: bold;*/
+		font-size: 12pt;
+		display: inline-block;
+		height: 18pt;
+		line-height: 18pt; 
+	}
+
+	&.calc--inline {
+		label {
+			top: auto;
+			bottom: 1pt;
+		}
+		.field__inner {
+			border: 0 none !important;
+		}
+		input, output {
+			visibility: hidden;
+		}
+	}
+}
+
+fieldset.calc--2-lines .field, .row--2-lines .field {
+	padding-top: 0.7cm;
+}

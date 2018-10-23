@@ -61,6 +61,11 @@
         grid-template-areas: "a b c";
     }
 
+    &--layout_5e {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "a b c d e";
+    }
+
     // &.layout_inventory {
     //     grid-template-columns: 5fr 4fr 4fr;
     //     grid-template-rows: auto auto auto;
