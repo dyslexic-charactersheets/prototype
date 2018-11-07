@@ -2,4 +2,33 @@
     &--frame_none {
         padding: 0;
     }
+    
+    &--frame_right, &--frame_left {
+        padding: 0;
+        display: grid;
+        .field__inner {
+            grid-area: control;
+        }
+        label{
+            position: static;
+            grid-area: label;
+            font-size: 1rem;
+        }
+    }
+
+    &--frame_right {
+        grid-template-columns: auto auto;
+        grid-template-areas: "control label";
+    }
+
+    &--frame_left {
+        grid-template-columns: auto auto;
+        grid-template-areas: "label control";
+    }
+}
+
+.row > .field {
+    &--frame_right {
+        display: inline-grid;
+    }
 }

@@ -5,7 +5,7 @@ register('doc', {
     var faviconData = getDataURL("images/"+args.favicon);
 
     return `<!DOCTYPE html>
-<html>
+<html lang='en-GB'>
 <head>
 <title>${esc(args.title)}</title>
 <link id="favicon" rel="shortcut icon" type="image/png" href='${faviconData}' />
@@ -15,6 +15,11 @@ ${stylesheet()}
 </head>
 
 <body>
+<nav id='nav-pages'>
+<a class="skip-link" href="#page-core">Go to character info</a>
+<a class="skip-link" href="#page-combat">Go to combat</a>
+</nav>
+
 <main>
 ${render(args.contents)}
 </main>

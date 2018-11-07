@@ -6,10 +6,10 @@ const _ = require('lodash');
 
 // select stylesheet parts
 var stylesheetsUnits = [
+    "fonts_pathfinder",
     "base",
     "size_normal",
-    "style_pathfinder",
-    "fonts_pathfinder"
+    "style_pathfinder"
 ];
 
 var stylesheets = {};

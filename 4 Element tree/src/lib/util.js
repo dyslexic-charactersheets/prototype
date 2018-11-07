@@ -14,7 +14,7 @@ global.esc = function(content, newlines = false) {
 }
 
 global.elementID = function(element, id = null) {
-    if (_.isNull(id) || id == '') {
+    if (_.isNull(id) || id == '' || id == 'null') {
         return '';
     }
 
@@ -82,26 +82,10 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
     // attribs are key-values, eg align=left
     attribs = pickAttribs(args, attribKeys);
     // console.log("["+block+" class] Attribs:", attribs);
-    // _(attribs).toPairs().each((value, key) => {
-    //     // some default values can be skipped
-    //     switch (key) {
-    //         case 'frame': if (value == 'normal') return;
-    //         case 'control': if (value == 'input') return;
-    //     }
-
-    //     switch (key) {
-    //         // global attributes that don't need a prefix
-    //         case 'align':
-    //             cls.push(`${key}_${value}`);
-    //             break;
-    //         default:
-    //             cls.push(`${prefix}--${key}_${value}`);
-    //             break;
-    //     }
-    // });
-
-
-    _.forOwn(attribs, function(value, key) {
+    _(attribs).toPairs().each(pair => {
+        var key = pair[0];
+        var value = pair[1];
+        // console.log("  -", key, " = ", value);
         // some default values can be skipped
         switch (key) {
             case 'frame': if (value == 'normal') return;
@@ -119,6 +103,26 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
         }
     });
 
+
+    // _.forOwn(attribs, function(value, key) {
+    //     // some default values can be skipped
+    //     switch (key) {
+    //         case 'frame': if (value == 'normal') return;
+    //         case 'control': if (value == 'input') return;
+    //         case 'align': if (value == 'left') return;
+    //     }
+
+    //     switch (key) {
+    //         // global attributes that don't need a prefix
+    //         case 'align':
+    //             cls.push(`${key}_${value}`);
+    //             break;
+    //         default:
+    //             cls.push(`${prefix}--${key}_${value}`);
+    //             break;
+    //     }
+    // });
+
     // the class attr, if needed
     if (_.isEmpty(cls)) {
         return '';
@@ -127,7 +131,8 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
 };
 
 global.interpolate = function (template, values) {
-    // console.log("Interpolate", template);
+    // console.log("Interpolate:", template);
+    // console.log(" - Values:", values);
 
     if (_.isNull(template))
         return null;
@@ -136,8 +141,11 @@ global.interpolate = function (template, values) {
         return template.replace(/#\{(.*?)\}/g, function (tag) {
             var match = tag.match(/#\{(.*?)\}/);
             var index = match[1];
-            if (_.has(values, index))
+            // console.log("Match index:", index);
+            if (_.has(values, index)) {
+                // console.log(` - Replacing #{${index}} -> ${values[index]}`);
                 return values[index];
+            }
             return match;
         });
     }

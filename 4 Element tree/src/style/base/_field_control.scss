@@ -5,4 +5,75 @@
             border: 0 none;
         }
     }
+
+    &--control_radio {
+
+    }
+
+    &--control_checkbox {
+
+	}
+	
+	&--control_progression {
+		.field__separator {
+			display: inline-block;
+			position: static;
+			font-size: 1rem;
+			margin: 0 2pt;
+
+			&:after {
+				content: "\0203A";
+			}
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+/* Checkboxes and Radio buttons */
+
+input[type=checkbox] {
+	width: 0 !important;
+	height: 0 !important;
+	visibility: hidden;
+
+	+ label {
+		display: inline-block;
+		position: relative;
+
+		width: 4pt;
+		height: 4pt;
+		border: 0.5pt solid #808080;
+
+		cursor: pointer;
+	}
+
+	&:checked + label {
+		background: #808080;
+	}
+}
+
+input[type=radio] {
+	width: 0 !important;
+	height: 0 !important;
+	visibility: hidden;
+
+	+ label {
+		display: inline-block;
+		position: relative;
+	
+		width: 5pt;
+		height: 5pt;
+		border-radius: 50%;
+		border: 0.5pt solid #808080;
+	
+		cursor: pointer;
+	}
+	
+	&:checked + label {
+		background: #808080;
+	}
 }

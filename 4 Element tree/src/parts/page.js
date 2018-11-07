@@ -10,7 +10,7 @@ register('page', {
     id: null,
 }, args => {
     var id = elementID('page', args.id);
-    var cls = elementClass('page', null, args, [ 'balanced' ]);
+    var cls = elementClass('page', null, args, [ 'flex' ]);
 
     var pageNumber = args.numbered ? `<div class='page-number'>${nextPageNumber++}</div>` : '';
     

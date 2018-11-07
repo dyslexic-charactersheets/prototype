@@ -4,13 +4,107 @@
     "contents": [
         {
             "type": "page",
+            "id": "permission",
+            "numbered": false,
+            "contents": [
+                {
+                    "type": "layout",
+                    "flex": true,
+                    "layout": "1n",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "spacer"
+                                },
+                                {
+                                    "type": "h4",
+                                    "title": "Dyslexic Character Sheets"
+                                },
+                                {
+                                    "type": "h1",
+                                    "title": "Permission to Print"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "This document may be freely printed, copied, reproduced and distributed."
+                                },
+                                {
+                                    "type": "spacer"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "https://www.dyslexic-charactersheets.com"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "Copyright &copy; Marcus Downing"
+                                },
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "This document is released under the Artistic License 2.0"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "https://opensource.org/licenses/Artistic-2.0"
+                                },
+                                {
+                                    "type": "blockquote",
+                                    "contents": [
+                                        {
+                                            "type": "p",
+                                            "content": "5. You may Distribute Compiled forms of the Standard Version without the Source, provided that you include complete instructions on how to get the Source of the Standard Version. Such instructions must be valid at the time of your distribution. If these instructions, at any time while you are carrying out such distribution, become invalid, you must provide new instructions on demand or cease further distribution. If you provide valid instructions or cease distribution within thirty days after you become aware that the instructions are invalid, then you do not forfeit any of your rights under this license."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "This document uses properties covered by the Open Game License v1.0a"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "http://www.opengamingfoundation.org/ogl.html"
+                                },
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "This document uses trademarks and/or copyrights owned by Paizo Publishing, LLC, which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This document is not published, endorsed, or specifically approved by Paizo Publishing."
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "http://paizo.com/paizo/about/communityuse"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+        {
+            "type": "page",
             "id": "build",
             "numbered": false,
-            "layout": "2l",
             "contents": [
                 {
                     "type": "layout",
                     "layout": "2l",
+                    "flex": true,
                     "contents": [
                         {
                             "type": "h2",
@@ -309,13 +403,16 @@
                                                     "type": "field",
                                                     "id": "campaign",
                                                     "label": "Campaign",
-                                                    "width": "stretch"
+                                                    "width": "stretch",
+                                                    "align": "left"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "xp",
                                                     "label": "XP",
-                                                    "underlay": "XP"
+                                                    "width": "large",
+                                                    "underlay": "XP",
+                                                    "output": true
                                                 }
                                             ]
                                         }
@@ -404,12 +501,14 @@
                                                 {
                                                     "type": "field",
                                                     "id": "proficiency-untrained",
+                                                    "label": "Untrained",
                                                     "output": true,
                                                     "control": "proficiency"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "proficiency-trained",
+                                                    "label": "Trained",
                                                     "output": true,
                                                     "control": "proficiency",
                                                     "proficiency": "trained"
@@ -417,6 +516,7 @@
                                                 {
                                                     "type": "field",
                                                     "id": "proficiency-expert",
+                                                    "label": "Expert",
                                                     "output": true,
                                                     "control": "proficiency",
                                                     "proficiency": "expert"
@@ -424,6 +524,7 @@
                                                 {
                                                     "type": "field",
                                                     "id": "proficiency-master",
+                                                    "label": "Master",
                                                     "output": true,
                                                     "control": "proficiency",
                                                     "proficiency": "master"
@@ -431,6 +532,7 @@
                                                 {
                                                     "type": "field",
                                                     "id": "proficiency-legendary",
+                                                    "label": "Legendary",
                                                     "output": true,
                                                     "control": "proficiency",
                                                     "proficiency": "legendary"
@@ -468,7 +570,7 @@
                                                 { "type": "label", "label": "Ability", "align": "left" }, 
                                                 "Proficiency" 
                                             ],
-                                            "rows": 10,
+                                            "repeat": 10,
                                             "template": [
                                                 {
                                                     "type": "field",
@@ -548,6 +650,7 @@
                                         {
                                             "type": "field",
                                             "id": "perception-other",
+                                            "frame": "none",
                                             "width": "stretch"
                                         }
                                     ]
@@ -627,26 +730,24 @@
                                                     "type": "field",
                                                     "id": "character-ancestry",
                                                     "width": "stretch",
-                                                    "label": "Ancestry"
+                                                    "label": "Ancestry",
+                                                    "align": "left"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "character-heritage",
                                                     "width": "stretch",
-                                                    "label": "Heritage"
+                                                    "label": "Heritage",
+                                                    "align": "left"
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "row",
-                                            "content": [
-                                                {
-                                                    "type": "field",
-                                                    "id": "character-background",
-                                                    "width": "stretch",
-                                                    "label": "Background"
-                                                }
-                                            ]
+                                            "type": "field",
+                                            "id": "character-background",
+                                            "width": "stretch",
+                                            "label": "Background",
+                                            "align": "left"
                                         }
                                     ]
                                 },
@@ -666,6 +767,9 @@
                                                 },
                                                 {
                                                     "type": "field",
+                                                    "id": "level",
+                                                    "output": true,
+                                                    "bold": true,
                                                     "label": "Level"
                                                 }
                                             ]
@@ -674,16 +778,33 @@
                                             "type": "table",
                                             "legend": "Archetypes",
                                             "repeat": 2,
+                                            "field_frame": "none",
+                                            "columns": [
+                                                { "type": "label", "align": "left", "label": "Archetypes" },
+                                                "Feats"
+                                            ],
                                             "template": [
                                                 {
                                                     "type": "field",
-                                                    "width": "stretch"
+                                                    "width": "stretch",
+                                                    "align": "left"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "control": "progression",
                                                     "parts": [
-
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        }
                                                     ]
                                                 }
                                             ]
@@ -708,33 +829,33 @@
                                                 "Ability\nModifier",
                                                 "Proficiency",
                                                 "Feats\nMisc",
-                                                "Armor\nCheck\nPenalty"
+                                                "Armour\nCheck\nPenalty"
                                             ],
                                             "rows": [
                                                 { "skill": "Acrobatics", "ability": "DEX", "acp": true },
-                                                { "skill": "Arcana", "ability": "INT" },
+                                                { "skill": "Arcana", "ability": "INT", "acp": false },
                                                 { "skill": "Athletics", "ability": "STR", "acp": true },
-                                                { "skill": "Crafting", "ability": "INT" },
-                                                { "skill": "Deception", "ability": "CHA" },
-                                                { "skill": "Intimidation", "ability": "CHA" },
-                                                { "skill": "Medicine", "ability": "WIS" },
-                                                { "skill": "Nature", "ability": "WIS" },
-                                                { "skill": "Occultism", "ability": "INT" },
-                                                { "skill": "Performance", "ability": "CHA" },
-                                                { "skill": "Religion", "ability": "WIS" },
-                                                { "skill": "Society", "ability": "INT" },
+                                                { "skill": "Crafting", "ability": "INT", "acp": false },
+                                                { "skill": "Deception", "ability": "CHA", "acp": false },
+                                                { "skill": "Intimidation", "ability": "CHA", "acp": false },
+                                                { "skill": "Medicine", "ability": "WIS", "acp": false },
+                                                { "skill": "Nature", "ability": "WIS", "acp": false },
+                                                { "skill": "Occultism", "ability": "INT", "acp": false },
+                                                { "skill": "Performance", "ability": "CHA", "acp": false },
+                                                { "skill": "Religion", "ability": "WIS", "acp": false },
+                                                { "skill": "Society", "ability": "INT", "acp": false },
                                                 { "skill": "Stealth", "ability": "DEX", "acp": true },
-                                                { "skill": "Survival", "ability": "WIS" },
+                                                { "skill": "Survival", "ability": "WIS", "acp": false },
                                                 { "skill": "Thievery", "ability": "DEX", "acp": true },
-                                                { "skill": "Lore", "ability": "INT" },
-                                                { "skill": "", "ability": "INT" },
-                                                { "skill": "", "ability": "INT" },
-                                                { "skill": "", "ability": "" },
-                                                { "skill": "", "ability": "" },
-                                                { "skill": "", "ability": "" },
-                                                { "skill": "", "ability": "" },
-                                                { "skill": "", "ability": "" },
-                                                { "skill": "", "ability": "" }
+                                                { "skill": "Lore", "ability": "INT", "acp": false },
+                                                { "skill": "", "ability": "INT", "acp": false },
+                                                { "skill": "", "ability": "INT", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false }
                                             ],
                                             "template": [
                                                 {
@@ -774,8 +895,9 @@
                                                 },
                                                 {
                                                     "type": "field",
+                                                    "id": "#{skill}-acp",
                                                     "ref": "acp",
-                                                    "box": true,
+                                                    "output": true,
                                                     "exists": "#{acp}"
                                                 }
                                             ]

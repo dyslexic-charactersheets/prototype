@@ -1,3 +1,7 @@
+html {
+    font-size: 10pt;
+}
+
 @font-face {
     font-family: "Roboto Condensed";
     src: url('{{{dataurl "fonts/RobotoCondensed-Regular.woff"}}}') format(woff);
@@ -14,7 +18,7 @@
   
 body, p, input, output {
     font-family: "Roboto Condensed", 'Arial Narrow', Arial, sans-serif;
-    font-size: 7pt;
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, legend, article header .annotation {

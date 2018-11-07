@@ -1,0 +1,44 @@
+
+/* Horizontal divider */
+
+hr {
+	margin: 3pt 0;
+	border: 0 none;
+	border-top: 1pt solid #b0b0b0;
+
+	&.hr--swash {
+		margin: 10pt 0;
+		position: relative;
+		height: 5mm;
+		border-top: 0 none;
+		
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: 15mm 5mm;
+
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			top: 2.5mm;
+			margin-top: -0.5pt;
+			border-top: 1pt solid #9f9f9f;
+			height: 0;
+		}
+
+		&::before {
+			left: 0;
+			right: 50%;
+			margin-right: 7mm;
+		}
+		
+		&::after {
+			right: 0;
+			left: 50%;
+			margin-left: 7mm;
+		}
+	}
+
+	&.hr--narrow {
+		margin: 1pt 0;
+	}
+}

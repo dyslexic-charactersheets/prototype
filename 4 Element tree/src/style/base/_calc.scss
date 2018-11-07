@@ -5,12 +5,20 @@ fieldset.calc {
 	margin: 2pt 0;
 	border: 0 none;
 	padding: 0;
-	display: block;
+
+	// display: flex;
+	// flex-direction: row;
+	// flex-wrap: nowrap;
+	// justify-content: flex-start;
+	// align-items: flex-end;
+
 	white-space: nowrap;
+	$height: 1.6rem;
 
 	> * {
+		flex: 0 1 auto;
 		display: inline-block;
-		margin: 0 1pt;
+		margin: 0 2pt 0 0;
 	}
 
 	> *:first-child {
@@ -18,12 +26,13 @@ fieldset.calc {
 	}
 
 	> span {
+		margin: 0 2pt;
 		/*font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
 		font-weight: bold;*/
-		font-size: 12pt;
+		font-size: 1.3rem;
 		display: inline-block;
-		height: 18pt;
-		line-height: 18pt; 
+		height: $height;
+		line-height: $height;
 	}
 
 	&.calc--inline {

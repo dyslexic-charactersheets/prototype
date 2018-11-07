@@ -9,7 +9,7 @@
 		right: 0.5cm;
 		width: 1cm;
 		text-align: center;
-		font-size: 13pt;
+		font-size: 1.2rem;
 	}
 
 	.copyright-attribution {
@@ -25,8 +25,8 @@
 		}
 
 		&, p, span {
-			font-size: 5pt;
-			line-height: 7pt;
+			font-size: 0.45rem;
+			line-height: 0.7rem;
 		}
 
 		a {
@@ -42,7 +42,7 @@
 		}
 	}
 
-	&.page--balanced {
+	&.page--flex {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -57,9 +57,8 @@
 			justify-content: space-between;
 		}
 		
-		.layout {
-			flex: 1 1 100%;;
-			// flex-basis: 100%;
+		> .layout {
+			flex: 1 1 100%;
 
 			// &:last-child {
 			// 	flex: 0 1 auto;

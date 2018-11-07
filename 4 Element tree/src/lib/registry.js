@@ -49,8 +49,8 @@ global.renderItem = function(item) {
         args = _.defaults(args, reg.defaults);
         args = _.defaults(args, { exists: true });
 
-        if (!args.exists)
-            return;
+        if (!args.exists || args.exists === "false")
+            return '';
 
         contextStack.push(item);
         stack.push(item.type + ((args.id == null) ? '' : ":"+args.id) + ((args.title == null) ? '' : ':'+args.title));

@@ -1,7 +1,7 @@
 register('p', {
     prose: false,
     content: '',
-    align: '',
+    align: 'left',
 }, args => {
     var cls = elementClass('p', null, args, ['prose'], ['align']);
     

@@ -4,7 +4,8 @@
 label {
 	margin: 3pt 0 1pt 0;
 	display: block;
-	font-size: 7pt;
+	font-size: 0.65rem;
+	text-align: center;
 }
 
 .field {
@@ -40,14 +41,24 @@ label {
 		}
 	}
 
+	&.field--bold {
+		.field__inner {
+			border-bottom-width: 1pt;
+		}
+		
+		&.field--output .field__inner {
+			border-width: 1pt;
+		}
+	}
+
 	input, output {
 		height: 0.55cm;
 		line-height: 0.55cm;
 		text-align: center;
-		font-size: 11pt;
+		font-size: 1rem;
 		color: #202020;
 		width: 1cm;
-		max-width: 4em;
+		max-width: 4rem;
 		padding: 0 1pt;
 		margin: 0;
 	
@@ -95,7 +106,7 @@ label {
 		line-height: 0.55cm;
 
 		text-align: center;
-		font-size: 10pt;
+		font-size: 1rem;
 		font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
 		font-weight: 900;
 		color: #000000;
@@ -109,7 +120,7 @@ label {
 			height: 0.75cm;
 		}
 		input, output {
-			font-size: 12.5pt;
+			font-size: 1.25rem;
 			line-height: 0.75cm;
 		}
 	}
@@ -119,7 +130,7 @@ label {
 			height: 0.9cm;
 		}
 		input, output {
-			font-size: 14pt;
+			font-size: 1.5rem;
 			line-height: 0.9cm;
 		}
 	}
@@ -201,7 +212,7 @@ label {
 			height: 0.5cm;
 		}
 		input, output {
-			font-size: 10pt;
+			font-size: 0.8rem;
 			height: 0.5cm;
 			line-height: 0.5cm;
 		}
@@ -212,7 +223,7 @@ label {
 			height: 0.6cm;
 		}
 		input, output {
-			font-size: 13pt;
+			font-size: 1.25rem;
 			height: 0.6cm;
 			line-height: 0.6cm;
 		}
@@ -223,7 +234,7 @@ label {
 			height: 0.6cm;
 		}
 		input, output {
-			font-size: 15pt;
+			font-size: 1.5rem;
 			height: 0.6cm;
 			line-height: 0.6cm;
 		}
@@ -233,10 +244,10 @@ label {
 
 	&.field--mod {
 		label {
-			font-size: 6pt;
+			font-size: 0.5rem;
 		}
 	}
-
+/*
 	&.field--big {
 		input, output {
 			font-size: 14pt;
@@ -244,7 +255,7 @@ label {
 			line-height: 0.8cm;
 		}
 	}
-
+*/
 	&.field--horizontal {
 		padding-top: 0;
 		padding-left: 2cm;
@@ -254,7 +265,7 @@ label {
 			left: 0;
 			right: auto;
 			top: auto;
-			font-size: 8pt;
+			//font-size: 8pt;
 		}
 	}
 	
@@ -332,7 +343,7 @@ label {
 		background: #f8f8f8;
 	}
 
-	&.field--checkbox, &.field--radio {
+	&.field--control_checkbox, &.field--control_radio, &.field--control_progression {
 		// margin: 0 6pt 0 3pt;
 
 		.field__inner {
@@ -385,7 +396,7 @@ label {
 		padding-left: 0.2cm;
 
 		.field__inner {
-			padding-left: 0.1cm;
+			// padding-left: 0.05cm;
 			border-width: 0.75pt;
 			border-left: 0 none !important;
 			border-radius: 2.5pt;
@@ -478,21 +489,21 @@ label + .field {
 	position: absolute;
 	bottom: 0pt;
 	right: 4pt;
-	font-size: 9pt;
+	font-size: 0.75rem;
 }
 
 .field .start-overlay {
 	position: absolute;
 	bottom: 0;
 	left: 4pt;
-	font-size: 9pt;
+	font-size: 0.75rem;
 }
 
 .field .mid-overlay {
 	position: absolute;
 	bottom: 0pt;
 	right: 50%;
-	font-size: 9pt;
+	font-size: 0.75pt;
 }
 
 .field--icon .mid-overlay {
@@ -509,52 +520,6 @@ label + .field {
 
 .field--misc input, .field--misc output {
 	border-color: #909090 !important;
-}
-
-
-/* Checkboxes and Radio buttons */
-
-input[type=checkbox] {
-	width: 0 !important;
-	height: 0 !important;
-	visibility: hidden;
-
-	+ label {
-		display: inline-block;
-		position: relative;
-
-		width: 4pt;
-		height: 4pt;
-		border: 0.5pt solid #808080;
-
-		cursor: pointer;
-	}
-
-	&:checked + label {
-		background: #808080;
-	}
-}
-
-input[type=radio] {
-	width: 0 !important;
-	height: 0 !important;
-	visibility: hidden;
-
-	+ label {
-		display: inline-block;
-		position: relative;
-	
-		width: 5pt;
-		height: 5pt;
-		border-radius: 50%;
-		border: 0.5pt solid #808080;
-	
-		cursor: pointer;
-	}
-	
-	&:checked + label {
-		background: #808080;
-	}
 }
 
 
@@ -663,7 +628,7 @@ label.field--alignment__lawful,
 label.field--alignment__chaotic {
 	position: absolute;
 	text-transform: uppercase;
-	font-size: 5pt;
+	font-size: 0.4rem;
 	text-align: center;
 	z-index: 6;
 	color: black;
