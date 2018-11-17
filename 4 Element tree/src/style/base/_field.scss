@@ -1,12 +1,6 @@
 
 /* Fields */
 
-label {
-	margin: 3pt 0 1pt 0;
-	display: block;
-	font-size: 0.65rem;
-	text-align: center;
-}
 
 .field {
 	margin: 2pt 0;
@@ -31,6 +25,10 @@ label {
 		height: 0.55cm;
 		display: inline-block;
 		position: relative;
+	}
+
+	.field__overlay {
+		margin: 0 1pt 0 0;
 	}
 
 	&.field--output {
@@ -151,40 +149,40 @@ label {
 
 	/* Field modifiers */
 
-	&--width_tiny {
+	&--width_tiny, .field__item--width_tiny {
 		input, output {
 			width: 0.5cm;
 		}
 	}
 
-	&--width_small {
+	&--width_small, .field__item--width_small {
 		input, output {
 			width: 0.75cm;
 		}
 	}
 
-	&--width_large {
+	&--width_large, .field__item--width_large {
 		// flex: 2 0 auto;
 		input, output {
 			width: 2.5cm;
 		}
 	}
 	
-	&--width_huge {
+	&--width_huge, .field__item--width_huge {
 		// flex: 3 0 auto;
 		input, output {
 			width: 4cm;
 		}
 	}
 
-	&--width_gargantuan {
+	&--width_gargantuan, .field__item--width_gargantuan {
 		// flex: 4 0 auto;
 		input, output {
 			width: 6cm;
 		}
 	}
 
-	&--width_stretch {
+	&--width_stretch, .field__item--width_stretch {
 		display: block;
 		box-sizing: border-box;
 		flex: 10 0 auto;
@@ -343,7 +341,7 @@ label {
 		background: #f8f8f8;
 	}
 
-	&.field--control_checkbox, &.field--control_radio, &.field--control_progression {
+	&.field--control_checkbox, &.field--control_radio, &.field--control_progression, &.field--control_boost {
 		// margin: 0 6pt 0 3pt;
 
 		.field__inner {
@@ -397,7 +395,7 @@ label {
 
 		.field__inner {
 			// padding-left: 0.05cm;
-			border-width: 0.75pt;
+			border-width: 0.7pt;
 			border-left: 0 none !important;
 			border-radius: 2.5pt;
 		}
@@ -514,11 +512,20 @@ label + .field {
 	border-style: dashed;
 }
 
+// .field--misc {
+// 	label {
+// 		color: #a0a0a0;
+// 	}
+// 	input {
+// 		border-color: #909090 !important;
+// 	}
+// }
+
 .field--misc label, .label--misc {
 	color: #a0a0a0;
 }
 
-.field--misc input, .field--misc output {
+.field--misc .field__inner {
 	border-color: #909090 !important;
 }
 

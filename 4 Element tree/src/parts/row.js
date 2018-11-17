@@ -1,5 +1,7 @@
 register('row', {
     contents: [],
+    layout: "left"
 }, args => {
-    return `<div class='row'>${render(args.contents)}</div>`;
+    var cls = elementClass('row', null, args, [ 'unlabelled' ], [ 'layout' ]);
+    return `<div${cls}>${render(args.contents)}</div>`;
 });

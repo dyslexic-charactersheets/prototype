@@ -7,7 +7,10 @@ global.getFieldControlCallback = function(control, args) {
         case 'radio': return fieldControl_radio;
         case 'checkbox': return fieldControl_checkbox;
         case 'progression': return fieldControl_composite;
+        case 'boost': return fieldControl_boost;
         case 'alignment': return fieldControl_alignment;
+        case 'speed': return fieldControl_speed;
+        case 'icon': return fieldControl_icon;
         case 'proficiency': return fieldControl_proficiency;
         case 'composite': return fieldControl_composite;
         default: return fieldControl_input;
@@ -18,17 +21,40 @@ global.getFieldControlCallback = function(control, args) {
 
 function fieldControl_input(args) {
     var ident = fieldIdent(args.id);
-    return `<div class='field__item'><input${ident.ident}></div>`;
+    var cls = elementClass("field__item", null, args, [], [ "align", "width" ]);
+    var overlay = '';
+    if (_.has(args, "overlay") && args.overlay != "")
+        overlay = `<span class='field__overlay'>${args.overlay}</span>`;
+    return `<div${cls}><input${ident.ident}></div>${overlay}`;
 }
 
 function fieldControl_radio(args) {
     var ident = fieldRadioIdent(args.id, args.value);
-    return `<div class='field__item'><input type='radio'${ident.ident}><label${ident.for}></label></div>`;
+    var cls = elementClass("field__item", null, args, [], [ "align" ]);
+    return `<div${cls}><input type='radio'${ident.ident}><label${ident.for}></label></div>`;
 }
 
 function fieldControl_checkbox(args) {
     var ident = fieldIdent(args.id);
-    return `<div class='field__item'><input type='checkbox'${ident.ident}><label${ident.for}></label></div>`;
+    var cls = elementClass("field__item", null, args, [], [ "align" ]);
+    return `<div${cls}><input type='checkbox'${ident.ident}><label${ident.for}></label></div>`;
+}
+
+function fieldControl_boost(args) {
+    args = _.defaults(args, { "plus": true, "minus": true });
+
+    var plus = '';
+    if (args.plus) {
+        var plusident = fieldIdent(args.id+"--plus");
+        plus = `<div class='field__item field--control_boost__item--plus'><input type='checkbox' ${plusident.ident}><label ${plusident.for}></label></div>`
+    }
+    var minus = '';
+    if (args.minus) {
+        var minusident = fieldIdent(args.id+"--minus");
+        minus = `<div class='field__item field--control_boost__item--minus'><input type='checkbox' ${minusident.ident}><label ${minusident.for}></label></div>`
+    }
+
+    return `${minus}${plus}`;
 }
 
 function fieldControl_alignment(args) {
@@ -54,6 +80,10 @@ function fieldControl_alignment(args) {
     // TODO checkboxes
 }
 
+function fieldControl_icon(args) {
+    return `<i></i>`
+}
+
 function fieldControl_proficiency(args) {
     var ident = fieldIdent(args.id);
     var input = `<input class='field--proficiency__bonus' ${ident.ident}>`;
@@ -65,6 +95,29 @@ function fieldControl_proficiency(args) {
     <input type='checkbox' class='field--proficiency__legendary'>
     <div class='field__item'>${input}</div>
     <i></i>`;
+}
+
+function fieldControl_speed(args) {
+    // TODO metric option
+    var ftIdent = fieldIdent(args.id, "ft");
+    var sqIdent = fieldIdent(args.id, "sq");
+
+    args.parts = [
+        {
+            type: "field",
+            id: ftIdent.id,
+            align: "right",
+            overlay: "ft"
+        }, {
+            type: "field",
+            id: sqIdent.id,
+            align: "right",
+            width: "small",
+            overlay: "sq"
+        }
+    ];
+
+    return fieldControl_composite(args);
 }
 
 function fieldControl_composite(args) {

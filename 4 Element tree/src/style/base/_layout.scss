@@ -4,8 +4,12 @@
 	display: grid;
 	grid-gap: 0.25cm 0.5cm;
 
-    &.layout--narrow, &.layout-spells-list {
+    &--narrow {
         grid-gap: 0.1cm 0.3cm;
+    }
+
+    &--collapse {
+        grid-gap: 0.05cm 0.05cm;
     }
 
     &--layout_1n {

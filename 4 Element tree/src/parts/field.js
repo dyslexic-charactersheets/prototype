@@ -46,14 +46,14 @@ register('field', {
     width: "medium",
 }, args => {
     var id = elementID('field', args.id);
-    var cls = elementClass('field', null, args, [ "output", "icon", "bold" ], [ "frame", "control", "align", "size", "width", "icon", "proficiency" ]);
+    var cls = elementClass('field', null, args, [ "output", "icon", "bold", "ref", "misc" ], [ "frame", "control", "align", "size", "width", "icon", "proficiency" ]);
 
     // Callbacks
     var frameCallback = getFieldFrameCallback(args.frame, args);
     var controlCallback = getFieldControlCallback(args.control, args);
 
     var innerCallback = function(args) {
-        var i = _.has(args, "icon") ? '<i></i>' : '';
+        var i = (_.has(args, "icon") && args.control != "icon") ? '<i></i>' : '';
         return `<div class='field__inner'>${i}${controlCallback(args)}</div>`;
     };
 

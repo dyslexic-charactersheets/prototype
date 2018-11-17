@@ -13,6 +13,19 @@
     &--control_checkbox {
 
 	}
+
+	&--control_boost {
+		.field--control_boost__item--plus {
+			input[type=checkbox] + label {
+				top: -3pt;
+			}
+		}
+		.field--control_boost__item--minus {
+			input[type=checkbox] + label {
+				top: +3pt;
+			}
+		}
+	}
 	
 	&--control_progression {
 		.field__separator {

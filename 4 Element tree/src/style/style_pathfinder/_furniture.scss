@@ -1,3 +1,6 @@
+$color_bg: #808080;
+$color_bg_shadow: #707070;
+$color_legend: #606060;
 
 /* Column Borders */
 
@@ -11,6 +14,8 @@
     padding-bottom: 0 !important;
     border-bottom: 0 none !important;
 }
+
+/* Headings */
 
 h1, h2, h3, h4, h5 {
     text-transform: uppercase;
@@ -31,7 +36,16 @@ h3 {
     
     text-transform: uppercase;
     color: white;
-    text-shadow: 0 0 1px #707070;
+    text-shadow: 0 0 1px $color_bg_shadow;
+}
+
+h4 {
+    color: $color_legend;
+    font-size: 0.8rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+
+    margin: 0;
 }
 
 h6 {
@@ -45,6 +59,7 @@ h6 {
 .hr--swash { background-image: url('{{{dataurl "images/swash.svg"}}}'); }
 
 legend, h5 {
+    color: $color_legend;
     font-size: 0.7rem;
     text-transform: uppercase;
 }

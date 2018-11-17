@@ -10,6 +10,18 @@
     &--unlabelled {
         min-height: 0.6cm;
     }
+
+    &--layout_left {
+        justify-content: flex-start;
+    }
+
+    &--layout_right {
+        justify-content: flex-end;
+    }
+
+    &--layout_split {
+        justify-content: space-between;
+    }
     
     > * {
         // flex: 1 1 auto;

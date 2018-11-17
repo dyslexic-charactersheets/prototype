@@ -15,7 +15,7 @@ register('table', {
     // columns headings
     var cols = args.columns.map(th => {
         if (_.isNull(th)) return { type: 'label', label: '' };
-        if (_.isString(th)) return { type: 'label', label: th };
+        if (_.isString(th)) return { type: 'label', label: th, misc: (th == "Misc") };
         return th;
     })
     var tcols = cols.map(renderItem);
@@ -40,7 +40,21 @@ register('table', {
     } else if (_.isArray(args.template)) {
         // console.log("Table row callback: elements");
         rowCallback = function(row) {
-            return args.template.map((cell, i) => {
+            var templateCells = _.flatMap(args.template, cell => {
+                if (_.isPlainObject(cell) && _.has(cell, "type") && cell.type == "calc") {
+                    var fields = _.clone(cell.inputs);
+                    fields.unshift({
+                        "type": "span",
+                        "content": "=",
+                    });
+                    var output = _.defaults(cell.output, { "output": true });
+                    fields.unshift(output);
+                    return fields;
+                }
+                return [ cell ];
+            });
+
+            return templateCells.map((cell, i) => {
                 cell = interpolate(cell, row);
                 if (_.isNull(cell)) {
                     return '<td></td>';

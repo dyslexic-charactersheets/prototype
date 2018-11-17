@@ -14,6 +14,9 @@ var stack = [];
 var contextStack = [];
 
 global.renderItem = function(item) {
+    if (_.isNull(item)) {
+        return '';
+    }
     var type = item.type;
     if (_.has(registry, type)) {
         var reg = registry[type];
