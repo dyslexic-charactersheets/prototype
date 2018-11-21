@@ -187,7 +187,7 @@ global.adjustColour = function (c) {
 
         // reduce the saturation of mid-lightness colours so they don't look too odd
         const nd = 32;
-        const nmid = 64;
+        const nmid = 50;
         const nlow = nmid - nd;
         const nhigh = nmid + nd;
         const f = 1.3;

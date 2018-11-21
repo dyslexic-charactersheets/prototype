@@ -446,6 +446,9 @@
                             "type": "g",
                             "contents": [
                                 {
+                                    "type": "hr"
+                                },
+                                {
                                     "type": "h4",
                                     "title": "Health"
                                 },
@@ -508,6 +511,9 @@
                         {
                             "type": "g",
                             "contents": [
+                                {
+                                    "type": "hr"
+                                },
                                 {
                                     "type": "h4",
                                     "title": "Proficiencies"
@@ -587,12 +593,26 @@
                                     "content": "Work out what your character owns at the start of the game, including clothes and weapons."
                                 },
                                 {
-                                    "type": "h5",
-                                    "title": "Starting Money"
-                                },
-                                {
-                                    "type": "h6",
-                                    "title": "150 sp"
+                                    "type": "row",
+                                    "layout": "split",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "legend": "Starting Money",
+                                            "overlay": "sp",
+                                            "value": "150",
+                                            "output": true,
+                                            "size": "huge",
+                                            "width": "large"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "label": "Remaining Money",
+                                            "overlay": "sp",
+                                            "size": "huge",
+                                            "width": "large"
+                                        }
+                                    ]
                                 }
                             ]
                         },
