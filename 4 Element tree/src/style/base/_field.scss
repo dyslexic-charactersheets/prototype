@@ -18,6 +18,19 @@
 		min-height: 0.55cm;
 		position: relative;
 		border-bottom: 0.5pt solid #707070;
+
+		u {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			z-index: 1;
+			line-height: 0.55cm;
+
+			text-decoration: none;
+			opacity: 0.2;
+		}
 	}
 
 	.field__item {
@@ -25,6 +38,7 @@
 		height: 0.55cm;
 		display: inline-block;
 		position: relative;
+		z-index: 10;
 	}
 
 	.field__overlay {
@@ -317,7 +331,7 @@
 			right: 5pt;
 		}
 
-		&.field--box {
+		&.field--output {
 			.field__inner {
 				border: 2pt solid #b0b0b0 !important;
 				// height: 0.75cm;
@@ -409,7 +423,12 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: auto 0.4cm;
-			opacity: 0.6;
+			// opacity: 0.6;
+			z-index: 20;
+		}
+
+		u {
+			left: 2pt;
 		}
 
 		label {

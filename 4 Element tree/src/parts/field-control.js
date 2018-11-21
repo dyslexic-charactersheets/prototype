@@ -81,7 +81,8 @@ function fieldControl_alignment(args) {
 }
 
 function fieldControl_icon(args) {
-    return `<i></i>`
+    var cls = elementClass("field__item", null, args, [ "icon" ], [ ]);
+    return `<div${cls}><i class='icon icon-${args.icon}'></i></div>`;
 }
 
 function fieldControl_proficiency(args) {
@@ -125,6 +126,9 @@ function fieldControl_composite(args) {
 
     var outputParts = parts.map(part => {
         var partArgs = _.defaults({}, part);
+        if (_.has(part, "type") && part.type != "field") {
+            return renderItem(part);
+        }
         partArgs = _.defaults(partArgs, args);
         var callback = getFieldControlCallback(part.control, partArgs);
         return callback(partArgs);
@@ -132,9 +136,10 @@ function fieldControl_composite(args) {
 
     if (args.control == 'progression') {
         outputParts = _.flatMap(outputParts, part => [ part, '<label class="field__separator"></label>']);
+        outputParts.pop();
     }
 
-    console.log("Parts:", outputParts);
+    // console.log("Parts:", outputParts);
 
     return outputParts.join("");
 }

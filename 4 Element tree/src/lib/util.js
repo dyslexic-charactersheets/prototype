@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const color = require('color');
 
 
 global.esc = function(content, newlines = false) {
@@ -164,3 +165,53 @@ global.interpolate = function (template, values) {
 
     return template;
 };
+
+
+global.replaceColours = function (str) {
+    str = str.replace(/#[0-9a-zA-Z]{6}/g, c => adjustColour(c));
+    return str;
+}
+
+global.adjustColour = function (c) {
+    try {
+        var base = color(c);
+        var col = color(documentColour);
+
+        const lmin = 16;
+        var lightness = base.lightness();
+        if (lightness < lmin) lightness = lmin;
+        col = col.lightness(lightness);
+        
+        // console.log("Color:", col.hex());
+        // console.log(" - lightness:", lightness);
+
+        // reduce the saturation of mid-lightness colours so they don't look too odd
+        const nd = 32;
+        const nmid = 64;
+        const nlow = nmid - nd;
+        const nhigh = nmid + nd;
+        const f = 1.3;
+
+        var saturation = col.saturationl();
+        // console.log(" - saturation:", saturation);
+        // saturation = saturation + 32;
+        if (lightness > nlow && lightness <= nmid) {
+            diff = lightness - nlow;
+            saturation -= diff * f;
+        } else if (lightness > nmid && lightness < nhigh) {
+            diff = nhigh - lightness;
+            saturation -= diff * f;
+        }
+        if (saturation < 0) saturation = 0;
+        if (saturation > 100) saturation = 100;
+        // console.log(" - adjust:", saturation);
+        col = col.saturationl(saturation);
+
+        var result = col.hex();
+        // console.log(" - adjusted:", result);
+        return result;
+    } catch (x) {
+        // console.log(x);
+        return c;
+    }
+}

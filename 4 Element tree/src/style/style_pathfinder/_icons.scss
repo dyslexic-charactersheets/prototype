@@ -1,5 +1,10 @@
 /* Icons */
 
+.field__item--icon i {
+    width: 0.5cm;
+    height: 0.55cm;
+}
+
 i.icon-action {
     background-image: url('{{{dataurl "images/icon-action.svg"}}}');
 }
@@ -92,7 +97,7 @@ fieldset.field--control_alignment {
             font-size: 5pt;
             text-align: center;
             z-index: 6;
-            color: black;
+            color: #000000;
         }
         
         label.field--alignment__good {

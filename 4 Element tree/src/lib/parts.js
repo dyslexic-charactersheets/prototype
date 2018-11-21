@@ -7,6 +7,7 @@ require('../parts/article.js');
 require('../parts/g.js');
 require('../parts/row.js');
 require('../parts/spacer.js');
+require('../parts/repeat.js');
 
 // elements
 require('../parts/headings.js');
@@ -21,6 +22,7 @@ require('../parts/field-control.js');
 require('../parts/field.js');
 require('../parts/span.js');
 require('../parts/label.js');
+require('../parts/icon.js');
 
 // specific parts
 require('../parts/logo.js');

@@ -4,13 +4,13 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="28.35px" height="28.35px" viewBox="0 0 28.35 28.35" enable-background="new 0 0 28.35 28.35" xml:space="preserve">
 <g>
-	<path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M14.174,13.271l5.406-5.406
+	<path fill="#707071" stroke="#707071" stroke-width="0.5" stroke-miterlimit="10" d="M14.174,13.271l5.406-5.406
 		c-3.465-3.464-5.406-7.183-5.406-7.183c-0.003,0.005-1.942,3.719-5.406,7.183l0,0L14.174,13.271z"/>
-	<path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M15.062,14.159l5.405,5.406
+	<path fill="#707071" stroke="#707071" stroke-width="0.5" stroke-miterlimit="10" d="M15.062,14.159l5.405,5.406
 		c3.466-3.464,7.183-5.407,7.183-5.407c-0.003-0.001-3.717-1.941-7.183-5.405l0,0L15.062,14.159z"/>
-	<path stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M14.174,15.046l-5.406,5.406
+	<path fill="#707071" stroke="#707071" stroke-width="0.5" stroke-miterlimit="10" d="M14.174,15.046l-5.406,5.406
 		c3.464,3.463,5.406,7.182,5.406,7.182c0.001-0.005,1.941-3.719,5.406-7.182l0,0L14.174,15.046z"/>
-	<path fill="none" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" d="M13.287,14.158L7.881,8.75
+	<path fill="none" stroke="#707071" stroke-width="0.5" stroke-miterlimit="10" d="M13.287,14.158L7.881,8.75
 		C4.415,12.216,0.7,14.158,0.7,14.158c0.001,0.002,3.716,1.943,7.182,5.405l0,0L13.287,14.158z"/>
 </g>
 </svg>

@@ -1,0 +1,29 @@
+.repeat {
+    .repeat__iter {
+        // padding: 0.01pt 0; // to ensure internal margins don't leak
+        padding: 0.01pt 2pt;
+        border-bottom: 2pt solid #a0a0a0;
+
+        &:last-child {
+            border-bottom: 0 none;
+        }
+    }
+
+    &--zebra {
+        .repeat__iter:nth-child(2n) {
+            background: #f8f8f8;
+        }
+    }
+
+    &--collapse {
+        .repeat__iter {
+            border-bottom: 0 none; // !important;
+            padding: 0;
+
+			.field, .row {
+				margin-top: -0.37pt;
+				margin-bottom: -0.37pt;
+			}
+        }
+    }
+}

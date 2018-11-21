@@ -11,6 +11,7 @@
   "dependencies": {
     "ansi-regex": "^3.0.0",
     "buffer": "^5.2.1",
+    "color": "^3.1.0",
     "delayed-stream": "^1.0.0",
     "handlebars": "^4.0.12",
     "has-ansi": "^3.0.0",

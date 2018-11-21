@@ -35,9 +35,6 @@ stylesheetsUnits.forEach(unit => {
             resolve();
         });
     }));
-//     preloadData("style/"+unit+"/"+unit+".scss");
-//     preloadData("style/"+unit+"/embed.css.h");
-    // fs.
 });
 
 Handlebars.registerHelper('dataurl', function (filename) {
@@ -55,21 +52,9 @@ global.stylesheet = function () {
     stylesheetsUnits.forEach(unit => {
         css = stylesheets[unit];
         var template = Handlebars.compile(css);
-        cssParts.push(template({}));
-
-        // // console.log("[stylesheet] Looking for CSS for", unit);
-        // var filename = path.dirname(__dirname)+"/style/"+unit+"/"+unit+".scss";
-        // // console.log("[stylesheet] SASS filename:", filename);
-        // if (fs.existsSync(filename)) {
-        //     console.log("[stylesheet] Found SASS component for", unit);
-        //     var sassResult = sass.renderSync({
-        //         file: filename,
-        //         outputStyle: 'compressed',
-        //     });
-            
-        //     var template = Handlebars.compile(sassResult.css.toString());
-        //     cssParts.push(template({}));
-        // }
+        var rendered = template({});
+        rendered = replaceColours(rendered);
+        cssParts.push(rendered);
     });
 
     // put it all together

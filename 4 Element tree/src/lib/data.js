@@ -61,7 +61,10 @@ function processSVG(data) {
     // data = data.replace(/>[\s\r\n]*</g, '><');
     data = data.replace(/^(.|[\r\n])*?<svg/, '<svg');
     data = data.replace(/\s*$/, '');
+    
+    data = replaceColours(data);
     data = data.replace(/#/g, '%23');
+
     return data;
 }
 

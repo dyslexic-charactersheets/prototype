@@ -115,10 +115,23 @@
                             "untitled": true,
                             "contents": [
                                 {
-                                    "type": "field",
-                                    "legend": "Character Concept",
-                                    "width": "stretch",
-                                    "lines": 2
+                                    "type": "layout",
+                                    "layout": "alignment",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "build-concept",
+                                            "legend": "Character Concept",
+                                            "width": "stretch",
+                                            "lines": 2
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-alignment",
+                                            "frame": "none",
+                                            "control": "alignment"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -142,11 +155,13 @@
                                     "contents": [
                                         {
                                             "type": "field",
+                                            "id": "build-ancestry",
                                             "width": "stretch",
                                             "label": "Ancestry"
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-ancestry-heritage",
                                             "width": "stretch",
                                             "label": "Heritage"
                                         },
@@ -155,18 +170,21 @@
                                             "contents": [
                                                 {
                                                     "type": "field",
+                                                    "id": "build-ancestry-hp",
                                                     "label": "Hit Points",
                                                     "icon": "hp",
                                                     "overlay": "hp"
                                                 },
                                                 {
                                                     "type": "field",
+                                                    "id": "build-ancestry-size",
                                                     "label": "Size",
                                                     "icon": "size",
                                                     "width": "large"
                                                 },
                                                 {
                                                     "type": "field",
+                                                    "id": "build-ancestry-speed",
                                                     "label": "Speed",
                                                     "control": "speed"
                                                 }
@@ -174,6 +192,7 @@
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-heritage-feat",
                                             "width": "stretch",
                                             "label": "Feat"
                                         }
@@ -201,11 +220,13 @@
                                     "contents": [
                                         {
                                             "type": "field",
+                                            "id": "build-background",
                                             "label": "Background",
                                             "width": "stretch"
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-background-skill-feat",
                                             "label": "Skill feat",
                                             "width": "stretch"
                                         }
@@ -237,11 +258,13 @@
                                     "contents": [
                                         {
                                             "type": "field",
+                                            "id": "build-class",
                                             "label": "Class",
                                             "width": "stretch"
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-class-specialisation",
                                             "label": "Specialisation",
                                             "width": "stretch"
                                         }
@@ -253,16 +276,19 @@
                                     "contents": [
                                         {
                                             "type": "field",
+                                            "id": "build-class-hp",
                                             "label": "Hit Points",
                                             "icon": "hp",
                                             "overlay": "hp"
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-class-key-ability",
                                             "label": "Key Ability"
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-class-prof-perception",
                                             "frame": "right",
                                             "control": "icon",
                                             "icon": "proficiency",
@@ -270,6 +296,7 @@
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-class-prof-fortitude",
                                             "frame": "right",
                                             "control": "icon",
                                             "icon": "proficiency",
@@ -277,6 +304,7 @@
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-class-prof-reflex",
                                             "frame": "right",
                                             "control": "icon",
                                             "icon": "proficiency",
@@ -284,6 +312,7 @@
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-class-prof-will",
                                             "frame": "right",
                                             "control": "icon",
                                             "icon": "proficiency",
@@ -389,18 +418,20 @@
                                             "content": "&rArr;"
                                         },
                                         {
-                                            "type": "field"
+                                            "type": "field",
+                                            "id": "build-#{short}-score"
                                         },
                                         {
                                             "type": "field",
+                                            "id": "build-#{short}-modifier",
                                             "icon": "modifier",
                                             "output": true,
                                             "underlay": "#{short}"
                                         },
                                         {
                                             "type": "field",
-                                            "control": "radio",
                                             "id": "build__key-ability",
+                                            "control": "radio",
                                             "value": "#{short}"
                                         }
                                     ]
@@ -431,6 +462,7 @@
                                     "type": "calc",
                                     "output": {
                                         "type": "field",
+                                        "id": "build-hp",
                                         "legend": "Hit Points",
                                         "icon": "hp",
                                         "overlay": "hp"
@@ -438,6 +470,7 @@
                                     "inputs": [
                                         {
                                             "type": "field",
+                                            "ref": "build-ancestry-hp",
                                             "label": "Ancestry"
                                         },
                                         {
@@ -446,6 +479,7 @@
                                         },
                                         {
                                             "type": "field",
+                                            "ref": "build-class-hp",
                                             "label": "Class"
                                         },
                                         {
@@ -454,7 +488,7 @@
                                         },
                                         {
                                             "type": "field",
-                                            "ref": true,
+                                            "ref": "CON",
                                             "underlay": "CON"
                                         },
                                         {
@@ -463,6 +497,7 @@
                                         },
                                         {
                                             "type": "field",
+                                            "ref": "level",
                                             "label": "Level",
                                             "underlay": "1"
                                         }
@@ -627,12 +662,7 @@
                             "type": "g",
                             "contents": [
                                 {
-                                    "type": "field",
-                                    "id": "cover-name",
-                                    "size": "huge",
-                                    "legend": "Name",
-                                    "width": "stretch",
-                                    "align": "left"
+                                    "type": "logo"
                                 },
                                 {
                                     "type": "layout",
@@ -641,54 +671,97 @@
                                         {
                                             "type": "g",
                                             "contents": [
-                                                    {
-                                                        "type": "field",
-                                                        "id": "cover-ancestry",
-                                                        "label": "Ancestry",
-                                                        "width": "stretch",
-                                                        "align": "left"
-                                                    },
                                                 {
                                                     "type": "field",
-                                                    "id": "cover-background",
-                                                    "label": "Background",
+                                                    "id": "cover-name",
+                                                    "size": "huge",
+                                                    "legend": "Name",
                                                     "width": "stretch",
                                                     "align": "left"
+                                                },
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "gender",
+                                                            "icon": "gender",
+                                                            "width": "huge",
+                                                            "label": "Gender"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "age",
+                                                            "width": "huge",
+                                                            "label": "Age"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "size",
+                                                            "width": "huge",
+                                                            "icon": "size",
+                                                            "label": "Size"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         },
                                         {
-                                            "type": "g",
-                                            "contents": [
-                                                {
-                                                    "type": "field",
-                                                    "id": "alignment",
-                                                    "frame": "none",
-                                                    "control": "alignment"
-                                                }
-                                            ]
+                                            "type": "field",
+                                            "id": "alignment",
+                                            "frame": "none",
+                                            "control": "alignment"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Ancestry",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "cover-ancestry",
+                                            "label": "Ancestry",
+                                            "size": "large",
+                                            "width": "stretch",
+                                            "align": "left"
                                         },
                                         {
-                                            "type": "row",
+                                            "type": "h4",
+                                            "title": "Ancestry Feats"
+                                        },
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 5,
+                                            "zebra": true,
+                                            "rows": [
+                                                { "level": 1 },
+                                                { "level": 5 },
+                                                { "level": 9 },
+                                                { "level": 13 },
+                                                { "level": 17 }
+                                            ],
                                             "contents": [
                                                 {
-                                                    "type": "field",
-                                                    "id": "gender",
-                                                    "icon": "gender",
-                                                    "label": "Gender"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "age",
-                                                    "label": "Age"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "size",
-                                                    "icon": "size",
-                                                    "label": "Size"
+                                                    "type": "article",
+                                                    "article": "feat",
+                                                    "level": "#{level}"
                                                 }
-                                            ]   
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Background",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "cover-background",
+                                            "label": "Background",
+                                            "size": "large",
+                                            "width": "stretch",
+                                            "align": "left"
                                         }
                                     ]
                                 }
@@ -698,22 +771,70 @@
                             "type": "g",
                             "contents": [
                                 {
-                                    "type": "row",
+                                    "type": "section",
+                                    "title": "Class",
                                     "contents": [
                                         {
-                                            "type": "field",
-                                            "id": "cover-class",
-                                            "label": "Class",
-                                            "width": "stretch",
-                                            "size": "large",
-                                            "align": "left"
+                                            "type": "row",
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-class",
+                                                    "label": "Class",
+                                                    "width": "stretch",
+                                                    "size": "large",
+                                                    "align": "left"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "class-level",
+                                                    "output": true,
+                                                    "size": "large",
+                                                    "label": "Level"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "field",
-                                            "id": "class-level",
-                                            "output": true,
-                                            "size": "large",
-                                            "label": "Level"
+                                            "id": "cover-specialisation",
+                                            "label": "Specialisation",
+                                            "width": "stretch",
+                                            "align": "left"
+                                        },
+                                        {
+                                            "type": "table",
+                                            "legend": "Archetypes",
+                                            "repeat": 2,
+                                            "field_frame": "none",
+                                            "columns": [
+                                                { "type": "label", "align": "left", "label": "Archetypes" },
+                                                "Feats"
+                                            ],
+                                            "template": [
+                                                {
+                                                    "type": "field",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "control": "progression",
+                                                    "parts": [
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -794,8 +915,8 @@
                                         {
                                             "type": "table",
                                             "width": "stretch",
-                                            "columns": [ 
-                                                { "align": "left" }, "Ability\nScore", 
+                                            "columns": [
+                                                { "align": "left" }, "Ability\nScore",
                                                 { "type": "label", "label": "Ability\nModifier", "icon": true },
                                                 "Key\nAbility", "Temporary\nAdjustment"
                                             ],
@@ -934,9 +1055,9 @@
                                         },
                                         {
                                             "type": "table",
-                                            "columns": [ 
-                                                { "type": "label", "label": "Ability", "align": "left" }, 
-                                                "Proficiency" 
+                                            "columns": [
+                                                { "type": "label", "label": "Ability", "align": "left" },
+                                                "Proficiency"
                                             ],
                                             "repeat": 10,
                                             "template": [
@@ -972,6 +1093,7 @@
                                                 {
                                                     "type": "field",
                                                     "ref": "WIS",
+                                                    "underlay": "WIS",
                                                     "label": "WIS"
                                                 },
                                                 {
@@ -1059,145 +1181,6 @@
                             "contents": [
                                 {
                                     "type": "section",
-                                    "id": "character",
-                                    "title": "Character",
-                                    "contents": [
-                                        {
-                                            "type": "layout",
-                                            "layout": "alignment",
-                                            "contents": [
-                                                {
-                                                    "type": "g",
-                                                    "contents": [
-                                                        {
-                                                            "type": "field",
-                                                            "id": "character-name",
-                                                            "legend": "Name",
-                                                            "width": "stretch"
-                                                        },
-                                                        {
-                                                            "type": "row",
-                                                            "contents": [
-                                                                {
-                                                                    "type": "field",
-                                                                    "id": "character-gender",
-                                                                    "label": "Gender",
-                                                                    "icon": "gender",
-                                                                    "width": "large"
-                                                                },
-                                                                {
-                                                                    "type": "field",
-                                                                    "id": "character-age",
-                                                                    "label": "Age"
-                                                                },
-                                                                {
-                                                                    "type": "field",
-                                                                    "id": "character-size",
-                                                                    "icon": "size",
-                                                                    "label": "Size"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "character-alignment",
-                                                    "frame": "none",
-                                                    "control": "alignment"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "row",
-                                            "contents": [
-                                                {
-                                                    "type": "field",
-                                                    "id": "character-ancestry",
-                                                    "width": "stretch",
-                                                    "label": "Ancestry",
-                                                    "align": "left"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "character-heritage",
-                                                    "width": "stretch",
-                                                    "label": "Heritage",
-                                                    "align": "left"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "field",
-                                            "id": "character-background",
-                                            "width": "stretch",
-                                            "label": "Background",
-                                            "align": "left"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "section",
-                                    "id": "class",
-                                    "title": "Class",
-                                    "contents": [
-                                        {
-                                            "type": "row",
-                                            "contents": [
-                                                {
-                                                    "type": "field",
-                                                    "id": "character-class",
-                                                    "width": "stretch",
-                                                    "legend": "Class"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "level",
-                                                    "output": true,
-                                                    "bold": true,
-                                                    "label": "Level"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "table",
-                                            "legend": "Archetypes",
-                                            "repeat": 2,
-                                            "field_frame": "none",
-                                            "columns": [
-                                                { "type": "label", "align": "left", "label": "Archetypes" },
-                                                "Feats"
-                                            ],
-                                            "template": [
-                                                {
-                                                    "type": "field",
-                                                    "width": "stretch",
-                                                    "align": "left"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "control": "progression",
-                                                    "parts": [
-                                                        {
-                                                            "type": "field",
-                                                            "control": "checkbox"
-                                                        },
-                                                        {
-                                                            "type": "field",
-                                                            "control": "checkbox"
-                                                        },
-                                                        {
-                                                            "type": "field",
-                                                            "control": "checkbox"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "section",
                                     "id": "skills",
                                     "title": "Skills",
                                     "contents": [
@@ -1237,9 +1220,6 @@
                                                 { "skill": "", "ability": "INT", "acp": false },
                                                 { "skill": "", "ability": "", "acp": false },
                                                 { "skill": "", "ability": "", "acp": false },
-                                                { "skill": "", "ability": "", "acp": false },
-                                                { "skill": "", "ability": "", "acp": false },
-                                                { "skill": "", "ability": "", "acp": false },
                                                 { "skill": "", "ability": "", "acp": false }
                                             ],
                                             "template": [
@@ -1266,7 +1246,9 @@
                                                 {
                                                     "type": "field",
                                                     "ref": "#{ability}",
-                                                    "underlay": "#{ability}"
+                                                    "underlay": "#{ability}",
+                                                    "frame": "h-label",
+                                                    "label": "#{ability}"
                                                 },
                                                 {
                                                     "type": "field",
@@ -1284,6 +1266,59 @@
                                                     "ref": "acp",
                                                     "output": true,
                                                     "exists": "#{acp}"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Skill Feats",
+                                    "contents": [
+                                        {
+                                            "type": "layout",
+                                            "layout": "2e",
+                                            "contents": [
+
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 6,
+                                                    "zebra": true,
+                                                    "rows": [
+                                                        { "level": 1 },
+                                                        { "level": 4 },
+                                                        { "level": 8 },
+                                                        { "level": 12 },
+                                                        { "level": 16 },
+                                                        { "level": 20 }
+                                                    ],
+                                                    "contents": [
+                                                        {
+                                                            "type": "article",
+                                                            "article": "feat",
+                                                            "level": "#{level}"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 6,
+                                                    "zebra": true,
+                                                    "rows": [
+                                                        { "level": 2 },
+                                                        { "level": 6 },
+                                                        { "level": 10 },
+                                                        { "level": 14 },
+                                                        { "level": 18 },
+                                                        {}
+                                                    ],
+                                                    "contents": [
+                                                        {
+                                                            "type": "article",
+                                                            "article": "feat",
+                                                            "level": "#{level}"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -1367,9 +1402,10 @@
                                                     "type": "field",
                                                     "id": "speed",
                                                     "legend": "Speed",
-                                                    "control": "speed"
+                                                    "control": "speed",
+                                                    "output": true
                                                 },
-                                                {},
+                                                null,
                                                 {
                                                     "type": "field",
                                                     "id": "speed-armour",
@@ -1409,23 +1445,26 @@
                                                 "Ability\nModifier", "Proficiency", "Item", "Misc"
                                             ],
                                             "rows": [
-                                                { "save": "fortitude", "legend": "Fortitude", "ability": "CON" },
-                                                { "save": "reflex", "legend": "Reflex", "ability": "DEX" },
-                                                { "save": "will", "legend": "Will", "ability": "WIS" }
+                                                { "save": "fortitude", "legend": "Fortitude", "short": "FORT", "ability": "CON" },
+                                                { "save": "reflex", "legend": "Reflex", "short": "REF", "ability": "DEX" },
+                                                { "save": "will", "legend": "Will", "short": "WILL", "ability": "WIS" }
                                             ],
                                             "template": [
                                                 {
                                                     "type": "calc",
                                                     "output": {
                                                         "type": "field",
+                                                        "id": "#{save}",
                                                         "legend": "#{legend}",
+                                                        "icon": "bonus",
                                                         "width": "large",
-                                                        "id": "#{save}"
+                                                        "underlay": "#{short}"
                                                     },
                                                     "inputs": [
                                                         {
                                                             "type": "field",
                                                             "label": "#{ability}",
+                                                            "underlay": "#{ability}",
                                                             "ref": "#{ability}"
                                                         },
                                                         {
@@ -1455,7 +1494,91 @@
                             "contents": [
                                 {
                                     "type": "section",
-                                    "title": "Weapons"
+                                    "title": "Attacks",
+                                    "contents": [
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 4,
+                                            "zebra": true,
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "control": "proficiency",
+                                                            "label": "Item Bonus"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "calc",
+                                                            "output": {
+                                                                "type": "field",
+                                                                "label": "Attack Bonus",
+                                                                "width": "large",
+                                                                "icon": "bonus"
+                                                            },
+                                                            "inputs": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "ref": true,
+                                                                    "label": "Ability"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "control": "proficiency",
+                                                                    "label": "Proficiency"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "ref": true,
+                                                                    "label": "Item"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "output": true,
+                                                            "label": "Damage",
+                                                            "width": "small",
+                                                            "icon": "damage",
+                                                            "control": "composite",
+                                                            "parts": [
+                                                                {
+                                                                    "subid": "ndice",
+                                                                    "overlay": "d"
+                                                                },
+                                                                {
+                                                                    "subid": "die",
+                                                                    "overlay": "+"
+                                                                },
+                                                                {
+                                                                    "subid": "extra"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "label": "Type"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "label": "Critical Effect",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -1529,24 +1652,30 @@
                                                     "label": "Dying",
                                                     "parts": [
                                                         {
-                                                            "type": "field",
                                                             "control": "checkbox"
                                                         },
                                                         {
-                                                            "type": "field",
                                                             "control": "checkbox"
                                                         },
                                                         {
-                                                            "type": "field",
                                                             "control": "checkbox"
                                                         },
                                                         {
                                                             "type": "icon",
+                                                            "size": "small",
                                                             "icon": "evil"
                                                         }
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "field",
+                                            "label": "Current Hit Points",
+                                            "output": true,
+                                            "temp": true,
+                                            "overlay": "hp",
+                                            "width": "stretch"
                                         }
                                     ]
                                 },
@@ -1557,7 +1686,7 @@
                                         {
                                             "type": "table",
                                             "columns": [
-                                                null, null, "DEX", "Proficiency", "Armour\nBonus", "Shield\nBonus", "Misc"
+                                                null, null, null, "DEX", "Proficiency", "Armour\nBonus", "Shield\nBonus", "Misc"
                                             ],
                                             "rows": [
                                                 { "id": "ac", "legend": "Armour Class", "underlay": "AC" },
@@ -1615,9 +1744,514 @@
                                     "type": "section",
                                     "title": "Actions",
                                     "contents": [
-                                        
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 5,
+                                            "zebra": true,
+                                            "contents": [
+                                                {
+                                                    "type": "article"
+                                                }
+                                            ]
+                                        }
                                     ]
                                 }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+        {
+            "type": "page",
+            "id": "inventory",
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "flex": true,
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Inventory",
+                                    "contents": [
+                                        {
+                                            "type": "repeat", 
+                                            "repeat": 20,
+                                            "zebra": true,
+                                            "collapse": true,
+                                            "field_frame": "none",
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "inventory-#{i}",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "inventory-#{i}-value"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "inventory-#{i}-weight"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 4,
+                                            "zebra": true,
+                                            "collapse": true,
+                                            "field_frame": "none",
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "expendable-#{i}",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "expendable-#{i}-count",
+                                                            "control": "checkgrid",
+                                                            "max": 30
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "layout",
+                                            "layout": "2l",
+                                            "contents": [
+                                                {
+                                                    "type": "g",
+                                                    "contents": [
+
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "g",
+                                                    "field_frame": "left",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "weight-inventory",
+                                                            "label": "Carried items",
+                                                            "overlay": "lb"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "weight-weapons",
+                                                            "label": "Weapons, Ammo",
+                                                            "overlay": "lb"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "weight-armour",
+                                                            "label": "Armour, Shield",
+                                                            "overlay": "lb"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "weight-worn",
+                                                            "label": "Word items",
+                                                            "overlay": "lb"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "weight-magic",
+                                                            "label": "Scrolls, Potions, Wands",
+                                                            "overlay": "lb"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "weight-total",
+                                                            "output": true,
+                                                            "legend": "Total weight",
+                                                            "overlay": "lb"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Money",
+                                    "contents": [
+
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Wands",
+                                    "contents": [
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 3,
+                                            "zebra": true,
+                                            "contents": [
+                                                {
+                                                    "type": "article",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "wand-#{i}",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "row",
+                                                            "layout": "right",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "wand-#{i}-ncharges",
+                                                                    "frame": "mini",
+                                                                    "width": "small",
+                                                                    "underlay": "#",
+                                                                    "label": "Charges"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "wand-#{i}-charges",
+                                                                    "frame": "none",
+                                                                    "control": "checkgrid",
+                                                                    "max": 50
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "2e",
+                                    "contents": [
+                                        {
+                                            "type": "g",
+                                            "contents": [
+                                                {
+                                                    "type": "section",
+                                                    "title": "Armour",
+                                                    "contents": [
+                                                        {
+                                                            "type": "article",
+                                                            "header": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour",
+                                                                    "legend": "Armour",
+                                                                    "size": "large",
+                                                                    "width": "stretch"
+                                                                }
+                                                            ],
+                                                            "contents": [
+                                                                {
+                                                                    "type": "row",
+                                                                    "layout": "split",
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-ac",
+                                                                            "label": "AC Bonus",
+                                                                            "icon": "ac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-ac",
+                                                                            "label": "TAC Bonus",
+                                                                            "icon": "tac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-bulk",
+                                                                            "label": "Bulk"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "row",
+                                                                    "layout": "split",
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-max-dex",
+                                                                            "label": "Max DEX\nto AC"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-speed-penalty",
+                                                                            "label": "Speed\nPenalty",
+                                                                            "control": "speed"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-acp",
+                                                                            "label": "Armour Check\nPenalty"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "section",
+                                                    "title": "Shield",
+                                                    "contents": [
+                                                        {
+                                                            "type": "article",
+                                                            "header": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "shield",
+                                                                    "legend": "Shield",
+                                                                    "size": "large",
+                                                                    "width": "stretch"
+                                                                }
+                                                            ],
+                                                            "contents": [
+                                                                {
+                                                                    "type": "row",
+                                                                    "layout": "split",
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "shield-ac",
+                                                                            "label": "AC Bonus",
+                                                                            "icon": "ac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "shield-ac",
+                                                                            "label": "TAC Bonus",
+                                                                            "icon": "tac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "shield-bulk",
+                                                                            "label": "Bulk"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "row",
+                                                                    "contents": [
+                                                                        
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "hr"
+                                                },
+                                                {
+                                                    "type": "portrait"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "g",
+                                            "contents": [
+                                                {
+                                                    "type": "section",
+                                                    "title": "Equipment",
+                                                    "contents": [
+                                                        {
+                                                            "type": "repeat",
+                                                            "repeat": 8,
+                                                            "zebra": true,
+                                                            "contents": [
+                                                                {
+                                                                    "type": "article"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Resonance",
+                                    "contents": [
+                                        {
+                                            "type": "calc",
+                                            "output": {
+                                                "type": "field",
+                                                "id": "resonance",
+                                                "legend": "Resonance",
+                                                "overlay": "rp"
+                                            },
+                                            "inputs": [
+                                                {
+                                                    "type": "field",
+                                                    "ref": "CHA",
+                                                    "underlay": "CHA",
+                                                    "label": "CHA"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "ref": "Level"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "resonance-misc",
+                                                    "label": "Misc",
+                                                    "misc": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "layout",
+                                    "layout": "2e",
+                                    "contents": [
+                                        {
+                                            "type": "section",
+                                            "title": "Wands",
+                                            "contents": [
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 12,
+                                                    "zebra": true,
+                                                    "collapse": true,
+                                                    "field_frame": "none",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "wand-#{i}",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "section",
+                                            "title": "Potions",
+                                            "contents": [
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 4,
+                                                    "zebra": true,
+                                                    "collapse": true,
+                                                    "field_frame": "none",
+                                                    "contents": [
+                                                        {
+                                                            "type": "row",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "potion-exp-#{i}",
+                                                                    "width": "stretch"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "potion-exp-#{i}-count",
+                                                                    "control": "checkgrid",
+                                                                    "max": 8,
+                                                                    "depth": 2
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 8,
+                                                    "zebra": true,
+                                                    "collapse": true,
+                                                    "field_frame": "none",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "potion-#{i}",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "type": "page",
+            "id": "barbarian",
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "h2",
+                                    "title": "Barbarian"
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Totem",
+                                    "primary": true,
+                                    "contents": [
+
+                                    ]
+                                }
+
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
                             ]
                         }
                     ]
