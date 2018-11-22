@@ -75,6 +75,12 @@
         grid-template-areas: "a b c d e";
     }
 
+    &--layout_level {
+        grid-template-columns: 0.7cm 1fr;
+        grid-template-areas: "a b";
+        grid-gap: 0.1cm;
+    }
+
     // &.layout_inventory {
     //     grid-template-columns: 5fr 4fr 4fr;
     //     grid-template-rows: auto auto auto;

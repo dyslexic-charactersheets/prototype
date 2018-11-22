@@ -186,7 +186,8 @@ global.adjustColour = function (c) {
         // console.log(" - lightness:", lightness);
 
         // reduce the saturation of mid-lightness colours so they don't look too odd
-        const nd = 32;
+        // enhance the saturation of dark colours so they don't fade away
+        const nd = 24;
         const nmid = 50;
         const nlow = nmid - nd;
         const nhigh = nmid + nd;
@@ -194,7 +195,7 @@ global.adjustColour = function (c) {
 
         var saturation = col.saturationl();
         // console.log(" - saturation:", saturation);
-        // saturation = saturation + 32;
+        saturation = saturation + 10;
         if (lightness > nlow && lightness <= nmid) {
             diff = lightness - nlow;
             saturation -= diff * f;
