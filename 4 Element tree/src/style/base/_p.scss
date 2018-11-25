@@ -1,4 +1,14 @@
-main p {
-    font-size: 1rem;
+p {
+    font-size: 0.9rem;
     margin: 4pt 0;
+
+    &.p--size_large {
+        font-size: 1.25rem;
+        margin: 6pt 0;
+    }
+    
+    &.p--size_huge {
+        font-size: 1.5rem;
+        margin: 8pt 0;
+    }
 }

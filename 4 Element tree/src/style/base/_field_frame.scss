@@ -17,18 +17,21 @@
     }
 
     &--frame_h-label {
-        padding: 0 0 0 2pt;
+        padding: 0 0 0 3pt;
 
         .field__inner {
-            padding-left: 4pt;
+            padding-left: 5pt;
         }
 
         label {
-            transform: rotate(-90deg);
-            left: 2pt;
+            left: -2pt;
             top: 0;
             bottom: 0;
             right: auto;
+
+            font-size: 0.55rem;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
         }
     }
 }

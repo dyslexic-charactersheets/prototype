@@ -27,9 +27,9 @@ h2 {
 }
 
 h3 {
-    font-size: 0.9rem;
-    height: 1.3rem;
-    line-height: 1.3rem;
+    font-size: 0.8rem;
+    height: 1.2rem; // be taller than the graphic to avoid distortion
+    line-height: 1.1rem;
     
     margin: 0;
     text-align: center;
@@ -60,8 +60,6 @@ h6 {
     margin: 0;
     line-height: 1.3rem;
 }
-
-.hr--swash { background-image: url('{{{dataurl "images/swash.svg"}}}'); }
 
 legend, h5 {
     color: $color_legend;

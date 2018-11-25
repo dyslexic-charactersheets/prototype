@@ -11,4 +11,19 @@
         width: 0.5cm;
         min-height: 0.5cm;
     }
+
+    &--size_large {
+        width: 1cm;
+        min-height: 1cm;
+    }
+
+    &--size_huge {
+        width: 1.5cm;
+        min-height: 1.5cm;
+    }
+
+    &--size_gargantuan {
+        width: 2cm;
+        min-height: 2cm;
+    }
 }

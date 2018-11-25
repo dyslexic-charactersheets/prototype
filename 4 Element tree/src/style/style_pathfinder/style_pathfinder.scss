@@ -2,3 +2,14 @@
 
 @import 'furniture';
 @import 'icons';
+
+// .page {
+//     background-image: url('{{{dataurl "images/parchment.jpg"}}}');
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: cover;
+// }
+
+.portrait {
+    background-image: url('{{{dataurl "images/Amari.jpg"}}}');
+}

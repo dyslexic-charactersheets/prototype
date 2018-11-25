@@ -6,6 +6,7 @@ const _ = require('lodash');
 
 // select stylesheet parts
 var stylesheetsUnits = [
+    "frame",
     "fonts_pathfinder",
     "base",
     "size_normal",
@@ -53,7 +54,8 @@ global.stylesheet = function () {
         css = stylesheets[unit];
         var template = Handlebars.compile(css);
         var rendered = template({});
-        rendered = replaceColours(rendered);
+        if (unit != "frame")
+            rendered = replaceColours(rendered);
         cssParts.push(rendered);
     });
 

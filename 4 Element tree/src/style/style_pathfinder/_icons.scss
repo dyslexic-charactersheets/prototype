@@ -5,25 +5,25 @@
     height: 0.55cm;
 }
 
-i.icon-action {
+i.icon--icon_action {
     background-image: url('{{{dataurl "images/icon-action.svg"}}}');
 }
 
-i.icon-action2 {
+i.icon--icon_action2 {
     background-image: url('{{{dataurl "images/icon-action2.svg"}}}');
     width: 1.05cm;
 }
 
-i.icon-action3 {
+i.icon--icon_action3 {
     background-image: url('{{{dataurl "images/icon-action3.svg"}}}');
     width: 1.4cm;
 }
 
-i.icon-reaction {
+i.icon--icon_reaction {
     background-image: url('{{{dataurl "images/icon-reaction.svg"}}}');
 }
 
-i.icon-action-template {
+i.icon--icon_action-template {
     background-image: url('{{{dataurl "images/icon-action-template.svg"}}}');
     width: 1.4cm;
 }
@@ -54,8 +54,11 @@ i.icon-action-template {
 .field--proficiency_master i,    .field--icon_proficiency--master,    .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ .field--proficiency__master:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-master.svg"}}}'); }
 .field--proficiency_legendary i, .field--icon_proficiency--legendary, .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ .field--proficiency__master:checked ~ .field--proficiency__legendary:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-legendary.svg"}}}'); }
 
-.field--icon.field--icon_bonus i {
+i.icon--icon_d20, .field--icon.field--icon_bonus i, .hr--swash {
     background-image: url('{{{dataurl "images/icon-d20.svg"}}}');
+}
+
+i.icon--icon_bonus .field--icon.field--icon_bonus i {
     background-size: auto 0.38cm;
     cursor: pointer;
 }
@@ -155,7 +158,9 @@ fieldset.field--control_alignment {
 }
 
 
+/* hr */
 
+// .hr--swash + i { background-image: url('{{{dataurl "images/swash.svg"}}}'); }
 
 
 

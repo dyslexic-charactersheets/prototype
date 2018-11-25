@@ -2,5 +2,6 @@ register('hr', {
     swash: false,
 }, args => {
     var cls = elementClass('hr', null, args, [ 'swash' ]);
-    return `<hr${cls}>`;
+    var i = args.swash ? '<i></i>' : '';
+    return `<hr${cls}>${i}`;
 });

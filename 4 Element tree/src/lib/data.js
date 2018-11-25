@@ -48,6 +48,8 @@ global.preloadLinkedData = function(data, filename) {
 }
 
 function processBase64(data) {
+    if (_.isUndefined(data) || _.isNull(data))
+        return '';
     data = data.replace(/\n$/, '');
     data = data.replace(/[\r\n]/g, '');
     return data;

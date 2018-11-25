@@ -45,21 +45,51 @@
 		margin: 0 1pt 0 0;
 	}
 
-	&.field--output {
+	.field__overlay {
+		font-size: 0.9rem;
+	}
+
+	&--unlined {
+		.field__inner {
+			border-width: 0;
+		}
+	}
+
+	&--output {
 		.field__inner {
 			border: 0.75pt solid #808080; // !important;
 			border-radius: 2pt;
+			outline-radius: 2pt;
+			-moz-outline-radius: 2pt;
 			background: rgba(255,255,255,0.9);
 		}
 	}
 
-	&.field--bold {
+	&--bold {
 		.field__inner {
 			border-bottom-width: 1pt;
 		}
 		
 		&.field--output .field__inner {
 			border-width: 1pt;
+		}
+	}
+
+	&--attack {
+		.field__inner {
+			border-radius: 4pt !important;
+			outline-radius: 4pt !important;
+			-moz-outline-radius: 4pt !important;
+		}
+	}
+
+	&--ref {		
+		.field__inner {
+			border-bottom: 0.75pt dashed #707070;
+		}
+
+		&.field--output .field__inner {
+			border: 0.75pt dashed #707070;
 		}
 	}
 
@@ -243,14 +273,15 @@
 
 	&--size_huge {
 		.field__item {
-			height: 0.6cm;
+			height: 0.7cm;
 		}
 		input, output {
 			font-size: 1.5rem;
-			height: 0.6cm;
-			line-height: 0.6cm;
+			height: 0.7cm;
+			line-height: 0.7cm;
 		}
 	}
+
 
 
 
@@ -475,6 +506,12 @@
 	}
 }
 
+
+
+
+
+
+
 label + .field {
 	margin-top: -1pt;
 }
@@ -486,49 +523,6 @@ label + .field {
 .field--unlined input, .field--merge-bottom input:last-child {
 	border-bottom: 0 none;
 	margin-bottom: 0;
-}
-
-.field--ref .field__inner {
-	border-bottom: 0.75pt dashed #707070;
-}
-
-.field--em output {
-	border-width: 1.25pt;
-}
-.field--em input {
-	border-bottom-width: 1.25pt;
-}
-.field--em .overlay, .field--em .mid-overlay {
-	font-weight: bold;
-}
-
-.field .overlay {
-	position: absolute;
-	bottom: 0pt;
-	right: 4pt;
-	font-size: 0.75rem;
-}
-
-.field .start-overlay {
-	position: absolute;
-	bottom: 0;
-	left: 4pt;
-	font-size: 0.75rem;
-}
-
-.field .mid-overlay {
-	position: absolute;
-	bottom: 0pt;
-	right: 50%;
-	font-size: 0.75pt;
-}
-
-.field--icon .mid-overlay {
-	right: 41%;
-}
-
-.field--ref input, .field--ref output {
-	border-style: dashed;
 }
 
 // .field--misc {

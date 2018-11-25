@@ -6,9 +6,11 @@ global.getFieldControlCallback = function(control, args) {
     switch (control) {
         case 'radio': return fieldControl_radio;
         case 'checkbox': return fieldControl_checkbox;
+        case 'checkgrid': return fieldControl_checkgrid;
         case 'progression': return fieldControl_composite;
         case 'boost': return fieldControl_boost;
         case 'alignment': return fieldControl_alignment;
+        case 'weight': return fieldControl_weight;
         case 'speed': return fieldControl_speed;
         case 'icon': return fieldControl_icon;
         case 'proficiency': return fieldControl_proficiency;
@@ -25,7 +27,8 @@ function fieldControl_input(args) {
     var overlay = '';
     if (_.has(args, "overlay") && args.overlay != "")
         overlay = `<span class='field__overlay'>${args.overlay}</span>`;
-    return `<div${cls}><input${ident.ident}></div>${overlay}`;
+    var value = (args.value == '') ? '' : ` value='${args.value}'`;
+    return `<div${cls}><input${ident.ident}${value}></div>${overlay}`;
 }
 
 function fieldControl_radio(args) {
@@ -38,6 +41,43 @@ function fieldControl_checkbox(args) {
     var ident = fieldIdent(args.id);
     var cls = elementClass("field__item", null, args, [], [ "align" ]);
     return `<div${cls}><input type='checkbox'${ident.ident}><label${ident.for}></label></div>`;
+}
+
+function fieldControl_checkgrid(args) {
+    args = _.defaults(args, {
+        max: 10,
+        group: 10,
+        direction: "horizontal",
+        depth: 3,
+        value: 0
+    });
+
+    var g = args.group;
+    if (args.max < args.group) g = args.max;
+    var grouplen = Math.ceil(parseFloat(g) / parseFloat(args.depth));
+    if (args.direction == "horizontal") {
+        args.dir = "h";
+        args.w = grouplen;
+        args.h = args.depth;
+    } else {
+        args.dir = "v";
+        args.h = grouplen;
+        args.w = args.width;
+    }
+
+
+    var checks = [];
+    for (var i = 1; i <= args.max; i++) {
+        var ident = fieldIdent(args.id, i);
+        var checked = (i <= args.value) ? ' checked' : '';
+        var cls = elementClass("field__item", null, args, [], []);
+        var check = `<div${cls}><input type='checkbox'${ident.ident}${checked}><label${ident.for}></label></div>`;
+        checks.push(check);
+    }
+
+    var cls = elementClass("field__item-group", null, args, [], [ "dir", "w", "h" ]);
+    var groups = _.chunk(checks, args.group).map(ch => `<div${cls}>${ch.join("")}</div>`);
+    return groups.join("");
 }
 
 function fieldControl_boost(args) {
@@ -96,6 +136,29 @@ function fieldControl_proficiency(args) {
     <input type='checkbox' class='field--proficiency__legendary'>
     <div class='field__item'>${input}</div>
     <i></i>`;
+}
+
+function fieldControl_weight(args) {
+    var bulkIdent = fieldIdent(args.id, "bulk");
+    var lightIdent = fieldIdent(args.id, "light");
+
+    args.parts = [
+        {
+            type: "field",
+            id: bulkIdent.id,
+            align: "right",
+            overlay: "B"
+        },
+        {
+            type: "field",
+            id: lightIdent.id,
+            align: "right",
+            width: "small",
+            overlay: "L"
+        }
+    ];
+
+    return fieldControl_composite(args);
 }
 
 function fieldControl_speed(args) {

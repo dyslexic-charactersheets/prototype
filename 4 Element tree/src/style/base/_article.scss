@@ -1,0 +1,20 @@
+article {
+    header {
+        .field {
+            .field__inner {
+                border-bottom-width: 1pt;
+            }
+        }
+    }
+
+    > .g {
+        flex: 0 0 auto;
+        > .field:last-child {
+            margin-bottom: 0;
+
+            .field__inner:last-child {
+                border-bottom: 0 none;
+            }
+        }
+    }
+}

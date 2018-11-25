@@ -1,5 +1,6 @@
 register('article', {
     title: '',
+    header: [],
     contents: [],
 }, args => {
     var id = elementID('section', args.id);

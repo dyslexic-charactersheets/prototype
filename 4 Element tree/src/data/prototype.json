@@ -1,0 +1,2666 @@
+{
+    "type": "doc",
+    "title": "Prototype 4",
+    "contents": [
+        {
+            "type": "page",
+            "id": "permission",
+            "numbered": false,
+            "contents": [
+                {
+                    "type": "layout",
+                    "flex": true,
+                    "layout": "1n",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "spacer"
+                                },
+                                {
+                                    "type": "icon",
+                                    "icon": "d20",
+                                    "size": "gargantuan"
+                                },
+                                {
+                                    "type": "p"
+                                },
+                                {
+                                    "type": "h4",
+                                    "title": "Dyslexic Character Sheets"
+                                },
+                                {
+                                    "type": "h1",
+                                    "title": "Permission to Print"
+                                },
+                                {
+                                    "type": "p"
+                                },
+                                {
+                                    "type": "p",
+                                    "size": "huge",
+                                    "content": "This document may be freely printed, copied, reproduced and distributed."
+                                },
+                                {
+                                    "type": "spacer"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "https://www.dyslexic-charactersheets.com"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "Copyright &copy; Marcus Downing"
+                                },
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "This document is released under the Artistic License 2.0"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "https://opensource.org/licenses/Artistic-2.0"
+                                },
+                                {
+                                    "type": "blockquote",
+                                    "contents": [
+                                        {
+                                            "type": "p",
+                                            "content": "5. You may Distribute Compiled forms of the Standard Version without the Source, provided that you include complete instructions on how to get the Source of the Standard Version. Such instructions must be valid at the time of your distribution. If these instructions, at any time while you are carrying out such distribution, become invalid, you must provide new instructions on demand or cease further distribution. If you provide valid instructions or cease distribution within thirty days after you become aware that the instructions are invalid, then you do not forfeit any of your rights under this license."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "This document uses properties covered by the Open Game License v1.0a"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "http://www.opengamingfoundation.org/ogl.html"
+                                },
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h6",
+                                    "title": "This document uses trademarks and/or copyrights owned by Paizo Publishing, LLC, which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This document is not published, endorsed, or specifically approved by Paizo Publishing."
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "http://paizo.com/paizo/about/communityuse"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+        {
+            "type": "page",
+            "id": "build",
+            "numbered": false,
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "flex": true,
+                    "contents": [
+                        {
+                            "type": "h2",
+                            "title": "Build a Character"
+                        },
+                        {
+                            "type": "section",
+                            "untitled": true,
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "alignment",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "build-concept",
+                                            "legend": "Character Concept",
+                                            "width": "stretch",
+                                            "repeat": 2
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-alignment",
+                                            "frame": "none",
+                                            "control": "alignment"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "title": "Step One",
+                            "contents": [
+                                {
+                                    "type": "p",
+                                    "content": "Pick your race and where your character comes from."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "title": "Ancestry",
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "2e",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "build-ancestry",
+                                            "width": "stretch",
+                                            "label": "Ancestry"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-ancestry-heritage",
+                                            "width": "stretch",
+                                            "label": "Heritage"
+                                        },
+                                        {
+                                            "type": "row",
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "build-ancestry-hp",
+                                                    "label": "Hit Points",
+                                                    "icon": "hp",
+                                                    "overlay": "hp"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "build-ancestry-size",
+                                                    "label": "Size",
+                                                    "icon": "size",
+                                                    "width": "large"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "build-ancestry-speed",
+                                                    "label": "Speed",
+                                                    "control": "speed"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                        	"type": "level",
+                                        	"level": 1,
+                                        	"contents": [
+		                                        {
+		                                            "type": "field",
+		                                            "id": "build-heritage-feat",
+		                                            "width": "stretch",
+		                                            "label": "Feat"
+		                                        }
+                                        	]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "title": "Step Two",
+                            "contents": [
+                                {
+                                    "type": "p",
+                                    "content": "Decide how your character grew up."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "title": "Background",
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "2e",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "build-background",
+                                            "label": "Background",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                        	"type": "level",
+                                        	"level": 1,
+                                        	"contents": [
+		                                        {
+		                                            "type": "field",
+		                                            "id": "build-background-skill-feat",
+		                                            "label": "Skill feat",
+		                                            "width": "stretch"
+		                                        }
+                                        	]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "title": "Step Three",
+                            "contents": [
+                                {
+                                    "type": "p",
+                                    "content": "Pick from one of the main classes."
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "Depending on your class, you will likely need to pick a specialisation at the same time. These include a Sorcerer's bloodline, a Cleric's domain or a Barbarian's totem."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "title": "Class",
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "2e",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "build-class",
+                                            "label": "Class",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-class-specialisation",
+                                            "label": "Specialisation",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "row",
+                                    "layout": "split",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "build-class-hp",
+                                            "label": "Hit Points",
+                                            "icon": "hp",
+                                            "overlay": "hp"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-class-key-ability",
+                                            "label": "Key Ability"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-class-prof-perception",
+                                            "frame": "right",
+                                            "control": "icon",
+                                            "icon": "proficiency",
+                                            "label": "Perception"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-class-prof-fortitude",
+                                            "frame": "right",
+                                            "control": "icon",
+                                            "icon": "proficiency",
+                                            "label": "Fortitude"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-class-prof-reflex",
+                                            "frame": "right",
+                                            "control": "icon",
+                                            "icon": "proficiency",
+                                            "label": "Reflex"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-class-prof-will",
+                                            "frame": "right",
+                                            "control": "icon",
+                                            "icon": "proficiency",
+                                            "label": "Will"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "title": "Step Four",
+                            "contents": [
+                                {
+                                    "type": "h4",
+                                    "title": "Ability Scores"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "Add up the ability score bonuses you get from your ancestry, background and class, each of which provides +2 or -2 to a number of abilities. You also get four free ability boosts to allocate as you wish."
+                                },
+                                {
+                                    "type": "calc",
+                                    "inline": true,
+                                    "output": {
+                                        "type": "label",
+                                        "label": "Ability\nModifier"
+                                    },
+                                    "inputs": [
+                                        {
+                                            "type": "span",
+                                            "content": "("
+                                        },
+                                        {
+                                            "type": "label",
+                                            "label": "Ability\nScore"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": "- 10 ) &divide; 2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "Your key ability comes from your class, and is used to determine your class DC."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "id": "build-details",
+                            "title": "Details",
+                            "contents": [
+                                {
+                                    "type": "table",
+                                    "field_frame": "none",
+                                    "collapse": true,
+                                    "zebra": true,
+                                    "columns": [
+                                        null, null, "Ancestry\n-2 +2", "Background\n+2", "Class\n+2", "4 Free\n+2", null, "Ability\nScore", "Ability\nModifier", "Key\nAbility"
+                                    ],
+                                    "rows": [
+                                        { "ability": "Strength", "short": "STR" },
+                                        { "ability": "Dexterity", "short": "DEX" },
+                                        { "ability": "Constitution", "short": "CON" },
+                                        { "ability": "Intelligence", "short": "INT" },
+                                        { "ability": "Wisdom", "short": "WIS" },
+                                        { "ability": "Charisma", "short": "CHA" }
+                                    ],
+                                    "template": [
+                                        {
+                                            "type": "h6",
+                                            "title": "#{ability}"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": "10 +"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-boost-#{short}-ancestry",
+                                            "control": "boost"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-boost-#{short}-background",
+                                            "control": "boost",
+                                            "minus": false
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-boost-#{short}-class",
+                                            "control": "boost",
+                                            "minus": false
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-boost-#{short}-free",
+                                            "control": "boost",
+                                            "minus": false
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": "&rArr;"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-#{short}-score"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build-#{short}-modifier",
+                                            "icon": "modifier",
+                                            "output": true,
+                                            "underlay": "#{short}"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "build__key-ability",
+                                            "control": "radio",
+                                            "value": "#{short}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "No ability score may be above 18 at level 1."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h4",
+                                    "title": "Health"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "Calculate your starting hit points."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "calc",
+                                    "output": {
+                                        "type": "field",
+                                        "id": "build-hp",
+                                        "legend": "Hit Points",
+                                        "icon": "hp",
+                                        "overlay": "hp"
+                                    },
+                                    "inputs": [
+                                        {
+                                            "type": "field",
+                                            "ref": "build-ancestry-hp",
+                                            "label": "Ancestry"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": "+ ("
+                                        },
+                                        {
+                                            "type": "field",
+                                            "ref": "build-class-hp",
+                                            "label": "Class"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": "+"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "ref": "CON",
+                                            "underlay": "CON"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": ") &times;"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "ref": "level",
+                                            "label": "Level",
+                                            "underlay": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "hr"
+                                },
+                                {
+                                    "type": "h4",
+                                    "title": "Proficiencies"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "Refer to your ancestry, background, class and feats to find your initial proficiencies."
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "Then spend the skill proficiencies your class provides to upgrade skills."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "3e",
+                                    "field_frame": "none",
+                                    "contents": [
+                                        {
+                                            "type": "h6",
+                                            "title": "Weapon & Armour"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+
+                                        {
+                                            "type": "h6",
+                                            "title": "Skills"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": ""
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "id": "build-stage-5",
+                            "title": "Step Five",
+                            "contents": [
+                                {
+                                    "type": "p",
+                                    "content": "Work out what your character owns at the start of the game, including clothes and weapons."
+                                },
+                                {
+                                    "type": "row",
+                                    "layout": "split",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "legend": "Starting Money",
+                                            "overlay": "sp",
+                                            "value": "150",
+                                            "output": true,
+                                            "size": "huge",
+                                            "width": "large"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "label": "Remaining Money",
+                                            "overlay": "sp",
+                                            "size": "huge",
+                                            "width": "large"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "section",
+                            "id": "build-equipment",
+                            "title": "Equipment",
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "2l",
+                                    "narrow": true,
+                                    "field_frame": "none",
+                                    "contents": [
+                                        {
+                                            "type": "h6",
+                                            "title": "Weapons"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "h6",
+                                            "title": "Armour"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "h6",
+                                            "title": "Gear"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "type": "page",
+            "id": "cover",
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2e",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "logo"
+                                },
+                                {
+                                    "type": "section",
+                                    "id": "player",
+                                    "untitled": true,
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "id": "player-name",
+                                            "label": "Player",
+                                            "align": "left",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "row",
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "campaign",
+                                                    "label": "Campaign",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "xp",
+                                                    "label": "XP",
+                                                    "width": "large",
+                                                    "underlay": "XP",
+                                                    "output": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Character",
+                                    "contents": [
+                                        {
+                                            "type": "layout",
+                                            "layout": "alignment",
+                                            "contents": [
+                                                {
+                                                    "type": "g",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "cover-name",
+                                                            "size": "huge",
+                                                            "legend": "Name",
+                                                            "width": "stretch",
+                                                            "align": "left"
+                                                        },
+                                                        {
+                                                            "type": "row",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "gender",
+                                                                    "icon": "gender",
+                                                                    "width": "huge",
+                                                                    "label": "Gender"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "age",
+                                                                    "width": "huge",
+                                                                    "label": "Age"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "size",
+                                                                    "width": "huge",
+                                                                    "icon": "size",
+                                                                    "label": "Size"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "alignment",
+                                                    "frame": "none",
+                                                    "control": "alignment"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr",
+                                            "swash": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "portrait",
+                                    "overprint": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Ancestry",
+                                    "contents": [
+                                        {
+                                            "type": "article",
+                                            "header": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-ancestry",
+                                                    "label": "Ancestry",
+                                                    "size": "large",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                }
+                                            ],
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-heritage-details",
+                                                    "frame": "none",
+                                                    "width": "stretch",
+                                                    "align": "left",
+                                                    "repeat": 2
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "article",
+                                            "header": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-heritage",
+                                                    "legend": "Heritage",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                }
+                                            ],
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-heritage-details",
+                                                    "frame": "none",
+                                                    "width": "stretch",
+                                                    "align": "left",
+                                                    "repeat": 2
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "h4",
+                                            "title": "Ancestry Feats"
+                                        },
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 5,
+                                            "zebra": true,
+                                            "rows": [
+                                                { "level": 1 },
+                                                { "level": 5 },
+                                                { "level": 9 },
+                                                { "level": 13 },
+                                                { "level": 17 }
+                                            ],
+                                            "contents": [
+                                                {
+                                                    "type": "level",
+                                                    "level": "#{level}",
+                                                    "contents": [
+                                                        {
+                                                            "type": "article",
+                                                            "article": "feat",
+                                                            "header": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "ancestry-feat-#{i}",
+                                                                    "frame": "none",
+                                                                    "width": "stretch",
+                                                                    "align": "left"
+                                                                }
+                                                            ],
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "ancestry-feat-#{i}-details",
+                                                                    "repeat": 2,
+                                                                    "frame": "none",
+                                                                    "width": "stretch",
+                                                                    "align": "left"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Background",
+                                    "contents": [
+                                        {
+                                            "type": "article",
+                                            "header": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-background",
+                                                    "label": "Background",
+                                                    "size": "large",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                }
+                                            ],
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "background-details",
+                                                    "repeat": 2,
+                                                    "frame": "none",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Class",
+                                    "contents": [
+                                        {
+                                            "type": "row",
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "cover-class",
+                                                    "label": "Class",
+                                                    "width": "stretch",
+                                                    "size": "large",
+                                                    "align": "left"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "class-level",
+                                                    "output": true,
+                                                    "size": "large",
+                                                    "label": "Level"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "cover-specialisation",
+                                            "label": "Specialisation",
+                                            "width": "stretch",
+                                            "align": "left"
+                                        },
+                                        {
+                                            "type": "table",
+                                            "legend": "Archetypes",
+                                            "repeat": 2,
+                                            "field_frame": "none",
+                                            "columns": [
+                                                { "type": "label", "align": "left", "label": "Archetypes" },
+                                                "Feats"
+                                            ],
+                                            "template": [
+                                                {
+                                                    "type": "field",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "control": "progression",
+                                                    "parts": [
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "control": "checkbox"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+        {
+            "type": "page",
+            "id": "core",
+            "layout": "2l",
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "id": "section",
+                                    "title": "Attributes",
+                                    "contents": [
+                                        {
+                                            "type": "table",
+                                            "width": "stretch",
+                                            "columns": [
+                                                { "align": "left" }, "Ability\nScore",
+                                                { "type": "label", "label": "Ability\nModifier", "icon": true },
+                                                "Key\nAbility", "Temporary\nAdjustment"
+                                            ],
+                                            "rows": [
+                                                { "ability": "Strength", "short": "STR" },
+                                                { "ability": "Dexterity", "short": "DEX" },
+                                                { "ability": "Constitution", "short": "CON" },
+                                                { "ability": "Intelligence", "short": "INT" },
+                                                { "ability": "Wisdom", "short": "WIS" },
+                                                { "ability": "Charisma", "short": "CHA" }
+                                            ],
+                                            "field_frame": "none",
+                                            "template": [
+                                                {
+                                                    "type": "h6",
+                                                    "title": "#{ability}"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{short}-score",
+                                                    "box": true
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{short}",
+                                                    "output": true,
+                                                    "icon": "modifier",
+                                                    "underlay": "#{short}"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "control": "radio",
+                                                    "id": "key-ability",
+                                                    "value": "#{short}"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{short}-temp",
+                                                    "temp": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "calc",
+                                            "inline": true,
+                                            "output": {
+                                                "type": "label",
+                                                "label": "Ability\nModifier"
+                                            },
+                                            "inputs": [
+                                                "(",
+                                                {
+                                                    "type": "label",
+                                                    "label": "Ability\nScore"
+                                                },
+                                                "- 10) &divide; 2"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "id": "proficiency",
+                                    "title": "Proficiency",
+                                    "contents": [
+                                        {
+                                            "type": "layout",
+                                            "layout": "5e",
+                                            "narrow": true,
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-untrained",
+                                                    "label": "Untrained",
+                                                    "output": true,
+                                                    "control": "proficiency"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-trained",
+                                                    "label": "Trained",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "trained"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-expert",
+                                                    "label": "Expert",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "expert"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-master",
+                                                    "label": "Master",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "master"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "proficiency-legendary",
+                                                    "label": "Legendary",
+                                                    "output": true,
+                                                    "control": "proficiency",
+                                                    "proficiency": "legendary"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n-4",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n+1",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n+2",
+                                                    "align": "center"
+                                                },
+                                                {
+                                                    "type": "label",
+                                                    "label": "Level\n+3",
+                                                    "align": "center"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "table",
+                                            "columns": [
+                                                { "type": "label", "label": "Ability", "align": "left" },
+                                                "Proficiency"
+                                            ],
+                                            "repeat": 10,
+                                            "template": [
+                                                {
+                                                    "type": "field",
+                                                    "width": "stretch"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "control": "proficiency"
+                                                }
+                                            ],
+                                            "collapse": true,
+                                            "field_frame": "none"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "id": "perception",
+                                    "title": "Perception",
+                                    "contents": [
+                                        {
+                                            "type": "calc",
+                                            "output": {
+                                                "type": "field",
+                                                "id": "perception",
+                                                "icon": "bonus",
+                                                "legend": "Perception"
+                                            },
+                                            "inputs": [
+                                                {
+                                                    "type": "field",
+                                                    "ref": "WIS",
+                                                    "underlay": "WIS",
+                                                    "label": "WIS"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "label": "Proficiency",
+                                                    "icon": "proficiency"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "label": "Item"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "misc": true,
+                                                    "label": "Misc"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "row",
+                                            "unlabelled": true,
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "perception-low-light",
+                                                    "frame": "right",
+                                                    "control": "checkbox",
+                                                    "label": "Low-light vision"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "perception-darkvision",
+                                                    "frame": "right",
+                                                    "control": "checkbox",
+                                                    "label": "Dark vision"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "perception-scent",
+                                                    "frame": "right",
+                                                    "control": "checkbox",
+                                                    "label": "Scent"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "field",
+                                            "id": "perception-other",
+                                            "frame": "none",
+                                            "align": "left",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "id": "languages",
+                                    "title": "Languages",
+                                    "contents": [
+                                        {
+                                            "type": "field",
+                                            "frame": "none",
+                                            "repeat": 2,
+                                            "align": "left",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "id": "skills",
+                                    "title": "Skills",
+                                    "contents": [
+                                        {
+                                            "type": "table",
+                                            "collapse": true,
+                                            "zebra": true,
+                                            "field_frame": "none",
+                                            "columns": [
+                                                null,
+                                                { "type": "label", "label": "Assurance", "align": "right" },
+                                                "Skill\nBonus",
+                                                null,
+                                                "Ability\nModifier",
+                                                "Proficiency",
+                                                "Feats\nMisc",
+                                                "Armour\nCheck\nPenalty"
+                                            ],
+                                            "rows": [
+                                                { "skill": "Acrobatics", "ability": "DEX", "acp": true },
+                                                { "skill": "Arcana", "ability": "INT", "acp": false },
+                                                { "skill": "Athletics", "ability": "STR", "acp": true },
+                                                { "skill": "Crafting", "ability": "INT", "acp": false },
+                                                { "skill": "Deception", "ability": "CHA", "acp": false },
+                                                { "skill": "Intimidation", "ability": "CHA", "acp": false },
+                                                { "skill": "Medicine", "ability": "WIS", "acp": false },
+                                                { "skill": "Nature", "ability": "WIS", "acp": false },
+                                                { "skill": "Occultism", "ability": "INT", "acp": false },
+                                                { "skill": "Performance", "ability": "CHA", "acp": false },
+                                                { "skill": "Religion", "ability": "WIS", "acp": false },
+                                                { "skill": "Society", "ability": "INT", "acp": false },
+                                                { "skill": "Stealth", "ability": "DEX", "acp": true },
+                                                { "skill": "Survival", "ability": "WIS", "acp": false },
+                                                { "skill": "Thievery", "ability": "DEX", "acp": true },
+                                                { "skill": "Lore", "ability": "INT", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false },
+                                                { "skill": "", "ability": "", "acp": false }
+                                            ],
+                                            "template": [
+                                                {
+                                                    "type": "h6",
+                                                    "title": "#{skill}"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-assurance",
+                                                    "control": "checkbox",
+                                                    "align": "right"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-bonus",
+                                                    "output": true,
+                                                    "icon": "bonus"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "="
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "ref": "#{ability}",
+                                                    "underlay": "#{ability}",
+                                                    "frame": "h-label",
+                                                    "label": "#{ability}"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-proficiency",
+                                                    "control": "proficiency"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-misc",
+                                                    "misc": true
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "#{skill}-acp",
+                                                    "ref": "acp",
+                                                    "output": true,
+                                                    "exists": "#{acp}"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr"
+                                        },
+                                        {
+                                            "type": "layout",
+                                            "layout": "2e",
+                                            "contents": [
+                                                {
+                                                    "type": "level",
+                                                    "level": 7,
+                                                    "contents": [
+                                                        {
+                                                            "type": "span",
+                                                            "content": "Master in skills"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "level",
+                                                    "level": 15,
+                                                    "contents": [
+                                                        {
+                                                            "type": "span",
+                                                            "content": "Legendary in skills"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Skill Feats",
+                                    "contents": [
+                                        {
+                                            "type": "layout",
+                                            "layout": "2e",
+                                            "contents": [
+
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 6,
+                                                    "zebra": true,
+                                                    "rows": [
+                                                        { "level": 1 },
+                                                        { "level": 4 },
+                                                        { "level": 8 },
+                                                        { "level": 12 },
+                                                        { "level": 16 },
+                                                        { "level": 20 }
+                                                    ],
+                                                    "contents": [
+                                                        {
+                                                            "type": "level",
+                                                            "level": "#{level}",
+                                                            "field_frame": "none",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "article",
+                                                                    "header": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}",
+                                                                            "width": "stretch",
+                                                                            "align": "left"
+                                                                        }
+                                                                    ],
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}-details",
+                                                                            "width": "stretch",
+                                                                            "align": "left",
+                                                                            "repeat": 2
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 6,
+                                                    "zebra": true,
+                                                    "rows": [
+                                                        { "level": 2 },
+                                                        { "level": 6 },
+                                                        { "level": 10 },
+                                                        { "level": 14 },
+                                                        { "level": 18 },
+                                                        { "level": "" }
+                                                    ],
+                                                    "contents": [
+                                                        {
+                                                            "type": "level",
+                                                            "level": "#{level}",
+                                                            "field_frame": "none",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "article",
+                                                                    "header": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}",
+                                                                            "width": "stretch",
+                                                                            "align": "left"
+                                                                        }
+                                                                    ],
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}-details",
+                                                                            "width": "stretch",
+                                                                            "align": "left",
+                                                                            "repeat": 2
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "type": "page",
+            "id": "combat",
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Class DC",
+                                    "contents": [
+                                        {
+                                            "type": "calc",
+                                            "output": {
+                                                "type": "field",
+                                                "legend": "Class DC",
+                                                "underlay": "DC",
+                                                "width": "large",
+                                                "icon": "modifier"
+                                            },
+                                            "inputs": [
+                                                {
+                                                    "type": "field",
+                                                    "label": "Key Ability",
+                                                    "ref": true
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "label": "Level",
+                                                    "ref": true
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "label": "Item"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "field",
+                                            "label": "Conditional",
+                                            "align": "left",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Speed",
+                                    "contents": [
+                                        {
+                                            "type": "layout",
+                                            "layout": "3e",
+                                            "collapse": true,
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "id": "speed",
+                                                    "legend": "Speed",
+                                                    "control": "speed",
+                                                    "output": true
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "speed-armour",
+                                                    "label": "Speed in Armour",
+                                                    "control": "speed"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "speed-temp",
+                                                    "label": "Temp Speed",
+                                                    "control": "speed",
+                                                    "output": true,
+                                                    "temp": true
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "speed-swim",
+                                                    "label": "Swim Speed",
+                                                    "control": "speed"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "speed-climb",
+                                                    "label": "Climb Speed",
+                                                    "control": "speed"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "speed-fly",
+                                                    "label": "Fly Speed",
+                                                    "control": "speed"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Saving Throws",
+                                    "contents": [
+                                        {
+                                            "type": "table",
+                                            "columns": [
+                                                null, null,
+                                                "Ability\nModifier", "Proficiency", "Item", "Misc"
+                                            ],
+                                            "rows": [
+                                                { "save": "fortitude", "legend": "Fortitude", "short": "FORT", "ability": "CON" },
+                                                { "save": "reflex", "legend": "Reflex", "short": "REF", "ability": "DEX" },
+                                                { "save": "will", "legend": "Will", "short": "WILL", "ability": "WIS" }
+                                            ],
+                                            "template": [
+                                                {
+                                                    "type": "calc",
+                                                    "output": {
+                                                        "type": "field",
+                                                        "id": "#{save}",
+                                                        "legend": "#{legend}",
+                                                        "icon": "bonus",
+                                                        "width": "large",
+                                                        "underlay": "#{short}"
+                                                    },
+                                                    "inputs": [
+                                                        {
+                                                            "type": "field",
+                                                            "label": "#{ability}",
+                                                            "underlay": "#{ability}",
+                                                            "ref": "#{ability}"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "#{save}-proficiency",
+                                                            "control": "proficiency"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "#{save}-item-bonus"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "#{save}-misc-bonus",
+                                                            "misc": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "field",
+                                            "label": "Conditional",
+                                            "align": "left",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Attacks",
+                                    "contents": [
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 4,
+                                            "zebra": true,
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "control": "proficiency",
+                                                            "label": "Item Bonus"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "calc",
+                                                            "output": {
+                                                                "type": "field",
+                                                                "label": "Attack Bonus",
+                                                                "width": "large",
+                                                                "attack": true,
+                                                                "icon": "bonus"
+                                                            },
+                                                            "inputs": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "ref": true,
+                                                                    "label": "Ability"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "control": "proficiency",
+                                                                    "label": "Proficiency"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "ref": true,
+                                                                    "label": "Item"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "output": true,
+                                                            "label": "Damage",
+                                                            "width": "small",
+                                                            "icon": "damage",
+                                                            "control": "composite",
+                                                            "parts": [
+                                                                {
+                                                                    "subid": "ndice",
+                                                                    "overlay": "d"
+                                                                },
+                                                                {
+                                                                    "subid": "die",
+                                                                    "overlay": "+"
+                                                                },
+                                                                {
+                                                                    "subid": "extra"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "label": "Type"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "label": "Critical Effect",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr"
+                                        },
+                                        {
+                                            "type": "layout",
+                                            "layout": "2e",
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-1-type",
+                                                            "legend": "Ammo",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-1",
+                                                            "frame": "h-label",
+                                                            "unlined": true,
+                                                            "width": "small",
+                                                            "size": "huge",
+                                                            "underlay": "#",
+                                                            "label": "Charges"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-1-count",
+                                                            "frame": "none",
+                                                            "control": "checkgrid",
+                                                            "max": 20,
+                                                            "depth": 3
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-2-type",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-2",
+                                                            "frame": "h-label",
+                                                            "unlined": true,
+                                                            "width": "small",
+                                                            "size": "huge",
+                                                            "underlay": "#",
+                                                            "label": "Charges"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-2-count",
+                                                            "frame": "none",
+                                                            "control": "checkgrid",
+                                                            "max": 20,
+                                                            "depth": 3
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-3-type",
+                                                            "width": "stretch",
+                                                            "unlined": true
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-3",
+                                                            "frame": "h-label",
+                                                            "unlined": true,
+                                                            "width": "small",
+                                                            "size": "huge",
+                                                            "underlay": "#",
+                                                            "label": "Charges"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-3-count",
+                                                            "frame": "none",
+                                                            "control": "checkgrid",
+                                                            "max": 20,
+                                                            "depth": 3
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-4-type",
+                                                            "width": "stretch",
+                                                            "unlined": true
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-4",
+                                                            "frame": "h-label",
+                                                            "unlined": true,
+                                                            "width": "small",
+                                                            "size": "huge",
+                                                            "underlay": "#",
+                                                            "label": "Charges"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "ammo-4-count",
+                                                            "frame": "none",
+                                                            "control": "checkgrid",
+                                                            "max": 20,
+                                                            "depth": 3
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2r",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Health",
+                                    "contents": [
+                                        {
+                                            "type": "row",
+                                            "layout": "split",
+                                            "contents": [
+                                                {
+                                                    "type": "calc",
+                                                    "output": {
+                                                        "type": "field",
+                                                        "id": "hp",
+                                                        "legend": "Hit Points",
+                                                        "icon": "hp",
+                                                        "overlay": "hp",
+                                                        "width": "large"
+                                                    },
+                                                    "inputs": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "hp-ancestry",
+                                                            "label": "Ancestry"
+                                                        },
+                                                        {
+                                                            "type": "span",
+                                                            "content": "("
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "hp-class",
+                                                            "label": "Class"
+                                                        },
+                                                        {
+                                                            "type": "span",
+                                                            "content": "+"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "label": "CON",
+                                                            "underlay": "CON",
+                                                            "ref": true
+                                                        },
+                                                        {
+                                                            "type": "span",
+                                                            "content": ") &times;"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "ref": "level",
+                                                            "label": "Level"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "control": "progression",
+                                                    "id": "dying",
+                                                    "label": "Dying",
+                                                    "parts": [
+                                                        {
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "control": "checkbox"
+                                                        },
+                                                        {
+                                                            "type": "icon",
+                                                            "size": "small",
+                                                            "icon": "evil"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "field",
+                                            "label": "Current Hit Points",
+                                            "output": true,
+                                            "temp": true,
+                                            "overlay": "hp",
+                                            "width": "stretch"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Armour",
+                                    "contents": [
+                                        {
+                                            "type": "table",
+                                            "columns": [
+                                                null, null, null, "DEX", "Proficiency", "Armour\nBonus", "Shield\nBonus", "Misc"
+                                            ],
+                                            "rows": [
+                                                { "id": "ac", "legend": "Armour Class", "underlay": "AC" },
+                                                { "id": "tac", "legend": "Touch AC", "underlay": "TAC" }
+                                            ],
+                                            "template": [
+                                                {
+                                                    "type": "calc",
+                                                    "output": {
+                                                        "type": "field",
+                                                        "id": "#{id}",
+                                                        "legend": "#{legend}",
+                                                        "icon": "#{id}",
+                                                        "width": "large"
+                                                    },
+                                                    "inputs": [
+                                                        {
+                                                            "type": "span",
+                                                            "content": "10 +"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "ref": "DEX",
+                                                            "underlay": "DEX"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "#{id}-proficiency",
+                                                            "control": "proficiency"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "armour-bonus"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "shield-bonus"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "misc": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Actions",
+                                    "contents": [
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 5,
+                                            "zebra": true,
+                                            "field_frame": "none",
+                                            "contents": [
+                                                {
+                                                    "type": "article",
+                                                    "header": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "equipment-#{i}",
+                                                            "width": "stretch",
+                                                            "align": "left"
+                                                        }
+                                                    ],
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "equipment-#{i}-details",
+                                                            "width": "stretch",
+                                                            "align": "left",
+                                                            "repeat": 2
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+        {
+            "type": "page",
+            "id": "inventory",
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "flex": true,
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Inventory",
+                                    "contents": [
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 20,
+                                            "zebra": true,
+                                            "collapse": true,
+                                            "field_frame": "none",
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "inventory-#{i}",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "inventory-#{i}-value"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "inventory-#{i}-weight"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 4,
+                                            "zebra": true,
+                                            "collapse": true,
+                                            "field_frame": "none",
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "expendable-#{i}",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "id": "expendable-#{i}-count",
+                                                            "frame": "none",
+                                                            "control": "checkgrid",
+                                                            "max": 20,
+                                                            "depth": 3
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "layout",
+                                            "layout": "2r",
+                                            "collapse": true,
+                                            "field_frame": "none",
+                                            "contents": [
+                                                {
+                                                    "type": "h6",
+                                                    "title": "Carried items"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "weight-inventory",
+                                                    "control": "weight"
+                                                },
+                                                {
+                                                    "type": "h6",
+                                                    "title": "Weapons, Ammo"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "weight-weapons",
+                                                    "control": "weight"
+                                                },
+                                                {
+                                                    "type": "h6",
+                                                    "title": "Armour, Shield"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "weight-armour",
+                                                    "control": "weight"
+                                                },
+                                                {
+                                                    "type": "h6",
+                                                    "title": "Worn items"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "weight-worn",
+                                                    "control": "weight"
+                                                },
+                                                {
+                                                    "type": "h6",
+                                                    "title": "Scrolls, Potions, Wands"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "weight-magic",
+                                                    "control": "weight"
+                                                },
+                                                {
+                                                    "type": "h6",
+                                                    "title": "Total weight"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "weight-total",
+                                                    "output": true,
+                                                    "control": "weight"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Money",
+                                    "contents": [
+
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Wands",
+                                    "contents": [
+                                        {
+                                            "type": "repeat",
+                                            "repeat": 3,
+                                            "zebra": true,
+                                            "contents": [
+                                                {
+                                                    "type": "article",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "wand-#{i}",
+                                                            "frame": "none",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "row",
+                                                            "layout": "right",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "wand-#{i}-ncharges",
+                                                                    "frame": "h-label",
+                                                                    "unlined": true,
+                                                                    "width": "small",
+                                                                    "size": "huge",
+                                                                    "underlay": "#",
+                                                                    "label": "Charges"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "wand-#{i}-charges",
+                                                                    "frame": "none",
+                                                                    "control": "checkgrid",
+                                                                    "max": 50
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "layout",
+                                    "layout": "2e",
+                                    "contents": [
+                                        {
+                                            "type": "g",
+                                            "contents": [
+                                                {
+                                                    "type": "section",
+                                                    "title": "Armour",
+                                                    "contents": [
+                                                        {
+                                                            "type": "article",
+                                                            "header": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour",
+                                                                    "legend": "Armour",
+                                                                    "size": "large",
+                                                                    "width": "stretch"
+                                                                }
+                                                            ],
+                                                            "contents": [
+                                                                {
+                                                                    "type": "row",
+                                                                    "layout": "split",
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-ac",
+                                                                            "label": "AC Bonus",
+                                                                            "icon": "ac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-ac",
+                                                                            "label": "TAC Bonus",
+                                                                            "icon": "tac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-bulk",
+                                                                            "label": "Bulk"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "row",
+                                                                    "layout": "split",
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-max-dex",
+                                                                            "label": "Max DEX\nto AC"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-speed-penalty",
+                                                                            "label": "Speed\nPenalty",
+                                                                            "control": "speed"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-acp",
+                                                                            "label": "ACP"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "section",
+                                                    "title": "Shield",
+                                                    "contents": [
+                                                        {
+                                                            "type": "article",
+                                                            "header": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "shield",
+                                                                    "legend": "Shield",
+                                                                    "size": "large",
+                                                                    "width": "stretch"
+                                                                }
+                                                            ],
+                                                            "contents": [
+                                                                {
+                                                                    "type": "row",
+                                                                    "layout": "split",
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "shield-ac",
+                                                                            "label": "AC Bonus",
+                                                                            "icon": "ac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "shield-ac",
+                                                                            "label": "TAC Bonus",
+                                                                            "icon": "tac"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "shield-bulk",
+                                                                            "label": "Bulk"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "row",
+                                                                    "contents": [
+
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "hr"
+                                                },
+                                                {
+                                                    "type": "portrait"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "g",
+                                            "contents": [
+                                                {
+                                                    "type": "section",
+                                                    "title": "Equipment",
+                                                    "contents": [
+                                                        {
+                                                            "type": "repeat",
+                                                            "repeat": 8,
+                                                            "zebra": true,
+                                                            "field_frame": "none",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "article",
+                                                                    "header": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "equipment-#{i}",
+                                                                            "width": "stretch",
+                                                                            "align": "left"
+                                                                        }
+                                                                    ],
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "equipment-#{i}-details",
+                                                                            "width": "stretch",
+                                                                            "align": "left",
+                                                                            "repeat": 2
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Resonance",
+                                    "contents": [
+                                        {
+                                            "type": "calc",
+                                            "output": {
+                                                "type": "field",
+                                                "id": "resonance",
+                                                "legend": "Resonance",
+                                                "overlay": "rp"
+                                            },
+                                            "inputs": [
+                                                {
+                                                    "type": "field",
+                                                    "ref": "CHA",
+                                                    "underlay": "CHA",
+                                                    "label": "CHA"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "ref": "Level"
+                                                },
+                                                {
+                                                    "type": "span",
+                                                    "content": "+"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "id": "resonance-misc",
+                                                    "label": "Misc",
+                                                    "misc": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "layout",
+                                    "layout": "2e",
+                                    "contents": [
+                                        {
+                                            "type": "section",
+                                            "title": "Scrolls",
+                                            "contents": [
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 12,
+                                                    "zebra": true,
+                                                    "collapse": true,
+                                                    "field_frame": "none",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "wand-#{i}",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "section",
+                                            "title": "Potions",
+                                            "contents": [
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 4,
+                                                    "zebra": true,
+                                                    "collapse": true,
+                                                    "field_frame": "none",
+                                                    "contents": [
+                                                        {
+                                                            "type": "row",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "potion-exp-#{i}",
+                                                                    "width": "stretch"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "potion-exp-#{i}-count",
+                                                                    "control": "checkgrid",
+                                                                    "max": 8,
+                                                                    "depth": 2
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 8,
+                                                    "zebra": true,
+                                                    "collapse": true,
+                                                    "field_frame": "none",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "id": "potion-#{i}",
+                                                            "width": "stretch"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "type": "page",
+            "id": "barbarian",
+            "contents": [
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
+                        {
+                            "type": "g",
+                            "contents": [
+                                {
+                                    "type": "h2",
+                                    "title": "Barbarian"
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Totem",
+                                    "primary": true,
+                                    "contents": [
+                                    	{
+                                    		"type": "field",
+                                    		"legend": "Totem",
+                                    		"width": "stretch",
+                                    		"align": "left"
+                                    	}
+                                    ]
+                                }
+
+                            ]
+                        },
+                        {
+                            "type": "g",
+                            "contents": [
+                            	{
+                            		"type": "section",
+                            		"title": "Rage",
+                            		"contents": [
+                            		]
+                            	},
+                            	{
+                            		"type": "section",
+                            		"title": "Barbarian Feats",
+                            		"contents": [
+
+                            		]
+                            	}
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

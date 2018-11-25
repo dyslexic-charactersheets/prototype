@@ -14,6 +14,50 @@
 
 	}
 
+	&--control_checkgrid {
+		.field__inner {
+			border-bottom: 0 none;
+		}
+		.field__item-group {
+			display: inline-flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			justify-content: center;
+			align-items: start;
+			margin: -1.2pt 0;
+
+			.field__item {
+				display: inline-block;
+				margin: 1.4pt;
+				width: 4pt;
+				height: 4pt;
+				position: relative;
+
+				input[type=checkbox] + label {
+					position: absolute;
+				}
+			}
+
+
+			&--dir-v { flex-direction: row; }
+
+			&--h_1 { height: 10pt; }
+			&--h_2 { height: 18pt; }
+			&--h_3 { height: 26pt; }
+			&--h_4 { height: 34pt; }
+			&--h_5 { height: 42pt; }
+			&--h_6 { height: 48pt; }
+
+			&--w_1 { width: 10pt; }
+			&--w_2 { width: 18pt; }
+			&--w_3 { width: 26pt; }
+			&--w_4 { width: 34pt; }
+			&--w_5 { width: 42pt; }
+			&--w_6 { width: 48pt; }
+		}
+	}
+
 	&--control_boost {
 		.field--control_boost__item--plus {
 			input[type=checkbox] + label {
