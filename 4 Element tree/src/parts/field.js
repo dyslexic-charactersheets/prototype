@@ -47,8 +47,10 @@ register('field', {
     attack: false,
     width: "medium",
 }, args => {
+    args.labelHeight = getLabelHeight(args);
+
     var id = elementID('field', args.id);
-    var cls = elementClass('field', null, args, [ "output", "icon", "bold", "unlined", "attack", "ref", "misc", "temp" ], [ "frame", "control", "align", "size", "width", "icon", "proficiency" ]);
+    var cls = elementClass('field', null, args, [ "output", "icon", "bold", "unlined", "attack", "ref", "misc", "temp" ], [ "frame", "control", "align", "size", "width", "icon", "proficiency", "labelHeight" ]);
 
     // Callbacks
     var frameCallback = getFieldFrameCallback(args.frame, args);
@@ -65,4 +67,5 @@ register('field', {
 
     // combine the results
     return `<fieldset${id}${cls}>${frameCallback(args, innerCallback)}</fieldset>`;
-})
+});
+

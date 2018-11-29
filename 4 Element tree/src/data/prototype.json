@@ -832,13 +832,16 @@
                                             "contents": [
                                                 {
                                                     "type": "field",
-                                                    "id": "cover-heritage-details",
+                                                    "id": "cover-ancestry-details",
                                                     "frame": "none",
                                                     "width": "stretch",
                                                     "align": "left",
                                                     "repeat": 2
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "hr"
                                         },
                                         {
                                             "type": "article",
@@ -861,6 +864,9 @@
                                                     "repeat": 2
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "hr"
                                         },
                                         {
                                             "type": "h4",
@@ -1788,6 +1794,13 @@
                                                             "width": "stretch"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "frame": "none",
+                                                    "width": "stretch",
+                                                    "align": "left",
+                                                    "unlined": true
                                                 }
                                             ]
                                         },
@@ -1797,6 +1810,7 @@
                                         {
                                             "type": "layout",
                                             "layout": "2e",
+                                            "collapse": true,
                                             "contents": [
                                                 {
                                                     "type": "row",
@@ -1805,7 +1819,8 @@
                                                             "type": "field",
                                                             "id": "ammo-1-type",
                                                             "legend": "Ammo",
-                                                            "width": "stretch"
+                                                            "width": "stretch",
+                                                            "unlined": true
                                                         },
                                                         {
                                                             "type": "field",
@@ -1833,7 +1848,8 @@
                                                         {
                                                             "type": "field",
                                                             "id": "ammo-2-type",
-                                                            "width": "stretch"
+                                                            "width": "stretch",
+                                                            "unlined": true
                                                         },
                                                         {
                                                             "type": "field",
@@ -1850,10 +1866,16 @@
                                                             "id": "ammo-2-count",
                                                             "frame": "none",
                                                             "control": "checkgrid",
-                                                            "max": 20,
+                                                            "max": 10,
                                                             "depth": 3
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "type": "hr"
+                                                },
+                                                {
+                                                    "type": "hr"
                                                 },
                                                 {
                                                     "type": "row",
@@ -1861,6 +1883,7 @@
                                                         {
                                                             "type": "field",
                                                             "id": "ammo-3-type",
+                                                            "frame": "none",
                                                             "width": "stretch",
                                                             "unlined": true
                                                         },
@@ -1890,6 +1913,7 @@
                                                         {
                                                             "type": "field",
                                                             "id": "ammo-4-type",
+                                                            "frame": "none",
                                                             "width": "stretch",
                                                             "unlined": true
                                                         },
@@ -1908,7 +1932,7 @@
                                                             "id": "ammo-4-count",
                                                             "frame": "none",
                                                             "control": "checkgrid",
-                                                            "max": 20,
+                                                            "max": 10,
                                                             "depth": 3
                                                         }
                                                     ]
@@ -2069,6 +2093,13 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "field",
+                                            "label": "Conditional",
+                                            "width": "stretch",
+                                            "align": "left",
+                                            "repeat": 3
                                         }
                                     ]
                                 }
@@ -2091,10 +2122,19 @@
                                                     "type": "article",
                                                     "header": [
                                                         {
-                                                            "type": "field",
-                                                            "id": "equipment-#{i}",
-                                                            "width": "stretch",
-                                                            "align": "left"
+                                                            "type": "row",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "icon",
+                                                                    "icon": "action-template"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "equipment-#{i}",
+                                                                    "width": "stretch",
+                                                                    "align": "left"
+                                                                }
+                                                            ]
                                                         }
                                                     ],
                                                     "contents": [
@@ -2333,7 +2373,7 @@
                                                                 {
                                                                     "type": "field",
                                                                     "id": "armour",
-                                                                    "legend": "Armour",
+                                                                    "frame": "none",
                                                                     "size": "large",
                                                                     "width": "stretch"
                                                                 }
@@ -2380,7 +2420,7 @@
                                                                         {
                                                                             "type": "field",
                                                                             "id": "armour-acp",
-                                                                            "label": "ACP"
+                                                                            "label": "Armour\nCheck\nPenalty"
                                                                         }
                                                                     ]
                                                                 }
@@ -2398,7 +2438,7 @@
                                                                 {
                                                                     "type": "field",
                                                                     "id": "shield",
-                                                                    "legend": "Shield",
+                                                                    "frame": "none",
                                                                     "size": "large",
                                                                     "width": "stretch"
                                                                 }
@@ -2429,8 +2469,24 @@
                                                                 },
                                                                 {
                                                                     "type": "row",
+                                                                    "layout": "split",
                                                                     "contents": [
-
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-max-dex",
+                                                                            "label": "Max DEX\nto AC"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-speed-penalty",
+                                                                            "label": "Speed\nPenalty",
+                                                                            "control": "speed"
+                                                                        },
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "armour-acp",
+                                                                            "label": "Armour\nCheck\nPenalty"
+                                                                        }
                                                                     ]
                                                                 }
                                                             ]
@@ -2496,6 +2552,7 @@
                                                 "type": "field",
                                                 "id": "resonance",
                                                 "legend": "Resonance",
+                                                "width": "large",
                                                 "overlay": "rp"
                                             },
                                             "inputs": [
@@ -2511,7 +2568,8 @@
                                                 },
                                                 {
                                                     "type": "field",
-                                                    "ref": "Level"
+                                                    "ref": "level",
+                                                    "label": "Level"
                                                 },
                                                 {
                                                     "type": "span",
@@ -2629,15 +2687,169 @@
                                     "title": "Totem",
                                     "primary": true,
                                     "contents": [
-                                    	{
-                                    		"type": "field",
-                                    		"legend": "Totem",
-                                    		"width": "stretch",
-                                    		"align": "left"
-                                    	}
+                                        {
+                                            "type": "article",
+                                            "header": [
+                                                {
+                                                    "type": "field",
+                                                    "legend": "Totem",
+                                                    "width": "stretch",
+                                                    "align": "left"
+                                                }
+                                            ],
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "label": "Anathema",
+                                                    "width": "stretch",
+                                                    "align": "left",
+                                                    "repeat": 3
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "label": "Totem Ability",
+                                                    "width": "stretch",
+                                                    "align": "left",
+                                                    "repeat": 3
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "label": "Raging Resistance",
+                                                    "width": "stretch",
+                                                    "align": "left",
+                                                    "repeat": 2
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Deny Advantage",
+                                    "contents": [
+                                        {
+                                            "type": "level",
+                                            "level": 5,
+                                            "contents": [
+                                                {
+                                                    "type": "p",
+                                                    "content": "Never flat-footed against creatures of a lower level."
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Juggernaut",
+                                    "contents": [
+                                        {
+                                            "type": "level",
+                                            "level": 7,
+                                            "contents": [
+                                                {
+                                                    "type": "proficiency",
+                                                    "proficiency": "master",
+                                                    "content": "Master at Fortitude saves"
+                                                },
+                                                {
+                                                    "type": "p",
+                                                    "content": "When you succeed at a Fortitude save, treat it as a critical success."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr"
+                                        },
+                                        {
+                                            "type": "level",
+                                            "level": 13,
+                                            "contents": [
+                                                {
+                                                    "type": "proficiency",
+                                                    "proficiency": "legendary",
+                                                    "content": "Legendary at Fortitude saves"
+                                                },
+                                                {
+                                                    "type": "p",
+                                                    "content": "When you critically fail a Fortitude save, treat it as a failure. When you fail a Fortitude save against an effect that deals damage, you halve the damage you take."
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Weapon Fury",
+                                    "contents": [
+                                        {
+                                            "type": "level",
+                                            "level": 13,
+                                            "contents": [
+                                                {
+                                                    "type": "proficiency",
+                                                    "proficiency": "expert",
+                                                    "content": "Expert at simple and martial weapons, and unarmed attacks"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Indomitable Will",
+                                    "contents": [
+                                        {
+                                            "type": "level",
+                                            "level": 15,
+                                            "contents": [
+                                                {
+                                                    "type": "proficiency",
+                                                    "proficiency": "master",
+                                                    "content": "Master at Will saves"
+                                                },
+                                                {
+                                                    "type": "p",
+                                                    "content": "When you succeed at a Will save, treat it as a critical success."
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "section",
+                                    "title": "Devastating Strikes",
+                                    "contents": [
+                                        {
+                                            "type": "level",
+                                            "level": 19,
+                                            "contents": [
+                                                {
+                                                    "type": "calc",
+                                                    "output": {
+                                                        "type": "field",
+                                                        "legend": "Resistance Reduction"
+                                                    },
+                                                    "inputs": [
+                                                        {
+                                                            "type": "field",
+                                                            "ref": "CON",
+                                                            "underlay": "CON"
+                                                        },
+                                                        {
+                                                            "type": "span",
+                                                            "content": "&times; 2"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "p",
+                                                    "content": "If you succeed at a melee Strike against a target with resistance against the physical damage type of the weapon or unarmed attack you’re using, reduce that resistance."
+                                                }
+                                            ]
+                                        }
                                     ]
                                 }
-
                             ]
                         },
                         {
@@ -2647,15 +2859,288 @@
                             		"type": "section",
                             		"title": "Rage",
                             		"contents": [
+                                        {
+                                            "type": "action",
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "field",
+                                                            "label": "Rounds",
+                                                            "control": "progression",
+                                                            "parts": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "control": "checkbox"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "control": "checkbox"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "control": "checkbox"
+                                                                },
+                                                                {
+                                                                    "type": "icon",
+                                                                    "icon": "..."
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "calc",
+                                                            "output": {
+                                                                "type": "field",
+                                                                "label": "Damage Bonus",
+                                                                "width": "large"
+                                                            },
+                                                            "inputs": [
+                                                                {
+                                                                    "type": "span",
+                                                                    "content": "1 +"
+                                                                }
+
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "label",
+                                                            "content": "To melee and\nunarmed strikes"
+                                                        },
+                                                        {
+                                                            "type": "spacer"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "label": "AC Penalty",
+                                                            "output": true,
+                                                            "width": "large",
+                                                            "value": "-1"
+                                                        },
+                                                        {
+                                                            "type": "spacer"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "calc",
+                                                    "output": {
+                                                        "type": "field",
+                                                        "legend": "Temporary\nHit Points",
+                                                        "overlay": "hp"
+                                                    },
+                                                    "inputs": [
+                                                        {
+                                                            "type": "field",
+                                                            "ref": "CON",
+                                                            "underlay": "CON"
+                                                        },
+                                                        {
+                                                            "type": "span",
+                                                            "content": "+"
+                                                        },
+                                                        {
+                                                            "type": "field",
+                                                            "ref": "level",
+                                                            "label": "Level"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "..."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr"
+                                        },
+                                        {
+                                            "type": "level",
+                                            "level": 3,
+                                            "contents": [
+                                                {
+                                                    "type": "h5",
+                                                    "title": "Critical Brutality"
+                                                },
+                                                {
+                                                    "type": "p",
+                                                    "content": "Gain critical specialization for your melee weapon or unarmed attack."
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr"
+                                        },
+                                        {
+                                            "type": "level",
+                                            "level": 9,
+                                            "contents": [
+                                                {
+                                                    "type": "row",
+                                                    "contents": [
+                                                        {
+                                                            "type": "calc",
+                                                            "output": {
+                                                                "type": "field",
+                                                                "legend": "Raging\nResistance"
+                                                            },
+                                                            "inputs": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "ref": "CON",
+                                                                    "underlay": "CON"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr"
+                                        },
+                                        {
+                                            "type": "level",
+                                            "level": 11,
+                                            "contents": [
+                                                {
+                                                    "type": "action",
+                                                    "action": "free",
+                                                    "contents": [
+                                                        {
+                                                            "type": "h5",
+                                                            "title": "Mighty Rage"
+                                                        },
+                                                        {
+                                                            "type": "p",
+                                                            "content": "Use one of your rage actions as a free action."
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "hr"
+                                        },
+                                        {
+                                            "type": "level",
+                                            "level": 17,
+                                            "contents": [
+                                                {
+                                                    "type": "h5",
+                                                    "title": "Tireless Rage"
+                                                },
+                                                {
+                                                    "type": "p",
+                                                    "content": "Don’t become fatigued after you stop raging. It still takes the normal amount of time before you can use Rage again."
+                                                }
+                                            ]
+                                        }
                             		]
                             	},
-                            	{
-                            		"type": "section",
-                            		"title": "Barbarian Feats",
-                            		"contents": [
+                                {
+                                    "type": "section",
+                                    "title": "Barbarian Feats",
+                                    "contents": [
+                                        {
+                                            "type": "layout",
+                                            "layout": "2e",
+                                            "contents": [
 
-                            		]
-                            	}
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 6,
+                                                    "zebra": true,
+                                                    "rows": [
+                                                        { "level": 1 },
+                                                        { "level": 4 },
+                                                        { "level": 8 },
+                                                        { "level": 12 },
+                                                        { "level": 16 },
+                                                        { "level": 20 }
+                                                    ],
+                                                    "contents": [
+                                                        {
+                                                            "type": "level",
+                                                            "level": "#{level}",
+                                                            "field_frame": "none",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "article",
+                                                                    "header": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}",
+                                                                            "width": "stretch",
+                                                                            "align": "left"
+                                                                        }
+                                                                    ],
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}-details",
+                                                                            "width": "stretch",
+                                                                            "align": "left",
+                                                                            "repeat": 2
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "repeat",
+                                                    "repeat": 6,
+                                                    "zebra": true,
+                                                    "rows": [
+                                                        { "level": 2 },
+                                                        { "level": 6 },
+                                                        { "level": 10 },
+                                                        { "level": 14 },
+                                                        { "level": 18 },
+                                                        { "level": "" }
+                                                    ],
+                                                    "contents": [
+                                                        {
+                                                            "type": "level",
+                                                            "level": "#{level}",
+                                                            "field_frame": "none",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "article",
+                                                                    "header": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}",
+                                                                            "width": "stretch",
+                                                                            "align": "left"
+                                                                        }
+                                                                    ],
+                                                                    "contents": [
+                                                                        {
+                                                                            "type": "field",
+                                                                            "id": "skill-feat-level-#{level}-details",
+                                                                            "width": "stretch",
+                                                                            "align": "left",
+                                                                            "repeat": 2
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]

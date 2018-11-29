@@ -13,7 +13,71 @@ global.render = function(items) {
 var stack = [];
 var contextStack = [];
 
+global.registryDefaultArgs = function(args) {
+    if (_.isNull(args)) {
+        return {};
+    }
+
+    // basic defaults
+    args = _.defaults({}, args);
+    args = _.defaults(args, {
+        id: null,
+        exists: true,
+    });
+    
+    // apply context stack
+    var context = {};
+    for (var i = contextStack.length - 1; i >= 0; i--) {
+        context = _.defaults(context, contextStack[i]);
+    }
+    var rx = new RegExp('^'+args.type+'_(.*)$', '');
+    var contextArgs = _(context).toPairs().flatMap(pair => {
+        var match = pair[0].match(rx);
+        if (match) {
+            return [[match[1], pair[1]]];
+        }
+        return [];
+    }).fromPairs().value();
+    
+    args = _.defaults(args, contextArgs);
+    args.context = context;
+
+    // registered defaults
+    if (_.has(registry, args.type)) {
+        var reg = registry[args.type];
+        args = _.defaults(args, reg.defaults);
+    }
+
+    return args;
+};
+
 global.renderItem = function(item) {
+    var args = registryDefaultArgs(item);
+
+    if (_.has(registry, args.type)) {
+        var reg = registry[args.type];
+        
+        contextStack.push(item);
+        stack.push(item.type + ((args.id == null) ? '' : ":"+args.id) + ((args.title == null) ? '' : ':'+args.title));
+        var output = reg.callback(args);
+        stack.pop();
+        contextStack.pop();
+        return output;
+    } else {
+        console.log("[registry] Unknown element type:", args.type, "at:", stack, item);
+        return '';
+    }
+
+
+
+
+
+
+
+
+
+
+    /*
     if (_.isNull(item)) {
         return '';
     }
@@ -65,4 +129,5 @@ global.renderItem = function(item) {
         console.log("[registry] Unknown element type:", type, "at:", stack, item);
         return '';
     }
-}
+    */
+};

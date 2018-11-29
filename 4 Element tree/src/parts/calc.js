@@ -5,7 +5,9 @@ register('calc', {
     inline: false,
     inputs: [],
 }, args => {
-    var cls = elementClass('calc', null, args, [ "inline" ]);
+    args.labelHeight = getLabelHeight(args);
+
+    var cls = elementClass('calc', null, args, [ "inline", "labelHeight" ]);
 
     // parts of the calculation
     var output = _.defaults(args.output, { "output": true });

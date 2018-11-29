@@ -193,6 +193,7 @@ function fieldControl_composite(args) {
             return renderItem(part);
         }
         partArgs = _.defaults(partArgs, args);
+        partArgs.frame = "none";
         var callback = getFieldControlCallback(part.control, partArgs);
         return callback(partArgs);
     });

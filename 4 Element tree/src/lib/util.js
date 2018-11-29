@@ -216,3 +216,50 @@ global.adjustColour = function (c) {
         return c;
     }
 }
+
+global.getLabelHeight = function(args) {
+    args = registryDefaultArgs(args);
+
+    if (_.has(args, "labelHeight"))
+        return args.labelHeight;
+    if (_.has(args.context, "labelHeight"))
+        return args.context.labelHeight;
+
+    switch(args.type) {
+        case 'field':
+            switch(args.frame) {
+                case 'none':
+                case 'left':
+                case 'right':
+                    return 0;
+
+                default:
+                    var label = "";
+                    if (args.label) label = args.label;
+                    if (args.legend) label = args.legend;
+                    if (label == "") break;
+                    var lines = label.split(/\n/);
+                    return lines.length;
+            }
+            return 1;
+
+        case 'calc':
+            var height = getLabelHeight(args.output);
+            _.each(args.inputs, field => {
+                var h = getLabelHeight(field);
+                if (h > height) 
+                    height = h;
+            });
+            return height;
+
+        case 'row':
+            var height = 0;
+            _.each(args.contents, field => {
+                var h = getLabelHeight(field);
+                if (h > height) 
+                    height = h;
+            });
+            return height;
+    }
+    return 0;
+};

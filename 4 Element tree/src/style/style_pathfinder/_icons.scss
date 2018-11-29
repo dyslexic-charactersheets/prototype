@@ -23,6 +23,10 @@ i.icon--icon_reaction {
     background-image: url('{{{dataurl "images/icon-reaction.svg"}}}');
 }
 
+i.icon--icon_free-action {
+    background-image: url('{{{dataurl "images/icon-free-action.svg"}}}');
+}
+
 i.icon--icon_action-template {
     background-image: url('{{{dataurl "images/icon-action-template.svg"}}}');
     width: 1.4cm;
@@ -44,15 +48,15 @@ i.icon--icon_action-template {
 
 /* Proficiency */
 
-.field--control_proficiency i, .field--icon_proficiency i, i.icon-proficiency {
+.field--control_proficiency i, .field--icon_proficiency i, i.icon-proficiency, i.icon--icon_proficiency {
     background-image: url('{{{dataurl "images/icon-proficiency.svg"}}}'); 
     background-size: auto 0.5cm;
 }
 
-.field--proficiency_trained i,   .field--icon_proficiency--trained,   .field--proficiency > .field--proficiency__trained:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-trained.svg"}}}'); }
-.field--proficiency_expert i,    .field--icon_proficiency--expert,    .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-expert.svg"}}}'); }
-.field--proficiency_master i,    .field--icon_proficiency--master,    .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ .field--proficiency__master:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-master.svg"}}}'); }
-.field--proficiency_legendary i, .field--icon_proficiency--legendary, .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ .field--proficiency__master:checked ~ .field--proficiency__legendary:checked ~ i { background-image: url('{{{dataurl "images/icon-proficiency-legendary.svg"}}}'); }
+.field--proficiency_trained i,   .field--icon_proficiency--trained,   .field--proficiency > .field--proficiency__trained:checked ~ i, i.icon--icon_proficiency-trained { background-image: url('{{{dataurl "images/icon-proficiency-trained.svg"}}}'); }
+.field--proficiency_expert i,    .field--icon_proficiency--expert,    .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ i, i.icon--icon_proficiency-expert { background-image: url('{{{dataurl "images/icon-proficiency-expert.svg"}}}'); }
+.field--proficiency_master i,    .field--icon_proficiency--master,    .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ .field--proficiency__master:checked ~ i, i.icon--icon_proficiency-master { background-image: url('{{{dataurl "images/icon-proficiency-master.svg"}}}'); }
+.field--proficiency_legendary i, .field--icon_proficiency--legendary, .field--proficiency > .field--proficiency__trained:checked ~ .field--proficiency__expert:checked ~ .field--proficiency__master:checked ~ .field--proficiency__legendary:checked ~ i, i.icon--icon_proficiency-legendary { background-image: url('{{{dataurl "images/icon-proficiency-legendary.svg"}}}'); }
 
 i.icon--icon_d20, .field--icon.field--icon_bonus i, .hr--swash {
     background-image: url('{{{dataurl "images/icon-d20.svg"}}}');

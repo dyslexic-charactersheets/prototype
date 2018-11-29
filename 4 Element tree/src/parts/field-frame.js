@@ -13,16 +13,16 @@ global.getFieldFrameCallback = function(frame, args) {
 
 function fieldFrame_normal(args, callback) {
     var ident = fieldIdent(args.id);
-    var label = args.label ? `<label${ident.for}>${esc(args.label)}</label>` : '';
-    var legend = args.legend ? `<legend>${esc(args.legend)}</legend>`: '';
+    var label = args.label ? `<label${ident.for}>${esc(args.label, true)}</label>` : '';
+    var legend = args.legend ? `<legend>${esc(args.legend, true)}</legend>`: '';
 
     return `${legend}${label}${callback(args)}`;
 }
 
 function fieldFrame_right(args, callback) {
     var ident = fieldIdent(args.id);
-    var label = args.label ? `<label${ident.for}>${esc(args.label)}</label>` : '';
-    var legend = args.legend ? `<legend>${esc(args.legend)}</legend>`: '';
+    var label = args.label ? `<label${ident.for}>${esc(args.label, true)}</label>` : '';
+    var legend = args.legend ? `<legend>${esc(args.legend, true)}</legend>`: '';
 
     return `${callback(args)}${legend}${label}`;
 }
