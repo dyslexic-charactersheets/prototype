@@ -57,5 +57,20 @@ table {
     
     &.table--width_stretch {
         width: 100%;
-    }
+	}
+	
+	&.table--layout_2r {
+		table-layout: fixed;
+		td {
+			&:nth-child(1) { width: 62%; }
+			&:nth-child(2) { width: 38%; }
+		}
+	}
+	&.table--layout_2r-80-20 {
+		table-layout: fixed;
+		td {
+			&:nth-child(1) { width: 80%; }
+			&:nth-child(2) { width: 20%; }
+		}
+	}
 }

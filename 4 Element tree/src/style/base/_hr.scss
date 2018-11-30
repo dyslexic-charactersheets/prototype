@@ -7,9 +7,12 @@ hr {
 	border-top: 2pt solid #a0a0a0;
 
 	&.hr--swash {
+		$h: 6mm;
+
 		position: relative;
-		height: 5mm;
+		height: $h;
 		border-top: 0 none;
+		margin: 2pt 0;
 		
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
@@ -18,9 +21,9 @@ hr {
 		&::before, &::after {
 			content: "";
 			position: absolute;
-			top: 2.5mm;
+			top: $h / 2;
 			margin-top: -0.5pt;
-			border-top: 0.5pt solid #9f9f9f;
+			border-top: 1pt solid #9f9f9f;
 			height: 0;
 		}
 

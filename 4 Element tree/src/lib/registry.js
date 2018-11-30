@@ -53,6 +53,8 @@ global.registryDefaultArgs = function(args) {
 
 global.renderItem = function(item) {
     var args = registryDefaultArgs(item);
+    if (!args.exists || args.exists === "false")
+        return '';
 
     if (_.has(registry, args.type)) {
         var reg = registry[args.type];

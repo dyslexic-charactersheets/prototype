@@ -10,7 +10,7 @@ register('table', {
     "columns": [],
     "template": null,
 }, args => {
-    var cls = elementClass('table', null, args, [ 'zebra', 'collapse' ], [ 'width' ]);
+    var cls = elementClass('table', null, args, [ 'zebra', 'collapse', 'fixed' ], [ 'width', 'layout' ]);
 
     // columns headings
     var cols = args.columns.map(th => {

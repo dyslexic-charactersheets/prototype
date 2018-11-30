@@ -50,7 +50,7 @@ register('field', {
     args.labelHeight = getLabelHeight(args);
 
     var id = elementID('field', args.id);
-    var cls = elementClass('field', null, args, [ "output", "icon", "bold", "unlined", "attack", "ref", "misc", "temp" ], [ "frame", "control", "align", "size", "width", "icon", "proficiency", "labelHeight" ]);
+    var cls = elementClass('field', null, args, [ "output", "icon", "bold", "unlined", "attack", "ref", "misc", "temp" ], [ "frame", "control", "align", "size", "width", "icon", "proficiency", "labelHeight", "digits", "shift" ]);
 
     // Callbacks
     var frameCallback = getFieldFrameCallback(args.frame, args);

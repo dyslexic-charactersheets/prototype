@@ -19,6 +19,10 @@
         padding-top: 2.7rem;
     }
 
+    &--frame_left {
+        text-align: right;
+    }
+
     &--frame_right, &--frame_left {
         padding: 0;
         .field__inner {
@@ -50,4 +54,11 @@
             transform: rotate(180deg);
         }
     }
+
+    $shift: 7pt;
+    &--shift_1 { padding-right: $shift; }
+    &--shift_2 { padding-right: $shift*2; }
+    &--shift_3 { padding-right: $shift*3; }
+    &--shift_4 { padding-right: $shift*4; }
+    &--shift_5 { padding-right: $shift*5; }
 }

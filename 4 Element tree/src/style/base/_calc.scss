@@ -2,7 +2,7 @@
 /* Calculations */
 
 fieldset.calc {
-	margin: 2pt 0;
+	margin: 3pt 0;
 	border: 0 none;
 	padding: 0;
 
@@ -27,8 +27,8 @@ fieldset.calc {
 
 	> span {
 		margin: 0 2pt;
-		/*font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
-		font-weight: bold;*/
+		font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
+		font-weight: bold;
 		font-size: 1.3rem;
 		display: inline-block;
 		height: $height;

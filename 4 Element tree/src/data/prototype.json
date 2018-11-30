@@ -851,6 +851,7 @@
                                                     "id": "cover-heritage",
                                                     "legend": "Heritage",
                                                     "width": "stretch",
+                                                    "size": "large",
                                                     "align": "left"
                                                 }
                                             ],
@@ -869,7 +870,7 @@
                                             "type": "hr"
                                         },
                                         {
-                                            "type": "h4",
+                                            "type": "h5",
                                             "title": "Ancestry Feats"
                                         },
                                         {
@@ -897,6 +898,7 @@
                                                                     "id": "ancestry-feat-#{i}",
                                                                     "frame": "none",
                                                                     "width": "stretch",
+                                                                    "size": "large",
                                                                     "align": "left"
                                                                 }
                                                             ],
@@ -979,6 +981,7 @@
                                         },
                                         {
                                             "type": "table",
+                                            "layout": "2r-80-20",
                                             "legend": "Archetypes",
                                             "repeat": 2,
                                             "field_frame": "none",
@@ -1095,6 +1098,9 @@
                                             ]
                                         },
                                         {
+                                            "type": "hr"
+                                        },
+                                        {
                                             "type": "calc",
                                             "inline": true,
                                             "output": {
@@ -1190,11 +1196,12 @@
                                         },
                                         {
                                             "type": "table",
+                                            "layout": "2r-80-20",
                                             "columns": [
                                                 { "type": "label", "label": "Ability", "align": "left" },
                                                 "Proficiency"
                                             ],
-                                            "repeat": 10,
+                                            "repeat": 15,
                                             "template": [
                                                 {
                                                     "type": "field",
@@ -1288,7 +1295,8 @@
                                         {
                                             "type": "field",
                                             "id": "perception-other",
-                                            "frame": "none",
+                                            
+                                            "label": "Conditional",
                                             "align": "left",
                                             "width": "stretch"
                                         }
@@ -1302,7 +1310,7 @@
                                         {
                                             "type": "field",
                                             "frame": "none",
-                                            "repeat": 2,
+                                            "repeat": 3,
                                             "align": "left",
                                             "width": "stretch"
                                         }
@@ -1466,6 +1474,7 @@
                                                                             "type": "field",
                                                                             "id": "skill-feat-level-#{level}",
                                                                             "width": "stretch",
+                                                                            "size": "large",
                                                                             "align": "left"
                                                                         }
                                                                     ],
@@ -1508,6 +1517,7 @@
                                                                             "type": "field",
                                                                             "id": "skill-feat-level-#{level}",
                                                                             "width": "stretch",
+                                                                            "size": "large",
                                                                             "align": "left"
                                                                         }
                                                                     ],
@@ -1590,6 +1600,7 @@
                                             "type": "field",
                                             "label": "Conditional",
                                             "align": "left",
+                                            "repeat": 2,
                                             "width": "stretch"
                                         }
                                     ]
@@ -1701,6 +1712,7 @@
                                             "type": "field",
                                             "label": "Conditional",
                                             "align": "left",
+                                            "repeat": 2,
                                             "width": "stretch"
                                         }
                                     ]
@@ -1729,7 +1741,10 @@
                                                         },
                                                         {
                                                             "type": "field",
-                                                            "width": "stretch"
+                                                            "width": "stretch",
+                                                            "frame": "none",
+                                                            "align": "left",
+                                                            "size": "large"
                                                         }
                                                     ]
                                                 },
@@ -1820,6 +1835,7 @@
                                                             "id": "ammo-1-type",
                                                             "legend": "Ammo",
                                                             "width": "stretch",
+                                                            "align": "left",
                                                             "unlined": true
                                                         },
                                                         {
@@ -1849,6 +1865,7 @@
                                                             "type": "field",
                                                             "id": "ammo-2-type",
                                                             "width": "stretch",
+                                                            "align": "left",
                                                             "unlined": true
                                                         },
                                                         {
@@ -1885,6 +1902,7 @@
                                                             "id": "ammo-3-type",
                                                             "frame": "none",
                                                             "width": "stretch",
+                                                            "align": "left",
                                                             "unlined": true
                                                         },
                                                         {
@@ -1915,6 +1933,7 @@
                                                             "id": "ammo-4-type",
                                                             "frame": "none",
                                                             "width": "stretch",
+                                                            "align": "left",
                                                             "unlined": true
                                                         },
                                                         {
@@ -2031,12 +2050,25 @@
                                             ]
                                         },
                                         {
-                                            "type": "field",
-                                            "label": "Current Hit Points",
-                                            "output": true,
-                                            "temp": true,
-                                            "overlay": "hp",
-                                            "width": "stretch"
+                                            "type": "row",
+                                            "contents": [
+                                                {
+                                                    "type": "field",
+                                                    "label": "Current Hit Points",
+                                                    "output": true,
+                                                    "temp": true,
+                                                    "overlay": "hp",
+                                                    "width": "stretch"
+                                                },
+                                                {
+                                                    "type": "field",
+                                                    "label": "Temp Hit Points",
+                                                    "output": true,
+                                                    "temp": true,
+                                                    "overlay": "hp",
+                                                    "width": "huge"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -2130,7 +2162,7 @@
                                                                 },
                                                                 {
                                                                     "type": "field",
-                                                                    "id": "equipment-#{i}",
+                                                                    "id": "action-#{i}",
                                                                     "width": "stretch",
                                                                     "align": "left"
                                                                 }
@@ -2140,7 +2172,7 @@
                                                     "contents": [
                                                         {
                                                             "type": "field",
-                                                            "id": "equipment-#{i}-details",
+                                                            "id": "action-#{i}-details",
                                                             "width": "stretch",
                                                             "align": "left",
                                                             "repeat": 2
@@ -2180,7 +2212,7 @@
                                     "contents": [
                                         {
                                             "type": "repeat",
-                                            "repeat": 20,
+                                            "repeat": 16,
                                             "zebra": true,
                                             "collapse": true,
                                             "field_frame": "none",
@@ -2300,8 +2332,40 @@
                                 {
                                     "type": "section",
                                     "title": "Money",
+                                    "field_frame": "left",
                                     "contents": [
-
+                                        {
+                                            "type": "field",
+                                            "control": "money",
+                                            "label": "Copper",
+                                            "denomination": "copper",
+                                            "digits": 7
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "money",
+                                            "label": "Silver",
+                                            "denomination": "silver",
+                                            "digits": 7,
+                                            "shift": 1
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "money",
+                                            "label": "Gold",
+                                            "denomination": "gold",
+                                            "digits": 7,
+                                            "shift": 2
+                                        },
+                                        {
+                                            "type": "field",
+                                            "output": "true",
+                                            "control": "money",
+                                            "legend": "Total",
+                                            "denomination": "copper",
+                                            "digits": 10,
+                                            "decimal": 1
+                                        }
                                     ]
                                 },
                                 {
@@ -2387,12 +2451,14 @@
                                                                             "type": "field",
                                                                             "id": "armour-ac",
                                                                             "label": "AC Bonus",
+                                                                            "width": "large",
                                                                             "icon": "ac"
                                                                         },
                                                                         {
                                                                             "type": "field",
                                                                             "id": "armour-ac",
                                                                             "label": "TAC Bonus",
+                                                                            "width": "large",
                                                                             "icon": "tac"
                                                                         },
                                                                         {
@@ -2452,12 +2518,14 @@
                                                                             "type": "field",
                                                                             "id": "shield-ac",
                                                                             "label": "AC Bonus",
+                                                                            "width": "large",
                                                                             "icon": "ac"
                                                                         },
                                                                         {
                                                                             "type": "field",
                                                                             "id": "shield-ac",
                                                                             "label": "TAC Bonus",
+                                                                            "width": "large",
                                                                             "icon": "tac"
                                                                         },
                                                                         {
@@ -2510,7 +2578,7 @@
                                                     "contents": [
                                                         {
                                                             "type": "repeat",
-                                                            "repeat": 8,
+                                                            "repeat": 9,
                                                             "zebra": true,
                                                             "field_frame": "none",
                                                             "contents": [
@@ -2595,7 +2663,7 @@
                                             "contents": [
                                                 {
                                                     "type": "repeat",
-                                                    "repeat": 12,
+                                                    "repeat": 10,
                                                     "zebra": true,
                                                     "collapse": true,
                                                     "field_frame": "none",
@@ -2641,7 +2709,7 @@
                                                 },
                                                 {
                                                     "type": "repeat",
-                                                    "repeat": 8,
+                                                    "repeat": 6,
                                                     "zebra": true,
                                                     "collapse": true,
                                                     "field_frame": "none",
@@ -2678,6 +2746,10 @@
                         {
                             "type": "g",
                             "contents": [
+                                {
+                                    "type": "class-icon",
+                                    "icon": "barbarian"
+                                },
                                 {
                                     "type": "h2",
                                     "title": "Barbarian"
@@ -2933,7 +3005,8 @@
                                                     "output": {
                                                         "type": "field",
                                                         "legend": "Temporary\nHit Points",
-                                                        "overlay": "hp"
+                                                        "overlay": "hp",
+                                                        "temp": true
                                                     },
                                                     "inputs": [
                                                         {
@@ -2988,7 +3061,8 @@
                                                             "type": "calc",
                                                             "output": {
                                                                 "type": "field",
-                                                                "legend": "Raging\nResistance"
+                                                                "legend": "Raging\nResistance",
+                                                                "width": "large"
                                                             },
                                                             "inputs": [
                                                                 {

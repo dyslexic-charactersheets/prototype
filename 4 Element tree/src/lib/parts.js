@@ -15,6 +15,7 @@ require('../parts/portrait.js');
 require('../parts/blockquote.js');
 require('../parts/level.js');
 require('../parts/proficiency.js');
+require('../parts/class-icon.js');
 require('../parts/p.js');
 require('../parts/table.js');
 require('../parts/hr.js');

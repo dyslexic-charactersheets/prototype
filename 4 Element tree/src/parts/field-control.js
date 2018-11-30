@@ -13,6 +13,7 @@ global.getFieldControlCallback = function(control, args) {
         case 'weight': return fieldControl_weight;
         case 'speed': return fieldControl_speed;
         case 'icon': return fieldControl_icon;
+        case 'money': return fieldControl_money;
         case 'proficiency': return fieldControl_proficiency;
         case 'composite': return fieldControl_composite;
         default: return fieldControl_input;
@@ -153,12 +154,41 @@ function fieldControl_weight(args) {
             type: "field",
             id: lightIdent.id,
             align: "right",
-            width: "small",
+            width: "tiny",
             overlay: "L"
         }
     ];
 
     return fieldControl_composite(args);
+}
+
+function fieldControl_money(args) {
+    args = _.defaults(args, {
+        indent: 0,
+        digits: 3,
+        decimal: 0,
+        denomination: "copper",
+        value: '',
+    });
+    var unit = '';
+    switch(args.denomination) {
+        case 'gold': unit = 'gp'; break;
+        case 'silver': unit = 'sp'; break;
+        case 'copper': unit = 'cp'; break;
+    }
+    var overlay = `<span class='field__overlay'>${unit}</span>`;
+
+    var ident = fieldIdent(args.id);
+    var cls = elementClass("field__item", null, args, [], [ "digits" ]);
+    var value = (args.value == '') ? '' : ` value='${args.value}'`;
+
+    var ticks = [];
+    for (var i = 1; i < args.digits; i++) {
+        var decimal = (i == args.decimal) ? ' field__tick--decimal' : '';
+        ticks.push(`<label class='field__tick field__tick-${i}${decimal}'></label>`);
+    }
+
+    return `<div${cls}><input${ident.ident}${value} size='${args.digits}'>${ticks.join("")}</div>${overlay}`;
 }
 
 function fieldControl_speed(args) {
