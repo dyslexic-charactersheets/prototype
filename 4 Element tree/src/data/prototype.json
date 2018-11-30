@@ -46,12 +46,12 @@
                                     "type": "spacer"
                                 },
                                 {
-                                    "type": "p",
-                                    "content": "https://www.dyslexic-charactersheets.com"
-                                },
-                                {
                                     "type": "h6",
                                     "title": "Copyright &copy; Marcus Downing"
+                                },
+                                {
+                                    "type": "p",
+                                    "content": "https://www.dyslexic-charactersheets.com"
                                 },
                                 {
                                     "type": "hr"
@@ -634,9 +634,9 @@
                                         {
                                             "type": "field",
                                             "label": "Remaining Money",
-                                            "overlay": "sp",
-                                            "size": "huge",
-                                            "width": "large"
+                                            "control": "money",
+                                            "denomination": "silver",
+                                            "digits": 4
                                         }
                                     ]
                                 }
