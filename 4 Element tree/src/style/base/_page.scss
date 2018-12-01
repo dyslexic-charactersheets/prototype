@@ -40,28 +40,4 @@
 			margin-right: 0.2cm;
 		}
 	}
-
-	&.page--flex {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-
-		.page-contents {
-			// flex: 1 1 100%;
-			width: 100%;
-			height: 100%;
-
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-		
-		> .layout {
-			flex: 1 1 100%;
-
-			// &:last-child {
-			// 	flex: 0 1 auto;
-			// }
-		}
-	}
 }

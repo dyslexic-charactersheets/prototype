@@ -5,11 +5,11 @@
         {
             "type": "page",
             "id": "permission",
+            "flex": true,
             "numbered": false,
             "contents": [
                 {
                     "type": "layout",
-                    "flex": true,
                     "layout": "1n",
                     "contents": [
                         {
@@ -111,12 +111,12 @@
         {
             "type": "page",
             "id": "build",
+            "flex": true,
             "numbered": false,
             "contents": [
                 {
                     "type": "layout",
                     "layout": "2l",
-                    "flex": true,
                     "contents": [
                         {
                             "type": "h2",
@@ -146,7 +146,13 @@
                                     ]
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
                         {
                             "type": "section",
                             "title": "Step One",
@@ -217,7 +223,13 @@
                                     ]
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
                         {
                             "type": "section",
                             "title": "Step Two",
@@ -257,7 +269,13 @@
                                     ]
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
                         {
                             "type": "section",
                             "title": "Step Three",
@@ -345,7 +363,13 @@
                                     ]
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
                         {
                             "type": "section",
                             "title": "Step Four",
@@ -467,7 +491,13 @@
                                     "content": "No ability score may be above 18 at level 1."
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
                         {
                             "type": "g",
                             "contents": [
@@ -533,7 +563,13 @@
                                     ]
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
                         {
                             "type": "g",
                             "contents": [
@@ -608,7 +644,13 @@
                                     ]
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "type": "layout",
+                    "layout": "2l",
+                    "contents": [
                         {
                             "type": "section",
                             "id": "build-stage-5",
@@ -699,6 +741,7 @@
         {
             "type": "page",
             "id": "cover",
+            "flex": true,
             "contents": [
                 {
                     "type": "layout",
@@ -823,7 +866,7 @@
                                                 {
                                                     "type": "field",
                                                     "id": "cover-ancestry",
-                                                    "label": "Ancestry",
+                                                    "legend": "Ancestry",
                                                     "size": "large",
                                                     "width": "stretch",
                                                     "align": "left"
@@ -1036,6 +1079,7 @@
         {
             "type": "page",
             "id": "core",
+            "flex": true,
             "layout": "2l",
             "contents": [
                 {
@@ -1550,6 +1594,7 @@
         {
             "type": "page",
             "id": "combat",
+            "flex": true,
             "contents": [
                 {
                     "type": "layout",
@@ -2197,6 +2242,7 @@
         {
             "type": "page",
             "id": "inventory",
+            "flex": true,
             "contents": [
                 {
                     "type": "layout",
@@ -2265,63 +2311,43 @@
                                             ]
                                         },
                                         {
-                                            "type": "layout",
-                                            "layout": "2r",
-                                            "collapse": true,
-                                            "field_frame": "none",
+                                            "type": "g",
+                                            "field_frame": "left",
                                             "contents": [
-                                                {
-                                                    "type": "h6",
-                                                    "title": "Carried items"
-                                                },
                                                 {
                                                     "type": "field",
                                                     "id": "weight-inventory",
+                                                    "label": "Carried Items",
                                                     "control": "weight"
-                                                },
-                                                {
-                                                    "type": "h6",
-                                                    "title": "Weapons, Ammo"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "weight-weapons",
+                                                    "label": "Weapons, Ammo",
                                                     "control": "weight"
-                                                },
-                                                {
-                                                    "type": "h6",
-                                                    "title": "Armour, Shield"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "weight-armour",
+                                                    "label": "Armour, Shield",
                                                     "control": "weight"
-                                                },
-                                                {
-                                                    "type": "h6",
-                                                    "title": "Worn items"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "weight-worn",
+                                                    "label": "Worn items",
                                                     "control": "weight"
-                                                },
-                                                {
-                                                    "type": "h6",
-                                                    "title": "Scrolls, Potions, Wands"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "weight-magic",
+                                                    "label": "Scrolls, Potions, Wands",
                                                     "control": "weight"
-                                                },
-                                                {
-                                                    "type": "h6",
-                                                    "title": "Total weight"
                                                 },
                                                 {
                                                     "type": "field",
                                                     "id": "weight-total",
+                                                    "label": "Total weight",
                                                     "output": true,
                                                     "control": "weight"
                                                 }
@@ -2361,7 +2387,7 @@
                                             "type": "field",
                                             "output": "true",
                                             "control": "money",
-                                            "legend": "Total",
+                                            "label": "Total",
                                             "denomination": "copper",
                                             "digits": 10,
                                             "decimal": 1
@@ -2738,6 +2764,7 @@
         {
             "type": "page",
             "id": "barbarian",
+            "flex": true,
             "contents": [
                 {
                     "type": "layout",

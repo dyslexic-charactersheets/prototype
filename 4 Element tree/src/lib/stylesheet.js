@@ -61,5 +61,5 @@ global.stylesheet = function () {
 
     // put it all together
     console.log("[stylesheet] Found", cssParts.length, "stylesheet parts");
-    return cssParts.join();
+    return cssParts.join("");
 };

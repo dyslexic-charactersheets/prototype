@@ -4,10 +4,26 @@ $color_legend: #606060;
 
 /* Column Borders */
 
-.page > .layout:last-child > *:last-child {
-/* .page-contents > .column > *:last-child, .page-contents > *:last-child > .column > *:last-child { */
-    padding-bottom: 2pt;
-    border-bottom: 2pt solid #808080;
+.page__contents {
+    > *:last-child {
+        padding-bottom: 2pt;
+        border-bottom: 2pt solid #808080;
+
+        &.layout {
+            padding-bottom: 0;
+            border-bottom: 0 none;
+            > *:last-child {
+                padding-bottom: 2pt;
+                border-bottom: 2pt solid #808080;
+            }
+            &--layout_2e, &--layout_2l, &--layout_2r {
+                > *:nth-last-child(2) {
+                    padding-bottom: 2pt;
+                    border-bottom: 2pt solid #808080;
+                }
+            }
+        }
+    }
 }
 
 .column.column--non-final > * {
@@ -27,9 +43,9 @@ h2 {
 }
 
 h3 {
-    font-size: 0.8rem;
-    height: 1rem;
-    line-height: 1rem;
+    font-size: 0.95rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
     
     margin: 0;
     text-align: center;

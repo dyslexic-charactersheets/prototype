@@ -20,7 +20,8 @@ register('page', {
 
     return `
 <div${id}${cls}>
-${copyrightAttribution}${pageNumber}${render(args.contents)}
+${copyrightAttribution}${pageNumber}
+<div class='page__contents'>${render(args.contents)}</div>
 </div>
 `;
 });
