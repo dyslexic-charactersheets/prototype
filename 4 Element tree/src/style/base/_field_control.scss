@@ -112,6 +112,9 @@
 	}
 	
 	&--control_progression {
+		.field__inner > * {
+			vertical-align: middle;
+		}
 		.field__separator {
 			display: inline-block;
 			position: static;

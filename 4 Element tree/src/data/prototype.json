@@ -146,13 +146,7 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "layout",
-                    "layout": "2l",
-                    "contents": [
+                        },
                         {
                             "type": "section",
                             "title": "Step One",
@@ -223,13 +217,7 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "layout",
-                    "layout": "2l",
-                    "contents": [
+                        },
                         {
                             "type": "section",
                             "title": "Step Two",
@@ -269,13 +257,7 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "layout",
-                    "layout": "2l",
-                    "contents": [
+                        },
                         {
                             "type": "section",
                             "title": "Step Three",
@@ -363,13 +345,7 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "layout",
-                    "layout": "2l",
-                    "contents": [
+                        },
                         {
                             "type": "section",
                             "title": "Step Four",
@@ -491,13 +467,7 @@
                                     "content": "No ability score may be above 18 at level 1."
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "layout",
-                    "layout": "2l",
-                    "contents": [
+                        },
                         {
                             "type": "g",
                             "contents": [
@@ -563,13 +533,7 @@
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "layout",
-                    "layout": "2l",
-                    "contents": [
+                        },
                         {
                             "type": "g",
                             "contents": [
@@ -640,17 +604,39 @@
                                             "type": "field",
                                             "control": "proficiency",
                                             "width": "stretch"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": ""
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "content": ""
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
+                                        },
+                                        {
+                                            "type": "field",
+                                            "control": "proficiency",
+                                            "width": "stretch"
                                         }
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "layout",
-                    "layout": "2l",
-                    "contents": [
+                        },
                         {
                             "type": "section",
                             "id": "build-stage-5",
@@ -1059,6 +1045,9 @@
                                             ]
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "spacer"
                                 }
                             ]
                         }
@@ -2258,7 +2247,7 @@
                                     "contents": [
                                         {
                                             "type": "repeat",
-                                            "repeat": 16,
+                                            "repeat": 24,
                                             "zebra": true,
                                             "collapse": true,
                                             "field_frame": "none",
@@ -2312,41 +2301,11 @@
                                         },
                                         {
                                             "type": "g",
-                                            "field_frame": "left",
                                             "contents": [
                                                 {
                                                     "type": "field",
-                                                    "id": "weight-inventory",
-                                                    "label": "Carried Items",
-                                                    "control": "weight"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "weight-weapons",
-                                                    "label": "Weapons, Ammo",
-                                                    "control": "weight"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "weight-armour",
-                                                    "label": "Armour, Shield",
-                                                    "control": "weight"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "weight-worn",
-                                                    "label": "Worn items",
-                                                    "control": "weight"
-                                                },
-                                                {
-                                                    "type": "field",
-                                                    "id": "weight-magic",
-                                                    "label": "Scrolls, Potions, Wands",
-                                                    "control": "weight"
-                                                },
-                                                {
-                                                    "type": "field",
                                                     "id": "weight-total",
+                                                    "frame": "left",
                                                     "label": "Total weight",
                                                     "output": true,
                                                     "control": "weight"
@@ -2458,63 +2417,56 @@
                                                     "title": "Armour",
                                                     "contents": [
                                                         {
-                                                            "type": "article",
-                                                            "header": [
-                                                                {
-                                                                    "type": "field",
-                                                                    "id": "armour",
-                                                                    "frame": "none",
-                                                                    "size": "large",
-                                                                    "width": "stretch"
-                                                                }
-                                                            ],
+                                                            "type": "field",
+                                                            "id": "armour",
+                                                            "frame": "none",
+                                                            "size": "large",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "row",
+                                                            "layout": "split",
                                                             "contents": [
                                                                 {
-                                                                    "type": "row",
-                                                                    "layout": "split",
-                                                                    "contents": [
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-ac",
-                                                                            "label": "AC Bonus",
-                                                                            "width": "large",
-                                                                            "icon": "ac"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-ac",
-                                                                            "label": "TAC Bonus",
-                                                                            "width": "large",
-                                                                            "icon": "tac"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-bulk",
-                                                                            "label": "Bulk"
-                                                                        }
-                                                                    ]
+                                                                    "type": "field",
+                                                                    "id": "armour-ac",
+                                                                    "label": "AC Bonus",
+                                                                    "width": "large",
+                                                                    "icon": "ac"
                                                                 },
                                                                 {
-                                                                    "type": "row",
-                                                                    "layout": "split",
-                                                                    "contents": [
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-max-dex",
-                                                                            "label": "Max DEX\nto AC"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-speed-penalty",
-                                                                            "label": "Speed\nPenalty",
-                                                                            "control": "speed"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-acp",
-                                                                            "label": "Armour\nCheck\nPenalty"
-                                                                        }
-                                                                    ]
+                                                                    "type": "field",
+                                                                    "id": "armour-ac",
+                                                                    "label": "TAC Bonus",
+                                                                    "width": "large",
+                                                                    "icon": "tac"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour-bulk",
+                                                                    "label": "Bulk"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "row",
+                                                            "layout": "split",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour-max-dex",
+                                                                    "label": "Max DEX\nto AC"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour-speed-penalty",
+                                                                    "label": "Speed\nPenalty",
+                                                                    "control": "speed"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour-acp",
+                                                                    "label": "Armour\nCheck\nPenalty"
                                                                 }
                                                             ]
                                                         }
@@ -2525,63 +2477,56 @@
                                                     "title": "Shield",
                                                     "contents": [
                                                         {
-                                                            "type": "article",
-                                                            "header": [
-                                                                {
-                                                                    "type": "field",
-                                                                    "id": "shield",
-                                                                    "frame": "none",
-                                                                    "size": "large",
-                                                                    "width": "stretch"
-                                                                }
-                                                            ],
+                                                            "type": "field",
+                                                            "id": "shield",
+                                                            "frame": "none",
+                                                            "size": "large",
+                                                            "width": "stretch"
+                                                        },
+                                                        {
+                                                            "type": "row",
+                                                            "layout": "split",
                                                             "contents": [
                                                                 {
-                                                                    "type": "row",
-                                                                    "layout": "split",
-                                                                    "contents": [
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "shield-ac",
-                                                                            "label": "AC Bonus",
-                                                                            "width": "large",
-                                                                            "icon": "ac"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "shield-ac",
-                                                                            "label": "TAC Bonus",
-                                                                            "width": "large",
-                                                                            "icon": "tac"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "shield-bulk",
-                                                                            "label": "Bulk"
-                                                                        }
-                                                                    ]
+                                                                    "type": "field",
+                                                                    "id": "shield-ac",
+                                                                    "label": "AC Bonus",
+                                                                    "width": "large",
+                                                                    "icon": "ac"
                                                                 },
                                                                 {
-                                                                    "type": "row",
-                                                                    "layout": "split",
-                                                                    "contents": [
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-max-dex",
-                                                                            "label": "Max DEX\nto AC"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-speed-penalty",
-                                                                            "label": "Speed\nPenalty",
-                                                                            "control": "speed"
-                                                                        },
-                                                                        {
-                                                                            "type": "field",
-                                                                            "id": "armour-acp",
-                                                                            "label": "Armour\nCheck\nPenalty"
-                                                                        }
-                                                                    ]
+                                                                    "type": "field",
+                                                                    "id": "shield-ac",
+                                                                    "label": "TAC Bonus",
+                                                                    "width": "large",
+                                                                    "icon": "tac"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "shield-bulk",
+                                                                    "label": "Bulk"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "row",
+                                                            "layout": "split",
+                                                            "contents": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour-max-dex",
+                                                                    "label": "Max DEX\nto AC"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour-speed-penalty",
+                                                                    "label": "Speed\nPenalty",
+                                                                    "control": "speed"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "id": "armour-acp",
+                                                                    "label": "Armour\nCheck\nPenalty"
                                                                 }
                                                             ]
                                                         }
@@ -2591,7 +2536,8 @@
                                                     "type": "hr"
                                                 },
                                                 {
-                                                    "type": "portrait"
+                                                    "type": "portrait",
+                                                    "overprint": true
                                                 }
                                             ]
                                         },
@@ -2689,7 +2635,7 @@
                                             "contents": [
                                                 {
                                                     "type": "repeat",
-                                                    "repeat": 10,
+                                                    "repeat": 12,
                                                     "zebra": true,
                                                     "collapse": true,
                                                     "field_frame": "none",
@@ -2735,7 +2681,7 @@
                                                 },
                                                 {
                                                     "type": "repeat",
-                                                    "repeat": 6,
+                                                    "repeat": 8,
                                                     "zebra": true,
                                                     "collapse": true,
                                                     "field_frame": "none",
@@ -2764,7 +2710,6 @@
         {
             "type": "page",
             "id": "barbarian",
-            "flex": true,
             "contents": [
                 {
                     "type": "layout",
@@ -2966,7 +2911,7 @@
                                                     "contents": [
                                                         {
                                                             "type": "field",
-                                                            "label": "Rounds",
+                                                            "legend": "RAGE ROUNDS",
                                                             "control": "progression",
                                                             "parts": [
                                                                 {
@@ -2980,36 +2925,36 @@
                                                                 {
                                                                     "type": "field",
                                                                     "control": "checkbox"
-                                                                },
-                                                                {
-                                                                    "type": "icon",
-                                                                    "icon": "..."
                                                                 }
                                                             ]
+                                                        },
+                                                        {
+                                                            "type": "spacer"
+                                                        },
+                                                        {
+                                                            "type": "p",
+                                                            "content": "After raging, you are\nfatigued for 1 round."
+                                                        },
+                                                        {
+                                                            "type": "spacer"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "type": "p",
+                                                    "content": "While raging, cannot use actions that require concentration, except for Seek."
                                                 },
                                                 {
                                                     "type": "row",
                                                     "contents": [
                                                         {
-                                                            "type": "calc",
-                                                            "output": {
-                                                                "type": "field",
-                                                                "label": "Damage Bonus",
-                                                                "width": "large"
-                                                            },
-                                                            "inputs": [
-                                                                {
-                                                                    "type": "span",
-                                                                    "content": "1 +"
-                                                                }
-
-
-                                                            ]
+                                                            "type": "field",
+                                                            "output": true,
+                                                            "label": "Damage Bonus",
+                                                            "width": "large"
                                                         },
                                                         {
-                                                            "type": "label",
+                                                            "type": "p",
                                                             "content": "To melee and\nunarmed strikes"
                                                         },
                                                         {
@@ -3024,36 +2969,33 @@
                                                         },
                                                         {
                                                             "type": "spacer"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "calc",
-                                                    "output": {
-                                                        "type": "field",
-                                                        "legend": "Temporary\nHit Points",
-                                                        "overlay": "hp",
-                                                        "temp": true
-                                                    },
-                                                    "inputs": [
-                                                        {
-                                                            "type": "field",
-                                                            "ref": "CON",
-                                                            "underlay": "CON"
                                                         },
                                                         {
-                                                            "type": "span",
-                                                            "content": "+"
-                                                        },
-                                                        {
-                                                            "type": "field",
-                                                            "ref": "level",
-                                                            "label": "Level"
+                                                            "type": "calc",
+                                                            "output": {
+                                                                "type": "field",
+                                                                "label": "Temporary\nHit Points",
+                                                                "overlay": "hp",
+                                                                "temp": true
+                                                            },
+                                                            "inputs": [
+                                                                {
+                                                                    "type": "field",
+                                                                    "ref": "CON",
+                                                                    "underlay": "CON"
+                                                                },
+                                                                {
+                                                                    "type": "span",
+                                                                    "content": "+"
+                                                                },
+                                                                {
+                                                                    "type": "field",
+                                                                    "ref": "level",
+                                                                    "label": "Level"
+                                                                }
+                                                            ]
                                                         }
                                                     ]
-                                                },
-                                                {
-                                                    "type": "..."
                                                 }
                                             ]
                                         },

@@ -143,8 +143,8 @@ fieldset.field--control_alignment {
             top: 0;
             left: 0;
         }
-        .field--alignment__evil-icon, .icon-evil {
-            background-image: url('{{{dataurl "images/icon-evil.svg"}}}');
+        .field--alignment__evil-icon, .icon--icon_evil {
+            // background-image: url('{{{dataurl "images/icon-evil.svg"}}}');
             bottom: 0;
             right: 0;
         }
@@ -159,6 +159,10 @@ fieldset.field--control_alignment {
             left: 0;
         }
     }
+}
+
+.field--alignment__evil-icon, .icon--icon_evil {
+    background-image: url('{{{dataurl "images/icon-evil.svg"}}}');
 }
 
 
@@ -181,5 +185,5 @@ fieldset.field--control_alignment {
 
 /* Classes */
 
-.class-icon--icon_bard { background-image: url('{{{dataurl "images/bard.png"}}}'); }
-.class-icon--icon_barbarian { background-image: url('{{{dataurl "images/barbarian.png"}}}'); }
+// .class-icon--icon_bard { background-image: url('{{{dataurl "images/bard.png"}}}'); }
+.class-icon--icon_barbarian { background-image: url('{{{dataurl "images/barbarian.svg"}}}'); }

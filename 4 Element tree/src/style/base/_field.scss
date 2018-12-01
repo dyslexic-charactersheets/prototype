@@ -12,6 +12,7 @@
 	white-space: nowrap;
 	padding-top: 0.35cm;
 	flex: 0 0 auto;
+	break-inside: avoid;
 
 	.field__inner {
 		flex: 0 0 auto;

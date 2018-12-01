@@ -7,5 +7,5 @@ register('p', {
     
     // var paras = args.content.split(/[\n\r]/);
 
-    return `<p${cls}>${esc(args.content)}</p>`;
+    return `<p${cls}>${esc(args.content, true)}</p>`;
 });

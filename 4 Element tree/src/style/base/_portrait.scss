@@ -1,12 +1,32 @@
 .portrait {
     margin: 0;
-    min-height: 10cm;
+    min-height: 5cm;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    flex: 100 1 auto;
+    position: relative;
+
+    figcaption {
+        position: absolute;
+        bottom: 3pt;
+        left: 0;
+        right: 0;
+
+        font-size: 0.7rem;
+        text-align: left;
+
+        // transform: rotate(-90deg) translate(3.4cm, 3cm);
+        opacity: 0.8;
+    }
 
     &--overprint {
-        margin-left: -0.5cm;
-        margin-right: -0.5cm;
+        margin-left: -0.4cm;
+        margin-right: -0.4cm;
+
+        figcaption {
+            left: 0.4cm;
+            right: 0.4cm;
+        }
     }
 }
