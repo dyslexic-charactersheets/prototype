@@ -1,0 +1,79 @@
+inc:
+	- at: @doc.pages
+		add:
+			- type: page
+				id: cover
+				contents:
+					- type: layout
+						layout: 2e
+						contents:
+							- type: g
+								contents:
+									- type: logo
+									- type: zone
+										zone: @cover.charinfo
+							- type: g
+								contents:
+									- type: zone
+										zone: @cover.details
+			- type: page
+				id: skills
+				contents:
+					- type: layout
+						layout: 2l
+						contents:
+							- type: g
+								contents:
+									- type: zone
+										zone: @skills.left
+							- type: g
+								contents:
+									- type: section
+										title: "Skills"
+										contents:
+											- type: table
+												columns:
+												rows:
+													- type: zone
+														zone: @skills.skills
+														sort: "#{skill}"
+														contents:
+															- skill: "Acrobatics"
+																ability: "DEX"
+																acp: true
+															- skill: "Arcana"
+																ability: "INT"
+															- skill: "Athletics"
+																ability: "STR"
+																acp: true
+															- skill: "Crafting"
+																ability: "INT"
+															- ...
+												template:
+													- h5: "#{skill}"
+													-
+									- type: section
+										title: "Skill Feats"
+										contents:
+											- type: zone
+												zone: @skills.feats
+												number: 12
+												columns: 2
+			- type: page
+				id: combat
+				contents:
+					- type: layout
+						layout: 2l
+						contents:
+							-
+					- type: layout
+						layout: 2r
+						contents:
+							- type: section
+								title: "Attacks"
+
+			- type: page
+				id: inventory
+				contents:
+					- type: layout
+						layout: 2l

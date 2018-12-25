@@ -1,0 +1,14 @@
+{
+  "name": "stage5-prototype",
+  "version": "1.0.0",
+  "description": "Stage 5 Prototype",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Downing",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

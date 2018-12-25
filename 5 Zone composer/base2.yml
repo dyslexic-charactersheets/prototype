@@ -1,0 +1,63 @@
+inc:
+	- at: @doc.pages
+		add:
+			- page: cover
+				layout: 2e
+				contents:
+					- g:
+						-	logo
+						- zone: @cover.charinfo
+					- g:
+						- zone: @cover.details
+			- page: skills
+				layout: 2l
+				contents:
+					- g:
+						- zone: @skills.left
+					- g:
+						- section: "Skills"
+							table:
+								columns:
+								rows:
+									- zone: @skills.skills
+										sort: "#{skill}"
+										contents:
+											- skill: "Acrobatics"
+												ability: "DEX"
+												acp: true
+											- skill: "Arcana"
+												ability: "INT"
+											- skill: "Athletics"
+												ability: "STR"
+												acp: true
+											- skill: "Crafting"
+												ability: "INT"
+											- ...
+								template:
+									- h5: "#{skill}"
+									-
+						- section: "Skill Feats"
+							zone: @skills.feats
+							number: 12
+							columns: 2
+			- page: combat
+				contents:
+					- layout: 2l
+						contents:
+							- g:
+									- zone: @combat.details
+							- g:
+									- section: Attacks
+									  zone: @combat.attacks
+					- layout: 2r
+						contents:
+							- g:
+									-	section: Health
+									- section: Armour
+									- zone: @combat.armour
+							- g:
+									- section: Actions
+										zone: @combat.actions
+	- at: @cover.charinfo
+		add:
+			-

@@ -1,0 +1,10 @@
+{
+	"type": "doc",
+	"title": "Stage 5 prototype",
+	"contents": [
+		{
+			"type": "zone",
+			"zone": "@doc.pages"
+		}
+	]
+}
