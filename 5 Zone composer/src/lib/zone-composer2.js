@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-function addAtZone(zones, zone_id, element) {
+function addAtZone(zones, zone_id, elements) {
     if (zone_id.charAt(0) != '@') {
         console.log("Not a zone ID:", zone_id);
         return;
@@ -8,7 +8,9 @@ function addAtZone(zones, zone_id, element) {
     // console.log("Adding to zone:", zone_id);
     if (!_.has(zones, zone_id))
         zones[zone_id] = [];
-    zones[zone_id].push(element);
+    elements.forEach(element => {
+        zones[zone_id].push(element);
+    });
     // console.log("Zone", zone_id, "contents:", zones[zone_id]);
 }
 
@@ -17,6 +19,11 @@ function flattenDocument(doc, zones) {
         if (_.has(element, "contents")) {
             element.contents = _.flatMap(element.contents, (subelement) => {
                 if (subelement.type == "zone") {
+                    subelement = _.defaults(subelement, {
+                        max: false,
+                        placeholder: false,
+                        overfill: true
+                    })
                     // console.log("Completing zone:", subelement.zone);
                     var insert = _.cloneDeep(zones[subelement.zone]);
                     insert.forEach(ins => {
@@ -25,6 +32,18 @@ function flattenDocument(doc, zones) {
                     insert = insert.sort((a, b) => {
                         return a.level - b.level;
                     });
+
+                    if (subelement.max && subelement.placeholder) {
+                        while (insert.length < subelement.max) {
+                            insert.push(_.cloneDeep(subelement.placeholder));
+                        }
+                    }
+
+                    if (subelement.max && !subelement.overfill) {
+                        if (insert.length > subelement.max)
+                            insert = insert.slice(0, subelement.max);
+                    }
+                    
                     return insert;
                 }
 
@@ -44,7 +63,7 @@ module.exports = function(baseDocument) {
     var zones = {};
     
     return {
-        addAt: (zone_id, element) => {addAtZone(zones, zone_id, element)},
+        addAt: (zone_id, elements) => {addAtZone(zones, zone_id, elements)},
         document: () => flattenDocument(doc, zones)
     };
 }
