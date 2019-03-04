@@ -1,0 +1,14 @@
+base:
+  doc: Test 3
+  contents:
+    - section: Section One
+      list:
+      # columns: 2
+      contents:
+        - p: "Foo"
+        - zone: @foo
+
+inc:
+  - at: @foo
+    add:
+      - p: Foo bar

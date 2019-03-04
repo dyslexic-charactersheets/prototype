@@ -1,0 +1,12 @@
+unit: helper
+id: spells-list
+title: ""
+
+inc:
+  - define: spells-list
+    defaults:
+      max-level: 10
+    elements:
+      - list:
+        contents:
+          - repeat:

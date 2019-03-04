@@ -1,0 +1,19 @@
+- type: doc
+  title: Test 7
+  contents:
+    - type: section
+      title: Section Seven
+      contents:
+        - type: list
+          contents:
+            - type: p
+              content: Foo
+          columns: 1
+          flowv: true
+          zebra: false
+          flex: false
+          sort: true
+          hr: false
+          vr: false
+          merge-bottom: false
+          avoid-shade: false

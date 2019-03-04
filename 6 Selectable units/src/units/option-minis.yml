@@ -1,0 +1,7 @@
+unit: option
+id: minis
+inc:
+  - at: @pages
+    add:
+      - page: minis
+        contents:

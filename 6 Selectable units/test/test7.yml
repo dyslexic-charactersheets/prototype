@@ -1,0 +1,99 @@
+base:
+  doc: Test 7
+  contents:
+    - section: Section Seven
+      contents:
+        - list:
+          contents:
+            # - p: foo
+            # - p: bar
+
+            # - each:
+            #   template:
+            #     - item:
+            #   contents:
+            #     - p: foo
+            #     - p: bar
+
+            # - slots: [ 1, 3, 5, 9 ]
+            #   max: 1
+            #   min: 1
+            #   placeholder:
+            #     p: "Placeholder"
+            #   contents:
+            #     - p: "Foo"
+            #       level: 1
+            #     - p: "Bar"
+            #       level: 3
+
+            # - each:
+            #   template:
+            #     - item:
+            #   contents:
+            #     - slots: [ 1, 3, 5, 9 ]
+            #       max: 1
+            #       min: 1
+            #       placeholder:
+            #         p: "Placeholder"
+            #       contents:
+            #         - p: "Foo"
+            #           level: 1
+            #         - p: "Bar"
+            #           level: 3
+
+
+            # - zone: @items
+
+            # - each:
+            #   template:
+            #     - level: #{level}
+            #       contents:
+            #         - item:
+            #   contents:
+            #     - zone: @items
+
+
+            # - each:
+            #   template:
+            #     - level: "#{level}"
+            #       contents:
+            #         - item:
+            #   contents:
+            #     - slots: [ 1, 3, 5, 9 ]
+            #       max: 1
+            #       min: 1
+            #       placeholder:
+            #         p: "Placeholder"
+            #       contents:
+            #         - zone: @items
+            
+            - slots:
+              min: 1
+              max: 1
+              contents:
+                - zone: @ancestry
+              placeholder:
+                p: "Foo"
+
+            
+        
+inc:
+  # - at: @ancestry
+  #   add:
+  #     - p: "Injected"
+  # - at: @items
+  #   add:
+  #     - p: "First"
+  #       level: 1
+  # - at: @items
+  #   add:
+  #     - p: "Third"
+  #       level: 3
+  # - at: @items
+  #   add:
+  #     - p: "Another third"
+  #       level: 3
+  # - at: @items
+  #   add:
+  #     - p: "Ninth"
+  #       level: 9

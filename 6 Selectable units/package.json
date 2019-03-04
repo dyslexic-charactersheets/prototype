@@ -1,0 +1,33 @@
+{
+  "name": "stage6prototype",
+  "version": "1.0.0",
+  "description": "Stage 6 Prototype",
+  "main": "src/index.js",
+  "dependencies": {
+    "ansi-regex": "^3.0.0",
+    "array.prototype.flatmap": "^1.2.1",
+    "buffer": "^5.2.1",
+    "color": "^3.1.0",
+    "delayed-stream": "^1.0.0",
+    "handlebars": "^4.1.0",
+    "has-ansi": "^3.0.0",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.9.3",
+    "yaml": "^1.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "main": "cd src; node index.js",
+    "test": "cd test; node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyslexic-charactersheets/prototype.git"
+  },
+  "author": "Marcus Downing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyslexic-charactersheets/prototype/issues"
+  },
+  "homepage": "https://github.com/dyslexic-charactersheets/prototype#readme"
+}

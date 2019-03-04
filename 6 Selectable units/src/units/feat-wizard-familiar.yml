@@ -1,0 +1,27 @@
+unit: feat
+group: wizard
+id: familiar
+name: "Familar (Wizard)"
+req:
+  - unit: option-animal-companion
+inc:
+  - at: @pages
+    add:
+      - page: familiar
+        name: "Familiar"
+        size: small
+        order: 12
+        contents:
+          - layout: 2l
+            contents:
+              - g:
+                contents:
+                  - h2: "Familiar"
+                  - section: "Attributes"
+                    contents:
+                      - p: "Foo"
+              - g:
+                contents:
+                  - section: "Skills"
+                    contents:
+                      - p: "Bar"

@@ -1,0 +1,58 @@
+base:
+  - type: section
+    id: attributes
+    title: "Attributes"
+    contents:
+      - type: table
+        width: stretch
+        columns:
+          - align: left
+          - "Ability\nScore"
+          - type: label
+            label: "Ability\nModifier"
+            icon: true
+          - "Key\nAbility"
+          - "Temporary\nAdjustment"
+        rows:
+          - ability: "Strength"
+            short: "STR"
+          - ability: "Dexterity"
+            short: "DEX"
+          - ability: "Constitution"
+            short: "CON"
+          - ability: "Intelligence"
+            short: "INT"
+          - ability: "Wisdom"
+            short: "WIS"
+          - ability: "Charisma"
+            short: "CHA"
+        field_frame: none
+        template:
+          - type: h6
+            title: "#{ability}"
+          - type: field
+            id: "#{short}-score"
+            box: true
+          - type: field
+            id: "#{short}"
+            output: true
+            icon: modifier
+            underlay: "#{short}"
+          - type: field
+            control: radio
+            id: key-ability
+            value: "#{short}"
+          - type: field
+            id: "#{short}-temp"
+            temp: true
+      - type: hr
+      - type: calc
+        inline: true
+        output:
+          type: label
+          label: "Ability\nModifier"
+        inputs:
+          - "("
+          - type: label
+            label: "Ability\nScore"
+          - "- 10) &divide; 2"

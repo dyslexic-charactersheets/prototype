@@ -1,0 +1,8 @@
+type: doc
+title: Test 6
+contents:
+  - type: section
+    title: Section Six
+    contents:
+      - type: template
+        template: tpl

@@ -1,0 +1,11 @@
+base:
+  doc: Test 6
+  contents:
+    - section: Section Six
+      contents:
+        - template: tpl
+        
+inc:
+  - define: tpl
+    contents:
+      - p: "Foo"

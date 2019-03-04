@@ -1,0 +1,179 @@
+type: unit
+unit-type: class
+id: wizard
+name: Wizard
+inc:
+  - at: "@pages"
+    add:
+      - type: page
+        id: wizard
+        name: Wizard
+        order: 10
+        contents:
+          - type: layout
+            layout: 2l
+            contents:
+              - type: g
+                contents:
+                  - type: class-icon
+                    icon: wizard
+                  - type: h2
+                    title: Wizard
+                  - type: section
+                    title: Thesis
+                    primary: true
+                    contents:
+                      - type: field
+                        id: thesis
+                        size: large
+                        width: stretch
+                        frame: none
+                      - type: field
+                        id: thesis-details
+                        width: stretch
+                        frame: none
+                        repeat: 4
+                        merge-bottom: true
+                  - type: section
+                    title: Specialisation
+                    contents:
+                      - type: field
+                        id: wizard-school
+                        label: School
+                        width: stretch
+                        align: left
+                      - type: field
+                        id: wizard-school-power
+                        legend: School Power
+                        width: stretch
+                        align: left
+                        repeat: 3
+                  - type: section
+                    title: Spells
+                    contents:
+                      - type: table
+                        collapse: true
+                        columns:
+                          - Level
+                          - Spells per day
+                        rows:
+                          - type: level
+                            level: 1
+                          - type: level
+                            level: 2
+                          - type: level
+                            level: 3
+                          - type: level
+                            level: 4
+                          - type: level
+                            level: 5
+                          - type: level
+                            level: 6
+                          - type: level
+                            level: 7
+                          - type: level
+                            level: 8
+                          - type: level
+                            level: 9
+                        template:
+                          - type: level-marker
+                            level: "#{level}"
+                            marker: ""
+                          - type: field
+                            id: spells-#{level}-per-day
+                            frame: none
+                  - type: section
+                    title: Arcane Focus
+                    contents:
+                      - type: p
+                        content: Arcane focus
+                      - type: action
+                        action: free
+                        contents:
+                          - type: article
+                            title: null
+                            header:
+                              - type: h4
+                                title: Drain Arcane Focus
+                            contents:
+                              - type: p
+                                content: Expend the magical power stored in your arcane
+                                  focus, to cast one spell you prepared today
+                                  and previously cast, without spending a spell
+                                  slot.
+                  - type: section
+                    title: Wizard Feats
+                    contents:
+                      - type: p
+                        content: Qux
+              - type: g
+                contents:
+                  - type: section
+                    title: Cantrips
+                    contents:
+                      - type: spells-list
+                        min: 0
+                        max: 0
+                        spells: 5
+                  - type: section
+                    title: Spells
+                    contents:
+                      - type: spells-list
+                        min: 1
+                        max: 9
+                        spells: 4
+                  - type: section
+                    title: Wizard Feats
+                    contents:
+                      - type: list
+                        zebra: true
+                        columns: 2
+                        flowv: true
+                        hr: true
+                        contents:
+                          - type: repeat
+                            repeat: 12
+                            rows:
+                              - type: level
+                                level: 1
+                              - type: level
+                                level: 2
+                              - type: level
+                                level: 4
+                              - type: level
+                                level: 6
+                              - type: level
+                                level: 8
+                              - type: level
+                                level: 10
+                              - type: level
+                                level: 12
+                              - type: level
+                                level: 14
+                              - type: level
+                                level: 16
+                              - type: level
+                                level: 18
+                              - type: level
+                                level: 20
+                              - type: level
+                                level: " "
+                            contents:
+                              - type: level
+                                level: "#{level}"
+                                contents:
+                                  - type: article
+                                    title: null
+                                    header:
+                                      - type: field
+                                        id: wixard-feat-level-#{level}
+                                        width: stretch
+                                        frame: none
+                                        align: left
+                                    contents:
+                                      - type: field
+                                        id: wizard-feat-level-#{level}-details
+                                        width: stretch
+                                        align: left
+                                        frame: none
+                                        repeat: 2

@@ -1,0 +1,56 @@
+type: doc
+title: Test 4
+contents:
+  - type: section
+    title: Section Four
+    contents:
+      - type: layout
+        layout: 2e
+        contents:
+          - columns: 1
+            contents:
+              - type: level
+                level: 1
+                contents:
+                  - type: p
+                    content: Level One
+                    align: left
+                order: 1
+              - type: level
+                level: 2
+                contents:
+                  - type: p
+                    content: Level Two
+                    align: left
+                order: 1
+              - type: level
+                level: 3
+                contents:
+                  - type: p
+                    content: Level Three
+                    align: left
+                order: 1
+            type: list
+            sort: true
+            p_align: left
+            max: 4
+          - columns: 1
+            contents:
+              - type: level
+                level: 4
+                contents:
+                  - type: p
+                    content: Level Four
+                    align: left
+                order: 1
+              - type: level
+                level: 5
+                contents:
+                  - type: p
+                    content: Level Five
+                    align: left
+                order: 1
+            type: list
+            sort: true
+            p_align: left
+            max: 4

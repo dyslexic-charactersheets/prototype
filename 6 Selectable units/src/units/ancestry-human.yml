@@ -1,0 +1,23 @@
+unit: ancestry
+id: human
+name: "Human"
+
+inc:
+  # - at: @ancestry
+  #   add:
+  #     - article:
+  #       header:
+  #         - h4: Human
+  #       contents:
+  #         - p: ""
+  - set: ancestry
+    value: "Human"
+  - set: build-boost-DEX-ancestry
+    value: +1
+  - set: build-boost-INT-ancestry
+    value: +1
+  - set: build-boost-CON-ancestry
+    value: -1
+  - set: languages
+    value:
+      - "Common"

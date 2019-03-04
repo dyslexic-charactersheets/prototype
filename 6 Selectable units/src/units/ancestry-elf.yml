@@ -1,0 +1,26 @@
+unit: ancestry
+id: elf
+name: "Elf"
+
+inc:
+  - at: @ancestry
+    add:
+      - article:
+        header:
+          - h4: Elf
+        contents:
+          - p: ""
+  - set: ancestry
+    value: "Elf"
+  - set: low-light-vision
+    value: true
+  - set: build-boost-DEX-ancestry
+    value: +1
+  - set: build-boost-INT-ancestry
+    value: +1
+  - set: build-boost-CON-ancestry
+    value: -1
+  - set: languages
+    value:
+      - "Common"
+      - "Elven"

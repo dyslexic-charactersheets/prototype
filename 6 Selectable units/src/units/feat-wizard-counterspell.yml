@@ -1,0 +1,14 @@
+unit: feat
+group: wizard
+id: wizard-counterspell
+name: "Familar (Wizard)"
+inc:
+  - at: @actions
+    add:
+      - action: reaction
+        contents:
+          - article:
+            header:
+              - h4: "Counterspell (abj)"
+            contents:
+              - p: "Expend a prepared spell to counter the triggering creature’s casting of that same spell. Roll a counteract check using the spell’s level against the caster’s spell DC."

@@ -1,0 +1,16 @@
+type: unit
+unit-type: ancestry
+id: human
+name: Human
+inc:
+  - set: ancestry
+    value: Human
+  - set: build-boost-DEX-ancestry
+    value: 1
+  - set: build-boost-INT-ancestry
+    value: 1
+  - set: build-boost-CON-ancestry
+    value: -1
+  - set: languages
+    value:
+      - Common

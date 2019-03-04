@@ -1,0 +1,601 @@
+type: unit
+unit-type: option
+id: animal-companion
+inc:
+  - at: "@pages"
+    add:
+      - type: page
+        id: animal-companion
+        name: Animal Companion
+        order: 20
+        flex: true
+        landscape: true
+        numbered: false
+        contents:
+          - type: layout
+            layout: 2e
+            contents:
+              - type: layout
+                layout: 2l
+                narrow: true
+                contents:
+                  - type: g
+                    contents:
+                      - type: h2
+                        title: Animal Companion
+                      - type: section
+                        title: Attributes
+                        id: attributes
+                        contents:
+                          - type: table
+                            width: stretch
+                            columns:
+                              - align: left
+                              - |-
+                                Ability
+                                Score
+                              - type: label
+                                label: |-
+                                  Ability
+                                  Modifier
+                                contents:
+                                  - type: icon
+                                    icon: true
+                            rows:
+                              - ability: Strength
+                                short: STR
+                              - ability: Dexterity
+                                short: DEX
+                              - ability: Constitution
+                                short: CON
+                              - ability: Intelligence
+                                short: INT
+                              - ability: Wisdom
+                                short: WIS
+                              - ability: Charisma
+                                short: CHA
+                            field_frame: none
+                            template:
+                              - type: h6
+                                title: "#{ability}"
+                              - type: field
+                                id: animal-companion-#{short}-score
+                                box: true
+                              - type: field
+                                id: animal-companion-#{short}
+                                output: true
+                                icon: modifier
+                                underlay: "#{short}"
+                      - type: section
+                        title: Abilities
+                        contents:
+                          - type: zone
+                            zone: "@animal-companion-abilities"
+                            contents:
+                              - type: h4
+                                title: Work Together
+                              - type: g
+                                contents:
+                                  - type: field
+                                    id: animal-companion-work-together
+                                    width: stretch
+                                    frame: none
+                                    align: left
+                                    repeat: 5
+                              - type: h4
+                                title: Advanced Manoeuvre
+                              - type: g
+                                contents:
+                                  - type: field
+                                    id: animal-companion-manoeuvre
+                                    width: stretch
+                                    frame: none
+                                    align: left
+                                    repeat: 4
+                              - type: h4
+                                title: Specialisation
+                              - type: g
+                                contents:
+                                  - type: field
+                                    id: animal-companion-specialisation
+                                    width: stretch
+                                    frame: none
+                                    align: left
+                                    merge-bottom: true
+                                    repeat: 4
+                  - type: g
+                    contents:
+                      - type: portrait
+                        animal-companion: true
+                      - type: g
+                        contents:
+                          - type: field
+                            id: animal-companion-name
+                            legend: Name
+                            width: stretch
+                            align: left
+                            size: large
+                          - type: row
+                            layout: null
+                            contents:
+                              - type: field
+                                id: animal-companion-species
+                                label: Companion Type
+                                align: left
+                                width: stretch
+                              - type: field
+                                id: animal-companion-size
+                                label: Size
+                                icon: size
+                              - type: field
+                                id: animal-companion-gender
+                                label: Gender
+                                icon: gender
+                      - type: section
+                        title: Skills
+                        contents:
+                          - type: table
+                            collapse: true
+                            zebra: true
+                            field_frame: none
+                            columns:
+                              - align: right
+                              - |-
+                                Skill
+                                Bonus
+                              - null
+                              - |-
+                                Ability
+                                Modifier
+                              - Proficiency
+                              - |-
+                                Feats
+                                Misc
+                              - |-
+                                Barding
+                                Check
+                                Penalty
+                            rows:
+                              - skill: Acrobatics
+                                ability: DEX
+                                acp: true
+                              - skill: Athletics
+                                ability: STR
+                                acp: true
+                              - skill: Deception
+                                ability: CHA
+                                acp: false
+                              - skill: Intimidation
+                                ability: CHA
+                                acp: false
+                              - skill: Nature
+                                ability: WIS
+                                acp: false
+                              - skill: Performance
+                                ability: CHA
+                                acp: false
+                              - skill: Stealth
+                                ability: DEX
+                                acp: true
+                              - skill: Survival
+                                ability: WIS
+                                acp: false
+                              - skill: Thievery
+                                ability: DEX
+                                acp: true
+                              - skill: ""
+                                ability: ""
+                                acp: false
+                            template:
+                              - type: h6
+                                title: "#{skill}"
+                              - type: field
+                                id: animal-companion-#{skill}-bonus
+                                output: true
+                                icon: bonus
+                              - type: span
+                                content: =
+                              - type: field
+                                id: null
+                                ref: "#{ability}"
+                                underlay: "#{ability}"
+                                frame: h-label
+                                label: "#{ability}"
+                              - type: field
+                                id: animal-companion-#{skill}-proficiency
+                                control: proficiency
+                              - type: field
+                                id: animal-companion-#{skill}-misc
+                                misc: true
+                              - type: field
+                                id: animal-companion-#{skill}-acp
+                                ref: acp
+                                output: true
+                                exists: "#{acp}"
+                          - type: calc
+                            output:
+                              type: field
+                              id: animal-companion-perception
+                              icon: bonus
+                              legend: Perception
+                            inputs:
+                              - type: field
+                                id: null
+                                ref: WIS
+                                underlay: WIS
+                                label: WIS
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                label: Proficiency
+                                icon: proficiency
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                label: Item
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                misc: true
+                                label: Misc
+                          - type: row
+                            layout: null
+                            unlabelled: true
+                            contents:
+                              - type: field
+                                id: animal-companion-perception-low-light
+                                frame: right
+                                control: checkbox
+                                label: Low-light vision
+                              - type: field
+                                id: animal-companion-perception-darkvision
+                                frame: right
+                                control: checkbox
+                                label: Dark vision
+                              - type: field
+                                id: animal-companion-perception-scent
+                                frame: right
+                                control: checkbox
+                                label: Scent
+              - type: g
+                contents:
+                  - type: layout
+                    layout: 2l
+                    narrow: true
+                    contents:
+                      - type: g
+                        contents:
+                          - type: section
+                            title: Speed
+                            contents:
+                              - type: row
+                                layout: split
+                                contents:
+                                  - type: field
+                                    id: animal-companion-speed
+                                    legend: Speed
+                                    control: speed
+                                    output: true
+                                  - type: field
+                                    id: animal-companion-speed-alt
+                                    label: ""
+                                    control: speed
+                              - type: row
+                                layout: null
+                                unlabelled: true
+                                contents:
+                                  - type: field
+                                    id: animal-companion-speed-mount
+                                    frame: right
+                                    control: checkbox
+                                    label: Mount
+                          - type: section
+                            title: Saving Throws
+                            id: saving-throws
+                            contents:
+                              - type: table
+                                columns:
+                                  - null
+                                  - null
+                                  - |-
+                                    Ability
+                                    Modifier
+                                  - Proficiency
+                                  - Misc
+                                rows:
+                                  - save: fortitude
+                                    legend: Fortitude
+                                    short: FORT
+                                    ability: CON
+                                  - save: reflex
+                                    legend: Reflex
+                                    short: REF
+                                    ability: DEX
+                                  - save: will
+                                    legend: Will
+                                    short: WILL
+                                    ability: WIS
+                                template:
+                                  - type: calc
+                                    output:
+                                      type: field
+                                      id: animal-companion-#{save}
+                                      legend: "#{legend}"
+                                      icon: bonus
+                                      width: large
+                                      underlay: "#{short}"
+                                    inputs:
+                                      - type: field
+                                        id: null
+                                        label: "#{ability}"
+                                        underlay: "#{ability}"
+                                        ref: "#{ability}"
+                                      - type: field
+                                        id: "#{save}-proficiency"
+                                        control: proficiency
+                                      - type: field
+                                        id: "#{save}-misc-bonus"
+                                        misc: true
+                              - type: field
+                                id: animal-companion-saving-throws-conditional
+                                label: Conditional
+                                align: left
+                                merge-bottom: true
+                                width: stretch
+                      - type: g
+                        contents:
+                          - type: section
+                            title: Attacks
+                            contents:
+                              - type: list
+                                zebra: true
+                                hr: true
+                                flex: true
+                                contents:
+                                  - type: repeat
+                                    repeat: 3
+                                    contents:
+                                      - type: g
+                                        contents:
+                                          - type: row
+                                            layout: null
+                                            contents:
+                                              - type: field
+                                                id: animal-companion-attack-#{i}
+                                                width: stretch
+                                                frame: none
+                                                align: left
+                                                size: large
+                                          - type: row
+                                            layout: null
+                                            contents:
+                                              - type: calc
+                                                output:
+                                                  type: field
+                                                  id: animal-companion-attack-#{i}-bonus
+                                                  label: Attack Bonus
+                                                  attack: true
+                                                  icon: bonus
+                                                inputs:
+                                                  - type: field
+                                                    id: null
+                                                    ref: true
+                                                    label: Ability
+                                                  - type: field
+                                                    id: null
+                                                    control: proficiency
+                                                    label: Proficiency
+                                              - type: field
+                                                id: animal-companion-attack-#{i}-damage
+                                                output: true
+                                                label: Damage
+                                                width: small
+                                                icon: damage
+                                                control: composite
+                                                parts:
+                                                  - subid: ndice
+                                                    overlay: d
+                                                  - subid: die
+                                                    overlay: +
+                                                  - subid: extra
+                                          - type: row
+                                            layout: null
+                                            contents:
+                                              - type: field
+                                                id: animal-companion-attack-#{i}-critical
+                                                frame: none
+                                                width: stretch
+                                                align: left
+                                                unlined: true
+                  - type: layout
+                    layout: 2r
+                    narrow: true
+                    contents:
+                      - type: g
+                        contents:
+                          - type: section
+                            title: Defence
+                            contents:
+                              - type: table
+                                columns:
+                                  - null
+                                  - null
+                                  - null
+                                  - DEX
+                                  - Proficiency
+                                  - |-
+                                    Barding
+                                    Bonus
+                                  - Misc
+                                rows:
+                                  - id: ac
+                                    legend: Armour Class
+                                    underlay: AC
+                                  - id: tac
+                                    legend: Touch AC
+                                    underlay: TAC
+                                template:
+                                  - type: calc
+                                    output:
+                                      type: field
+                                      id: animal-companion-#{id}
+                                      legend: "#{legend}"
+                                      icon: "#{id}"
+                                      width: large
+                                      underlay: "#{underlay}"
+                                    inputs:
+                                      - type: span
+                                        content: 10 +
+                                      - type: field
+                                        id: null
+                                        ref: DEX
+                                        underlay: DEX
+                                      - type: field
+                                        id: animal-companion-#{id}-proficiency
+                                        control: proficiency
+                                      - type: field
+                                        id: armour-bonus
+                                      - type: field
+                                        id: true
+                              - type: field
+                                id: animal-companion-ac-conditional
+                                label: Conditional
+                                width: stretch
+                                align: left
+                                repeat: 2
+                          - type: section
+                            title: Health
+                            contents:
+                              - type: calc
+                                output:
+                                  type: field
+                                  id: animal-companion-hp
+                                  legend: Hit Points
+                                  icon: hp
+                                  overlay: hp
+                                inputs:
+                                  - type: field
+                                    id: null
+                                    label: Ancestry
+                                  - type: span
+                                    content: + (
+                                  - type: field
+                                    id: null
+                                    ref: CON
+                                    underlay: CON
+                                  - type: span
+                                    content: +
+                                  - type: field
+                                    id: animal-companion-hp-per-level
+                                    underlay: "6"
+                                    width: tiny
+                                  - type: span
+                                    content: ) &times;
+                                  - type: field
+                                    id: null
+                                    ref: level
+                                    legend: Level
+                              - type: field
+                                id: animal-companion-current-hp
+                                output: true
+                                temp: true
+                                icon: hp
+                                overlay: hp
+                                width: stretch
+                              - type: h4
+                                title: Effects
+                              - type: list
+                                columns: 2
+                                collapse: true
+                                merge-bottom: true
+                                contents:
+                                  - type: repeat
+                                    repeat: 4
+                                    contents:
+                                      - type: row
+                                        layout: null
+                                        unlabelled: true
+                                        contents:
+                                          - type: field
+                                            id: animal-companion-effect-#{i}
+                                            width: stretch
+                                            frame: none
+                                            align: left
+                                          - type: field
+                                            id: animal-companion-effect-#{i}-progress
+                                            control: progression
+                                            parts:
+                                              - control: checkbox
+                                              - control: checkbox
+                                              - control: checkbox
+                      - type: g
+                        contents:
+                          - type: section
+                            title: Barding
+                            contents:
+                              - type: field
+                                id: animal-companion-barding
+                                frame: none
+                                size: large
+                                width: stretch
+                              - type: row
+                                layout: split
+                                contents:
+                                  - type: field
+                                    id: animal-companion-barding-ac
+                                    label: AC Bonus
+                                    width: large
+                                    icon: ac
+                                  - type: field
+                                    id: animal-companion-barding-ac
+                                    label: TAC Bonus
+                                    width: large
+                                    icon: tac
+                                  - type: field
+                                    id: animal-companion-barding-bulk
+                                    label: Bulk
+                              - type: row
+                                layout: split
+                                contents:
+                                  - type: field
+                                    id: animal-companion-barding-max-dex
+                                    label: |-
+                                      Max DEX
+                                      to AC
+                                  - type: field
+                                    id: animal-companion-barding-speed-penalty
+                                    label: |-
+                                      Speed
+                                      Penalty
+                                    control: speed
+                                  - type: field
+                                    id: animal-companion-barding-acp
+                                    label: |-
+                                      Barding
+                                      Check
+                                      Penalty
+                          - type: section
+                            title: Inventory
+                            contents:
+                              - type: list
+                                zebra: true
+                                collapse: true
+                                merge-bottom: true
+                                field_frame: none
+                                contents:
+                                  - type: repeat
+                                    repeat: 11
+                                    contents:
+                                      - type: row
+                                        layout: null
+                                        contents:
+                                          - type: field
+                                            id: animal-companion-inventory-#{i}
+                                            width: stretch
+                                          - type: field
+                                            id: animal-companion-inventory-#{i}-value
+                                          - type: field
+                                            id: animal-companion-inventory-#{i}-weight

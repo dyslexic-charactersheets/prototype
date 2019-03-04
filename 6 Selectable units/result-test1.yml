@@ -1,0 +1,8 @@
+type: doc
+title: Test 1
+contents:
+  - type: p
+    content: Foo
+id: false
+inc:
+  []

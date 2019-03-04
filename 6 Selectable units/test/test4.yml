@@ -1,0 +1,27 @@
+base:
+  doc: Test 4
+  contents:
+    - section: Section Four
+      list:
+      columns: 2
+      sort: true
+      p_align: left
+      max: 4
+      contents:
+        - level: 1
+          p: "Level One"
+        - zone: @foo
+        - level: 5
+          p: "Level Five"
+        
+inc:
+  - at: @foo
+    add:
+      - level: 3
+        p: "Level Three"
+      - level: 2
+        p: "Level Two"
+  - at: @foo
+    add:
+      - level: 4
+        p: "Level Four"

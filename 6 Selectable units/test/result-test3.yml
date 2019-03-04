@@ -1,0 +1,12 @@
+type: doc
+title: Test 3
+contents:
+  - type: section
+    title: Section One
+    contents:
+      - type: iter
+        contents:
+          - type: p
+            content: Foo
+          - type: p
+            content: Foo bar

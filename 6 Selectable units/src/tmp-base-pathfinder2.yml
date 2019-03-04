@@ -1,0 +1,1544 @@
+type: unit
+unit-type: base
+id: pathfinder2
+inc:
+  - at: "@permission"
+    add:
+      - type: hr
+      - type: h6
+        title: This document uses trademarks and/or copyrights owned by Paizo
+          Publishing, LLC, which are used under Paizo's Community Use Policy. We
+          are expressly prohibited from charging you to use or access this
+          content. This document is not published, endorsed, or specifically
+          approved by Paizo Publishing.
+      - type: p
+        content: http://paizo.com/paizo/about/communityuse
+  - at: "@pages"
+    add:
+      - type: page
+        id: cover
+        name: Cover
+        order: 4
+        flex: true
+        contents:
+          - type: layout
+            layout: 2e
+            contents:
+              - type: g
+                contents:
+                  - type: logo
+                    source: null
+                  - type: section
+                    title: null
+                    id: player
+                    untitled: true
+                    contents:
+                      - type: field
+                        id: player-name
+                        label: Player
+                        width: stretch
+                        align: left
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: field
+                            id: campaign-name
+                            label: Campaign
+                            width: stretch
+                            align: left
+                          - type: field
+                            id: xp
+                            label: XP
+                            underlay: XP
+                            width: large
+                            output: true
+                  - type: hr
+                    swash: true
+                  - type: portrait
+                  - type: section
+                    title: Character
+                    id: character
+                    untitled: true
+                    contents:
+                      - type: layout
+                        layout: alignment
+                        contents:
+                          - type: g
+                            contents:
+                              - type: field
+                                id: character-name
+                                legend: Character Name
+                                size: huge
+                                width: stretch
+                                align: left
+                              - type: row
+                                layout: null
+                                contents:
+                                  - type: field
+                                    id: gender
+                                    label: Gender
+                                    icon: gender
+                                    width: huge
+                                  - type: spacer
+                                  - type: field
+                                    id: age
+                                    label: Age
+                                    width: huge
+                                  - type: spacer
+                                  - type: field
+                                    id: size
+                                    label: Size
+                                    icon: size
+                                    width: huge
+                                  - type: spacer
+                          - type: field
+                            id: alignment
+                            frame: none
+                            control: alignment
+              - type: g
+                contents:
+                  - type: section
+                    title: Ancestry
+                    id: ancestry
+                    contents:
+                      - type: h5
+                        title: Ancestry
+                      - type: slots
+                        slots: null
+                        min: 1
+                        max: 1
+                        contents:
+                          - type: zone
+                            zone: "@ancestry"
+                        placeholder:
+                          type: article
+                          title: null
+                          header:
+                            - type: field
+                              id: ancestry
+                              size: large
+                              width: stretch
+                              align: left
+                              frame: none
+                          contents:
+                            - type: field
+                              id: ancestry-details
+                              frame: none
+                              width: stretch
+                              align: left
+                              repeat: 2
+                      - type: hr
+                      - type: h5
+                        title: Heritage
+                      - type: slots
+                        slots: null
+                        min: 1
+                        max: 1
+                        contents:
+                          - type: zone
+                            zone: "@heritage"
+                        placeholder:
+                          type: article
+                          title: null
+                          header:
+                            - type: field
+                              id: heritage
+                              size: large
+                              width: stretch
+                              align: left
+                          contents:
+                            - type: field
+                              id: heritage-details
+                              frame: none
+                              width: stretch
+                              align: left
+                              repeat: 2
+                      - type: hr
+                      - type: h5
+                        title: Ancestry Feats
+                      - type: list
+                        zebra: true
+                        hr: true
+                        contents:
+                          - type: each
+                            template:
+                              - type: level
+                                level: "#{level}"
+                                contents:
+                                  - ? item
+                            contents:
+                              - type: slots
+                                slots:
+                                  - 1
+                                  - 5
+                                  - 9
+                                  - 13
+                                  - 17
+                                min: 1
+                                max: 1
+                                contents:
+                                  - type: zone
+                                    zone: "@ancestry-feats"
+                                placeholder:
+                                  - type: article
+                                    title: null
+                                    header:
+                                      - type: field
+                                        id: ancestry-feat-#{i}
+                                        frame: none
+                                        size: large
+                                        width: stretch
+                                        align: left
+                                    contents:
+                                      - type: field
+                                        id: ancestry-feat-#{i}-details
+                                        repeat: 2
+                                        frame: none
+                                        width: stretch
+                                        align: left
+                  - type: section
+                    title: Background
+                    id: background
+                    contents:
+                      - type: slots
+                        slots: null
+                        min: 1
+                        max: 1
+                        contents:
+                          - type: zone
+                            zone: "@background"
+                        placeholder:
+                          - type: article
+                            title: null
+                            header:
+                              - type: field
+                                id: background
+                                legend: Background
+                                size: large
+                                frame: none
+                                width: stretch
+                                align: left
+                            contents:
+                              - type: field
+                                id: background-details
+                                repeat: 2
+                                frame: none
+                                width: stretch
+                                align: left
+                  - type: section
+                    title: Class
+                    id: class
+                    contents:
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: field
+                            id: class
+                            legend: Class
+                            size: large
+                            width: stretch
+                            align: left
+                          - type: field
+                            id: class-level
+                            label: Level
+                            output: true
+                            size: large
+                      - type: field
+                        id: specialisation
+                        label: Specialisation
+                        width: stretch
+                        align: left
+                      - type: h4
+                        title: Archetypes
+                      - type: list
+                        collapse: true
+                        contents:
+                          - type: repeat
+                            repeat: 3
+                            field_frame: none
+                            contents:
+                              - type: row
+                                layout: null
+                                contents:
+                                  - type: field
+                                    id: archetype-#{i}-name
+                                    width: stretch
+                                    align: left
+                                  - type: field
+                                    id: archetype-#{i}-feats
+                                    control: progression
+                                    parts:
+                                      - control: checkbox
+                                      - control: checkbox
+                                      - control: checkbox
+                  - type: hr
+                    swash: true
+                  - type: spacer
+      - type: page
+        id: skills
+        name: Skills
+        order: 5
+        flex: true
+        contents:
+          - type: layout
+            layout: 2l
+            contents:
+              - type: g
+                contents:
+                  - type: section
+                    title: Attributes
+                    id: attributes
+                    contents:
+                      - type: table
+                        width: stretch
+                        columns:
+                          - align: left
+                          - |-
+                            Ability
+                            Score
+                          - type: label
+                            label: |-
+                              Ability
+                              Modifier
+                            contents:
+                              - type: icon
+                                icon: true
+                          - |-
+                            Key
+                            Ability
+                          - |-
+                            Temporary
+                            Adjustment
+                        rows:
+                          - ability: Strength
+                            short: STR
+                          - ability: Dexterity
+                            short: DEX
+                          - ability: Constitution
+                            short: CON
+                          - ability: Intelligence
+                            short: INT
+                          - ability: Wisdom
+                            short: WIS
+                          - ability: Charisma
+                            short: CHA
+                        field_frame: none
+                        template:
+                          - type: h6
+                            title: "#{ability}"
+                          - type: field
+                            id: "#{short}-score"
+                            box: true
+                          - type: field
+                            id: "#{short}"
+                            output: true
+                            icon: modifier
+                            underlay: "#{short}"
+                          - type: field
+                            id: key-ability
+                            control: radio
+                            value: "#{short}"
+                          - type: field
+                            id: "#{short}-temp"
+                            temp: true
+                      - type: hr
+                      - type: calc
+                        output:
+                          type: label
+                          label: |-
+                            Ability
+                            Modifier
+                        inline: true
+                        inputs:
+                          - (
+                          - type: label
+                            label: |-
+                              Ability
+                              Score
+                          - "- 10) &divide; 2"
+                  - type: section
+                    title: Proficiency
+                    id: proficiency
+                    contents:
+                      - type: field
+                        id: proficiency-level
+                        output: true
+                        frame: right
+                        label: Class Level
+                      - type: layout
+                        layout: 5e
+                        narrow: true
+                        contents:
+                          - type: field
+                            id: proficiency-untrained
+                            label: Untrained
+                            output: true
+                            control: proficiency
+                            value: 0
+                          - type: field
+                            id: proficiency-trained
+                            label: Trained
+                            output: true
+                            control: proficiency
+                            contents:
+                              - type: proficiency
+                                proficiency: trained
+                          - type: field
+                            id: proficiency-expert
+                            label: Expert
+                            output: true
+                            control: proficiency
+                            contents:
+                              - type: proficiency
+                                proficiency: expert
+                          - type: field
+                            id: proficiency-master
+                            label: Master
+                            output: true
+                            control: proficiency
+                            contents:
+                              - type: proficiency
+                                proficiency: master
+                          - type: field
+                            id: proficiency-legendary
+                            label: Legendary
+                            output: true
+                            control: proficiency
+                            contents:
+                              - type: proficiency
+                                proficiency: legendary
+                          - type: label
+                            label: null
+                          - type: label
+                            label: |-
+                              Level
+                              +2
+                            align: center
+                          - type: label
+                            label: |-
+                              Level
+                              +4
+                            align: center
+                          - type: label
+                            label: |-
+                              Level
+                              +6
+                            align: center
+                          - type: label
+                            label: |-
+                              Level
+                              +8
+                            align: center
+                      - type: list
+                        zebra: true
+                        collapse: true
+                        merge-bottom: true
+                        field_frame: none
+                        contents:
+                          - type: repeat
+                            repeat: 17
+                            contents:
+                              - type: row
+                                layout: null
+                                contents:
+                                  - type: field
+                                    id: proficiency-#{i}-name
+                                    frame: none
+                                    width: stretch
+                                  - type: field
+                                    id: proficiency-#{i}-value
+                                    frame: none
+                                    control: proficiency
+                  - type: section
+                    title: Perception
+                    contents:
+                      - type: calc
+                        output:
+                          type: field
+                          id: perception
+                          icon: bonus
+                          legend: Perception
+                        inputs:
+                          - type: field
+                            id: null
+                            ref: WIS
+                            underlay: WIS
+                            label: WIS
+                          - type: span
+                            content: +
+                          - type: field
+                            id: null
+                            label: Proficiency
+                            icon: proficiency
+                          - type: span
+                            content: +
+                          - type: field
+                            id: null
+                            label: Item
+                          - type: span
+                            content: +
+                          - type: field
+                            id: null
+                            misc: true
+                            label: Misc
+                      - type: row
+                        layout: split
+                        unlabelled: true
+                        contents:
+                          - type: field
+                            id: perception-low-light
+                            frame: right
+                            control: checkbox
+                            label: Low-light vision
+                          - type: field
+                            id: perception-darkvision
+                            frame: right
+                            control: checkbox
+                            label: Dark vision
+                          - type: field
+                            id: perception-scent
+                            frame: right
+                            control: checkbox
+                            label: Scent
+                      - type: field
+                        id: perception-other
+                        label: Conditional
+                        align: left
+                        width: stretch
+                  - type: section
+                    title: Languages
+                    id: languages
+                    contents:
+                      - type: field
+                        id: languages
+                        frame: none
+                        repeat: 4
+                        align: left
+                        width: stretch
+                        merge-bottom: true
+              - type: g
+                contents:
+                  - type: section
+                    title: Skills
+                    id: skills
+                    contents:
+                      - type: table
+                        collapse: true
+                        zebra: true
+                        field_frame: none
+                        columns:
+                          - null
+                          - type: label
+                            label: Assurance
+                            align: right
+                          - |-
+                            Skill
+                            Bonus
+                          - null
+                          - |-
+                            Ability
+                            Modifier
+                          - Proficiency
+                          - |-
+                            Feats
+                            Misc
+                          - |-
+                            Armour
+                            Check
+                            Penalty
+                        rows:
+                          - skill: Acrobatics
+                            ability: DEX
+                            acp: true
+                          - skill: Arcana
+                            ability: INT
+                            acp: false
+                          - skill: Athletics
+                            ability: STR
+                            acp: true
+                          - skill: Crafting
+                            ability: INT
+                            acp: false
+                          - skill: Deception
+                            ability: CHA
+                            acp: false
+                          - skill: Intimidation
+                            ability: CHA
+                            acp: false
+                          - skill: Medicine
+                            ability: WIS
+                            acp: false
+                          - skill: Nature
+                            ability: WIS
+                            acp: false
+                          - skill: Occultism
+                            ability: INT
+                            acp: false
+                          - skill: Performance
+                            ability: CHA
+                            acp: false
+                          - skill: Religion
+                            ability: WIS
+                            acp: false
+                          - skill: Society
+                            ability: INT
+                            acp: false
+                          - skill: Stealth
+                            ability: DEX
+                            acp: true
+                          - skill: Survival
+                            ability: WIS
+                            acp: false
+                          - skill: Thievery
+                            ability: DEX
+                            acp: true
+                          - skill: Lore
+                            ability: INT
+                            acp: false
+                          - skill: ""
+                            ability: ""
+                            acp: false
+                          - skill: ""
+                            ability: ""
+                            acp: false
+                          - skill: ""
+                            ability: ""
+                            acp: false
+                        template:
+                          - type: h6
+                            title: "#{skill}"
+                          - type: field
+                            id: "#{skill}-assurance"
+                            control: checkbox
+                            align: right
+                          - type: field
+                            id: "#{skill}-bonus"
+                            output: true
+                            icon: bonus
+                          - type: span
+                            content: =
+                          - type: field
+                            id: null
+                            ref: "#{ability}"
+                            underlay: "#{ability}"
+                            frame: h-label
+                            label: "#{ability}"
+                          - type: field
+                            id: "#{skill}-proficiency"
+                            control: proficiency
+                          - type: field
+                            id: "#{skill}-misc"
+                            misc: true
+                          - type: field
+                            id: "#{skill}-acp"
+                            ref: acp
+                            output: true
+                            exists: "#{acp}"
+                      - type: hr
+                      - type: layout
+                        layout: 2e
+                        contents:
+                          - type: level
+                            level: 7
+                            contents:
+                              - type: span
+                                content: Master in skills
+                          - type: level
+                            level: 15
+                            contents:
+                              - type: span
+                                content: Legendary in skills
+                  - type: section
+                    title: Skill feats
+                    id: skill-feats
+                    contents:
+                      - type: list
+                        columns: 2
+                        zebra: true
+                        hr: true
+                        flex: true
+                        contents:
+                          - type: repeat
+                            repeat: 6
+                            rows:
+                              - type: level
+                                level: 1
+                              - type: level
+                                level: 2
+                              - type: level
+                                level: 4
+                              - type: level
+                                level: 6
+                              - type: level
+                                level: 8
+                              - type: level
+                                level: 10
+                              - type: level
+                                level: 12
+                              - type: level
+                                level: 14
+                              - type: level
+                                level: 16
+                              - type: level
+                                level: 18
+                              - type: level
+                                level: 20
+                            contents:
+                              - type: level
+                                level: "#{level}"
+                                contents:
+                                  - type: article
+                                    title: null
+                                    header:
+                                      - type: field
+                                        id: skill-feat-level-#{level}
+                                        width: stretch
+                                        size: large
+                                        frame: none
+                                        align: left
+                                    contents:
+                                      - type: field
+                                        id: skill-feat-level-#{level}-details
+                                        width: stretch
+                                        align: left
+                                        frame: none
+                                        repeat: 3
+                  - type: hr
+                  - type: spacer
+      - type: page
+        id: combat
+        name: Combat
+        order: 6
+        flex: true
+        contents:
+          - type: layout
+            layout: 2l
+            contents:
+              - type: g
+                contents:
+                  - type: section
+                    title: Class DC
+                    id: class-dc
+                    contents:
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: calc
+                            output:
+                              type: field
+                              id: class-dc
+                              legend: Class DC
+                              underlay: DC
+                              width: large
+                              icon: modifier
+                            inputs:
+                              - type: field
+                                id: null
+                                label: Key Ability
+                                ref: key-ability
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                label: Level
+                                ref: level
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                label: Item
+                  - type: section
+                    title: Speed
+                    id: speed
+                    contents:
+                      - type: row
+                        layout: split
+                        contents:
+                          - type: field
+                            id: speed
+                            legend: Speed
+                            control: speed
+                            output: true
+                          - type: field
+                            id: speed-armour
+                            label: Speed in Armour
+                            control: speed
+                          - type: field
+                            id: speed-temp
+                            label: Temp Speed
+                            control: speed
+                            output: true
+                            temp: true
+                      - type: row
+                        layout: split
+                        contents:
+                          - type: field
+                            id: speed-swim
+                            label: Swim Speed
+                            control: speed
+                          - type: field
+                            id: speed-climb
+                            label: Climb Speed
+                            control: speed
+                          - type: field
+                            id: speed-fly
+                            label: Fly Speed
+                            control: speed
+                  - type: section
+                    title: Multiple Attack Penalty
+                    id: attack-penalty
+                    contents:
+                      - type: row
+                        layout: split
+                        contents:
+                          - type: field
+                            id: map-1
+                            frame: left
+                            label: 1st
+                            output: true
+                            width: large
+                            underlay: 0
+                          - type: field
+                            id: map-2
+                            frame: left
+                            label: 2nd
+                            output: true
+                            width: large
+                            underlay: -5
+                          - type: field
+                            id: map-3
+                            frame: left
+                            label: 3rd
+                            output: true
+                            width: large
+                            underlay: -10
+                      - type: field
+                        id: null
+                        label: Conditional
+                        align: left
+                        width: stretch
+                        merge-bottom: true
+                  - type: section
+                    title: Saving Throws
+                    id: saving-throws
+                    contents:
+                      - type: table
+                        columns:
+                          - null
+                          - null
+                          - |-
+                            Ability
+                            Modifier
+                          - Proficiency
+                          - Item
+                          - Misc
+                        rows:
+                          - save: fortitude
+                            legend: Fortitude
+                            short: FORT
+                            ability: CON
+                          - save: reflex
+                            legend: Reflex
+                            short: REF
+                            ability: DEX
+                          - save: will
+                            legend: Will
+                            short: WILL
+                            ability: WIS
+                        template:
+                          - type: calc
+                            output:
+                              type: field
+                              id: "#{save}"
+                              legend: "#{legend}"
+                              icon: bonus
+                              width: large
+                              underlay: "#{short}"
+                            inputs:
+                              - type: field
+                                id: null
+                                label: "#{ability}"
+                                underlay: "#{ability}"
+                                ref: "#{ability}"
+                              - type: field
+                                id: "#{save}-proficiency"
+                                control: proficiency
+                              - type: field
+                                id: "#{save}-item-bonus"
+                              - type: field
+                                id: "#{save}-misc-bonus"
+                                misc: true
+                      - type: field
+                        id: saving-throws-conditional
+                        label: Conditional
+                        align: left
+                        repeat: 2
+                        merge-bottom: true
+                        width: stretch
+              - type: g
+                contents:
+                  - type: section
+                    title: Attacks
+                    id: attacks
+                    contents:
+                      - type: list
+                        zebra: true
+                        hr: true
+                        flex: true
+                        contents:
+                          - type: repeat
+                            repeat: 4
+                            contents:
+                              - type: g
+                                contents:
+                                  - type: row
+                                    layout: null
+                                    contents:
+                                      - type: field
+                                        id: attack-#{i}-proficiency
+                                        control: proficiency
+                                        label: Item Bonus
+                                      - type: field
+                                        id: attack-#{i}
+                                        width: stretch
+                                        frame: none
+                                        align: left
+                                        size: large
+                                  - type: row
+                                    layout: null
+                                    contents:
+                                      - type: calc
+                                        output:
+                                          type: field
+                                          id: attack-#{i}-bonus
+                                          label: Attack Bonus
+                                          width: large
+                                          attack: true
+                                          icon: bonus
+                                        inputs:
+                                          - type: field
+                                            id: null
+                                            ref: true
+                                            label: Ability
+                                          - type: field
+                                            id: null
+                                            control: proficiency
+                                            label: Proficiency
+                                          - type: field
+                                            id: null
+                                            ref: true
+                                            label: Item
+                                      - type: field
+                                        id: attack-#{i}-damage
+                                        output: true
+                                        label: Damage
+                                        width: small
+                                        icon: damage
+                                        control: composite
+                                        parts:
+                                          - subid: ndice
+                                            overlay: d
+                                          - subid: die
+                                            overlay: +
+                                          - subid: extra
+                                      - type: field
+                                        id: attack-#{i}-type
+                                        label: Type
+                                      - type: field
+                                        id: attack-#{i}-critical
+                                        label: Critical Effect
+                                        width: stretch
+                                  - type: field
+                                    id: attack-#{i}-details
+                                    frame: none
+                                    width: stretch
+                                    align: left
+                                    unlined: true
+                      - type: hr
+                      - type: layout
+                        layout: 2e
+                        contents:
+                          - type: row
+                            layout: null
+                            contents:
+                              - type: field
+                                id: ammo-1-type
+                                legend: Ammo
+                                width: stretch
+                                align: left
+                                unlined: true
+                              - type: field
+                                id: ammo-1
+                                frame: h-label
+                                unlined: true
+                                width: small
+                                size: huge
+                                underlay: "#"
+                                label: Charges
+                              - type: field
+                                id: ammo-1-count
+                                frame: none
+                                control: checkgrid
+                                max: 20
+                                depth: 3
+                          - type: row
+                            layout: null
+                            contents:
+                              - type: field
+                                id: ammo-2-type
+                                width: stretch
+                                align: left
+                                unlined: true
+                              - type: field
+                                id: ammo-2
+                                frame: h-label
+                                unlined: true
+                                width: small
+                                size: huge
+                                underlay: "#"
+                                label: Charges
+                              - type: field
+                                id: ammo-2-count
+                                frame: none
+                                control: checkgrid
+                                max: 10
+                                depth: 3
+                          - type: hr
+                          - type: hr
+                          - type: row
+                            layout: null
+                            unlabelled: true
+                            contents:
+                              - type: field
+                                id: ammo-3-type
+                                frame: none
+                                width: stretch
+                                align: left
+                                unlined: true
+                              - type: field
+                                id: ammo-3
+                                frame: h-label
+                                unlined: true
+                                width: small
+                                size: huge
+                                underlay: "#"
+                                label: Charges
+                              - type: field
+                                id: ammo-3-count
+                                frame: none
+                                control: checkgrid
+                                max: 20
+                                depth: 3
+                          - type: row
+                            layout: null
+                            unlabelled: true
+                            contents:
+                              - type: field
+                                id: ammo-4-type
+                                frame: none
+                                width: stretch
+                                align: left
+                                unlined: true
+                              - type: field
+                                id: ammo-4
+                                frame: h-label
+                                unlined: true
+                                width: small
+                                size: huge
+                                underlay: "#"
+                                label: Charges
+                              - type: field
+                                id: ammo-4-count
+                                frame: none
+                                control: checkgrid
+                                max: 10
+                                depth: 3
+          - type: layout
+            layout: 2r
+            contents:
+              - type: g
+                contents:
+                  - type: section
+                    title: Health
+                    id: health
+                    contents:
+                      - type: row
+                        layout: split
+                        contents:
+                          - type: calc
+                            output:
+                              type: field
+                              id: hp
+                              legend: Hit Points
+                              icon: hp
+                              overlay: hp
+                              width: large
+                            inputs:
+                              - type: field
+                                id: hp-ancestry
+                                label: Ancestry
+                              - type: span
+                                content: (
+                              - type: field
+                                id: hp-class
+                                label: Class
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                label: CON
+                                underlay: CON
+                                ref: true
+                              - type: span
+                                content: ) &times;
+                              - type: field
+                                id: null
+                                ref: level
+                                label: Level
+                          - type: field
+                            id: dying
+                            control: progression
+                            label: Dying
+                            parts:
+                              - control: checkbox
+                              - control: checkbox
+                              - control: checkbox
+                              - type: icon
+                                icon: evil
+                                size: small
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: field
+                            id: current-hp
+                            label: Current Hit Points
+                            output: true
+                            temp: true
+                            overlay: hp
+                            width: stretch
+                          - type: field
+                            id: temp-hp
+                            label: Temp Hit Points
+                            output: true
+                            temp: true
+                            overlay: hp
+                            width: huge
+                      - type: h4
+                        title: Effects
+                      - type: list
+                        columns: 2
+                        collapse: true
+                        merge-bottom: true
+                        contents:
+                          - type: repeat
+                            repeat: 8
+                            contents:
+                              - type: row
+                                layout: null
+                                unlabelled: true
+                                contents:
+                                  - type: field
+                                    id: effect-#{i}
+                                    width: stretch
+                                    frame: none
+                                    align: left
+                                  - type: field
+                                    id: effect-#{i}-progress
+                                    control: progression
+                                    parts:
+                                      - control: checkbox
+                                      - control: checkbox
+                                      - control: checkbox
+                  - type: section
+                    title: Armour
+                    id: armour
+                    contents:
+                      - type: table
+                        columns:
+                          - null
+                          - null
+                          - null
+                          - DEX
+                          - Proficiency
+                          - Armour Bonus
+                          - Shield Bonus
+                          - Magic / Items
+                          - Misc
+                        rows:
+                          - id: ac
+                            legend: Armour Class
+                            underlay: AC
+                          - id: tac
+                            legend: Touch AC
+                            underlay: TAC
+                        template:
+                          - type: calc
+                            output:
+                              type: field
+                              id: null
+                              legend: "#{legend}"
+                              icon: "#{id}"
+                              width: large
+                              underlay: "#{underlay}"
+                            inputs:
+                              - type: span
+                                content: 10 +
+                              - type: field
+                                id: null
+                                ref: DEX
+                                underlay: DEX
+                              - type: field
+                                id: null
+                                control: proficiency
+                              - type: field
+                                id: armour-bonus
+                              - type: field
+                                id: shield-bonus
+                              - type: field
+                                id: null
+                              - type: field
+                                id: null
+                      - type: field
+                        id: ac-conditional
+                        label: Conditional
+                        width: stretch
+                        align: left
+                        repeat: 3
+              - type: g
+                contents:
+                  - type: section
+                    title: Actions
+                    id: actions
+                    contents:
+                      - type: list
+                        zebra: true
+                        flex: true
+                        hr: true
+                        contents:
+                          - type: zone
+                            zone: "@actions"
+                            max: 6
+                            zebra: true
+                            field_frame: none
+                            fill:
+                              - type: article
+                                title: null
+                                header:
+                                  - type: row
+                                    layout: null
+                                    contents:
+                                      - type: icon
+                                        icon: action-template
+                                      - type: field
+                                        id: action-#{i}
+                                        frame: none
+                                        width: stretch
+                                        align: left
+                                contents:
+                                  - type: field
+                                    id: action-#{i}-details
+                                    width: stretch
+                                    frame: none
+                                    align: left
+                                    repeat: 2
+      - type: page
+        id: inventory
+        name: Inventory
+        flex: true
+        order: 10
+        contents:
+          - type: layout
+            layout: 2l
+            flex: true
+            contents:
+              - type: g
+                contents:
+                  - type: section
+                    title: Inventory
+                    id: inventory
+                    contents:
+                      - type: list
+                        zebra: true
+                        collapse: true
+                        field_frame: none
+                        contents:
+                          - type: repeat
+                            repeat: 24
+                            contents:
+                              - type: row
+                                layout: null
+                                contents:
+                                  - type: field
+                                    id: inventory-#{i}
+                                    width: stretch
+                                  - type: field
+                                    id: inventory-#{i}-value
+                                  - type: field
+                                    id: inventory-#{i}-weight
+                          - type: repeat
+                            repeat: 4
+                            contents:
+                              - type: row
+                                layout: null
+                                contents:
+                                  - type: field
+                                    id: expendable-#{i}
+                                    width: stretch
+                                  - type: field
+                                    id: expendable-#{i}-count
+                                    frame: none
+                                    control: checkgrid
+                                    max: 20
+                                    depth: 3
+                      - type: g
+                        contents:
+                          - type: field
+                            id: weight-total
+                            frame: left
+                            label: Total weight
+                            output: true
+                            control: weight
+                  - type: section
+                    title: Money
+                    id: money
+                    field_frame: left
+                    contents:
+                      - type: field
+                        id: money-copper
+                        control: money
+                        label: Copper
+                        denomination: copper
+                        digits: 7
+                      - type: field
+                        id: money-silver
+                        control: money
+                        label: Silver
+                        denomination: silver
+                        digits: 7
+                        shift: 1
+                      - type: field
+                        id: money-gold
+                        control: money
+                        label: Gold
+                        denomination: gold
+                        digits: 7
+                        shift: 2
+                      - type: field
+                        id: money-total
+                        output: "true"
+                        control: money
+                        label: Total
+                        denomination: copper
+                        digits: 10
+                        decimal: 1
+                  - type: section
+                    title: Wands
+                    id: wands
+                    contents:
+                      - type: list
+                        zebra: true
+                        hr: true
+                        flex: true
+                        contents:
+                          - type: repeat
+                            repeat: 3
+                            contents:
+                              - type: article
+                                title: null
+                                contents:
+                                  - type: field
+                                    id: wand-#{i}
+                                    frame: none
+                                    width: stretch
+                                  - type: row
+                                    layout: right
+                                    contents:
+                                      - type: field
+                                        id: wand-#{i}-ncharges
+                                        frame: h-label
+                                        unlined: true
+                                        width: small
+                                        size: huge
+                                        underlay: "#"
+                                        label: Charges
+                                      - type: field
+                                        id: wand-#{i}-charges
+                                        frame: none
+                                        control: checkgrid
+                                        max: 50
+              - type: g
+                contents:
+                  - type: layout
+                    layout: 2e
+                    contents:
+                      - type: g
+                        contents:
+                          - type: section
+                            title: Armour
+                            contents:
+                              - type: field
+                                id: armour
+                                frame: none
+                                size: large
+                                width: stretch
+                              - type: row
+                                layout: split
+                                contents:
+                                  - type: field
+                                    id: armour-ac
+                                    label: AC Bonus
+                                    width: large
+                                    icon: ac
+                                  - type: field
+                                    id: armour-ac
+                                    label: TAC Bonus
+                                    width: large
+                                    icon: tac
+                                  - type: field
+                                    id: armour-bulk
+                                    label: Bulk
+                              - type: row
+                                layout: split
+                                contents:
+                                  - type: field
+                                    id: armour-max-dex
+                                    label: |-
+                                      Max DEX
+                                      to AC
+                                  - type: field
+                                    id: armour-speed-penalty
+                                    label: |-
+                                      Speed
+                                      Penalty
+                                    control: speed
+                                  - type: field
+                                    id: armour-acp
+                                    label: |-
+                                      Armour
+                                      Check
+                                      Penalty
+                          - type: section
+                            title: Shield
+                            contents:
+                              - type: field
+                                id: shield
+                                frame: none
+                                size: large
+                                width: stretch
+                              - type: row
+                                layout: split
+                                contents:
+                                  - type: field
+                                    id: shield-ac
+                                    label: AC Bonus
+                                    width: large
+                                    icon: ac
+                                  - type: field
+                                    id: shield-tac
+                                    label: TAC Bonus
+                                    width: large
+                                    icon: tac
+                                  - type: field
+                                    id: shield-bulk
+                                    label: Bulk
+                              - type: row
+                                layout: split
+                                contents:
+                                  - type: field
+                                    id: armour-max-dex
+                                    label: |-
+                                      Max DEX
+                                      to AC
+                                  - type: field
+                                    id: armour-speed-penalty
+                                    label: |-
+                                      Speed
+                                      Penalty
+                                    control: speed
+                                  - type: field
+                                    id: armour-acp
+                                    label: |-
+                                      Armour
+                                      Check
+                                      Penalty
+                          - type: hr
+                            swash: true
+                          - type: portrait
+                            overprint: true
+                      - type: section
+                        title: Equipment
+                        contents:
+                          - type: list
+                            zebra: true
+                            flex: true
+                            hr: true
+                            avoid-shade: true
+                            contents:
+                              - type: repeat
+                                repeat: 10
+                                contents:
+                                  - type: article
+                                    title: null
+                                    header:
+                                      - type: field
+                                        id: equipment-#{i}
+                                        width: stretch
+                                        frame: none
+                                        align: left
+                                    contents:
+                                      - type: field
+                                        id: equipment-#{i}-details
+                                        width: stretch
+                                        frame: none
+                                        align: left
+                                        repeat: 2
+                  - type: layout
+                    layout: 2e
+                    contents:
+                      - type: section
+                        title: Scrolls
+                        contents:
+                          - type: list
+                            zebra: true
+                            collapse: true
+                            merge-bottom: true
+                            flex: true
+                            contents:
+                              - type: repeat
+                                repeat: 13
+                                contents:
+                                  - type: field
+                                    id: scroll-#{i}
+                                    frame: none
+                                    width: stretch
+                      - type: section
+                        title: Potions
+                        contents:
+                          - type: list
+                            zebra: true
+                            collapse: true
+                            merge-bottom: true
+                            flex: true
+                            contents:
+                              - type: repeat
+                                repeat: 4
+                                contents:
+                                  - type: row
+                                    layout: null
+                                    contents:
+                                      - type: field
+                                        id: potion-exp-#{i}
+                                        frame: none
+                                        width: stretch
+                                      - type: field
+                                        id: potion-exp-#{i}-count
+                                        frame: none
+                                        control: checkgrid
+                                        max: 8
+                                        depth: 2
+                              - type: repeat
+                                repeat: 9
+                                contents:
+                                  - type: field
+                                    id: potion-#{i}
+                                    width: stretch

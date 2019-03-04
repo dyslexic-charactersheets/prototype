@@ -1,0 +1,12 @@
+base:
+  doc: Test 2
+  contents:
+    - section: Section One
+      contents:
+        - type: zone
+          zone: @foo
+
+inc:
+  - at: @foo
+    add:
+      - p: Foo bar

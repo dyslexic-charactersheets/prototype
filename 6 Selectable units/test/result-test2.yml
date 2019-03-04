@@ -1,0 +1,6 @@
+doc: Test 2
+contents:
+  - section: Section One
+    contents:
+      - type: zone
+        zone: "@foo"
