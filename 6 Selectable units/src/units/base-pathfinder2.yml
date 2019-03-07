@@ -10,7 +10,7 @@ inc:
           LLC, which are used under Paizo's Community Use Policy. We are expressly
           prohibited from charging you to use or access this content. This document
           is not published, endorsed, or specifically approved by Paizo Publishing.
-      - p: http://paizo.com/paizo/about/communityuse
+      - p: https://paizo.com/paizo/about/communityuse
 
   - at: @pages
     add:
@@ -338,7 +338,7 @@ inc:
                         merge-bottom: true
                         field_frame: none
                         contents:
-                          - repeat: 16
+                          - repeat: 15
                             contents:
                               - row:
                                 contents:
@@ -373,6 +373,13 @@ inc:
                           - field:
                             misc: true
                             label: "Misc"
+                      - calc:
+                        inline: true
+                        output:
+                          label: "Perception\nDC"
+                        inputs:
+                          - span: "10 +"
+                          - label: "Perception\nBonus"
                       - row: split
                         unlabelled: true
                         contents:
@@ -392,6 +399,7 @@ inc:
                         label: "Conditional"
                         align: left
                         width: stretch
+                        merge-bottom: true
 
                   - section: "Languages"
                     id: languages

@@ -2,7 +2,7 @@ const _ = require('lodash');
 
 register('each', '', {
     template: '',
-    var: 'i',
+    index: 'i',
     rows: [],
     params: {},
     contents: [],
@@ -20,12 +20,12 @@ args => {
         
         values['item'] = item;
         values = _.defaults(values, item);
-        values[args.var] = i;
+        values[args.index] = i;
 
-        console.log("[each] template", args.template);
-        console.log("[each] interpolating", values);
+        // console.log("[each] template", args.template);
+        // console.log("[each] interpolating", values);
         var product = interpolate(args.template, values);
-        console.log("[each] product", values);
+        // console.log("[each] product", values);
         return product;
     });
 });

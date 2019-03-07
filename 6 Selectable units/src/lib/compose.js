@@ -26,16 +26,16 @@ function composeDocument(doc, zones, templates) {
     var registry = getRegistry();
 
     function compose(element) {
-        console.log("[compose] element", element);
+        // console.log("[compose] element", element);
 
         if (!_.has(element, "type"))
             return element;
 
         // first recurse so we have the ingredients
         _.each(["contents", "placeholder"], item_key => {
-            console.log("[compose] Checking for", item_key);
+            // console.log("[compose] Checking for", item_key);
             if (_.has(element, item_key)) {
-                console.log("[compose] Preparing element", item_key, element[item_key]);
+                // console.log("[compose] Preparing element", item_key, element[item_key]);
                 if (_.isArray(element[item_key]))
                     element[item_key] = _.flatMap(element[item_key], compose);
                 else

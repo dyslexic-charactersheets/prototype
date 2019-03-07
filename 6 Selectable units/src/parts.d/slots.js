@@ -10,17 +10,17 @@ register('slots', 'slots', {
 }, 
 args => '', 
 (args, ctx) => {
-    console.log("[slots] Slots:", args.slots);
+    // console.log("[slots] Slots:", args.slots);
     var placeholder = args.placeholder;
     if (!_.isArray(placeholder))
         placeholder = [ placeholder ];
     
     function slotItems(items) {
-        console.log("[slots] Items", items);
+        // console.log("[slots] Items", items);
         if (args.min && items.length < args.min) {
             var n = args.min - items.length;
             for (var i = 0; i < n; i++) {
-                console.log("[slots] Placeholder", args.placeholder);
+                // console.log("[slots] Placeholder", args.placeholder);
                 items = items.concat(_.cloneDeep(args.placeholder));
             }
         }
@@ -32,7 +32,7 @@ args => '',
     }
 
     if (_.isNull(args.slots) || args.slots == []) {
-        console.log("[slots] Single slot");
+        // console.log("[slots] Single slot");
         return slotItems(args.contents);
     }
 
@@ -44,7 +44,7 @@ args => '',
         };
         slots[s][args.key] = s;
     });
-    console.log("[slots] Filled", slots);
+    // console.log("[slots] Filled", slots);
     _.forEach(args.contents, item => {
         if (!_.has(item, args.key))
             return;
@@ -53,15 +53,15 @@ args => '',
         }
     });
     _.forEach(slots, s => {
-        console.log("[slots] Slot", s.key);
+        // console.log("[slots] Slot", s.key);
         s.contents = slotItems(s.contents);
         s.contents.forEach(item => item[args.key] = s.key);
-        console.log("[slots] Slot", s.key, "items", s.contents);
+        // console.log("[slots] Slot", s.key, "items", s.contents);
     });
 
-    console.log("[slots]", slots);
+    // console.log("[slots]", slots);
     var contents = _.flatMap(slots, s => s.contents);
 
-    console.log("[slots]", contents);
+    // console.log("[slots]", contents);
     return contents;
 });

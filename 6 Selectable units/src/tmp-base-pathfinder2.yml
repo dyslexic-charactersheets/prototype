@@ -12,7 +12,7 @@ inc:
           content. This document is not published, endorsed, or specifically
           approved by Paizo Publishing.
       - type: p
-        content: http://paizo.com/paizo/about/communityuse
+        content: https://paizo.com/paizo/about/communityuse
   - at: "@pages"
     add:
       - type: page
@@ -445,7 +445,7 @@ inc:
                         field_frame: none
                         contents:
                           - type: repeat
-                            repeat: 16
+                            repeat: 15
                             contents:
                               - type: row
                                 layout: null
@@ -491,6 +491,20 @@ inc:
                             id: null
                             misc: true
                             label: Misc
+                      - type: calc
+                        output:
+                          type: label
+                          label: |-
+                            Perception
+                            DC
+                        inline: true
+                        inputs:
+                          - type: span
+                            content: 10 +
+                          - type: label
+                            label: |-
+                              Perception
+                              Bonus
                       - type: row
                         layout: split
                         unlabelled: true

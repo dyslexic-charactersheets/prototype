@@ -15,14 +15,15 @@ const units = require('./lib/units.js');
 // Create a document from units
 
 // Barbarian
-var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-human', 'class-barbarian', 'option-permission' ];
-// global.documentColour = '#264e80'; // faded blue
-// global.accentColour = '#a65e08';
+// var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-human', 'class-barbarian', 'option-permission' ];
+// global.documentColour = '#661b14'; // red
+// global.accentColour = '#b38000'; // gold
+
 
 // Wizard
-// var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-elf', 'class-wizard', 'option-permission', 'feat-wizard-counterspell', 'option-animal-companion' ];
-global.documentColour = '#661b14'; // red
-global.accentColour = '#b38000'; // gold
+var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-elf', 'class-wizard', 'option-permission', 'feat-wizard-counterspell', 'option-animal-companion' ];
+global.documentColour = '#264e80'; // faded blue
+global.accentColour = '#a65e08';
 
 // var selectedUnits = [ 'option-animal-companion' ];
 

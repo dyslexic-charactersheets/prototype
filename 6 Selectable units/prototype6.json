@@ -99,7 +99,7 @@
                 },
                 {
                   "type": "p",
-                  "content": "http://paizo.com/paizo/about/communityuse"
+                  "content": "https://paizo.com/paizo/about/communityuse"
                 }
               ]
             }
@@ -1447,22 +1447,14 @@
                       "title": null,
                       "header": [
                         {
-                          "type": "field",
-                          "id": "ancestry",
-                          "size": "large",
-                          "width": "stretch",
-                          "align": "left",
-                          "frame": "none"
+                          "type": "h4",
+                          "title": "Elf"
                         }
                       ],
                       "contents": [
                         {
-                          "type": "field",
-                          "id": "ancestry-details",
-                          "frame": "none",
-                          "width": "stretch",
-                          "align": "left",
-                          "repeat": 2
+                          "type": "p",
+                          "content": ""
                         }
                       ]
                     },
@@ -2385,25 +2377,6 @@
                               "control": "proficiency"
                             }
                           ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": "proficiency-16-name",
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "field",
-                              "id": "proficiency-16-value",
-                              "frame": "none",
-                              "control": "proficiency"
-                            }
-                          ]
                         }
                       ],
                       "columns": 1,
@@ -2464,6 +2437,24 @@
                           "id": null,
                           "misc": true,
                           "label": "Misc"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "calc",
+                      "output": {
+                        "type": "label",
+                        "label": "Perception\nDC"
+                      },
+                      "inline": true,
+                      "inputs": [
+                        {
+                          "type": "span",
+                          "content": "10 +"
+                        },
+                        {
+                          "type": "label",
+                          "label": "Perception\nBonus"
                         }
                       ]
                     },
@@ -4316,35 +4307,24 @@
                       "hr": true,
                       "contents": [
                         {
-                          "type": "article",
-                          "title": null,
-                          "header": [
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "icon",
-                                  "icon": "action-template"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "action-#{i}",
-                                  "frame": "none",
-                                  "width": "stretch",
-                                  "align": "left"
-                                }
-                              ]
-                            }
-                          ],
+                          "type": "action",
+                          "action": "reaction",
                           "contents": [
                             {
-                              "type": "field",
-                              "id": "action-#{i}-details",
-                              "width": "stretch",
-                              "frame": "none",
-                              "align": "left",
-                              "repeat": 2
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "h4",
+                                  "title": "Counterspell (abj)"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "p",
+                                  "content": "Expend a prepared spell to counter the triggering creature’s casting of that same spell. Roll a counteract check using the spell’s level against the caster’s spell DC."
+                                }
+                              ]
                             }
                           ]
                         },
@@ -6004,8 +5984,8 @@
     },
     {
       "type": "page",
-      "id": "barbarian",
-      "name": "Barbarian",
+      "id": "wizard",
+      "name": "Wizard",
       "order": 10,
       "contents": [
         {
@@ -6017,53 +5997,114 @@
               "contents": [
                 {
                   "type": "class-icon",
-                  "icon": "barbarian"
+                  "icon": "wizard"
                 },
                 {
                   "type": "h2",
-                  "title": "Barbarian"
+                  "title": "Wizard"
                 },
                 {
                   "type": "section",
-                  "title": "Totem",
+                  "title": "Thesis",
                   "primary": true,
                   "contents": [
                     {
-                      "type": "article",
-                      "title": null,
-                      "header": [
+                      "type": "field",
+                      "id": "thesis",
+                      "size": "large",
+                      "width": "stretch",
+                      "frame": "none"
+                    },
+                    {
+                      "type": "field",
+                      "id": "thesis-details",
+                      "width": "stretch",
+                      "frame": "none",
+                      "repeat": 4,
+                      "merge-bottom": true
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Specialisation",
+                  "contents": [
+                    {
+                      "type": "field",
+                      "id": "wizard-school",
+                      "label": "School",
+                      "width": "stretch",
+                      "align": "left"
+                    },
+                    {
+                      "type": "field",
+                      "id": "wizard-school-power",
+                      "legend": "School Power",
+                      "width": "stretch",
+                      "align": "left",
+                      "repeat": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Spells",
+                  "contents": [
+                    {
+                      "type": "table",
+                      "collapse": true,
+                      "columns": [
+                        "Level",
+                        "Spells per day"
+                      ],
+                      "rows": [
                         {
-                          "type": "field",
-                          "id": "barbarian-totem",
-                          "legend": "Totem",
-                          "width": "stretch",
-                          "align": "left"
+                          "type": "level",
+                          "level": 1
+                        },
+                        {
+                          "type": "level",
+                          "level": 2
+                        },
+                        {
+                          "type": "level",
+                          "level": 3
+                        },
+                        {
+                          "type": "level",
+                          "level": 4
+                        },
+                        {
+                          "type": "level",
+                          "level": 5
+                        },
+                        {
+                          "type": "level",
+                          "level": 6
+                        },
+                        {
+                          "type": "level",
+                          "level": 7
+                        },
+                        {
+                          "type": "level",
+                          "level": 8
+                        },
+                        {
+                          "type": "level",
+                          "level": 9
                         }
                       ],
-                      "contents": [
+                      "template": [
                         {
-                          "type": "field",
-                          "id": "barbarian-totem-anathema",
-                          "label": "Anathema",
-                          "width": "stretch",
-                          "align": "left",
-                          "repeat": 3
+                          "type": "level-marker",
+                          "level": "#{level}",
+                          "marker": ""
                         },
                         {
                           "type": "field",
-                          "id": "barbarian-totem-ability",
-                          "label": "Totem Ability",
-                          "width": "stretch",
-                          "align": "left",
-                          "repeat": 3
-                        },
-                        {
-                          "type": "field",
-                          "id": "barbarian-totem-raging-resistance",
-                          "label": "Raging Resistance",
-                          "width": "stretch",
-                          "align": "left",
-                          "repeat": 2
+                          "id": "spells-#{level}-per-day",
+                          "frame": "none"
                         }
                       ]
                     }
@@ -6071,130 +6112,43 @@
                 },
                 {
                   "type": "section",
-                  "title": "Deny Advantage",
+                  "title": "Arcane Focus",
                   "contents": [
                     {
-                      "type": "level",
-                      "level": 5,
-                      "contents": [
-                        {
-                          "type": "p",
-                          "content": "Never flat-footed against creatures of a lower level."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Juggernaut",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 7,
-                      "contents": [
-                        {
-                          "type": "proficiency",
-                          "proficiency": "master",
-                          "content": "Master at Fortitude saves"
-                        },
-                        {
-                          "type": "p",
-                          "content": "When you succeed at a Fortitude save, treat it as a critical success."
-                        }
-                      ]
+                      "type": "p",
+                      "content": "Arcane focus"
                     },
                     {
-                      "type": "hr"
-                    },
-                    {
-                      "type": "level",
-                      "level": 13,
+                      "type": "action",
+                      "action": "free",
                       "contents": [
                         {
-                          "type": "proficiency",
-                          "proficiency": "legendary",
-                          "content": "Legendary at Fortitude saves"
-                        },
-                        {
-                          "type": "p",
-                          "content": "When you critically fail a Fortitude save, treat it as a failure. When you fail a Fortitude save against an effect that deals damage, you halve the damage you take."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Weapon Fury",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 13,
-                      "contents": [
-                        {
-                          "type": "proficiency",
-                          "proficiency": "expert",
-                          "content": "Expert at simple and martial weapons, and unarmed attacks"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Indomitable Will",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 15,
-                      "contents": [
-                        {
-                          "type": "proficiency",
-                          "proficiency": "master",
-                          "content": "Master at Will saves"
-                        },
-                        {
-                          "type": "p",
-                          "content": "When you succeed at a Will save, treat it as a critical success."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Devastating Strikes",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 19,
-                      "contents": [
-                        {
-                          "type": "calc",
-                          "output": {
-                            "type": "field",
-                            "id": "barbarian-raging-resistance-",
-                            "legend": "Resistance Reduction"
-                          },
-                          "inputs": [
+                          "type": "article",
+                          "title": null,
+                          "header": [
                             {
-                              "type": "field",
-                              "id": null,
-                              "ref": "CON",
-                              "underlay": "CON"
-                            },
+                              "type": "h4",
+                              "title": "Drain Arcane Focus"
+                            }
+                          ],
+                          "contents": [
                             {
-                              "type": "span",
-                              "content": "&times; 2"
+                              "type": "p",
+                              "content": "Expend the magical power stored in your arcane focus, to cast one spell you prepared today and previously cast, without spending a spell slot."
                             }
                           ]
-                        },
-                        {
-                          "type": "p",
-                          "content": "If you succeed at a melee Strike against a target with resistance against the physical damage type of the weapon or unarmed attack you’re using, reduce that resistance."
                         }
                       ]
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Wizard Feats",
+                  "contents": [
+                    {
+                      "type": "p",
+                      "content": "Qux"
                     }
                   ]
                 },
@@ -6208,206 +6162,31 @@
               "contents": [
                 {
                   "type": "section",
-                  "title": "Rage",
+                  "title": "Cantrips",
                   "contents": [
                     {
-                      "type": "list",
-                      "hr": true,
-                      "contents": [
-                        {
-                          "type": "action",
-                          "action": null,
-                          "contents": [
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "rage-rounds",
-                                  "legend": "Rage Rounds",
-                                  "control": "progression",
-                                  "parts": [
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "spacer"
-                                },
-                                {
-                                  "type": "p",
-                                  "content": "After raging, you are fatigued for 1 round."
-                                },
-                                {
-                                  "type": "spacer"
-                                }
-                              ]
-                            },
-                            {
-                              "type": "p",
-                              "content": "While raging, cannot use actions that require concentration, except for Seek."
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "barbarian-rage-damage-bonus",
-                                  "output": true,
-                                  "label": "Damage Bonus",
-                                  "width": "large"
-                                },
-                                {
-                                  "type": "p",
-                                  "content": "To melee and unarmed strikes"
-                                },
-                                {
-                                  "type": "spacer"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "barbarian-rage-ac-penalty",
-                                  "label": "AC Penalty",
-                                  "output": true,
-                                  "width": "large",
-                                  "value": "-1"
-                                },
-                                {
-                                  "type": "spacer"
-                                },
-                                {
-                                  "type": "calc",
-                                  "output": {
-                                    "type": "field",
-                                    "id": "barbarian-rage-temp-hp",
-                                    "label": "Temporary Hit Points",
-                                    "overlay": "hp",
-                                    "temp": true
-                                  },
-                                  "inputs": [
-                                    {
-                                      "type": "field",
-                                      "id": null,
-                                      "ref": "CON",
-                                      "underlay": "CON"
-                                    },
-                                    {
-                                      "type": "span",
-                                      "content": "+"
-                                    },
-                                    {
-                                      "type": "field",
-                                      "id": null,
-                                      "ref": "level",
-                                      "label": "Level"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 3,
-                          "contents": [
-                            {
-                              "type": "h5",
-                              "title": "Critical Brutality"
-                            },
-                            {
-                              "type": "p",
-                              "content": "Gain critical specialization for your melee weapon or unarmed attack."
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 9,
-                          "contents": [
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "calc",
-                                  "output": {
-                                    "type": "field",
-                                    "id": "barbarian-raging-resistance",
-                                    "legend": "Raging Resistance",
-                                    "width": "large"
-                                  },
-                                  "inputs": [
-                                    {
-                                      "type": "field",
-                                      "id": null,
-                                      "ref": "CON",
-                                      "underlay": "CON"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 11,
-                          "contents": [
-                            {
-                              "type": "action",
-                              "action": "free",
-                              "contents": [
-                                {
-                                  "type": "h5",
-                                  "title": "Mighty Rage"
-                                },
-                                {
-                                  "type": "p",
-                                  "content": "Use one of your rage actions as a free action."
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 17,
-                          "contents": [
-                            {
-                              "type": "h5",
-                              "title": "Tireless Rage"
-                            },
-                            {
-                              "type": "p",
-                              "content": "Don’t become fatigued after you stop raging. It still takes the normal amount of time before you can use Rage again."
-                            }
-                          ]
-                        }
-                      ],
-                      "columns": 1,
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "vr": false,
-                      "merge-bottom": false,
-                      "avoid-shade": false
+                      "type": "spells-list",
+                      "min": 0,
+                      "max": 0,
+                      "spells": 5
                     }
                   ]
                 },
                 {
                   "type": "section",
-                  "title": "Barbarian Feats",
+                  "title": "Spells",
+                  "contents": [
+                    {
+                      "type": "spells-list",
+                      "min": 1,
+                      "max": 9,
+                      "spells": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Wizard Feats",
                   "contents": [
                     {
                       "type": "layout",
@@ -6426,7 +6205,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-1",
+                                      "id": "wixard-feat-level-1",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6435,7 +6214,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-1-details",
+                                      "id": "wizard-feat-level-1-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6455,7 +6234,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-4",
+                                      "id": "wixard-feat-level-4",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6464,7 +6243,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-4-details",
+                                      "id": "wizard-feat-level-4-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6484,7 +6263,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-8",
+                                      "id": "wixard-feat-level-8",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6493,7 +6272,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-8-details",
+                                      "id": "wizard-feat-level-8-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6513,7 +6292,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-12",
+                                      "id": "wixard-feat-level-12",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6522,7 +6301,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-12-details",
+                                      "id": "wizard-feat-level-12-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6542,7 +6321,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-16",
+                                      "id": "wixard-feat-level-16",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6551,7 +6330,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-16-details",
+                                      "id": "wizard-feat-level-16-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6571,7 +6350,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-20",
+                                      "id": "wixard-feat-level-20",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6580,7 +6359,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-20-details",
+                                      "id": "wizard-feat-level-20-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6614,7 +6393,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-2",
+                                      "id": "wixard-feat-level-2",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6623,7 +6402,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-2-details",
+                                      "id": "wizard-feat-level-2-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6643,7 +6422,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-6",
+                                      "id": "wixard-feat-level-6",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6652,7 +6431,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-6-details",
+                                      "id": "wizard-feat-level-6-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6672,7 +6451,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-10",
+                                      "id": "wixard-feat-level-10",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6681,7 +6460,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-10-details",
+                                      "id": "wizard-feat-level-10-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6701,7 +6480,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-14",
+                                      "id": "wixard-feat-level-14",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6710,7 +6489,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-14-details",
+                                      "id": "wizard-feat-level-14-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6730,7 +6509,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-18",
+                                      "id": "wixard-feat-level-18",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6739,7 +6518,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-18-details",
+                                      "id": "wizard-feat-level-18-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6759,7 +6538,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level- ",
+                                      "id": "wixard-feat-level- ",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6768,7 +6547,7 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level- -details",
+                                      "id": "wizard-feat-level- -details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
@@ -6795,6 +6574,1463 @@
                 },
                 {
                   "type": "tail"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "level": 1
+    },
+    {
+      "type": "page",
+      "id": "animal-companion",
+      "name": "Animal Companion",
+      "order": 20,
+      "flex": true,
+      "landscape": true,
+      "numbered": false,
+      "contents": [
+        {
+          "type": "layout",
+          "layout": "2e",
+          "contents": [
+            {
+              "type": "layout",
+              "layout": "2l",
+              "narrow": true,
+              "contents": [
+                {
+                  "type": "g",
+                  "contents": [
+                    {
+                      "type": "h2",
+                      "title": "Animal Companion"
+                    },
+                    {
+                      "type": "section",
+                      "title": "Attributes",
+                      "id": "attributes",
+                      "contents": [
+                        {
+                          "type": "table",
+                          "width": "stretch",
+                          "columns": [
+                            {
+                              "align": "left"
+                            },
+                            "Ability\nScore",
+                            {
+                              "type": "label",
+                              "label": "Ability\nModifier",
+                              "contents": [
+                                {
+                                  "type": "icon",
+                                  "icon": true
+                                }
+                              ]
+                            }
+                          ],
+                          "rows": [
+                            {
+                              "ability": "Strength",
+                              "short": "STR"
+                            },
+                            {
+                              "ability": "Dexterity",
+                              "short": "DEX"
+                            },
+                            {
+                              "ability": "Constitution",
+                              "short": "CON"
+                            },
+                            {
+                              "ability": "Intelligence",
+                              "short": "INT"
+                            },
+                            {
+                              "ability": "Wisdom",
+                              "short": "WIS"
+                            },
+                            {
+                              "ability": "Charisma",
+                              "short": "CHA"
+                            }
+                          ],
+                          "template": [
+                            {
+                              "type": "h6",
+                              "title": "#{ability}"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-#{short}-score",
+                              "box": true,
+                              "frame": "none"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-#{short}",
+                              "output": true,
+                              "icon": "modifier",
+                              "underlay": "#{short}",
+                              "frame": "none"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "section",
+                      "title": "Abilities",
+                      "contents": [
+                        {
+                          "type": "h4",
+                          "title": "Work Together"
+                        },
+                        {
+                          "type": "g",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "animal-companion-work-together",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 5
+                            }
+                          ]
+                        },
+                        {
+                          "type": "h4",
+                          "title": "Advanced Manoeuvre"
+                        },
+                        {
+                          "type": "g",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "animal-companion-manoeuvre",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 4
+                            }
+                          ]
+                        },
+                        {
+                          "type": "h4",
+                          "title": "Specialisation"
+                        },
+                        {
+                          "type": "g",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "animal-companion-specialisation",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "merge-bottom": true,
+                              "repeat": 4
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "g",
+                  "contents": [
+                    {
+                      "type": "portrait",
+                      "animal-companion": true
+                    },
+                    {
+                      "type": "g",
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "animal-companion-name",
+                          "legend": "Name",
+                          "width": "stretch",
+                          "align": "left",
+                          "size": "large"
+                        },
+                        {
+                          "type": "row",
+                          "layout": null,
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "animal-companion-species",
+                              "label": "Companion Type",
+                              "align": "left",
+                              "width": "stretch"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-size",
+                              "label": "Size",
+                              "icon": "size"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-gender",
+                              "label": "Gender",
+                              "icon": "gender"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "section",
+                      "title": "Skills",
+                      "contents": [
+                        {
+                          "type": "table",
+                          "collapse": true,
+                          "zebra": true,
+                          "columns": [
+                            {
+                              "align": "right"
+                            },
+                            "Skill\nBonus",
+                            null,
+                            "Ability\nModifier",
+                            "Proficiency",
+                            "Feats\nMisc",
+                            "Barding\nCheck\nPenalty"
+                          ],
+                          "rows": [
+                            {
+                              "skill": "Acrobatics",
+                              "ability": "DEX",
+                              "acp": true
+                            },
+                            {
+                              "skill": "Athletics",
+                              "ability": "STR",
+                              "acp": true
+                            },
+                            {
+                              "skill": "Deception",
+                              "ability": "CHA",
+                              "acp": false
+                            },
+                            {
+                              "skill": "Intimidation",
+                              "ability": "CHA",
+                              "acp": false
+                            },
+                            {
+                              "skill": "Nature",
+                              "ability": "WIS",
+                              "acp": false
+                            },
+                            {
+                              "skill": "Performance",
+                              "ability": "CHA",
+                              "acp": false
+                            },
+                            {
+                              "skill": "Stealth",
+                              "ability": "DEX",
+                              "acp": true
+                            },
+                            {
+                              "skill": "Survival",
+                              "ability": "WIS",
+                              "acp": false
+                            },
+                            {
+                              "skill": "Thievery",
+                              "ability": "DEX",
+                              "acp": true
+                            },
+                            {
+                              "skill": "",
+                              "ability": "",
+                              "acp": false
+                            }
+                          ],
+                          "template": [
+                            {
+                              "type": "h6",
+                              "title": "#{skill}"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-#{skill}-bonus",
+                              "output": true,
+                              "icon": "bonus",
+                              "frame": "none"
+                            },
+                            {
+                              "type": "span",
+                              "content": "="
+                            },
+                            {
+                              "type": "field",
+                              "id": null,
+                              "ref": "#{ability}",
+                              "underlay": "#{ability}",
+                              "frame": "h-label",
+                              "label": "#{ability}"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-#{skill}-proficiency",
+                              "control": "proficiency",
+                              "frame": "none"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-#{skill}-misc",
+                              "misc": true,
+                              "frame": "none"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-#{skill}-acp",
+                              "ref": "acp",
+                              "output": true,
+                              "exists": "#{acp}",
+                              "frame": "none"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "calc",
+                          "output": {
+                            "type": "field",
+                            "id": "animal-companion-perception",
+                            "icon": "bonus",
+                            "legend": "Perception"
+                          },
+                          "inputs": [
+                            {
+                              "type": "field",
+                              "id": null,
+                              "ref": "WIS",
+                              "underlay": "WIS",
+                              "label": "WIS"
+                            },
+                            {
+                              "type": "span",
+                              "content": "+"
+                            },
+                            {
+                              "type": "field",
+                              "id": null,
+                              "label": "Proficiency",
+                              "icon": "proficiency"
+                            },
+                            {
+                              "type": "span",
+                              "content": "+"
+                            },
+                            {
+                              "type": "field",
+                              "id": null,
+                              "label": "Item"
+                            },
+                            {
+                              "type": "span",
+                              "content": "+"
+                            },
+                            {
+                              "type": "field",
+                              "id": null,
+                              "misc": true,
+                              "label": "Misc"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "row",
+                          "layout": null,
+                          "unlabelled": true,
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "animal-companion-perception-low-light",
+                              "frame": "right",
+                              "control": "checkbox",
+                              "label": "Low-light vision"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-perception-darkvision",
+                              "frame": "right",
+                              "control": "checkbox",
+                              "label": "Dark vision"
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-perception-scent",
+                              "frame": "right",
+                              "control": "checkbox",
+                              "label": "Scent"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "g",
+              "contents": [
+                {
+                  "type": "layout",
+                  "layout": "2l",
+                  "narrow": true,
+                  "contents": [
+                    {
+                      "type": "g",
+                      "contents": [
+                        {
+                          "type": "section",
+                          "title": "Speed",
+                          "contents": [
+                            {
+                              "type": "row",
+                              "layout": "split",
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-speed",
+                                  "legend": "Speed",
+                                  "control": "speed",
+                                  "output": true
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-speed-alt",
+                                  "label": "",
+                                  "control": "speed"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "unlabelled": true,
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-speed-mount",
+                                  "frame": "right",
+                                  "control": "checkbox",
+                                  "label": "Mount"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "section",
+                          "title": "Saving Throws",
+                          "id": "saving-throws",
+                          "contents": [
+                            {
+                              "type": "table",
+                              "columns": [
+                                null,
+                                null,
+                                "Ability\nModifier",
+                                "Proficiency",
+                                "Misc"
+                              ],
+                              "rows": [
+                                {
+                                  "save": "fortitude",
+                                  "legend": "Fortitude",
+                                  "short": "FORT",
+                                  "ability": "CON"
+                                },
+                                {
+                                  "save": "reflex",
+                                  "legend": "Reflex",
+                                  "short": "REF",
+                                  "ability": "DEX"
+                                },
+                                {
+                                  "save": "will",
+                                  "legend": "Will",
+                                  "short": "WILL",
+                                  "ability": "WIS"
+                                }
+                              ],
+                              "template": [
+                                {
+                                  "type": "calc",
+                                  "output": {
+                                    "type": "field",
+                                    "id": "animal-companion-#{save}",
+                                    "legend": "#{legend}",
+                                    "icon": "bonus",
+                                    "width": "large",
+                                    "underlay": "#{short}"
+                                  },
+                                  "inputs": [
+                                    {
+                                      "type": "field",
+                                      "id": null,
+                                      "label": "#{ability}",
+                                      "underlay": "#{ability}",
+                                      "ref": "#{ability}"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "#{save}-proficiency",
+                                      "control": "proficiency"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "#{save}-misc-bonus",
+                                      "misc": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-saving-throws-conditional",
+                              "label": "Conditional",
+                              "align": "left",
+                              "merge-bottom": true,
+                              "width": "stretch"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "g",
+                      "contents": [
+                        {
+                          "type": "section",
+                          "title": "Attacks",
+                          "contents": [
+                            {
+                              "type": "list",
+                              "zebra": true,
+                              "hr": true,
+                              "flex": true,
+                              "contents": [
+                                {
+                                  "type": "g",
+                                  "contents": [
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-1",
+                                          "width": "stretch",
+                                          "frame": "none",
+                                          "align": "left",
+                                          "size": "large"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "calc",
+                                          "output": {
+                                            "type": "field",
+                                            "id": "animal-companion-attack-1-bonus",
+                                            "label": "Attack Bonus",
+                                            "attack": true,
+                                            "icon": "bonus"
+                                          },
+                                          "inputs": [
+                                            {
+                                              "type": "field",
+                                              "id": null,
+                                              "ref": true,
+                                              "label": "Ability"
+                                            },
+                                            {
+                                              "type": "field",
+                                              "id": null,
+                                              "control": "proficiency",
+                                              "label": "Proficiency"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-1-damage",
+                                          "output": true,
+                                          "label": "Damage",
+                                          "width": "small",
+                                          "icon": "damage",
+                                          "control": "composite",
+                                          "parts": [
+                                            {
+                                              "subid": "ndice",
+                                              "overlay": "d"
+                                            },
+                                            {
+                                              "subid": "die",
+                                              "overlay": "+"
+                                            },
+                                            {
+                                              "subid": "extra"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-1-critical",
+                                          "frame": "none",
+                                          "width": "stretch",
+                                          "align": "left",
+                                          "unlined": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "g",
+                                  "contents": [
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-2",
+                                          "width": "stretch",
+                                          "frame": "none",
+                                          "align": "left",
+                                          "size": "large"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "calc",
+                                          "output": {
+                                            "type": "field",
+                                            "id": "animal-companion-attack-2-bonus",
+                                            "label": "Attack Bonus",
+                                            "attack": true,
+                                            "icon": "bonus"
+                                          },
+                                          "inputs": [
+                                            {
+                                              "type": "field",
+                                              "id": null,
+                                              "ref": true,
+                                              "label": "Ability"
+                                            },
+                                            {
+                                              "type": "field",
+                                              "id": null,
+                                              "control": "proficiency",
+                                              "label": "Proficiency"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-2-damage",
+                                          "output": true,
+                                          "label": "Damage",
+                                          "width": "small",
+                                          "icon": "damage",
+                                          "control": "composite",
+                                          "parts": [
+                                            {
+                                              "subid": "ndice",
+                                              "overlay": "d"
+                                            },
+                                            {
+                                              "subid": "die",
+                                              "overlay": "+"
+                                            },
+                                            {
+                                              "subid": "extra"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-2-critical",
+                                          "frame": "none",
+                                          "width": "stretch",
+                                          "align": "left",
+                                          "unlined": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "g",
+                                  "contents": [
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-3",
+                                          "width": "stretch",
+                                          "frame": "none",
+                                          "align": "left",
+                                          "size": "large"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "calc",
+                                          "output": {
+                                            "type": "field",
+                                            "id": "animal-companion-attack-3-bonus",
+                                            "label": "Attack Bonus",
+                                            "attack": true,
+                                            "icon": "bonus"
+                                          },
+                                          "inputs": [
+                                            {
+                                              "type": "field",
+                                              "id": null,
+                                              "ref": true,
+                                              "label": "Ability"
+                                            },
+                                            {
+                                              "type": "field",
+                                              "id": null,
+                                              "control": "proficiency",
+                                              "label": "Proficiency"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-3-damage",
+                                          "output": true,
+                                          "label": "Damage",
+                                          "width": "small",
+                                          "icon": "damage",
+                                          "control": "composite",
+                                          "parts": [
+                                            {
+                                              "subid": "ndice",
+                                              "overlay": "d"
+                                            },
+                                            {
+                                              "subid": "die",
+                                              "overlay": "+"
+                                            },
+                                            {
+                                              "subid": "extra"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-attack-3-critical",
+                                          "frame": "none",
+                                          "width": "stretch",
+                                          "align": "left",
+                                          "unlined": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "columns": 1,
+                              "flowv": true,
+                              "sort": true,
+                              "vr": false,
+                              "merge-bottom": false,
+                              "avoid-shade": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "layout",
+                  "layout": "2r",
+                  "narrow": true,
+                  "contents": [
+                    {
+                      "type": "g",
+                      "contents": [
+                        {
+                          "type": "section",
+                          "title": "Defence",
+                          "contents": [
+                            {
+                              "type": "table",
+                              "columns": [
+                                null,
+                                null,
+                                null,
+                                "DEX",
+                                "Proficiency",
+                                "Barding\nBonus",
+                                "Misc"
+                              ],
+                              "rows": [
+                                {
+                                  "id": "ac",
+                                  "legend": "Armour Class",
+                                  "underlay": "AC"
+                                },
+                                {
+                                  "id": "tac",
+                                  "legend": "Touch AC",
+                                  "underlay": "TAC"
+                                }
+                              ],
+                              "template": [
+                                {
+                                  "type": "calc",
+                                  "output": {
+                                    "type": "field",
+                                    "id": "animal-companion-#{id}",
+                                    "legend": "#{legend}",
+                                    "icon": "#{id}",
+                                    "width": "large",
+                                    "underlay": "#{underlay}"
+                                  },
+                                  "inputs": [
+                                    {
+                                      "type": "span",
+                                      "content": "10 +"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": null,
+                                      "ref": "DEX",
+                                      "underlay": "DEX"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-#{id}-proficiency",
+                                      "control": "proficiency"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "armour-bonus"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-ac-conditional",
+                              "label": "Conditional",
+                              "width": "stretch",
+                              "align": "left",
+                              "repeat": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "section",
+                          "title": "Health",
+                          "contents": [
+                            {
+                              "type": "calc",
+                              "output": {
+                                "type": "field",
+                                "id": "animal-companion-hp",
+                                "legend": "Hit Points",
+                                "icon": "hp",
+                                "overlay": "hp"
+                              },
+                              "inputs": [
+                                {
+                                  "type": "field",
+                                  "id": null,
+                                  "label": "Ancestry"
+                                },
+                                {
+                                  "type": "span",
+                                  "content": "+ ("
+                                },
+                                {
+                                  "type": "field",
+                                  "id": null,
+                                  "ref": "CON",
+                                  "underlay": "CON"
+                                },
+                                {
+                                  "type": "span",
+                                  "content": "+"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-hp-per-level",
+                                  "underlay": "6",
+                                  "width": "tiny"
+                                },
+                                {
+                                  "type": "span",
+                                  "content": ") &times;"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": null,
+                                  "ref": "level",
+                                  "legend": "Level"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "field",
+                              "id": "animal-companion-current-hp",
+                              "output": true,
+                              "temp": true,
+                              "icon": "hp",
+                              "overlay": "hp",
+                              "width": "stretch"
+                            },
+                            {
+                              "type": "h4",
+                              "title": "Effects"
+                            },
+                            {
+                              "type": "layout",
+                              "layout": "2e",
+                              "contents": [
+                                {
+                                  "columns": 1,
+                                  "contents": [
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "unlabelled": true,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-1",
+                                          "width": "stretch",
+                                          "frame": "none",
+                                          "align": "left"
+                                        },
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-1-progress",
+                                          "control": "progression",
+                                          "parts": [
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "unlabelled": true,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-3",
+                                          "width": "stretch",
+                                          "frame": "none",
+                                          "align": "left"
+                                        },
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-3-progress",
+                                          "control": "progression",
+                                          "parts": [
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "type": "list",
+                                  "collapse": true,
+                                  "merge-bottom": true,
+                                  "flowv": true,
+                                  "zebra": false,
+                                  "flex": false,
+                                  "sort": true,
+                                  "hr": false,
+                                  "vr": false,
+                                  "avoid-shade": false
+                                },
+                                {
+                                  "columns": 1,
+                                  "contents": [
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "unlabelled": true,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-2",
+                                          "width": "stretch",
+                                          "frame": "none",
+                                          "align": "left"
+                                        },
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-2-progress",
+                                          "control": "progression",
+                                          "parts": [
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "row",
+                                      "layout": null,
+                                      "unlabelled": true,
+                                      "contents": [
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-4",
+                                          "width": "stretch",
+                                          "frame": "none",
+                                          "align": "left"
+                                        },
+                                        {
+                                          "type": "field",
+                                          "id": "animal-companion-effect-4-progress",
+                                          "control": "progression",
+                                          "parts": [
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            },
+                                            {
+                                              "control": "checkbox"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "type": "list",
+                                  "collapse": true,
+                                  "merge-bottom": true,
+                                  "flowv": true,
+                                  "zebra": false,
+                                  "flex": false,
+                                  "sort": true,
+                                  "hr": false,
+                                  "vr": false,
+                                  "avoid-shade": false
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "g",
+                      "contents": [
+                        {
+                          "type": "section",
+                          "title": "Barding",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "animal-companion-barding",
+                              "frame": "none",
+                              "size": "large",
+                              "width": "stretch"
+                            },
+                            {
+                              "type": "row",
+                              "layout": "split",
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-barding-ac",
+                                  "label": "AC Bonus",
+                                  "width": "large",
+                                  "icon": "ac"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-barding-ac",
+                                  "label": "TAC Bonus",
+                                  "width": "large",
+                                  "icon": "tac"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-barding-bulk",
+                                  "label": "Bulk"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "row",
+                              "layout": "split",
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-barding-max-dex",
+                                  "label": "Max DEX\nto AC"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-barding-speed-penalty",
+                                  "label": "Speed\nPenalty",
+                                  "control": "speed"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "animal-companion-barding-acp",
+                                  "label": "Barding\nCheck\nPenalty"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "section",
+                          "title": "Inventory",
+                          "contents": [
+                            {
+                              "type": "list",
+                              "zebra": true,
+                              "collapse": true,
+                              "merge-bottom": true,
+                              "contents": [
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-1",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-1-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-1-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-2",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-2-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-2-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-3",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-3-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-3-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-4",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-4-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-4-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-5",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-5-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-5-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-6",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-6-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-6-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-7",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-7-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-7-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-8",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-8-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-8-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-9",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-9-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-9-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-10",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-10-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-10-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-11",
+                                      "width": "stretch",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-11-value",
+                                      "frame": "none"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "animal-companion-inventory-11-weight",
+                                      "frame": "none"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "columns": 1,
+                              "flowv": true,
+                              "flex": false,
+                              "sort": true,
+                              "hr": false,
+                              "vr": false,
+                              "avoid-shade": false
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

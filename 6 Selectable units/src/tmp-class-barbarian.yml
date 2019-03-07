@@ -37,19 +37,24 @@ inc:
                             label: Anathema
                             width: stretch
                             align: left
-                            repeat: 3
+                            repeat: 4
+                            merge-bottom: true
+                          - type: hr
                           - type: field
                             id: barbarian-totem-ability
                             label: Totem Ability
                             width: stretch
                             align: left
-                            repeat: 3
+                            repeat: 4
+                            merge-bottom: true
+                          - type: hr
                           - type: field
                             id: barbarian-totem-raging-resistance
                             label: Raging Resistance
                             width: stretch
                             align: left
-                            repeat: 2
+                            repeat: 4
+                            merge-bottom: true
                   - type: section
                     title: Deny Advantage
                     contents:
@@ -297,5 +302,5 @@ inc:
                                         width: stretch
                                         align: left
                                         frame: none
-                                        repeat: 2
+                                        repeat: 3
                   - type: tail

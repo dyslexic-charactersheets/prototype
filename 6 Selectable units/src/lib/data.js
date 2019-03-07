@@ -14,7 +14,10 @@ var storedDataURLs = {};
 const MIME_SVG = 'image/svg+xml';
 const MIME_PNG = 'image/png';
 const MIME_JPEG = 'image/jpeg';
-const MIME_WOFF = 'application/font-woff;charset=utf-8';
+// const MIME_WOFF = 'application/font-woff;charset=utf-8';
+// const MIME_WOFF = 'application/x-font-woff;charset=utf-8';
+const MIME_WOFF = 'application/x-font-woff;charset=utf-8';
+// const MIME_WOFF = 'font/woff;charset=utf-8';
 const MIME_WOFF2 = 'application/font-woff2;charset=utf-8'
 const MIME_SCSS = 'text/x-scss';
 const MIME_HANDLEBARS = 'text/x-handlebars';
@@ -110,15 +113,17 @@ global.preloadData = function(filename, {
     // load the actual file
 	loadingQueue.push(new Promise(function (resolve, reject) {
 		fs.readFile(baseDir+filename, 'utf-8', function (err, data) {
-            if (required && err) {
+            if (err) {
                 console.log("[data] Error preloading "+filename, err);
-                reject(err);
-                return;
+                if (required) {
+                    reject(err);
+                    return;
+                }
             }
             
             // console.log("[data] Found file", filename);
             // process the data
-            if (!raw) {
+            if (!raw && !err) {
                 switch (mimeType(filename)) {
                     case MIME_SVG: data = processSVG(data); break;
                     default: data = processRaw; break;

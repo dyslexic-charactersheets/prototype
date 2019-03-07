@@ -8,6 +8,7 @@ register('doc', 'title', {
     return `<!DOCTYPE html>
 <html lang='en-GB'>
 <head>
+<meta charset='utf-8'/>
 <title>${esc(args.title)}</title>
 <link id="favicon" rel="shortcut icon" type="image/png" href='${faviconData}' />
 <style>
