@@ -1,19 +1,50 @@
-- type: doc
-  title: Test 7
-  contents:
-    - type: section
-      title: Section Seven
-      contents:
-        - type: list
-          contents:
-            - type: p
-              content: Foo
-          columns: 1
-          flowv: true
-          zebra: false
-          flex: false
-          sort: true
-          hr: false
-          vr: false
-          merge-bottom: false
-          avoid-shade: false
+type: doc
+title: Test 7
+contents:
+  - type: section
+    title: Section Seven
+    contents:
+      - type: list
+        contents:
+          - type: h5
+            title: Ancestry Feats
+          - type: list
+            zebra: true
+            hr: true
+            contents:
+              - type: level
+                level: "1"
+                contents:
+                  - type: article
+                    title: null
+                    header:
+                      - type: field
+                        id: ancestry-feat-#{i}
+                        frame: none
+                        size: large
+                        width: stretch
+                        align: left
+                    contents:
+                      - type: field
+                        id: ancestry-feat-#{i}-details
+                        repeat: 2
+                        frame: none
+                        width: stretch
+                        align: left
+                    level: 1
+            columns: 1
+            flowv: true
+            flex: false
+            sort: true
+            vr: false
+            merge-bottom: false
+            avoid-shade: false
+        columns: 1
+        flowv: true
+        zebra: false
+        flex: false
+        sort: true
+        hr: false
+        vr: false
+        merge-bottom: false
+        avoid-shade: false

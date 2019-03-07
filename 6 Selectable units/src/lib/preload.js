@@ -2,7 +2,8 @@ preloadData("fonts/Merriweather-Black.woff", { base64: true });
 preloadData("fonts/RobotoCondensed-Regular.woff", { base64: true });
 
 preloadData("images/favicon.png", { base64: true });
-preloadData("images/logo.png", { base64: true });
+// preloadData("images/logo.png", { base64: true });
+preloadData("images/2e-logo.png", { base64: true });
 preloadData("images/frost1.jpg", { base64: true });
 preloadData("images/paper3.jpg", { base64: true });
 preloadData("images/Amari.jpg", { base64: true });

@@ -47,8 +47,6 @@ inc:
                   - hr:
                     swash: true
                   - portrait:
-                  # - hr:
-                  #   swash: true
                   - section: "Character"
                     id: character
                     untitled: true
@@ -81,6 +79,7 @@ inc:
                           - field: alignment
                             frame: none
                             control: alignment
+                  - tail:
               - g:
                 contents:
                   - section: "Ancestry"
@@ -286,10 +285,15 @@ inc:
                   - section: "Proficiency"
                     id: proficiency
                     contents:
-                      - field: proficiency-level
-                        output: true
-                        frame: right
-                        label: "Class Level"
+                      - row:
+                        contents:
+                          - field: proficiency-class
+                            width: stretch
+                            align: left
+                            legend: "Class"
+                          - field: proficiency-level
+                            output: true
+                            label: "Level"
                       - layout: 5e
                         narrow: true
                         contents:
@@ -334,13 +338,14 @@ inc:
                         merge-bottom: true
                         field_frame: none
                         contents:
-                          - repeat: 17
+                          - repeat: 16
                             contents:
                               - row:
                                 contents:
                                   - field: "proficiency-#{i}-name"
                                     frame: none
                                     width: stretch
+                                    align: left
                                   - field: "proficiency-#{i}-value"
                                     frame: none
                                     control: proficiency
@@ -397,6 +402,7 @@ inc:
                         align: left
                         width: stretch
                         merge-bottom: true
+                  - tail:
 
               - g:
                 contents:
@@ -541,7 +547,7 @@ inc:
                                     align: left
                                     frame: none
                                     repeat: 3
-                  - hr:
+                  - tail:
                   - spacer:
 
       - page: combat
@@ -667,6 +673,7 @@ inc:
                               underlay: "#{short}"
                             inputs:
                               - field:
+                                frame: h-label
                                 label: "#{ability}"
                                 underlay: "#{ability}"
                                 ref: "#{ability}"
@@ -902,6 +909,7 @@ inc:
                                     width: stretch
                                     frame: none
                                     align: left
+                                    temp: true
                                   - field: effect-#{i}-progress
                                     control: progression
                                     parts:
@@ -954,6 +962,7 @@ inc:
                         width: stretch
                         align: left
                         repeat: 3
+                  - tail:
 
               - g:
                 contents:
@@ -965,26 +974,28 @@ inc:
                         flex: true
                         hr: true
                         contents:
-                          - zone: @actions
+                          - slots:
+                            min: 6
                             max: 6
-                            zebra: true
-                            field_frame: none
-                            fill:
-                              - article:
-                                header:
-                                  - row:
-                                    contents:
-                                      - icon: action-template
-                                      - field: action-#{i}
-                                        frame: none
-                                        width: stretch
-                                        align: left
-                                contents:
-                                  - field: action-#{i}-details
-                                    width: stretch
-                                    frame: none
-                                    align: left
-                                    repeat: 2
+                            placeholder:
+                              article:
+                              header:
+                                - row:
+                                  contents:
+                                    - icon: action-template
+                                    - field: action-#{i}
+                                      frame: none
+                                      width: stretch
+                                      align: left
+                              contents:
+                                - field: action-#{i}-details
+                                  width: stretch
+                                  frame: none
+                                  align: left
+                                  repeat: 2
+                            contents:
+                              - zone: @actions
+                  - tail:
 
       - page: inventory
         name: "Inventory"
@@ -1004,7 +1015,7 @@ inc:
                         collapse: true
                         field_frame: none
                         contents:
-                          - repeat: 24
+                          - repeat: 23
                             contents:
                               - row:
                                 contents:
@@ -1087,6 +1098,7 @@ inc:
                                         frame: none
                                         control: checkgrid
                                         max: 50
+                  - tail:
               - g:
                 contents:
                   - layout: 2e
@@ -1179,40 +1191,46 @@ inc:
                                         repeat: 2
                   - layout: 2e
                     contents:
-                      - section: "Scrolls"
+                      - g:
                         contents:
-                          - list:
-                            zebra: true
-                            collapse: true
-                            merge-bottom: true
-                            flex: true
+                          - section: "Scrolls"
                             contents:
-                              - repeat: 13
+                              - list:
+                                zebra: true
+                                collapse: true
+                                merge-bottom: true
+                                flex: true
                                 contents:
-                                  - field: scroll-#{i}
-                                    frame: none
-                                    width: stretch
-                      - section: "Potions"
-                        contents:
-                          - list:
-                            zebra: true
-                            collapse: true
-                            merge-bottom: true
-                            flex: true
-                            contents:
-                              - repeat: 4
-                                contents:
-                                  - row:
+                                  - repeat: 12
                                     contents:
-                                      - field: potion-exp-#{i}
+                                      - field: scroll-#{i}
                                         frame: none
                                         width: stretch
-                                      - field: potion-exp-#{i}-count
-                                        frame: none
-                                        control: checkgrid
-                                        max: 8
-                                        depth: 2
-                              - repeat: 9
+                          - tail:
+                      - g:
+                        contents:
+                          - section: "Potions"
+                            contents:
+                              - list:
+                                zebra: true
+                                collapse: true
+                                merge-bottom: true
+                                flex: true
                                 contents:
-                                  - field: potion-#{i}
-                                    width: stretch
+                                  - repeat: 4
+                                    contents:
+                                      - row:
+                                        contents:
+                                          - field: potion-exp-#{i}
+                                            frame: none
+                                            width: stretch
+                                          - field: potion-exp-#{i}-count
+                                            frame: none
+                                            control: checkgrid
+                                            max: 8
+                                            depth: 2
+                                  - repeat: 8
+                                    contents:
+                                      - field: potion-#{i}
+                                        width: stretch
+                          - tail:

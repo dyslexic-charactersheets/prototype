@@ -353,3 +353,5 @@ inc:
                             control: money
                             denomination: silver
                             digits: 3
+              - tail:
+              - tail:

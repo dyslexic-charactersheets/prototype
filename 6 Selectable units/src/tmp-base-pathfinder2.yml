@@ -95,6 +95,7 @@ inc:
                             id: alignment
                             frame: none
                             control: alignment
+                  - type: tail
               - type: g
                 contents:
                   - type: section
@@ -144,6 +145,7 @@ inc:
                             - type: field
                               id: heritage
                               size: large
+                              frame: none
                               width: stretch
                               align: left
                           contents:
@@ -360,11 +362,18 @@ inc:
                     title: Proficiency
                     id: proficiency
                     contents:
-                      - type: field
-                        id: proficiency-level
-                        output: true
-                        frame: right
-                        label: Class Level
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: field
+                            id: proficiency-class
+                            width: stretch
+                            align: left
+                            legend: Class
+                          - type: field
+                            id: proficiency-level
+                            output: true
+                            label: Level
                       - type: layout
                         layout: 5e
                         narrow: true
@@ -436,7 +445,7 @@ inc:
                         field_frame: none
                         contents:
                           - type: repeat
-                            repeat: 17
+                            repeat: 16
                             contents:
                               - type: row
                                 layout: null
@@ -445,6 +454,7 @@ inc:
                                     id: proficiency-#{i}-name
                                     frame: none
                                     width: stretch
+                                    align: left
                                   - type: field
                                     id: proficiency-#{i}-value
                                     frame: none
@@ -516,6 +526,7 @@ inc:
                         align: left
                         width: stretch
                         merge-bottom: true
+                  - type: tail
               - type: g
                 contents:
                   - type: section
@@ -703,7 +714,7 @@ inc:
                                         align: left
                                         frame: none
                                         repeat: 3
-                  - type: hr
+                  - type: tail
                   - type: spacer
       - type: page
         id: combat
@@ -857,6 +868,7 @@ inc:
                             inputs:
                               - type: field
                                 id: null
+                                frame: h-label
                                 label: "#{ability}"
                                 underlay: "#{ability}"
                                 ref: "#{ability}"
@@ -1142,6 +1154,7 @@ inc:
                                     width: stretch
                                     frame: none
                                     align: left
+                                    temp: true
                                   - type: field
                                     id: effect-#{i}-progress
                                     control: progression
@@ -1204,6 +1217,7 @@ inc:
                         width: stretch
                         align: left
                         repeat: 3
+                  - type: tail
               - type: g
                 contents:
                   - type: section
@@ -1215,32 +1229,35 @@ inc:
                         flex: true
                         hr: true
                         contents:
-                          - type: zone
-                            zone: "@actions"
+                          - type: slots
+                            slots: null
+                            min: 6
                             max: 6
-                            zebra: true
-                            field_frame: none
-                            fill:
-                              - type: article
-                                title: null
-                                header:
-                                  - type: row
-                                    layout: null
-                                    contents:
-                                      - type: icon
-                                        icon: action-template
-                                      - type: field
-                                        id: action-#{i}
-                                        frame: none
-                                        width: stretch
-                                        align: left
-                                contents:
-                                  - type: field
-                                    id: action-#{i}-details
-                                    width: stretch
-                                    frame: none
-                                    align: left
-                                    repeat: 2
+                            placeholder:
+                              type: article
+                              title: null
+                              header:
+                                - type: row
+                                  layout: null
+                                  contents:
+                                    - type: icon
+                                      icon: action-template
+                                    - type: field
+                                      id: action-#{i}
+                                      frame: none
+                                      width: stretch
+                                      align: left
+                              contents:
+                                - type: field
+                                  id: action-#{i}-details
+                                  width: stretch
+                                  frame: none
+                                  align: left
+                                  repeat: 2
+                            contents:
+                              - type: zone
+                                zone: "@actions"
+                  - type: tail
       - type: page
         id: inventory
         name: Inventory
@@ -1263,7 +1280,7 @@ inc:
                         field_frame: none
                         contents:
                           - type: repeat
-                            repeat: 24
+                            repeat: 23
                             contents:
                               - type: row
                                 layout: null
@@ -1366,6 +1383,7 @@ inc:
                                         frame: none
                                         control: checkgrid
                                         max: 50
+                  - type: tail
               - type: g
                 contents:
                   - type: layout
@@ -1495,50 +1513,56 @@ inc:
                   - type: layout
                     layout: 2e
                     contents:
-                      - type: section
-                        title: Scrolls
+                      - type: g
                         contents:
-                          - type: list
-                            zebra: true
-                            collapse: true
-                            merge-bottom: true
-                            flex: true
+                          - type: section
+                            title: Scrolls
                             contents:
-                              - type: repeat
-                                repeat: 13
+                              - type: list
+                                zebra: true
+                                collapse: true
+                                merge-bottom: true
+                                flex: true
                                 contents:
-                                  - type: field
-                                    id: scroll-#{i}
-                                    frame: none
-                                    width: stretch
-                      - type: section
-                        title: Potions
-                        contents:
-                          - type: list
-                            zebra: true
-                            collapse: true
-                            merge-bottom: true
-                            flex: true
-                            contents:
-                              - type: repeat
-                                repeat: 4
-                                contents:
-                                  - type: row
-                                    layout: null
+                                  - type: repeat
+                                    repeat: 12
                                     contents:
                                       - type: field
-                                        id: potion-exp-#{i}
+                                        id: scroll-#{i}
                                         frame: none
                                         width: stretch
-                                      - type: field
-                                        id: potion-exp-#{i}-count
-                                        frame: none
-                                        control: checkgrid
-                                        max: 8
-                                        depth: 2
-                              - type: repeat
-                                repeat: 9
+                          - type: tail
+                      - type: g
+                        contents:
+                          - type: section
+                            title: Potions
+                            contents:
+                              - type: list
+                                zebra: true
+                                collapse: true
+                                merge-bottom: true
+                                flex: true
                                 contents:
-                                  - type: field
-                                    id: potion-#{i}
-                                    width: stretch
+                                  - type: repeat
+                                    repeat: 4
+                                    contents:
+                                      - type: row
+                                        layout: null
+                                        contents:
+                                          - type: field
+                                            id: potion-exp-#{i}
+                                            frame: none
+                                            width: stretch
+                                          - type: field
+                                            id: potion-exp-#{i}-count
+                                            frame: none
+                                            control: checkgrid
+                                            max: 8
+                                            depth: 2
+                                  - type: repeat
+                                    repeat: 8
+                                    contents:
+                                      - type: field
+                                        id: potion-#{i}
+                                        width: stretch
+                          - type: tail

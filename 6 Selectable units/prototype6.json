@@ -1284,6 +1284,12 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "tail"
+            },
+            {
+              "type": "tail"
             }
           ]
         }
@@ -1418,6 +1424,9 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "tail"
                 }
               ]
             },
@@ -1472,6 +1481,7 @@
                           "type": "field",
                           "id": "heritage",
                           "size": "large",
+                          "frame": "none",
                           "width": "stretch",
                           "align": "left"
                         }
@@ -1500,122 +1510,157 @@
                       "hr": true,
                       "contents": [
                         {
-                          "type": "article",
-                          "title": null,
-                          "header": [
-                            {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}",
-                              "frame": "none",
-                              "size": "large",
-                              "width": "stretch",
-                              "align": "left"
-                            }
-                          ],
+                          "type": "level",
+                          "level": "1",
                           "contents": [
                             {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}-details",
-                              "repeat": 2,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 1
                             }
                           ]
                         },
                         {
-                          "type": "article",
-                          "title": null,
-                          "header": [
-                            {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}",
-                              "frame": "none",
-                              "size": "large",
-                              "width": "stretch",
-                              "align": "left"
-                            }
-                          ],
+                          "type": "level",
+                          "level": "5",
                           "contents": [
                             {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}-details",
-                              "repeat": 2,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 5
                             }
                           ]
                         },
                         {
-                          "type": "article",
-                          "title": null,
-                          "header": [
-                            {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}",
-                              "frame": "none",
-                              "size": "large",
-                              "width": "stretch",
-                              "align": "left"
-                            }
-                          ],
+                          "type": "level",
+                          "level": "9",
                           "contents": [
                             {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}-details",
-                              "repeat": 2,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 9
                             }
                           ]
                         },
                         {
-                          "type": "article",
-                          "title": null,
-                          "header": [
-                            {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}",
-                              "frame": "none",
-                              "size": "large",
-                              "width": "stretch",
-                              "align": "left"
-                            }
-                          ],
+                          "type": "level",
+                          "level": "13",
                           "contents": [
                             {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}-details",
-                              "repeat": 2,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 13
                             }
                           ]
                         },
                         {
-                          "type": "article",
-                          "title": null,
-                          "header": [
-                            {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}",
-                              "frame": "none",
-                              "size": "large",
-                              "width": "stretch",
-                              "align": "left"
-                            }
-                          ],
+                          "type": "level",
+                          "level": "17",
                           "contents": [
                             {
-                              "type": "field",
-                              "id": "ancestry-feat-#{i}-details",
-                              "repeat": 2,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 17
                             }
                           ]
                         }
@@ -1941,11 +1986,23 @@
                   "id": "proficiency",
                   "contents": [
                     {
-                      "type": "field",
-                      "id": "proficiency-level",
-                      "output": true,
-                      "frame": "right",
-                      "label": "Class Level"
+                      "type": "row",
+                      "layout": null,
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "proficiency-class",
+                          "width": "stretch",
+                          "align": "left",
+                          "legend": "Class"
+                        },
+                        {
+                          "type": "field",
+                          "id": "proficiency-level",
+                          "output": true,
+                          "label": "Level"
+                        }
+                      ]
                     },
                     {
                       "type": "layout",
@@ -2052,7 +2109,8 @@
                               "type": "field",
                               "id": "proficiency-1-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2070,7 +2128,8 @@
                               "type": "field",
                               "id": "proficiency-2-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2088,7 +2147,8 @@
                               "type": "field",
                               "id": "proficiency-3-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2106,7 +2166,8 @@
                               "type": "field",
                               "id": "proficiency-4-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2124,7 +2185,8 @@
                               "type": "field",
                               "id": "proficiency-5-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2142,7 +2204,8 @@
                               "type": "field",
                               "id": "proficiency-6-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2160,7 +2223,8 @@
                               "type": "field",
                               "id": "proficiency-7-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2178,7 +2242,8 @@
                               "type": "field",
                               "id": "proficiency-8-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2196,7 +2261,8 @@
                               "type": "field",
                               "id": "proficiency-9-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2214,7 +2280,8 @@
                               "type": "field",
                               "id": "proficiency-10-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2232,7 +2299,8 @@
                               "type": "field",
                               "id": "proficiency-11-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2250,7 +2318,8 @@
                               "type": "field",
                               "id": "proficiency-12-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2268,7 +2337,8 @@
                               "type": "field",
                               "id": "proficiency-13-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2286,7 +2356,8 @@
                               "type": "field",
                               "id": "proficiency-14-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2304,7 +2375,8 @@
                               "type": "field",
                               "id": "proficiency-15-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
@@ -2322,29 +2394,12 @@
                               "type": "field",
                               "id": "proficiency-16-name",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "align": "left"
                             },
                             {
                               "type": "field",
                               "id": "proficiency-16-value",
-                              "frame": "none",
-                              "control": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": "proficiency-17-name",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "proficiency-17-value",
                               "frame": "none",
                               "control": "proficiency"
                             }
@@ -2464,6 +2519,9 @@
                       "merge-bottom": true
                     }
                   ]
+                },
+                {
+                  "type": "tail"
                 }
               ]
             },
@@ -2896,7 +2954,7 @@
                   ]
                 },
                 {
-                  "type": "hr"
+                  "type": "tail"
                 },
                 {
                   "type": "spacer"
@@ -3129,6 +3187,7 @@
                             {
                               "type": "field",
                               "id": null,
+                              "frame": "h-label",
                               "label": "#{ability}",
                               "underlay": "#{ability}",
                               "ref": "#{ability}"
@@ -3881,7 +3940,8 @@
                                   "id": "effect-1",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -3911,7 +3971,8 @@
                                   "id": "effect-3",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -3941,7 +4002,8 @@
                                   "id": "effect-5",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -3971,7 +4033,8 @@
                                   "id": "effect-7",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -4016,7 +4079,8 @@
                                   "id": "effect-2",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -4046,7 +4110,8 @@
                                   "id": "effect-4",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -4076,7 +4141,8 @@
                                   "id": "effect-6",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -4106,7 +4172,8 @@
                                   "id": "effect-8",
                                   "width": "stretch",
                                   "frame": "none",
-                                  "align": "left"
+                                  "align": "left",
+                                  "temp": true
                                 },
                                 {
                                   "type": "field",
@@ -4228,6 +4295,9 @@
                       "repeat": 3
                     }
                   ]
+                },
+                {
+                  "type": "tail"
                 }
               ]
             },
@@ -4244,7 +4314,206 @@
                       "zebra": true,
                       "flex": true,
                       "hr": true,
-                      "contents": [],
+                      "contents": [
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "icon",
+                                  "icon": "action-template"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "action-#{i}",
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ]
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "action-#{i}-details",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "icon",
+                                  "icon": "action-template"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "action-#{i}",
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ]
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "action-#{i}-details",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "icon",
+                                  "icon": "action-template"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "action-#{i}",
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ]
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "action-#{i}-details",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "icon",
+                                  "icon": "action-template"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "action-#{i}",
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ]
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "action-#{i}-details",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "icon",
+                                  "icon": "action-template"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "action-#{i}",
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ]
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "action-#{i}-details",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 2
+                            }
+                          ]
+                        },
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "icon",
+                                  "icon": "action-template"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "action-#{i}",
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ]
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "action-#{i}-details",
+                              "width": "stretch",
+                              "frame": "none",
+                              "align": "left",
+                              "repeat": 2
+                            }
+                          ]
+                        }
+                      ],
                       "columns": 1,
                       "flowv": true,
                       "sort": true,
@@ -4253,6 +4522,9 @@
                       "avoid-shade": false
                     }
                   ]
+                },
+                {
+                  "type": "tail"
                 }
               ]
             }
@@ -4798,28 +5070,6 @@
                           "contents": [
                             {
                               "type": "field",
-                              "id": "inventory-24",
-                              "width": "stretch",
-                              "frame": "none"
-                            },
-                            {
-                              "type": "field",
-                              "id": "inventory-24-value",
-                              "frame": "none"
-                            },
-                            {
-                              "type": "field",
-                              "id": "inventory-24-weight",
-                              "frame": "none"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
                               "id": "expendable-1",
                               "width": "stretch",
                               "frame": "none"
@@ -5091,6 +5341,9 @@
                       "avoid-shade": false
                     }
                   ]
+                },
+                {
+                  "type": "tail"
                 }
               ]
             },
@@ -5491,247 +5744,252 @@
                   "layout": "2e",
                   "contents": [
                     {
-                      "type": "section",
-                      "title": "Scrolls",
+                      "type": "g",
                       "contents": [
                         {
-                          "type": "list",
-                          "zebra": true,
-                          "collapse": true,
-                          "merge-bottom": true,
-                          "flex": true,
+                          "type": "section",
+                          "title": "Scrolls",
                           "contents": [
                             {
-                              "type": "field",
-                              "id": "scroll-1",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-2",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-3",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-4",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-5",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-6",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-7",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-8",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-9",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-10",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-11",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-12",
-                              "frame": "none",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "scroll-13",
-                              "frame": "none",
-                              "width": "stretch"
+                              "type": "list",
+                              "zebra": true,
+                              "collapse": true,
+                              "merge-bottom": true,
+                              "flex": true,
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "scroll-1",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-2",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-3",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-4",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-5",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-6",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-7",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-8",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-9",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-10",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-11",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "scroll-12",
+                                  "frame": "none",
+                                  "width": "stretch"
+                                }
+                              ],
+                              "columns": 1,
+                              "flowv": true,
+                              "sort": true,
+                              "hr": false,
+                              "vr": false,
+                              "avoid-shade": false
                             }
-                          ],
-                          "columns": 1,
-                          "flowv": true,
-                          "sort": true,
-                          "hr": false,
-                          "vr": false,
-                          "avoid-shade": false
+                          ]
+                        },
+                        {
+                          "type": "tail"
                         }
                       ]
                     },
                     {
-                      "type": "section",
-                      "title": "Potions",
+                      "type": "g",
                       "contents": [
                         {
-                          "type": "list",
-                          "zebra": true,
-                          "collapse": true,
-                          "merge-bottom": true,
-                          "flex": true,
+                          "type": "section",
+                          "title": "Potions",
                           "contents": [
                             {
-                              "type": "row",
-                              "layout": null,
+                              "type": "list",
+                              "zebra": true,
+                              "collapse": true,
+                              "merge-bottom": true,
+                              "flex": true,
                               "contents": [
                                 {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-1",
+                                      "frame": "none",
+                                      "width": "stretch"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-1-count",
+                                      "frame": "none",
+                                      "control": "checkgrid",
+                                      "max": 8,
+                                      "depth": 2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-2",
+                                      "frame": "none",
+                                      "width": "stretch"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-2-count",
+                                      "frame": "none",
+                                      "control": "checkgrid",
+                                      "max": 8,
+                                      "depth": 2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-3",
+                                      "frame": "none",
+                                      "width": "stretch"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-3-count",
+                                      "frame": "none",
+                                      "control": "checkgrid",
+                                      "max": 8,
+                                      "depth": 2
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "row",
+                                  "layout": null,
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-4",
+                                      "frame": "none",
+                                      "width": "stretch"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "potion-exp-4-count",
+                                      "frame": "none",
+                                      "control": "checkgrid",
+                                      "max": 8,
+                                      "depth": 2
+                                    }
+                                  ]
+                                },
+                                {
                                   "type": "field",
-                                  "id": "potion-exp-1",
-                                  "frame": "none",
+                                  "id": "potion-1",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
-                                  "id": "potion-exp-1-count",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 8,
-                                  "depth": 2
-                                }
-                              ]
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "potion-exp-2",
-                                  "frame": "none",
+                                  "id": "potion-2",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
-                                  "id": "potion-exp-2-count",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 8,
-                                  "depth": 2
-                                }
-                              ]
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "potion-exp-3",
-                                  "frame": "none",
+                                  "id": "potion-3",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
-                                  "id": "potion-exp-3-count",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 8,
-                                  "depth": 2
-                                }
-                              ]
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "potion-exp-4",
-                                  "frame": "none",
+                                  "id": "potion-4",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
-                                  "id": "potion-exp-4-count",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 8,
-                                  "depth": 2
+                                  "id": "potion-5",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "potion-6",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "potion-7",
+                                  "width": "stretch"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "potion-8",
+                                  "width": "stretch"
                                 }
-                              ]
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-1",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-2",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-3",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-4",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-5",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-6",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-7",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-8",
-                              "width": "stretch"
-                            },
-                            {
-                              "type": "field",
-                              "id": "potion-9",
-                              "width": "stretch"
+                              ],
+                              "columns": 1,
+                              "flowv": true,
+                              "sort": true,
+                              "hr": false,
+                              "vr": false,
+                              "avoid-shade": false
                             }
-                          ],
-                          "columns": 1,
-                          "flowv": true,
-                          "sort": true,
-                          "hr": false,
-                          "vr": false,
-                          "avoid-shade": false
+                          ]
+                        },
+                        {
+                          "type": "tail"
                         }
                       ]
                     }
@@ -5939,6 +6197,9 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "tail"
                 }
               ]
             },
@@ -6531,6 +6792,9 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "tail"
                 }
               ]
             }

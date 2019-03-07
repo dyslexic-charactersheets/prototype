@@ -31,9 +31,10 @@ register('level-marker', 'level', {
     level: 1,
     marker: "Level",
 }, args => {
-    if (args.level == "") {
+    var level = (""+args.level).replace(/^\s*/, '').replace(/\s*$/, '');
+    if (level == "") {
         return `<div class='level-marker'></div>`;
     }
     var marker = args.marker ? `<label>${args.marker}</label>` : '';
-    return `<div class='level-marker'>${marker}<div class='level-marker__level'>${args.level}</div></div>`;
+    return `<div class='level-marker'>${marker}<div class='level-marker__level'>${level}</div></div>`;
 });

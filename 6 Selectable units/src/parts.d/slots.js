@@ -3,7 +3,7 @@ const _ = require('lodash');
 register('slots', 'slots', {
     slots: [],
     key: 'level',
-    placeholder: {},
+    placeholder: null,
     max: false,
     min: false,
     contents: [],
@@ -11,13 +11,18 @@ register('slots', 'slots', {
 args => '', 
 (args, ctx) => {
     console.log("[slots] Slots:", args.slots);
+    var placeholder = args.placeholder;
+    if (!_.isArray(placeholder))
+        placeholder = [ placeholder ];
     
     function slotItems(items) {
         console.log("[slots] Items", items);
         if (args.min && items.length < args.min) {
             var n = args.min - items.length;
-            for (var i = 0; i < n; i++) 
-                items.push(_.cloneDeep(args.placeholder));
+            for (var i = 0; i < n; i++) {
+                console.log("[slots] Placeholder", args.placeholder);
+                items = items.concat(_.cloneDeep(args.placeholder));
+            }
         }
         if (args.max && items.length > args.max) {
             items = items.slice(0, args.max);
@@ -50,7 +55,8 @@ args => '',
     _.forEach(slots, s => {
         console.log("[slots] Slot", s.key);
         s.contents = slotItems(s.contents);
-        s.contents.forEach(item => item[args.key] = s.key)
+        s.contents.forEach(item => item[args.key] = s.key);
+        console.log("[slots] Slot", s.key, "items", s.contents);
     });
 
     console.log("[slots]", slots);

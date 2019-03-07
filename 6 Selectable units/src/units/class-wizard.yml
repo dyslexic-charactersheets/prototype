@@ -76,6 +76,8 @@ inc:
                   - section: "Wizard Feats"
                     contents:
                       - p: "Qux"
+                      
+                  - tail:
 
               - g:
                 contents:
@@ -130,5 +132,6 @@ inc:
                                         align: left
                                         frame: none
                                         repeat: 2
+                  - tail:
 
 

@@ -22,7 +22,7 @@ var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-human', 'cla
 // Wizard
 // var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-elf', 'class-wizard', 'option-permission', 'feat-wizard-counterspell', 'option-animal-companion' ];
 global.documentColour = '#661b14'; // red
-global.accentColour = '#b39500'; // gold
+global.accentColour = '#b38000'; // gold
 
 // var selectedUnits = [ 'option-animal-companion' ];
 

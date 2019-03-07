@@ -90,6 +90,7 @@ inc:
                               underlay: "CON"
                             - span: "&times; 2"
                         - p: "If you succeed at a melee Strike against a target with resistance against the physical damage type of the weapon or unarmed attack you’re using, reduce that resistance."
+                - tail:
             - g:
               contents:
                 - section: "Rage"
@@ -206,4 +207,5 @@ inc:
                                       align: left
                                       frame: none
                                       repeat: 2
+                - tail:
 

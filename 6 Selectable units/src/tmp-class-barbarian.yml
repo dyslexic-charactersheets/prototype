@@ -128,6 +128,7 @@ inc:
                               with resistance against the physical damage type
                               of the weapon or unarmed attack you’re using,
                               reduce that resistance.
+                  - type: tail
               - type: g
                 contents:
                   - type: section
@@ -297,3 +298,4 @@ inc:
                                         align: left
                                         frame: none
                                         repeat: 2
+                  - type: tail

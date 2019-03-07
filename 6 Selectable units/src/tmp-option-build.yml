@@ -510,3 +510,5 @@ inc:
                             control: money
                             denomination: silver
                             digits: 3
+              - type: tail
+              - type: tail

@@ -5,3 +5,11 @@ register('hr', '', {
     var i = args.swash ? '<i></i>' : '';
     return `<hr${cls}>${i}`;
 });
+
+register('tail', '', {
+}, args => {
+    args.tail = true;
+    var cls = elementClass('hr', null, args, [ 'tail' ]);
+    // var i = args.swash ? '<i></i>' : '';
+    return `<hr${cls}>`;
+})

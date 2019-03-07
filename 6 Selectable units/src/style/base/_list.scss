@@ -38,7 +38,7 @@
 
     &--merge-bottom > *:last-child {
         &.field .field__inner, .field .field__inner {
-            border-bottom-width: 0;
+            border-bottom-width: 0 !important;
         }
     }
 
