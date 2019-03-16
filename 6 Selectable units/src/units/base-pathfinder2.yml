@@ -237,6 +237,7 @@ inc:
                     id: attributes
                     contents:
                       - table:
+                        collapse: true
                         width: stretch
                         columns:
                           - align: left
@@ -285,15 +286,15 @@ inc:
                   - section: "Proficiency"
                     id: proficiency
                     contents:
-                      - row:
-                        contents:
-                          - field: proficiency-class
-                            width: stretch
-                            align: left
-                            legend: "Class"
-                          - field: proficiency-level
-                            output: true
-                            label: "Level"
+                      # - row:
+                      #   contents:
+                      #     - field: proficiency-class
+                      #       width: stretch
+                      #       align: left
+                      #       legend: "Class"
+                      #     - field: proficiency-level
+                      #       output: true
+                      #       label: "Level"
                       - layout: 5e
                         narrow: true
                         contents:
@@ -338,7 +339,7 @@ inc:
                         merge-bottom: true
                         field_frame: none
                         contents:
-                          - repeat: 15
+                          - repeat: 11
                             contents:
                               - row:
                                 contents:
@@ -350,63 +351,99 @@ inc:
                                     frame: none
                                     control: proficiency
 
-                  - section: "Perception"
+                  # - section: "Perception"
+                  #   contents:
+                  #     - calc:
+                  #       output:
+                  #         field: perception
+                  #         icon: bonus
+                  #         legend: "Perception"
+                  #       inputs:
+                  #         - field:
+                  #           ref: "WIS"
+                  #           underlay: "WIS"
+                  #           label: "WIS"
+                  #         - span: "+"
+                  #         - field:
+                  #           label: "Proficiency"
+                  #           icon: proficiency
+                  #         - span: "+"
+                  #         - field:
+                  #           label: "Item"
+                  #         - span: "+"
+                  #         - field:
+                  #           misc: true
+                  #           label: "Misc"
+                  #     - calc:
+                  #       inline: true
+                  #       output:
+                  #         label: "Perception\nDC"
+                  #       inputs:
+                  #         - span: "10 +"
+                  #         - label: "Perception\nBonus"
+                  #     - row: split
+                  #       unlabelled: true
+                  #       contents:
+                  #         - field: perception-low-light
+                  #           frame: right
+                  #           control: checkbox
+                  #           label: "Low-light vision"
+                  #           value: '#{low-light-vision}'
+                  #         - field: perception-darkvision
+                  #           frame: right
+                  #           control: checkbox
+                  #           label: "Dark vision"
+                  #         - field: perception-scent
+                  #           frame: right
+                  #           control: checkbox
+                  #           label: "Scent"
+                  #     - field: perception-other
+                  #       label: "Conditional"
+                  #       align: left
+                  #       width: stretch
+                  #       merge-bottom: true
+
+
+                  - section: "General feats"
+                    id: general-feats
                     contents:
-                      - calc:
-                        output:
-                          field: perception
-                          icon: bonus
-                          legend: "Perception"
-                        inputs:
-                          - field:
-                            ref: "WIS"
-                            underlay: "WIS"
-                            label: "WIS"
-                          - span: "+"
-                          - field:
-                            label: "Proficiency"
-                            icon: proficiency
-                          - span: "+"
-                          - field:
-                            label: "Item"
-                          - span: "+"
-                          - field:
-                            misc: true
-                            label: "Misc"
-                      - calc:
-                        inline: true
-                        output:
-                          label: "Perception\nDC"
-                        inputs:
-                          - span: "10 +"
-                          - label: "Perception\nBonus"
-                      - row: split
-                        unlabelled: true
+                      - list:
+                        zebra: true
+                        hr: true
+                        flex: true
                         contents:
-                          - field: perception-low-light
-                            frame: right
-                            control: checkbox
-                            label: "Low-light vision"
-                          - field: perception-darkvision
-                            frame: right
-                            control: checkbox
-                            label: "Dark vision"
-                          - field: perception-scent
-                            frame: right
-                            control: checkbox
-                            label: "Scent"
-                      - field: perception-other
-                        label: "Conditional"
-                        align: left
-                        width: stretch
-                        merge-bottom: true
+                          - each:
+                            template:
+                              - level: "#{level}"
+                                contents:
+                                  - item:
+                            contents:
+                              - slots: [ 3, 7, 11, 15, 19 ]
+                                min: 1
+                                max: 1
+                                placeholder:
+                                  article:
+                                  header:
+                                    - field: general-feat-level-#{level}
+                                      width: stretch
+                                      size: large
+                                      frame: none
+                                      align: left
+                                  contents:
+                                    - field: general-feat-level-#{level}-details
+                                      width: stretch
+                                      align: left
+                                      frame: none
+                                      repeat: 2
+                                contents:
+                                  - zone: @general-feats
 
                   - section: "Languages"
                     id: languages
                     contents:
                       - field: languages
                         frame: none
-                        repeat: 4
+                        repeat: 3
                         align: left
                         width: stretch
                         merge-bottom: true
@@ -483,12 +520,12 @@ inc:
                           - skill: ''
                             ability: ''
                             acp: false
-                          - skill: ''
-                            ability: ''
-                            acp: false
-                          - skill: ''
-                            ability: ''
-                            acp: false
+                          # - skill: ''
+                          #   ability: ''
+                          #   acp: false
+                          # - skill: ''
+                          #   ability: ''
+                          #   acp: false
                         template:
                           - h6: "#{skill}"
                           - field: "#{skill}-assurance"
@@ -518,6 +555,50 @@ inc:
                             span: "Master in skills"
                           - level: 15
                             span: "Legendary in skills"
+                      - hr:
+                      - row:
+                        contents:
+                          - calc:
+                            output:
+                              field: perception
+                              icon: bonus
+                              legend: "Perception"
+                            inputs:
+                              - field:
+                                ref: "WIS"
+                                underlay: "WIS"
+                                label: "WIS"
+                              - span: "+"
+                              - field:
+                                label: "Proficiency"
+                                icon: proficiency
+                              - span: "+"
+                              - field:
+                                label: "Item"
+                              - span: "+"
+                              - field:
+                                misc: true
+                                label: "Misc"
+                          - g:
+                            contents:
+                              - field: perception-low-light
+                                frame: right
+                                control: checkbox
+                                label: "Low-light vision"
+                                value: '#{low-light-vision}'
+                              - field: perception-darkvision
+                                frame: right
+                                control: checkbox
+                                label: "Dark vision"
+                              - field: perception-scent
+                                frame: right
+                                control: checkbox
+                                label: "Scent"
+                      - field: perception-other
+                        label: "Conditional"
+                        align: left
+                        width: stretch
+                        merge-bottom: true
                   - section: "Skill feats"
                     id: skill-feats
                     contents:
@@ -527,36 +608,33 @@ inc:
                         hr: true
                         flex: true
                         contents:
-                          - repeat: 6
-                            rows:
-                              - level: 1
-                              - level: 2
-                              - level: 4
-                              - level: 6
-                              - level: 8
-                              - level: 10
-                              - level: 12
-                              - level: 14
-                              - level: 16
-                              - level: 18
-                              - level: 20
-                            contents:
+                          - each:
+                            template:
                               - level: "#{level}"
-                                article:
-                                header:
-                                  - field: skill-feat-level-#{level}
-                                    width: stretch
-                                    size: large
-                                    frame: none
-                                    align: left
                                 contents:
-                                  - field: skill-feat-level-#{level}-details
-                                    width: stretch
-                                    align: left
-                                    frame: none
-                                    repeat: 3
+                                  - item:
+                            contents:
+                              - slots: [ 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, "" ]
+                                min: 1
+                                max: 1
+                                placeholder:
+                                  article:
+                                  header:
+                                    - field: skill-feat-level-#{level}
+                                      width: stretch
+                                      size: large
+                                      frame: none
+                                      align: left
+                                  contents:
+                                    - field: skill-feat-level-#{level}-details
+                                      width: stretch
+                                      align: left
+                                      frame: none
+                                      repeat: 2
+                                contents:
+                                  - zone: @skill-feats
                   - tail:
-                  - spacer:
+                  # - spacer:
 
       - page: combat
         name: "Combat"
@@ -893,11 +971,19 @@ inc:
                             label: "Current Hit Points"
                             output: true
                             temp: true
+                            icon: hp
                             overlay: hp
                             width: stretch
                           - field: temp-hp
                             label: "Temp Hit Points"
                             output: true
+                            temp: true
+                            overlay: hp
+                            width: huge
+                          - field: shield-hp
+                            label: "Shield Hit Points"
+                            output: true
+                            icon: ac
                             temp: true
                             overlay: hp
                             width: huge

@@ -48,10 +48,12 @@ inc:
                       - type: field
                         id: build-ancestry
                         width: stretch
+                        align: left
                         label: Ancestry
                       - type: field
                         id: build-ancestry-heritage
                         width: stretch
+                        align: left
                         label: Heritage
                       - type: row
                         layout: null
@@ -76,6 +78,7 @@ inc:
                           - type: field
                             id: build-heritage-feat
                             width: stretch
+                            align: left
                             label: Feat
               - type: section
                 title: Step Two
@@ -93,6 +96,7 @@ inc:
                         id: build-background
                         label: Background
                         width: stretch
+                        align: left
                       - type: level
                         level: 1
                         contents:
@@ -100,6 +104,7 @@ inc:
                             id: build-background-skill-feat
                             label: Skill feat
                             width: stretch
+                            align: left
               - type: section
                 title: Step Three
                 contents:
@@ -113,7 +118,7 @@ inc:
                 title: Class
                 contents:
                   - type: layout
-                    layout: 2e
+                    layout: 2r
                     contents:
                       - type: row
                         layout: null
@@ -122,70 +127,176 @@ inc:
                             id: build-class
                             label: Class
                             width: stretch
+                            align: left
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: field
+                            id: build-class-level
+                            label: Level
+                            output: true
+                            underlay: 1
                           - type: field
                             id: build-class-hp
                             label: Hit Points
                             icon: hp
                             overlay: hp
-                      - type: row
-                        layout: null
-                        contents:
                           - type: field
                             id: build-class-key-ability
                             label: Key Ability
-                          - type: field
-                            id: build-class-specialisation
-                            label: Specialisation
-                            width: stretch
+                      - type: field
+                        id: build-class-specialisation
+                        label: Specialisation
+                        width: stretch
+                        align: left
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: h6
+                            title: Perception
+                          - type: spacer
+                          - type: icon
+                            icon: proficiency
+              - type: g
+                contents:
+                  - type: hr
+                  - type: h4
+                    title: Proficiencies
+                  - type: p
+                    content: Refer to your ancestry, background, class and feats to
+                      find your initial proficiencies.
+                  - type: p
+                    content: Then spend the skill proficiencies your class provides to
+                      upgrade skills.
                   - type: layout
-                    layout: 2l
+                    layout: 5e
                     narrow: true
                     contents:
-                      - type: g
+                      - type: field
+                        id: proficiency-untrained
+                        label: Untrained
+                        output: true
+                        control: proficiency
+                        value: 0
+                      - type: field
+                        id: proficiency-trained
+                        label: Trained
+                        output: true
+                        control: proficiency
+                        proficiency: trained
+                      - type: field
+                        id: proficiency-expert
+                        label: Expert
+                        output: true
+                        control: proficiency
+                        proficiency: expert
+                      - type: field
+                        id: proficiency-master
+                        label: Master
+                        output: true
+                        control: proficiency
+                        proficiency: master
+                      - type: field
+                        id: proficiency-legendary
+                        label: Legendary
+                        output: true
+                        control: proficiency
+                        proficiency: legendary
+                      - type: label
+                        label: null
+                      - type: label
+                        label: |-
+                          Level
+                          +2
+                        align: center
+                      - type: label
+                        label: |-
+                          Level
+                          +4
+                        align: center
+                      - type: label
+                        label: |-
+                          Level
+                          +6
+                        align: center
+                      - type: label
+                        label: |-
+                          Level
+                          +8
+                        align: center
+                  - type: spacer
+              - type: g
+                contents:
+                  - type: hr
+                  - type: h4
+                    title: Saving Throws
+                  - type: list
+                    columns: 3
+                    contents:
+                      - type: row
+                        layout: null
+                        valign: middle
                         contents:
-                          - type: h4
-                            title: Proficiency
-                          - type: list
-                            contents:
-                              - type: row
-                                layout: null
-                                contents:
-                                  - type: h6
-                                    title: Perception
-                                  - type: spacer
-                                  - type: icon
-                                    icon: proficiency
-                      - type: g
+                          - type: h6
+                            title: Fortitude
+                          - type: spacer
+                          - type: icon
+                            icon: proficiency
+                      - type: row
+                        layout: null
+                        valign: middle
                         contents:
-                          - type: h4
-                            title: Saving Throws
-                          - type: list
-                            columns: 3
+                          - type: h6
+                            title: Reflex
+                          - type: spacer
+                          - type: icon
+                            icon: proficiency
+                      - type: row
+                        layout: null
+                        valign: middle
+                        contents:
+                          - type: h6
+                            title: Will
+                          - type: spacer
+                          - type: icon
+                            icon: proficiency
+                  - type: h4
+                    title: Weapons
+                  - type: list
+                    columns: 3
+                    contents:
+                      - type: repeat
+                        repeat: 6
+                        contents:
+                          - type: row
+                            layout: null
                             contents:
-                              - type: row
-                                layout: null
-                                contents:
-                                  - type: h6
-                                    title: Fortitude
-                                  - type: spacer
-                                  - type: icon
-                                    icon: proficiency
-                              - type: row
-                                layout: null
-                                contents:
-                                  - type: h6
-                                    title: Reflex
-                                  - type: spacer
-                                  - type: icon
-                                    icon: proficiency
-                              - type: row
-                                layout: null
-                                contents:
-                                  - type: h6
-                                    title: Will
-                                  - type: spacer
-                                  - type: icon
-                                    icon: proficiency
+                              - type: field
+                                id: null
+                                frame: none
+                                width: stretch
+                                align: left
+                              - type: icon
+                                icon: proficiency
+                  - type: h4
+                    title: Skills
+                  - type: list
+                    columns: 3
+                    merge-bottom: true
+                    contents:
+                      - type: repeat
+                        repeat: 9
+                        contents:
+                          - type: row
+                            layout: null
+                            contents:
+                              - type: field
+                                id: null
+                                frame: none
+                                width: stretch
+                                align: left
+                              - type: icon
+                                icon: proficiency
               - type: section
                 title: Step Four
                 contents:
@@ -311,9 +422,11 @@ inc:
                   - type: h4
                     title: Health
                   - type: p
-                    content: Calculate your hit points.
+                    content: Calculate your hit points. Some of these come from your
+                      ancestry, and some each level from your chosen class.
               - type: g
                 contents:
+                  - type: hr
                   - type: calc
                     output:
                       type: field
@@ -345,118 +458,6 @@ inc:
                         ref: level
                         label: Level
                         underlay: "1"
-              - type: g
-                contents:
-                  - type: hr
-                  - type: h4
-                    title: Proficiencies
-                  - type: p
-                    content: Refer to your ancestry, background, class and feats to
-                      find your initial proficiencies.
-                  - type: p
-                    content: Then spend the skill proficiencies your class provides to
-                      upgrade skills.
-                  - type: layout
-                    layout: 5e
-                    narrow: true
-                    contents:
-                      - type: field
-                        id: proficiency-untrained
-                        label: Untrained
-                        output: true
-                        control: proficiency
-                        value: 0
-                      - type: field
-                        id: proficiency-trained
-                        label: Trained
-                        output: true
-                        control: proficiency
-                        contents:
-                          - type: proficiency
-                            proficiency: trained
-                      - type: field
-                        id: proficiency-expert
-                        label: Expert
-                        output: true
-                        control: proficiency
-                        contents:
-                          - type: proficiency
-                            proficiency: expert
-                      - type: field
-                        id: proficiency-master
-                        label: Master
-                        output: true
-                        control: proficiency
-                        contents:
-                          - type: proficiency
-                            proficiency: master
-                      - type: field
-                        id: proficiency-legendary
-                        label: Legendary
-                        output: true
-                        control: proficiency
-                        contents:
-                          - type: proficiency
-                            proficiency: legendary
-                      - type: label
-                        label: null
-                      - type: label
-                        label: |-
-                          Level
-                          +2
-                        align: center
-                      - type: label
-                        label: |-
-                          Level
-                          +4
-                        align: center
-                      - type: label
-                        label: |-
-                          Level
-                          +6
-                        align: center
-                      - type: label
-                        label: |-
-                          Level
-                          +8
-                        align: center
-                  - type: spacer
-              - type: g
-                contents:
-                  - type: h4
-                    title: Weapons
-                  - type: list
-                    columns: 3
-                    contents:
-                      - type: repeat
-                        repeat: 6
-                        contents:
-                          - type: row
-                            layout: null
-                            contents:
-                              - type: field
-                                id: null
-                                frame: none
-                                width: stretch
-                              - type: icon
-                                icon: proficiency
-                  - type: h4
-                    title: Skills
-                  - type: list
-                    columns: 3
-                    contents:
-                      - type: repeat
-                        repeat: 9
-                        contents:
-                          - type: row
-                            layout: null
-                            contents:
-                              - type: field
-                                id: null
-                                frame: none
-                                width: stretch
-                              - type: icon
-                                icon: proficiency
               - type: section
                 title: Step Five
                 contents:

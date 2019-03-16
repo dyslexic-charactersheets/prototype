@@ -1,0 +1,21 @@
+type: unit
+unit-type: background
+id: scholar
+name: Scholar
+inc:
+  - at: "@background"
+    add:
+      - type: article
+        title: null
+        header:
+          - type: h6
+            title: Scholar
+        contents:
+          - type: p
+            content: >
+              You have a knack for learning, and from a young age, you
+              sequestered yourself from the outside world to learn all that you
+              could. You’ve read about so many wondrous places and things in
+              your books, and you’ve always dreamed about one day seeing the
+              real things. Eventually, that curiosity led you to leave your
+              studies and become an adventurer.

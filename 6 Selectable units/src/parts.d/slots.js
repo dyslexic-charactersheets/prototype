@@ -10,13 +10,13 @@ register('slots', 'slots', {
 }, 
 args => '', 
 (args, ctx) => {
-    // console.log("[slots] Slots:", args.slots);
+    console.log("[slots] Slots:", args.slots);
     var placeholder = args.placeholder;
     if (!_.isArray(placeholder))
         placeholder = [ placeholder ];
     
     function slotItems(items) {
-        // console.log("[slots] Items", items);
+        console.log("[slots] Items", items);
         if (args.min && items.length < args.min) {
             var n = args.min - items.length;
             for (var i = 0; i < n; i++) {
@@ -59,7 +59,7 @@ args => '',
         // console.log("[slots] Slot", s.key, "items", s.contents);
     });
 
-    // console.log("[slots]", slots);
+    console.log("[slots]", slots);
     var contents = _.flatMap(slots, s => s.contents);
 
     // console.log("[slots]", contents);

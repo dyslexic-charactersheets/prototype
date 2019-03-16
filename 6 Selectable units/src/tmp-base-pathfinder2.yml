@@ -292,6 +292,7 @@ inc:
                     id: attributes
                     contents:
                       - type: table
+                        collapse: true
                         width: stretch
                         columns:
                           - align: left
@@ -362,18 +363,6 @@ inc:
                     title: Proficiency
                     id: proficiency
                     contents:
-                      - type: row
-                        layout: null
-                        contents:
-                          - type: field
-                            id: proficiency-class
-                            width: stretch
-                            align: left
-                            legend: Class
-                          - type: field
-                            id: proficiency-level
-                            output: true
-                            label: Level
                       - type: layout
                         layout: 5e
                         narrow: true
@@ -389,33 +378,25 @@ inc:
                             label: Trained
                             output: true
                             control: proficiency
-                            contents:
-                              - type: proficiency
-                                proficiency: trained
+                            proficiency: trained
                           - type: field
                             id: proficiency-expert
                             label: Expert
                             output: true
                             control: proficiency
-                            contents:
-                              - type: proficiency
-                                proficiency: expert
+                            proficiency: expert
                           - type: field
                             id: proficiency-master
                             label: Master
                             output: true
                             control: proficiency
-                            contents:
-                              - type: proficiency
-                                proficiency: master
+                            proficiency: master
                           - type: field
                             id: proficiency-legendary
                             label: Legendary
                             output: true
                             control: proficiency
-                            contents:
-                              - type: proficiency
-                                proficiency: legendary
+                            proficiency: legendary
                           - type: label
                             label: null
                           - type: label
@@ -445,7 +426,7 @@ inc:
                         field_frame: none
                         contents:
                           - type: repeat
-                            repeat: 15
+                            repeat: 11
                             contents:
                               - type: row
                                 layout: null
@@ -460,75 +441,50 @@ inc:
                                     frame: none
                                     control: proficiency
                   - type: section
-                    title: Perception
+                    title: General feats
+                    id: general-feats
                     contents:
-                      - type: calc
-                        output:
-                          type: field
-                          id: perception
-                          icon: bonus
-                          legend: Perception
-                        inputs:
-                          - type: field
-                            id: null
-                            ref: WIS
-                            underlay: WIS
-                            label: WIS
-                          - type: span
-                            content: +
-                          - type: field
-                            id: null
-                            label: Proficiency
-                            icon: proficiency
-                          - type: span
-                            content: +
-                          - type: field
-                            id: null
-                            label: Item
-                          - type: span
-                            content: +
-                          - type: field
-                            id: null
-                            misc: true
-                            label: Misc
-                      - type: calc
-                        output:
-                          type: label
-                          label: |-
-                            Perception
-                            DC
-                        inline: true
-                        inputs:
-                          - type: span
-                            content: 10 +
-                          - type: label
-                            label: |-
-                              Perception
-                              Bonus
-                      - type: row
-                        layout: split
-                        unlabelled: true
+                      - type: list
+                        zebra: true
+                        hr: true
+                        flex: true
                         contents:
-                          - type: field
-                            id: perception-low-light
-                            frame: right
-                            control: checkbox
-                            label: Low-light vision
-                          - type: field
-                            id: perception-darkvision
-                            frame: right
-                            control: checkbox
-                            label: Dark vision
-                          - type: field
-                            id: perception-scent
-                            frame: right
-                            control: checkbox
-                            label: Scent
-                      - type: field
-                        id: perception-other
-                        label: Conditional
-                        align: left
-                        width: stretch
+                          - type: each
+                            template:
+                              - type: level
+                                level: "#{level}"
+                                contents:
+                                  - ? item
+                            contents:
+                              - type: slots
+                                slots:
+                                  - 3
+                                  - 7
+                                  - 11
+                                  - 15
+                                  - 19
+                                min: 1
+                                max: 1
+                                placeholder:
+                                  type: article
+                                  title: null
+                                  header:
+                                    - type: field
+                                      id: general-feat-level-#{level}
+                                      width: stretch
+                                      size: large
+                                      frame: none
+                                      align: left
+                                  contents:
+                                    - type: field
+                                      id: general-feat-level-#{level}-details
+                                      width: stretch
+                                      align: left
+                                      frame: none
+                                      repeat: 2
+                                contents:
+                                  - type: zone
+                                    zone: "@general-feats"
                   - type: section
                     title: Languages
                     id: languages
@@ -536,7 +492,7 @@ inc:
                       - type: field
                         id: languages
                         frame: none
-                        repeat: 4
+                        repeat: 3
                         align: left
                         width: stretch
                         merge-bottom: true
@@ -623,12 +579,6 @@ inc:
                           - skill: ""
                             ability: ""
                             acp: false
-                          - skill: ""
-                            ability: ""
-                            acp: false
-                          - skill: ""
-                            ability: ""
-                            acp: false
                         template:
                           - type: h6
                             title: "#{skill}"
@@ -673,6 +623,63 @@ inc:
                             contents:
                               - type: span
                                 content: Legendary in skills
+                      - type: hr
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: calc
+                            output:
+                              type: field
+                              id: perception
+                              icon: bonus
+                              legend: Perception
+                            inputs:
+                              - type: field
+                                id: null
+                                ref: WIS
+                                underlay: WIS
+                                label: WIS
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                label: Proficiency
+                                icon: proficiency
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                label: Item
+                              - type: span
+                                content: +
+                              - type: field
+                                id: null
+                                misc: true
+                                label: Misc
+                          - type: g
+                            contents:
+                              - type: field
+                                id: perception-low-light
+                                frame: right
+                                control: checkbox
+                                label: Low-light vision
+                                value: "#{low-light-vision}"
+                              - type: field
+                                id: perception-darkvision
+                                frame: right
+                                control: checkbox
+                                label: Dark vision
+                              - type: field
+                                id: perception-scent
+                                frame: right
+                                control: checkbox
+                                label: Scent
+                      - type: field
+                        id: perception-other
+                        label: Conditional
+                        align: left
+                        width: stretch
+                        merge-bottom: true
                   - type: section
                     title: Skill feats
                     id: skill-feats
@@ -683,53 +690,50 @@ inc:
                         hr: true
                         flex: true
                         contents:
-                          - type: repeat
-                            repeat: 6
-                            rows:
-                              - type: level
-                                level: 1
-                              - type: level
-                                level: 2
-                              - type: level
-                                level: 4
-                              - type: level
-                                level: 6
-                              - type: level
-                                level: 8
-                              - type: level
-                                level: 10
-                              - type: level
-                                level: 12
-                              - type: level
-                                level: 14
-                              - type: level
-                                level: 16
-                              - type: level
-                                level: 18
-                              - type: level
-                                level: 20
-                            contents:
+                          - type: each
+                            template:
                               - type: level
                                 level: "#{level}"
                                 contents:
-                                  - type: article
-                                    title: null
-                                    header:
-                                      - type: field
-                                        id: skill-feat-level-#{level}
-                                        width: stretch
-                                        size: large
-                                        frame: none
-                                        align: left
-                                    contents:
-                                      - type: field
-                                        id: skill-feat-level-#{level}-details
-                                        width: stretch
-                                        align: left
-                                        frame: none
-                                        repeat: 3
+                                  - ? item
+                            contents:
+                              - type: slots
+                                slots:
+                                  - 1
+                                  - 2
+                                  - 4
+                                  - 6
+                                  - 8
+                                  - 10
+                                  - 12
+                                  - 14
+                                  - 16
+                                  - 18
+                                  - 20
+                                  - ""
+                                min: 1
+                                max: 1
+                                placeholder:
+                                  type: article
+                                  title: null
+                                  header:
+                                    - type: field
+                                      id: skill-feat-level-#{level}
+                                      width: stretch
+                                      size: large
+                                      frame: none
+                                      align: left
+                                  contents:
+                                    - type: field
+                                      id: skill-feat-level-#{level}-details
+                                      width: stretch
+                                      align: left
+                                      frame: none
+                                      repeat: 2
+                                contents:
+                                  - type: zone
+                                    zone: "@skill-feats"
                   - type: tail
-                  - type: spacer
       - type: page
         id: combat
         name: Combat
@@ -1140,12 +1144,21 @@ inc:
                             label: Current Hit Points
                             output: true
                             temp: true
+                            icon: hp
                             overlay: hp
                             width: stretch
                           - type: field
                             id: temp-hp
                             label: Temp Hit Points
                             output: true
+                            temp: true
+                            overlay: hp
+                            width: huge
+                          - type: field
+                            id: shield-hp
+                            label: Shield Hit Points
+                            output: true
+                            icon: ac
                             temp: true
                             overlay: hp
                             width: huge

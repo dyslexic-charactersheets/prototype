@@ -48,6 +48,7 @@ register('field', 'id', {
     attack: false,
     width: "medium",
     'merge-bottom': false,
+    proficiency: false,
 }, args => {
     args.labelHeight = getLabelHeight(args);
 

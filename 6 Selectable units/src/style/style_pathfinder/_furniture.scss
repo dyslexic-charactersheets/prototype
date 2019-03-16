@@ -43,13 +43,14 @@ h1, h2, h3, h4, h5 {
 
 h2 {
     text-align: center;
-    margin: 0 0 1.4rem 0;
+    padding: 0 0 1.4rem 0;
+    flex: 0 1 auto;
 }
 
 h3 {
     font-size: 0.95rem;
     height: 1.3rem;
-    line-height: 1.3rem;
+    line-height: 1.43rem;
     
     margin: 0;
     text-align: center;

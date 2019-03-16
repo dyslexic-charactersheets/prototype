@@ -3,13 +3,18 @@ id: human
 name: "Human"
 
 inc:
-  # - at: @ancestry
-  #   add:
-  #     - article:
-  #       header:
-  #         - h4: Human
-  #       contents:
-  #         - p: ""
+  - at: @ancestry
+    add:
+      - article:
+        header:
+          - h6: Human
+        contents:
+          - p: >
+              As unpredictable and varied as any the peoples on Golarion, humans have the exceptional
+              drive and capacity to endure and expand. Though many civilizations thrived before
+              humanity rose to prominence, humans have built some of the greatest and the most
+              terrible societies throughout the course of history, and today they are the most populous
+              people in the realms around the Inner Sea.
   - set: ancestry
     value: "Human"
   - set: build-boost-DEX-ancestry

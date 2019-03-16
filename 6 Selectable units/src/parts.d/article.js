@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 register('article', 'title', {
     title: '',
     header: [],
@@ -7,7 +9,11 @@ register('article', 'title', {
     var id = elementID('section', args.id);
     var cls = elementClass('section', null, args, [ 'shade' ]);
 
-    var header = `<header>${render(args.header)}</header>`
+    var headerElements = args.header;
+    if (_.isEmpty(args.header) && args.title != '') {
+        headerElements = [ { type: 'h6', title: args.title } ];
+    }
+    var header = `<header>${render(headerElements)}</header>`
     var dl = '';
 
     return `<article${id}${cls}>

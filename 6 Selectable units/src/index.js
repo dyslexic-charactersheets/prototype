@@ -21,7 +21,7 @@ const units = require('./lib/units.js');
 
 
 // Wizard
-var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-elf', 'class-wizard', 'option-permission', 'feat-wizard-counterspell', 'option-animal-companion' ];
+var selectedUnits = [ 'base-pathfinder2', 'option-build', 'ancestry-human', 'background-scholar', 'class-wizard', 'option-permission', 'option-spellbook', 'feat-wizard-counterspell', 'feat-wizard-familiar', 'option-animal-companion' ];
 global.documentColour = '#264e80'; // faded blue
 global.accentColour = '#a65e08';
 

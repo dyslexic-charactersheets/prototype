@@ -22,6 +22,7 @@ inc:
                         id: attributes
                         contents:
                           - table:
+                            collapse: true
                             width: stretch
                             columns:
                               - align: left
@@ -62,7 +63,9 @@ inc:
                                     width: stretch
                                     frame: none
                                     align: left
-                                    repeat: 5
+                                    merge-bottom: true
+                                    repeat: 6
+                              - hr:
                               - h4: "Advanced Manoeuvre"
                               - g:
                                 contents:
@@ -70,7 +73,9 @@ inc:
                                     width: stretch
                                     frame: none
                                     align: left
-                                    repeat: 4
+                                    merge-bottom: true
+                                    repeat: 6
+                              - hr:
                               - h4: "Specialisation"
                               - g:
                                 contents:
@@ -79,7 +84,8 @@ inc:
                                     frame: none
                                     align: left
                                     merge-bottom: true
-                                    repeat: 4
+                                    repeat: 6
+                      - tail:
                   - g:
                     contents:
                       - portrait:
@@ -206,6 +212,7 @@ inc:
                                 frame: right
                                 control: checkbox
                                 label: "Scent"
+                      - tail:
               - g:
                 contents:
                   - layout: 2l
@@ -382,7 +389,8 @@ inc:
                                 label: "Conditional"
                                 width: stretch
                                 align: left
-                                repeat: 2
+                                repeat: 3
+                                merge-bottom: true
                           - section: "Health"
                             contents:
                               - calc:
@@ -407,12 +415,21 @@ inc:
                                   - field:
                                     ref: level
                                     legend: "Level"
-                              - field: animal-companion-current-hp
-                                output: true
-                                temp: true
-                                icon: hp
-                                overlay: hp
-                                width: stretch
+                              - row:
+                                contents:
+                                  - field: animal-companion-current-hp
+                                    label: "Current hit points"
+                                    output: true
+                                    temp: true
+                                    icon: hp
+                                    overlay: hp
+                                    width: stretch
+                                  - field: animal-companion-temp-hp
+                                    label: "Temp hit points"
+                                    output: true
+                                    temp: true
+                                    overlay: hp
+                                    width: large
                                 
                               - h4: "Effects"
                               - list:
@@ -428,6 +445,7 @@ inc:
                                           - field: animal-companion-effect-#{i}
                                             width: stretch
                                             frame: none
+                                            temp: true
                                             align: left
                                           - field: animal-companion-effect-#{i}-progress
                                             control: progression
@@ -435,6 +453,7 @@ inc:
                                               - control: checkbox
                                               - control: checkbox
                                               - control: checkbox
+                          - tail:
                       - g:
                         contents:
                           - section: "Barding"
@@ -482,3 +501,4 @@ inc:
                                             width: stretch
                                           - field: animal-companion-inventory-#{i}-value
                                           - field: animal-companion-inventory-#{i}-weight
+                          - tail:

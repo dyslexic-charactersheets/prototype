@@ -1,0 +1,49 @@
+unit: option
+id: spellbook
+inc:
+  - at: @pages
+    add:
+      - page: spellbook
+        order: 16
+        flex: true
+        numbered: false
+        contents:
+          - h2: "Spellbook"
+          - layout: 3e
+            contents:
+              - repeat: 3
+                contents:
+                  - g:
+                    contents:
+                      - row:
+                        contents:
+                          - spacer:
+                          - field: spellbook-col-#{i}-level
+                            output: true
+                            frame: none
+                            size: large
+                          - spacer:
+                      - hr:
+                      - list:
+                        zebra: true
+                        hr: true
+                        flex: true
+                        contents:
+                          - repeat: 9
+                            index: j
+                            contents:
+                              - article:
+                                header:
+                                  - field: 'spellbook-col-#{i}-spell-#{j}'
+                                    width: stretch
+                                    size: large
+                                    frame: none
+                                    align: left
+                                contents:
+                                  - field: 'spellbook-col-#{i}-spell-#{j}-details'
+                                    width: stretch
+                                    align: left
+                                    frame: none
+                                    repeat: 3
+                      - hr:
+                      - spacer:

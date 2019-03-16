@@ -5,6 +5,7 @@ register('spells-list', '', {
     max: 9,
     spells: 4,
     daily: false,
+    special: false,
 }, args => {
     var min = args.min;
     var max = args.max;
@@ -29,28 +30,35 @@ register('spells-list', '', {
             type: "level-marker",
             level: lvl,
         };
-        
-        // daily spells?
 
         // number of spells
-        var left = [];
-        var right = [];
-        var n = Math.ceil(slots[lvl] / 2.0);
-        for (var i = 0; i < n; i++) {
-            left.push({
+        var fields = [];
+        if (args.special) {
+            var special = interpolate(args.special, { 'level': lvl });
+            if (_.isArray(special)) fields = special;
+            else fields.push(special);
+        }
+
+        var n = parseInt(2 * Math.ceil((slots[lvl] + fields.length) / 2.0)) + fields.length;
+        // console.log("[spells] Adding up to", n, "spell fields");
+        for (var i = fields.length; i < n; i++) {
+            fields.push({
                 type: "field",
+                id: `spells-level-${lvl}-${n}`,
                 frame: "none",
-                width: "stretch",
-            });
-            right.push({
-                type: "field",
-                frame: "none",
-                width: "stretch",
+                align: "left",
+                width: "stretch"
             });
         }
 
-        // special fields?
-        // ?
+        var left = [];
+        var right = [];
+        // var n = Math.ceil(slots[lvl] / 2.0);
+        for (var i = 0; i < fields.length; i++) {
+            left.push(fields[i]);
+            i++;
+            right.push(fields[i]);
+        }
 
         // full level
         spell_levels.push({
@@ -84,4 +92,51 @@ register('spells-list', '', {
             contents: spell_levels
         }
     ]);
+});
+
+
+register('spells-table', '', {
+    'max-level': 9,
+    'spells-per-day': true,
+},
+args => '',
+args => {
+    // console.log("[spells] Expanding spells table:", args);
+
+    var rows = [];
+    var columns = [];
+    var template = [];
+
+    // Rows
+    for (var lvl = 1; lvl < args['max-level']; lvl++) {
+        rows.push({ level: lvl });
+    }
+
+    // Spell Level
+    columns.push("Spell\nLevel");
+    template.push({
+        type: "level-marker",
+        level: "#{level}",
+        marker: ""
+    });
+
+    // Spells per day
+    if (args['spells-per-day']) {
+        columns.push("Spells\nper day");
+        template.push({
+            type: "field",
+            id: "spells-#{level}-per-day",
+            frame: "none"
+        });
+    }
+
+    var table = {
+        type: "table",
+        rows: rows,
+        columns: columns,
+        template: template
+    };
+    table = _.defaults(table, args);
+    // console.log("[spells] Expanded spells table:", table);
+    return [ table ];
 });

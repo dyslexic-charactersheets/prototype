@@ -1,0 +1,60 @@
+type: unit
+unit-type: option
+id: spellbook
+inc:
+  - at: "@pages"
+    add:
+      - type: page
+        id: spellbook
+        order: 16
+        flex: true
+        numbered: false
+        contents:
+          - type: h2
+            title: Spellbook
+          - type: layout
+            layout: 3e
+            contents:
+              - type: repeat
+                repeat: 3
+                contents:
+                  - type: g
+                    contents:
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: spacer
+                          - type: field
+                            id: spellbook-col-#{i}-level
+                            output: true
+                            frame: none
+                            size: large
+                          - type: spacer
+                      - type: hr
+                      - type: list
+                        zebra: true
+                        hr: true
+                        flex: true
+                        contents:
+                          - type: repeat
+                            repeat: 9
+                            index: j
+                            contents:
+                              - type: article
+                                title: null
+                                header:
+                                  - type: field
+                                    id: spellbook-col-#{i}-spell-#{j}
+                                    width: stretch
+                                    size: large
+                                    frame: none
+                                    align: left
+                                contents:
+                                  - type: field
+                                    id: spellbook-col-#{i}-spell-#{j}-details
+                                    width: stretch
+                                    align: left
+                                    frame: none
+                                    repeat: 3
+                      - type: hr
+                      - type: spacer

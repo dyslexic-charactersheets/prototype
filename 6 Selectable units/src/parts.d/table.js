@@ -5,10 +5,11 @@ function tableBodyTemplate_basic(rows, columns) {
 }
 
 register('table', '', {
-    "rows": [],
-    "repeat": 1,
-    "columns": [],
-    "template": null,
+    rows: [],
+    columns: [],
+    repeat: 1,
+    flip: false,
+    template: null,
 }, args => {
     var cls = elementClass('table', null, args, [ 'zebra', 'collapse', 'fixed' ], [ 'width', 'layout' ]);
 

@@ -47,6 +47,10 @@
 		font-size: 0.9rem;
 	}
 
+	&--merge-bottom {
+		margin-bottom: 0;
+	}
+
 	&--unlined {
 		.field__inner {
 			border-width: 0;
@@ -354,6 +358,10 @@
 			border-bottom: 2pt solid #b0b0b0 !important;
 		}
 
+		.field__item {
+			margin-bottom: -1pt;
+		}
+
 		.overlay {
 			bottom: 1pt;
 			right: 5pt;
@@ -576,7 +584,6 @@ fieldset.field--alignment {
 	-webkit-print-color-adjust: exact;
 	color-adjust: exact !important;
 
-	opacity: 0.6;
 	z-index: 2;
 	top: 0.3cm;
 	left: 0.3cm;

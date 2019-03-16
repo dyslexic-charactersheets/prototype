@@ -20,11 +20,16 @@ inc:
                       - field: thesis
                         size: large
                         width: stretch
-                        frame: none
+                        align: left
+                        label: "Title"
+                        repeat: 3
+                        merge-bottom: true
+                      - hr:
                       - field: thesis-details
                         width: stretch
-                        frame: none
-                        repeat: 4
+                        align: left
+                        label: "Abstract"
+                        repeat: 8
                         merge-bottom: true
 
                   - section: "Specialisation"
@@ -33,49 +38,63 @@ inc:
                         label: "School"
                         width: stretch
                         align: left
-                      - field: wizard-school-power
-                        legend: "School Power"
-                        width: stretch
-                        align: left
-                        repeat: 3
+                      - h4: "School Power"
+                      - slots:
+                        min: 1
+                        max: 1
+                        placeholder:
+                          article:
+                          header:
+                            - field: wizard-feat-level-#{level}
+                              width: stretch
+                              frame: none
+                              align: left
+                          contents:
+                            - field: wizard-feat-level-#{level}-details
+                              width: stretch
+                              align: left
+                              frame: none
+                              repeat: 2
+                        contents:
+                          - zone: @wizard-school-power
                   - section: "Spells"
                     contents:
-                      - table:
-                        collapse: true
-                        columns:
-                          - "Level"
-                          - "Spells per day"
-                        rows:
-                          - level: 1
-                          - level: 2
-                          - level: 3
-                          - level: 4
-                          - level: 5
-                          - level: 6
-                          - level: 7
-                          - level: 8
-                          - level: 9 
-                        template:
-                          - level-marker: "#{level}"
-                            marker: ""
-                          - field: spells-#{level}-per-day
-                            frame: none
+                      - spells-table:
+                        flip: true
+                      # - table:
+                      #   collapse: true
+                      #   columns:
+                      #     - "Level"
+                      #     - "Spells per day"
+                      #   rows:
+                      #     - level: 1
+                      #     - level: 2
+                      #     - level: 3
+                      #     - level: 4
+                      #     - level: 5
+                      #     - level: 6
+                      #     - level: 7
+                      #     - level: 8
+                      #     - level: 9 
+                      #   template:
+                      #     - level-marker: "#{level}"
+                      #       marker: ""
+                      #     - field: spells-#{level}-per-day
+                      #       frame: none
                   - section: "Arcane Focus"
                     contents:
-                      - p: "Arcane focus"
+                      - field: wizard-arcane-focus-item
+                        label: "Focus Item"
+                        width: stretch
+                        align: left
                       - action: free
                         contents:
                           - article:
                             header:
                               - h4: "Drain Arcane Focus"
                             contents:
-                              - p: "Expend the magical power stored in your arcane focus, to cast one spell you prepared today and previously cast, without spending a spell slot."
+                              - p: "Expend the power stored in your arcane focus to cast one spell you prepared and cast today, without spending a spell slot."
 
-
-
-                  - section: "Wizard Feats"
-                    contents:
-                      - p: "Qux"
                       
                   - tail:
 
@@ -103,35 +122,30 @@ inc:
                         flowv: true
                         hr: true
                         contents:
-                          - repeat: 12
-                            rows:
-                              - level: 1
-                              - level: 2
-                              - level: 4
-                              - level: 6
-                              - level: 8
-                              - level: 10
-                              - level: 12
-                              - level: 14
-                              - level: 16
-                              - level: 18
-                              - level: 20
-                              - level: " "
-                            contents:
+                          - each:
+                            template:
                               - level: "#{level}"
                                 contents:
-                                  - article:
-                                    header:
-                                      - field: wixard-feat-level-#{level}
-                                        width: stretch
-                                        frame: none
-                                        align: left
-                                    contents:
-                                      - field: wizard-feat-level-#{level}-details
-                                        width: stretch
-                                        align: left
-                                        frame: none
-                                        repeat: 2
+                                  - item:
+                            contents:
+                              - slots: [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, "", "" ]
+                                min: 1
+                                max: 1
+                                placeholder:
+                                  article:
+                                  header:
+                                    - field: wizard-feat-level-#{level}
+                                      width: stretch
+                                      frame: none
+                                      align: left
+                                  contents:
+                                    - field: wizard-feat-level-#{level}-details
+                                      width: stretch
+                                      align: left
+                                      frame: none
+                                      repeat: 2
+                                contents:
+                                  - zone: @wizard-feats
                   - tail:
 
 

@@ -7,9 +7,9 @@ inc:
     add:
       - article:
         header:
-          - h4: Elf
+          - h6: Elf
         contents:
-          - p: ""
+          - p: "Generally taller than humans, and with a fragile grace accentuated with long facial features and sharply pointed ears. Broad pupils fill their wide eyes, giving elves an alien look and allowing them to see sharply even in very little light."
   - set: ancestry
     value: "Elf"
   - set: low-light-vision

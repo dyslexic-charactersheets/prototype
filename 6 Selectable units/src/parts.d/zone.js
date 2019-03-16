@@ -4,7 +4,7 @@ register('zone', 'zone', {
     zone: '',
     sort: false,
 }, args => '', (args, ctx) => {
-    // console.log("[zone] Injecting", args.zone);
+    console.log("[zone] Zone", args.zone);
     var existing = _.has(args, "contents") && args.contents ? args.contents : [];
     var insert = _.has(ctx.zones, args.zone) ? _.cloneDeep(ctx.zones[args.zone]) : [];
 

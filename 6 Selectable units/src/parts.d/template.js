@@ -1,10 +1,10 @@
-register('template', 'template', {
+register('paste', 'template', {
     template: '',
     params: {}
 }, args => '');
 
 
-register('define', 'define', {
+register('define', 'template', {
     template: '',
     params: {},
     contents: [],
