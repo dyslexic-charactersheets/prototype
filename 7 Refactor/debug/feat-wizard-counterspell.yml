@@ -1,0 +1,29 @@
+type: unit
+unit-type: feat/wizard/counterspell
+in: feat/wizard
+param: level
+name: Counterspell (Wizard)
+inc:
+  - at: "@wizard-feats"
+    level: 2
+    add:
+      - type: article
+        title: Counterspell (abj)
+        contents:
+          - type: p
+            content: Expend a prepared spell to counter the triggering creature’s
+              casting of that same spell. Roll a counteract check using the
+              spell’s level against the caster’s spell DC.
+  - at: "@actions"
+    add:
+      - type: action
+        action: reaction
+        contents:
+          - type: article
+            title: Counterspell (abj)
+            contents:
+              - type: p
+                content: Expend a prepared spell to counter the triggering creature’s
+                  casting of that same spell. Roll a counteract check using the
+                  spell’s level against the caster’s spell DC.
+id: feat/wizard/counterspell

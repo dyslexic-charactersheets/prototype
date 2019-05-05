@@ -1,0 +1,5 @@
+type: unit
+unit-type: feat/fighter/power-attack
+in: feat/fighter
+name: Power Attack
+id: feat/fighter/power-attack

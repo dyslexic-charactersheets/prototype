@@ -1,0 +1,12 @@
+type: unit
+unit-type: document
+name: Document
+sort: true
+contents:
+  - type: document
+    title: null
+    contents:
+      - type: zone
+        zone: "@pages"
+        sort: true
+id: document

@@ -1,0 +1,10 @@
+type: unit
+unit-type: option/minis
+name: Minis
+inc:
+  - at: "@pages"
+    add:
+      - type: page
+        id: minis
+        contents: []
+id: option/minis

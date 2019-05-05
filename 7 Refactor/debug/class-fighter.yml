@@ -1,0 +1,5 @@
+type: unit
+unit-type: class/fighter
+in: class
+name: Fighter
+id: class/fighter

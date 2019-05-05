@@ -1,0 +1,307 @@
+type: unit
+unit-type: class/barbarian
+in: class
+name: Barbarian
+inc:
+  - at: "@pages"
+    add:
+      - type: page
+        id: barbarian
+        name: Barbarian
+        order: 10
+        contents:
+          - type: layout
+            layout: 2l
+            contents:
+              - type: g
+                contents:
+                  - type: class-icon
+                    icon: barbarian
+                  - type: h2
+                    title: Barbarian
+                  - type: section
+                    title: Totem
+                    primary: true
+                    contents:
+                      - type: article
+                        title: null
+                        header:
+                          - type: field
+                            id: barbarian-totem
+                            legend: Totem
+                            width: stretch
+                            align: left
+                        contents:
+                          - type: field
+                            id: barbarian-totem-anathema
+                            label: Anathema
+                            width: stretch
+                            align: left
+                            repeat: 4
+                            merge-bottom: true
+                          - type: hr
+                          - type: field
+                            id: barbarian-totem-ability
+                            label: Totem Ability
+                            width: stretch
+                            align: left
+                            repeat: 4
+                            merge-bottom: true
+                          - type: hr
+                          - type: field
+                            id: barbarian-totem-raging-resistance
+                            label: Raging Resistance
+                            width: stretch
+                            align: left
+                            repeat: 4
+                            merge-bottom: true
+                  - type: section
+                    title: Deny Advantage
+                    contents:
+                      - type: level
+                        level: 5
+                        contents:
+                          - type: p
+                            content: Never flat-footed against creatures of a lower
+                              level.
+                  - type: section
+                    title: Juggernaut
+                    contents:
+                      - type: level
+                        level: 7
+                        contents:
+                          - type: proficiency
+                            proficiency: master
+                            content: Master at Fortitude saves
+                          - type: p
+                            content: When you succeed at a Fortitude save, treat it as
+                              a critical success.
+                      - type: hr
+                      - type: level
+                        level: 13
+                        contents:
+                          - type: proficiency
+                            proficiency: legendary
+                            content: Legendary at Fortitude saves
+                          - type: p
+                            content: When you critically fail a Fortitude save, treat
+                              it as a failure. When you fail a Fortitude save
+                              against an effect that deals damage, you halve the
+                              damage you take.
+                  - type: section
+                    title: Weapon Fury
+                    contents:
+                      - type: level
+                        level: 13
+                        contents:
+                          - type: proficiency
+                            proficiency: expert
+                            content: Expert at simple and martial weapons, and unarmed
+                              attacks
+                  - type: section
+                    title: Indomitable Will
+                    contents:
+                      - type: level
+                        level: 15
+                        contents:
+                          - type: proficiency
+                            proficiency: master
+                            content: Master at Will saves
+                          - type: p
+                            content: When you succeed at a Will save, treat it as a
+                              critical success.
+                  - type: section
+                    title: Devastating Strikes
+                    contents:
+                      - type: level
+                        level: 19
+                        contents:
+                          - type: calc
+                            output:
+                              type: field
+                              id: barbarian-raging-resistance-
+                              legend: Resistance Reduction
+                            inputs:
+                              - type: field
+                                id: null
+                                ref: CON
+                                underlay: CON
+                              - type: span
+                                content: "&times; 2"
+                          - type: p
+                            content: If you succeed at a melee Strike against a target
+                              with resistance against the physical damage type
+                              of the weapon or unarmed attack you’re using,
+                              reduce that resistance.
+                  - type: tail
+              - type: g
+                contents:
+                  - type: section
+                    title: Rage
+                    contents:
+                      - type: list
+                        hr: true
+                        contents:
+                          - type: zone
+                            zone: "@barbarian-rage"
+                            contents:
+                              - type: action
+                                action: null
+                                contents:
+                                  - type: row
+                                    layout: null
+                                    contents:
+                                      - type: field
+                                        id: rage-rounds
+                                        legend: Rage Rounds
+                                        control: progression
+                                        parts:
+                                          - control: checkbox
+                                          - control: checkbox
+                                          - control: checkbox
+                                      - type: spacer
+                                      - type: p
+                                        content: After raging, you are fatigued for 1
+                                          round.
+                                      - type: spacer
+                                  - type: p
+                                    content: While raging, cannot use actions that
+                                      require concentration, except for Seek.
+                                  - type: row
+                                    layout: null
+                                    contents:
+                                      - type: field
+                                        id: barbarian-rage-damage-bonus
+                                        output: true
+                                        label: Damage Bonus
+                                        width: large
+                                      - type: p
+                                        content: To melee and unarmed strikes
+                                      - type: spacer
+                                      - type: field
+                                        id: barbarian-rage-ac-penalty
+                                        label: AC Penalty
+                                        output: true
+                                        width: large
+                                        value: "-1"
+                                      - type: spacer
+                                      - type: calc
+                                        output:
+                                          type: field
+                                          id: barbarian-rage-temp-hp
+                                          label: Temporary Hit Points
+                                          overlay: hp
+                                          temp: true
+                                        inputs:
+                                          - type: field
+                                            id: null
+                                            ref: CON
+                                            underlay: CON
+                                          - type: span
+                                            content: +
+                                          - type: field
+                                            id: null
+                                            ref: level
+                                            label: Level
+                              - type: level
+                                level: 3
+                                contents:
+                                  - type: h5
+                                    title: Critical Brutality
+                                  - type: p
+                                    content: Gain critical specialization for your
+                                      melee weapon or unarmed attack.
+                              - type: level
+                                level: 9
+                                contents:
+                                  - type: row
+                                    layout: null
+                                    contents:
+                                      - type: calc
+                                        output:
+                                          type: field
+                                          id: barbarian-raging-resistance
+                                          legend: Raging Resistance
+                                          width: large
+                                        inputs:
+                                          - type: field
+                                            id: null
+                                            ref: CON
+                                            underlay: CON
+                              - type: level
+                                level: 11
+                                contents:
+                                  - type: action
+                                    action: free
+                                    contents:
+                                      - type: h5
+                                        title: Mighty Rage
+                                      - type: p
+                                        content: Use one of your rage actions as a free
+                                          action.
+                              - type: level
+                                level: 17
+                                contents:
+                                  - type: h5
+                                    title: Tireless Rage
+                                  - type: p
+                                    content: Don’t become fatigued after you stop
+                                      raging. It still takes the normal amount
+                                      of time before you can use Rage again.
+                  - type: section
+                    title: Barbarian Feats
+                    contents:
+                      - type: list
+                        zebra: true
+                        columns: 2
+                        flowv: true
+                        hr: true
+                        contents:
+                          - type: repeat
+                            repeat: 12
+                            rows:
+                              - type: level
+                                level: 1
+                              - type: level
+                                level: 2
+                              - type: level
+                                level: 4
+                              - type: level
+                                level: 6
+                              - type: level
+                                level: 8
+                              - type: level
+                                level: 10
+                              - type: level
+                                level: 12
+                              - type: level
+                                level: 14
+                              - type: level
+                                level: 16
+                              - type: level
+                                level: 18
+                              - type: level
+                                level: 20
+                              - type: level
+                                level: " "
+                            contents:
+                              - type: level
+                                level: "#{level}"
+                                contents:
+                                  - type: article
+                                    title: null
+                                    header:
+                                      - type: field
+                                        id: barbarian-feat-level-#{level}
+                                        width: stretch
+                                        frame: none
+                                        align: left
+                                    contents:
+                                      - type: field
+                                        id: barbarian-feat-level-#{level}-details
+                                        width: stretch
+                                        align: left
+                                        frame: none
+                                        repeat: 3
+                  - type: tail
+id: class/barbarian

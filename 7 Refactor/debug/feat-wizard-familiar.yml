@@ -1,0 +1,18 @@
+type: unit
+unit-type: feat/wizard/familiar
+in: feat/wizard
+param: level
+name: Familar (Wizard)
+req:
+  - type: unit
+    unit-type: option-animal-companion
+inc:
+  - at: "@wizard-feats"
+    level: 2
+    add:
+      - type: article
+        title: Familiar
+        contents:
+          - type: p
+            content: An animal serves you and assists your spellcasting.
+id: feat/wizard/familiar

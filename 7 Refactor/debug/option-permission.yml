@@ -1,0 +1,67 @@
+type: unit
+unit-type: option/permission
+name: Permission to Print
+inc:
+  - at: "@pages"
+    add:
+      - type: page
+        id: permission
+        order: 1
+        flex: true
+        numbered: false
+        contents:
+          - type: layout
+            layout: 1n
+            contents:
+              - type: g
+                contents:
+                  - type: spacer
+                  - type: icon
+                    icon: d20
+                    size: gargantuan
+                  - type: p
+                    content: null
+                  - type: h4
+                    title: Dyslexic Character Sheets
+                  - type: h1
+                    title: Permission to Print
+                  - type: p
+                    content: null
+                  - type: p
+                    content: This document may be freely printed, copied, reproduced
+                      and distributed.
+                    size: huge
+                  - type: spacer
+                  - type: h6
+                    title: Copyright &copy; Marcus Downing
+                  - type: p
+                    content: https://www.dyslexic-charactersheets.com
+                  - type: hr
+                  - type: h6
+                    title: This document is released under the Artistic License 2.0
+                  - type: p
+                    content: https://opensource.org/licenses/Artistic-2.0
+                  - type: blockquote
+                    contents:
+                      - type: p
+                        content: 5. You may Distribute Compiled forms of the Standard
+                          Version without the Source, provided that you include
+                          complete instructions on how to get the Source of the
+                          Standard Version. Such instructions must be valid at
+                          the time of your distribution. If these instructions,
+                          at any time while you are carrying out such
+                          distribution, become invalid, you must provide new
+                          instructions on demand or cease further distribution.
+                          If you provide valid instructions or cease
+                          distribution within thirty days after you become aware
+                          that the instructions are invalid, then you do not
+                          forfeit any of your rights under this license.
+                  - type: hr
+                  - type: h6
+                    title: This document uses properties covered by the Open Game
+                      License v1.0a
+                  - type: p
+                    content: http://www.opengamingfoundation.org/ogl.html
+                  - type: zone
+                    zone: "@permission"
+id: option/permission
