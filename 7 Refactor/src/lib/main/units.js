@@ -19,7 +19,7 @@ function loadUnit(unit_id) {
         log("units", "Loading:", baseDir+filename);
 		fs.readFile(baseDir+filename, 'utf-8', function (err, data) {
             if (err) {
-                err("units", "Error preloading unit "+unit_id, err);
+                error("units", "Error preloading unit "+unit_id, err);
                 reject(err);
                 return;
             }
@@ -28,7 +28,7 @@ function loadUnit(unit_id) {
             try {
                 var unitdata = yaml.parse(data);
             } catch (exception) {
-                err("units", "YAML error in "+unit_id+".yml:", exception.message);
+                error("units", "YAML error in "+unit_id+".yml:", exception.message);
 
                 // print an excerpt to make debugging easier
                 if (_.has(exception, "source") && _.has(exception.source, "range")) {
@@ -40,7 +40,7 @@ function loadUnit(unit_id) {
                         end = data.indexOf("\n", end + 1);
                     }
                     var excerpt = data.substring(start, end);
-                    console.log(excerpt);
+                    error("units", excerpt);
                 }
 
                 reject();
@@ -52,7 +52,7 @@ function loadUnit(unit_id) {
             //     id: false,
             //     inc: []
             // });
-            console.log(`[units] Expanding ${unit_id}`);
+            log("units", `Expanding ${unit_id}`);
             unitdata = CharacterSheets.expandZone(unitdata);
 
             fs.writeFile(baseDir+'tmp-'+unit_id+'.yml', yaml.stringify(unitdata), err => {});

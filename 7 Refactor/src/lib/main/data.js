@@ -6,11 +6,11 @@ const path = require('path');
 const baseDir = path.dirname(__dirname)+"/";
 log("data", "Base dir:", baseDir);
 
-var loadingQueue = [];
+// var loadingQueue = [];
 
-var storedData = {};
-var base64Data = {};
-var storedDataURLs = {};
+// var storedData = {};
+// var base64Data = {};
+// var storedDataURLs = {};
 
 const MIME_SVG = 'image/svg+xml';
 const MIME_PNG = 'image/png';
@@ -37,6 +37,7 @@ function mimeType(filename) {
     }
 }
 
+/*
 global.preloadLinkedData = function(data, filename) {
     switch(mimeType(filename)) {
         case 'text/x-scss':
@@ -50,6 +51,7 @@ global.preloadLinkedData = function(data, filename) {
             break;
     }
 }
+*/
 
 function processBase64(data) {
     if (_.isUndefined(data) || _.isNull(data))
@@ -68,7 +70,7 @@ function processSVG(data) {
     data = data.replace(/^(.|[\r\n])*?<svg/, '<svg');
     data = data.replace(/\s*$/, '');
     
-    data = replaceColours(data);
+    // data = replaceColours(data); // DON'T DO THIS UNTIL THE BUILD PHASE
     data = data.replace(/#/g, '%23');
 
     return data;
@@ -80,6 +82,7 @@ function processRaw(data) {
     return data;
 }
 
+/*
 global.preloadQueue = function(promise) {
     loadingQueue.push(promise);
 };
@@ -139,11 +142,13 @@ global.preloadData = function(filename, {
         });
     }));
 };
+*/
 
 global.waitForData = function (callback) {
     Promise.all(loadingQueue).then(callback);
 };
 
+/*
 global.getDataSource = function (filename) {
     if (_.has(storedData, filename)) {
         return storedData[filename];
@@ -167,7 +172,49 @@ global.getDataBase64 = function (filename) {
     warn("data", "No base64 data for", filename);
     return null;
 };
+*/
 
+function toDataURL (data, base64, filename) {
+    var mime = mimeType(filename);
+    switch (mime) {
+        case MIME_SVG:
+            // log("data", "Returning data for", filename);
+            if (_.isNull(data)) return '';
+            data = processSVG(data);
+            return 'data:'+mime+','+data;
+
+        default:
+            // log("data", "Returning base64 data for", filename);
+            if (_.isNull(base64)) return '';
+            base64 = processBase64(base64);
+            return 'data:'+mime+';base64,'+base64;
+    }
+}
+
+global.getDataURL = function (unit, filename) {
+    // log("data", "getDataURL", unit+":"+filename);
+    var data = (_.has(CharacterSheets._assets, unit) && _.has(CharacterSheets._assets[unit], filename) && !_.isEmpty(CharacterSheets._assets[unit][filename])) ?
+        CharacterSheets._assets[unit][filename] :
+        CharacterSheets._allAssets[filename];
+        
+    var base64name = filename+".base64";
+    var base64 = (_.has(CharacterSheets._assets, unit) && _.has(CharacterSheets._assets[unit], base64name) && !_.isEmpty(CharacterSheets._assets[unit][base64name])) ?
+        CharacterSheets._assets[unit][base64name] :
+        CharacterSheets._allAssets[base64name];
+
+
+    if (_.isNull(data) && _.isNull(base64)) {
+        // log("data", "Data URL: Data not found", unit+":"+filename);
+        return '';
+    } else {
+        // log("data", "Data URL: data:", _.isNull(data) ? "no" : "yes", " base64:", _.isNull(base64) ? "no" : "yes");
+    }
+    var url = toDataURL(data, base64, filename);
+    // log("data", "URL:", url.substr(0, 30)+"...");
+    return url;
+}
+
+/*
 global.getDataURL = function (filename) {
     if (_.has(storedDataURLs, filename)) {
         return storedDataURLs[filename];
@@ -190,3 +237,4 @@ global.getDataURL = function (filename) {
     storedDataURLs[filename] = dataurl;
     return dataurl;
 };
+*/

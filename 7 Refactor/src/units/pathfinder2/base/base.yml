@@ -1,6 +1,10 @@
 ---
 unit: base
 name: "Pathfinder 2nd Edition"
+
+assets:
+  - images/2e-logo.png
+
 inc:
 
   - at: @permission

@@ -11,7 +11,7 @@ args => '',
 args => {
     var i = 0;
     // console.log("[each] items", args.contents);
-    return _.map(args.contents, item => {
+    return _.flatMap(args.contents, item => {
         i++;
 
         var values = _.cloneDeep(args.params);

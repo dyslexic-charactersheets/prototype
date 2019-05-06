@@ -5,7 +5,7 @@
 @import 'icons';
 
 .page {
-    background-image: url('{{{dataurl "images/paper3.jpg"}}}');
+    // background-image: url('{{{dataurl "images/paper3.jpg"}}}');
     // background-repeat: no-repeat;
     // background-position: center;
     // background-size: cover;
@@ -14,10 +14,10 @@
 .portrait {
     .portrait__inner {
         // background-image: url('{{{dataurl "images/Barbarian - Amiri - Yeti Hide.jpg"}}}');
-        background-image: url('{{{dataurl "images/wizard-ezren-runes.png"}}}');
+        // background-image: url('{{{dataurl "images/wizard-ezren-runes.png"}}}');
     }
 
     &--animal-companion .portrait__inner {
-        background-image: url('{{{dataurl "images/large_riding_dog.jpg"}}}');
+        // background-image: url('{{{dataurl "images/large_riding_dog.jpg"}}}');
     }
 }

@@ -187,9 +187,16 @@ global.interpolate = function (template, values) {
 
 
 global.replaceColours = function (str) {
-    str = str.replace(/#[0-9a-zA-Z]{6}/g, c => adjustColour(c));
+    str = str.replace(/#[0-9a-fA-F]{6}/g, c => adjustColour(c));
+    str = str.replace(/%23[0-9a-fA-F]{6}/g, c => {
+        c = c.replace('%23', '#');
+        c = adjustColour(c);
+        c = c.replace('#', '%23');
+        return c;
+    });
     str = str.replace(/rgba\(.*?,.*?,.*?,(.*?)\)/g, c => adjustColour(c)); // (c, opacity) => adjustColourRGBA(c, opacity));
     str = str.replace(/--c-accent/g, CharacterSheets._current.accentColour);
+    str = str.replace(/="#([0-9a-fA-F]{6})"/g, '="%23$1"');
     return str;
 }
 
@@ -204,7 +211,7 @@ global.adjustColourRGBA = function (c, opacity) {
 global.adjustColour = function (c) {
     try {
         var base = color(c);
-        var col = color(documentColour);
+        var col = color(CharacterSheets._current.documentColour);
 
         const lmin = 16;
         var lightness = base.lightness();
@@ -226,10 +233,10 @@ global.adjustColour = function (c) {
         // console.log(" - saturation:", saturation);
         saturation = saturation + 10;
         if (lightness > nlow && lightness <= nmid) {
-            diff = lightness - nlow;
+            var diff = lightness - nlow;
             saturation -= diff * f;
         } else if (lightness > nmid && lightness < nhigh) {
-            diff = nhigh - lightness;
+            var diff = nhigh - lightness;
             saturation -= diff * f;
         }
         if (saturation < 0) saturation = 0;
@@ -254,7 +261,7 @@ global.adjustColour = function (c) {
         // console.log(" - adjusted:", result);
         return result;
     } catch (x) {
-        // console.log(x);
+        error("util", "Colour error:", x, x.stack);
         return c;
     }
 }

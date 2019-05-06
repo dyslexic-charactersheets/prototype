@@ -27,16 +27,6 @@ CharacterSheets.getRegistry = function() {
 
 var stack = [];
 
-CharacterSheets.stylesheet = function() {
-    var stylesheets = _.map(CharacterSheets._current.units, unit => {
-        var stylesheet = unit.stylesheet;
-        if (stylesheet.length > 0)
-            log("registry", "Unit stylesheet:", unit.id, unit.stylesheet.substr(0, 30)+"...");
-        return unit.stylesheet;
-    });
-    return stylesheets.join("");
-}
-
 global.renderItem = function(item) {
     if (_.isNull(item)) return '';
     item = _.defaults(item, {

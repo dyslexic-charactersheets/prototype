@@ -3,7 +3,7 @@ CharacterSheets.register('document', 'title', {
     favicon: 'favicon.png',
     sort: true
 }, args => {
-    var faviconData = getDataURL("images/"+args.favicon);
+    var faviconData = getDataURL("core", "images/"+args.favicon);
 
     return `<!DOCTYPE html>
 <html lang='en-GB'>

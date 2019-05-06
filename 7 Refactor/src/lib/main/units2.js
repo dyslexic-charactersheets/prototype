@@ -7,17 +7,29 @@ const sass = require('node-sass');
 const Handlebars = require('handlebars');
 
 // set up helpers to replace data URLs in stylesheets
-Handlebars.registerHelper('dataurl', function (filename) {
-	return getDataURL(filename, false);
+Handlebars.registerHelper('dataurl', function (filename, options) {
+    // log("units", "dataurl:", filename, " Options:", options);
+    var unit = options.data.root.unit;
+    // var data = CharacterSheets._assets[unit][filename];
+    // return toDataURL(data, filename);
+    // return getDataURL(filename, false);
+    return getDataURL(unit, filename);
 });
 
-Handlebars.registerHelper('dataurlraw', function (filename) {
-	return getDataURL(filename, true);
+Handlebars.registerHelper('dataurlraw', function (filename, options) {
+    // log("units", "dataurlraw:", filename, " Options:", options);
+    var unit = options.data.root.unit;
+    // var asset = CharacterSheets._assets[unit][filename];
+    // return toDataURL(data, filename);
+	// return getDataURL(filename, true);
+    return getDataURL(unit, filename);
 });
 
 
 // load units
 CharacterSheets._units = {};
+CharacterSheets._assets = {};
+CharacterSheets._allAssets = {};
 
 CharacterSheets.getUnit = function (unitcode) {
     log("units", "getUnit", unitcode);
@@ -59,7 +71,8 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
                 end = data.indexOf("\n", end + 1);
             }
             var excerpt = data.substring(start, end);
-            console.log(excerpt);
+            error("units", excerpt);
+            // console.log(excerpt);
         }
 
         reject();
@@ -82,8 +95,9 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
         });
 
         unitdata.stylesheet = '';
-        unitdata.assets = {};
+        // unitdata.assets = {};
         CharacterSheets._units[unitcode] = unitdata;
+        CharacterSheets._assets[unitcode] = {};
 
         // Load unit stylesheet
         var stylesheetfile = './units/'+unitdir+'/stylesheet/'+shortfile.replace(/\.yml$/, '.scss');
@@ -94,7 +108,8 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
             
                 sass.render({
                     file: stylesheetfile,
-                    outputStyle: 'compressed',
+                    // outputStyle: 'compressed',
+                    outputStyle: 'compact',
                 }, function(err, result) {
                     if (err) {
                         error("units", "Error rendering", unitcode, err);
@@ -103,21 +118,17 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
                     }
 
                     var css = result.css.toString();
-                    
-                    // preloadLinkedData(css, stylesheetfile);
-
                     CharacterSheets.loadQueue.assets.ready(() => {
                         var template = Handlebars.compile(css);
-                        var rendered = template({});
+                        var rendered = `/* ${unitcode} */\n`+template({
+                            unit: unitcode
+                        });
 
-                        // if (unitcode != "frame")
-                        //     rendered = replaceColours(rendered);
-
-                        if (css.length > 0)
-                            log("units", "Loaded stylesheet:", unitcode, css.substring(0, 30)+"...");
-                        else
-                            log("units", "Empty stylesheet:", unitcode);
-                        CharacterSheets._units[unitcode].stylesheet = css;
+                        // if (rendered.length > 0)
+                        //     log("units", "Loaded stylesheet:", unitcode, rendered.substring(0, 30)+"...");
+                        // else
+                        //     log("units", "Empty stylesheet:", unitcode);
+                        CharacterSheets._units[unitcode].stylesheet = rendered;
                         resolve();
                     });
                 });
@@ -127,11 +138,33 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
         // Load unit assets
         // log("unit", "Looking for assets:", './'+unitdir+'/assets');
         CharacterSheets.loadQueue.assets.walkDirectory('./units/'+unitdir+'/assets', fn => true, (data, assetfile) => {
-            // log("units", "Asset loaded", unitcode+":"+assetfile);
-            // process asset
+            log("units", "Asset loaded", unitcode+":"+assetfile);
+            // process asset data now, or later?
 
-            CharacterSheets._units[unitcode].assets[assetfile] = data;
+            // unitassets[assetfile] = data;
+            CharacterSheets._assets[unitcode][assetfile] = data;
+            CharacterSheets._allAssets[assetfile] = data;
         });
+        if (_.has(unitdata, "assets")) {
+            var assets = unitdata.assets;
+            CharacterSheets.loadQueue.assets.ready(() => {
+                unitdata.assets = [];
+                _.each(assets, filename => {
+                    var assetdata = { name: filename };
+                    if (filename.match(/\.svg$/)) {
+                        assetdata.data = (_.has(CharacterSheets._assets, unitcode) && _.has(CharacterSheets._assets[unitcode], filename) && !_.isEmpty(CharacterSheets._assets[unitcode][filename])) ?
+                            CharacterSheets._assets[unitcode][filename] :
+                            CharacterSheets._allAssets[filename];
+                    } else {
+                        var base64name = filename+".base64";
+                        assetdata.base64 = (_.has(CharacterSheets._assets, unitcode) && _.has(CharacterSheets._assets[unitcode], base64name) && !_.isEmpty(CharacterSheets._assets[unitcode][base64name])) ?
+                            CharacterSheets._assets[unitcode][base64name] :
+                            CharacterSheets._allAssets[base64name];
+                    }
+                    unitdata.assets.push(assetdata);
+                })
+            });
+        }
         // walkAssets(unitdir+'/assets', "", unitcode);
 
     } catch (exception) {

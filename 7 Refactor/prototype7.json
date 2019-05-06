@@ -1481,171 +1481,161 @@
                       "zebra": true,
                       "hr": true,
                       "contents": [
-                        [
-                          {
-                            "type": "level",
-                            "level": "1",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}",
-                                    "frame": "none",
-                                    "size": "large",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}-details",
-                                    "repeat": 2,
-                                    "frame": "none",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "level": 1
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "5",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}",
-                                    "frame": "none",
-                                    "size": "large",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}-details",
-                                    "repeat": 2,
-                                    "frame": "none",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "level": 5
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "9",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}",
-                                    "frame": "none",
-                                    "size": "large",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}-details",
-                                    "repeat": 2,
-                                    "frame": "none",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "level": 9
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "13",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}",
-                                    "frame": "none",
-                                    "size": "large",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}-details",
-                                    "repeat": 2,
-                                    "frame": "none",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "level": 13
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "17",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}",
-                                    "frame": "none",
-                                    "size": "large",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "ancestry-feat-#{i}-details",
-                                    "repeat": 2,
-                                    "frame": "none",
-                                    "width": "stretch",
-                                    "align": "left"
-                                  }
-                                ],
-                                "level": 17
-                              }
-                            ]
-                          }
-                        ]
+                        {
+                          "type": "level",
+                          "level": "1",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "5",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 5
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "9",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 9
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "13",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 13
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "17",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}",
+                                  "frame": "none",
+                                  "size": "large",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ancestry-feat-#{i}-details",
+                                  "repeat": 2,
+                                  "frame": "none",
+                                  "width": "stretch",
+                                  "align": "left"
+                                }
+                              ],
+                              "level": 17
+                            }
+                          ]
+                        }
                       ],
                       "columns": 1,
                       "flowv": true,
@@ -2276,171 +2266,161 @@
                       "hr": true,
                       "flex": true,
                       "contents": [
-                        [
-                          {
-                            "type": "level",
-                            "level": "3",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}",
-                                    "width": "stretch",
-                                    "size": "large",
-                                    "frame": "none",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}-details",
-                                    "width": "stretch",
-                                    "align": "left",
-                                    "frame": "none",
-                                    "repeat": 2
-                                  }
-                                ],
-                                "level": 3
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "7",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}",
-                                    "width": "stretch",
-                                    "size": "large",
-                                    "frame": "none",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}-details",
-                                    "width": "stretch",
-                                    "align": "left",
-                                    "frame": "none",
-                                    "repeat": 2
-                                  }
-                                ],
-                                "level": 7
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "11",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}",
-                                    "width": "stretch",
-                                    "size": "large",
-                                    "frame": "none",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}-details",
-                                    "width": "stretch",
-                                    "align": "left",
-                                    "frame": "none",
-                                    "repeat": 2
-                                  }
-                                ],
-                                "level": 11
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "15",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}",
-                                    "width": "stretch",
-                                    "size": "large",
-                                    "frame": "none",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}-details",
-                                    "width": "stretch",
-                                    "align": "left",
-                                    "frame": "none",
-                                    "repeat": 2
-                                  }
-                                ],
-                                "level": 15
-                              }
-                            ]
-                          }
-                        ],
-                        [
-                          {
-                            "type": "level",
-                            "level": "19",
-                            "contents": [
-                              {
-                                "type": "article",
-                                "title": null,
-                                "header": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}",
-                                    "width": "stretch",
-                                    "size": "large",
-                                    "frame": "none",
-                                    "align": "left"
-                                  }
-                                ],
-                                "contents": [
-                                  {
-                                    "type": "field",
-                                    "id": "general-feat-level-#{level}-details",
-                                    "width": "stretch",
-                                    "align": "left",
-                                    "frame": "none",
-                                    "repeat": 2
-                                  }
-                                ],
-                                "level": 19
-                              }
-                            ]
-                          }
-                        ]
+                        {
+                          "type": "level",
+                          "level": "3",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}",
+                                  "width": "stretch",
+                                  "size": "large",
+                                  "frame": "none",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}-details",
+                                  "width": "stretch",
+                                  "align": "left",
+                                  "frame": "none",
+                                  "repeat": 2
+                                }
+                              ],
+                              "level": 3
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "7",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}",
+                                  "width": "stretch",
+                                  "size": "large",
+                                  "frame": "none",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}-details",
+                                  "width": "stretch",
+                                  "align": "left",
+                                  "frame": "none",
+                                  "repeat": 2
+                                }
+                              ],
+                              "level": 7
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "11",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}",
+                                  "width": "stretch",
+                                  "size": "large",
+                                  "frame": "none",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}-details",
+                                  "width": "stretch",
+                                  "align": "left",
+                                  "frame": "none",
+                                  "repeat": 2
+                                }
+                              ],
+                              "level": 11
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "15",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}",
+                                  "width": "stretch",
+                                  "size": "large",
+                                  "frame": "none",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}-details",
+                                  "width": "stretch",
+                                  "align": "left",
+                                  "frame": "none",
+                                  "repeat": 2
+                                }
+                              ],
+                              "level": 15
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "19",
+                          "contents": [
+                            {
+                              "type": "article",
+                              "title": null,
+                              "header": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}",
+                                  "width": "stretch",
+                                  "size": "large",
+                                  "frame": "none",
+                                  "align": "left"
+                                }
+                              ],
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "general-feat-level-#{level}-details",
+                                  "width": "stretch",
+                                  "align": "left",
+                                  "frame": "none",
+                                  "repeat": 2
+                                }
+                              ],
+                              "level": 19
+                            }
+                          ]
+                        }
                       ],
                       "columns": 1,
                       "flowv": true,
@@ -2773,204 +2753,192 @@
                         {
                           "columns": 1,
                           "contents": [
-                            [
-                              {
-                                "type": "level",
-                                "level": "1",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 1
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "4",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 4
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "8",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 8
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "12",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 12
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "16",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 16
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "20",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 20
-                                  }
-                                ]
-                              }
-                            ]
+                            {
+                              "type": "level",
+                              "level": "1",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 1
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "4",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 4
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "8",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 8
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "12",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 12
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "16",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 16
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "20",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 20
+                                }
+                              ]
+                            }
                           ],
                           "type": "list",
                           "zebra": true,
@@ -2985,204 +2953,192 @@
                         {
                           "columns": 1,
                           "contents": [
-                            [
-                              {
-                                "type": "level",
-                                "level": "2",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 2
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "6",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 6
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "10",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 10
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "14",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 14
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "18",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": 18
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "type": "level",
-                                "level": "",
-                                "contents": [
-                                  {
-                                    "type": "article",
-                                    "title": null,
-                                    "header": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}",
-                                        "width": "stretch",
-                                        "size": "large",
-                                        "frame": "none",
-                                        "align": "left"
-                                      }
-                                    ],
-                                    "contents": [
-                                      {
-                                        "type": "field",
-                                        "id": "skill-feat-level-#{level}-details",
-                                        "width": "stretch",
-                                        "align": "left",
-                                        "frame": "none",
-                                        "repeat": 2
-                                      }
-                                    ],
-                                    "level": ""
-                                  }
-                                ]
-                              }
-                            ]
+                            {
+                              "type": "level",
+                              "level": "2",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 2
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "6",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 6
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "10",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 10
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "14",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 14
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "18",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": 18
+                                }
+                              ]
+                            },
+                            {
+                              "type": "level",
+                              "level": "",
+                              "contents": [
+                                {
+                                  "type": "article",
+                                  "title": null,
+                                  "header": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}",
+                                      "width": "stretch",
+                                      "size": "large",
+                                      "frame": "none",
+                                      "align": "left"
+                                    }
+                                  ],
+                                  "contents": [
+                                    {
+                                      "type": "field",
+                                      "id": "skill-feat-level-#{level}-details",
+                                      "width": "stretch",
+                                      "align": "left",
+                                      "frame": "none",
+                                      "repeat": 2
+                                    }
+                                  ],
+                                  "level": ""
+                                }
+                              ]
+                            }
                           ],
                           "type": "list",
                           "zebra": true,

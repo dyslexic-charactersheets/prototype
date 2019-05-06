@@ -12,8 +12,12 @@ var barbarian = {
         'class/barbarian',
         'option/permission',
     ],
-    documentColour: '#661b14',
-    accentColour: '#a65e08'
+    // documentColour: '#661b14',
+    // accentColour: '#a65e08',
+    documentColour: '#264e80',
+    accentColour: '#a65e08',
+    portrait: 'images/Barbarian - Amiri - Yeti Hide.jpg',
+    background: 'images/frost1.jpg',
 };
 
 // Wizard
@@ -33,7 +37,9 @@ var wizard = {
         'option/animal-companion',
     ],
     documentColour: '#264e80',
-    accentColour: '#a65e08'
+    accentColour: '#a65e08',
+    portrait: 'images/wizard-ezren-runes.png',
+    background: 'images/paper3.jpg',
 };
 
 
@@ -45,7 +51,6 @@ CharacterSheets.ready(() => {
     
     character.ready(() => {
         var document = character.document();
-        // console.log("Document:", JSON.stringify(document, null, 2));
         fs.writeFile('../prototype7.json', JSON.stringify(document, null, 2), err => {});
     
         // waitForData(() => {
