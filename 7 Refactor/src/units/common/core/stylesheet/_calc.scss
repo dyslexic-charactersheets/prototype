@@ -1,16 +1,15 @@
 
 /* Calculations */
 
-fieldset.calc {
+.calc {
 	margin: 3pt 0;
 	border: 0 none;
 	padding: 0;
 
-	// display: flex;
-	// flex-direction: row;
-	// flex-wrap: nowrap;
-	// justify-content: flex-start;
-	// align-items: flex-end;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-end;
 
 	white-space: nowrap;
 	$height: 1.6rem;
@@ -49,6 +48,6 @@ fieldset.calc {
 	}
 }
 
-fieldset.calc--2-lines .field, .row--2-lines .field {
+.calc--2-lines .field, .row--2-lines .field {
 	padding-top: 2rem;
 }

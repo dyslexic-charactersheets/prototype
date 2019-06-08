@@ -33,7 +33,7 @@ function pickAttribs(args, keys) {
     return _.pick(args, keys);
 };
 
-global.elementClass = function(block, element = null, args = {}, modKeys = [], attribKeys = {}) {
+global.elementClass = function(block, element = null, args = {}, modKeys = [], attribDefs = {}) {
     var cls = [];
 
     var prefix = block;
@@ -77,6 +77,7 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
             //     cls.push(``)
             //     break;
             case 'shade':
+            case 'lp':
                 cls.push(mod);
                 break;
             default:
@@ -85,6 +86,13 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
     });
 
     // attribs are key-values, eg align=left
+    var attribKeys;
+    if (_.isArray(attribDefs)) {
+        attribKeys = attribDefs;
+        attribDefs = {};
+    } else {
+        attribKeys = _.keys(attribDefs);
+    }
     var attribs = pickAttribs(args, attribKeys);
     // console.log("["+block+" class] Attribs:", attribs);
     _(attribs).toPairs().each(pair => {
@@ -95,14 +103,19 @@ global.elementClass = function(block, element = null, args = {}, modKeys = [], a
             return;
         // console.log("  -", key, " = ", value);
         // some default values can be skipped
-        switch (key) {
-            case 'frame': if (value == 'normal') return;
-            case 'control': if (value == 'input') return;
-        }
+        // switch (key) {
+        //     case 'frame': if (value == 'normal') return;
+        //     case 'control': if (value == 'input') return;
+        // }
+        if (_.has(attribDefs, key) && value == attribDefs[key])
+            return;
 
         switch (key) {
             // global attributes that don't need a prefix
             case 'align':
+            case 'valign':
+            case 'lp':
+            case 'icon':
                 cls.push(`${key}_${value}`);
                 break;
             default:
@@ -280,15 +293,19 @@ global.getLabelHeight = function(args) {
                 case 'none':
                 case 'left':
                 case 'right':
+                case 'h-label':
                     return 0;
 
                 default:
-                    var label = "";
-                    if (args.label) label = args.label;
-                    if (args.legend) label = args.legend;
-                    if (label == "") break;
-                    var lines = label.split(/\n/);
-                    return lines.length;
+                    var labelHeight = args.label ? args.label.split(/\n/).length : 0;
+                    var legendHeight = args.legend ? args.legend.split(/\n/).length : 0;
+                    return Math.max(labelHeight, legendHeight, 1);
+
+                    // var label = "";
+                    // if (args.label) label = args.label;
+                    // if (args.legend) label = args.legend;
+                    // if (label == "") break;
+                    // return label.split(/\n/).length;
             }
             return 1;
 
@@ -308,6 +325,10 @@ global.getLabelHeight = function(args) {
                 if (h > height) 
                     height = h;
             });
+            return height;
+
+        case 'g':
+            var height = getLabelHeight(args.contents[0]);
             return height;
     }
     return 0;

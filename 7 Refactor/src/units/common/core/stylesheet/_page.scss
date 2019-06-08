@@ -4,9 +4,13 @@
 
 	// background-image: url('{{{dataurl "images/frost1.jpg"}}}');
 	background-color: white;
-    background-size: 100% 100%;
+	background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: center;
+	background-position: center;
+	
+	&--no-bg {
+		background-image: none !important;
+	}
 	
 	.page-number {
 		position: absolute;

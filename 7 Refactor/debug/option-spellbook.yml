@@ -26,7 +26,7 @@ inc:
                           - type: spacer
                           - type: field
                             id: spellbook-col-#{i}-level
-                            output: true
+                            border: full
                             frame: none
                             size: large
                           - type: spacer

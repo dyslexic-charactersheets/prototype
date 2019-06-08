@@ -1,6 +1,13 @@
-CharacterSheets.register('span', 'content', {
-    content: '',
-}, args => {
-    var cls = elementClass('span');
-    return `<span${cls}>${esc(args.content, true)}</span>`;
+'use strict';
+
+CharacterSheets.register('span', {
+    key: 'content',
+    defaults: {
+        content: '',
+        'field-separator': false,
+    }, 
+    render: args => {
+        var cls = elementClass('span', '', args, [ 'field-separator' ]);
+        return `<span${cls}>${esc(args.content, true)}</span>`;
+    }
 });

@@ -5,12 +5,12 @@ var expansion = {
 
 // populate from the registry
 _.each(CharacterSheets.getRegistry(), (reg, element) => {
-    var expected = _.keys(reg.defaults);
-    if (reg.key != "") expected.unshift(reg.key);
-    expected.unshift("level");
+    // var expected = _.keys(reg.defaults);
+    // if (reg.key != "") expected.unshift(reg.key);
+    // expected.unshift("level");
     expansion[element] = {
         key: reg.key,
-        expected: expected
+        expected: reg.expect //expected
     };
 });
 // console.log("[expand] Registry", expansion);

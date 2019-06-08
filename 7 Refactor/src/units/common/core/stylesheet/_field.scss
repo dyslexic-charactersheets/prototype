@@ -557,17 +557,17 @@ label + .field {
 	flex: 100 0 auto;
 }
 
-.row fieldset.calc {
+.row .calc {
 	margin: 0;
 }
-.row fieldset.calc + * {
+.row .calc + * {
 	margin-left: 2pt;
 }
 
 
 /* Special fields */
 
-fieldset.field--alignment {
+.field--alignment {
 	display: block;
 	position: relative;
 	width: 1.6cm;

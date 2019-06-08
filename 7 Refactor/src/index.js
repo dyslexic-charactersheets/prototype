@@ -3,6 +3,7 @@ require('./lib/main/main.js');
 
 // Barbarian
 var barbarian = {
+    name: "Amiri, Barbarian",
     units: [
         'core',
         'theme/pathfinder',
@@ -22,6 +23,7 @@ var barbarian = {
 
 // Wizard
 var wizard = {
+    name: "Ezren, Wizard",
     units: [
         'core',
         'theme/pathfinder',
@@ -42,12 +44,30 @@ var wizard = {
     background: 'images/paper3.jpg',
 };
 
+// Cleric
+var cleric = {
+    name: "Hallundan, Cleric",
+    units: [
+        'core',
+        'theme/pathfinder',
+        'base',
+        'ancestry/dwarf',
+        // 'background/barkeep',
+        'class/cleric',
+        'option/spellbook',
+    ],
+    documentColour: '#102820',
+    accentColour: '#a6085e',
+    portrait: 'images/Priestess of Torag.jpg',
+    background: 'images/paper3.jpg',
+}
+
 
 CharacterSheets.ready(() => {
     fs.writeFile("../units.json", JSON.stringify(CharacterSheets._units, null, 2), err => {});
 
     log("index", "Building character");
-    var character = CharacterSheets(barbarian);
+    var character = CharacterSheets(cleric);
     
     character.ready(() => {
         var document = character.document();

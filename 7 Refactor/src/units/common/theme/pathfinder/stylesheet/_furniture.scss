@@ -58,11 +58,22 @@ h3 {
     background-image: url('{{{dataurl "images/h3.svg"}}}');
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 100% 0.45cm;
+    background-size: 100% 1.3rem;
     
     text-transform: uppercase;
     color: white;
     text-shadow: 0 0 1px $color_bg_shadow;
+}
+
+hr.hr--tail {
+    border-top: 0 none;
+    height: 0.5rem;
+    margin-top: -2pt;
+
+    background-image: url('{{{dataurl "images/tail.svg"}}}');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% 1.3rem;
 }
 
 h4 {

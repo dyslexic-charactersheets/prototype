@@ -32,7 +32,7 @@ CharacterSheets._assets = {};
 CharacterSheets._allAssets = {};
 
 CharacterSheets.getUnit = function (unitcode) {
-    log("units", "getUnit", unitcode);
+    // log("units", "getUnit", unitcode);
     if (_.has(CharacterSheets._units, unitcode))
         return CharacterSheets._units[unitcode];
     else
@@ -40,7 +40,7 @@ CharacterSheets.getUnit = function (unitcode) {
 };
 
 CharacterSheets.getUnits = function (unitcodes) {
-    log("units", "getUnits", unitcodes);
+    // log("units", "getUnits", unitcodes);
     return _.map(unitcodes, code => CharacterSheets.getUnit(code));
 };
 
@@ -83,7 +83,7 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
         var unitcode = unitdata.unit;
         unitdata.id = unitcode;
         var name = unitdata.name;
-        log("units", "Loading unit", unitcode, "-", name);
+        // log("units", "Loading unit", unitcode, "-", name);
 
         // TODO: Preprocess the data??
         
@@ -104,7 +104,7 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
 
         if (fs.existsSync(stylesheetfile)) {
             CharacterSheets.loadQueue.stylesheets.enqueue(stylesheetfile, function (resolve, reject) {
-                log("units", "Loading stylesheet", unitcode);
+                // log("units", "Loading stylesheet", unitcode);
             
                 sass.render({
                     file: stylesheetfile,
@@ -128,6 +128,9 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
                         //     log("units", "Loaded stylesheet:", unitcode, rendered.substring(0, 30)+"...");
                         // else
                         //     log("units", "Empty stylesheet:", unitcode);
+                        fs.writeFile("../debug/"+unitcode.replace(/\//g, '-')+".css", rendered, err => {
+                            if (err) error("units", "Error saving unit", unitcode, err);
+                        });
                         CharacterSheets._units[unitcode].stylesheet = rendered;
                         resolve();
                     });
@@ -138,7 +141,7 @@ CharacterSheets.loadQueue.units.walkDirectory('./units', fn => fn.match(/\.yml$/
         // Load unit assets
         // log("unit", "Looking for assets:", './'+unitdir+'/assets');
         CharacterSheets.loadQueue.assets.walkDirectory('./units/'+unitdir+'/assets', fn => true, (data, assetfile) => {
-            log("units", "Asset loaded", unitcode+":"+assetfile);
+            // log("units", "Asset loaded", unitcode+":"+assetfile);
             // process asset data now, or later?
 
             // unitassets[assetfile] = data;

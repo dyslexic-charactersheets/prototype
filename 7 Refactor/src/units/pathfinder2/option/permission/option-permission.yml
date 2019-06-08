@@ -6,6 +6,7 @@ inc:
       - page: permission
         order: 1
         flex: true
+        no-bg: true
         numbered: false
         contents:
           - layout: 1n

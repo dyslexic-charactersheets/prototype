@@ -1,3 +1,5 @@
-CharacterSheets.register('blockquote', '', {}, args => {
-    return `<blockquote>${render(args.contents)}</blockquote>`;
+'use strict';
+
+CharacterSheets.register('blockquote', {
+    render: args => `<blockquote>${render(args.contents)}</blockquote>`
 });

@@ -7,11 +7,11 @@
     // margin-bottom: 1pt;
     &:last-child { border-bottom: 0; }
 
-    &--narrow {
+    &--gutter_small {
         grid-gap: 0 0.3cm;
     }
 
-    &--collapse {
+    &--gutter_none {
         grid-gap: 0 0.05cm;
     }
 
@@ -104,7 +104,7 @@
     // }
 
     &--layout_spells-list {
-        grid-template-columns: 1fr 3rem 1fr;
+        grid-template-columns: 1fr 2rem 1fr;
         grid-template-areas: "a level b";
         align-items: center;
 

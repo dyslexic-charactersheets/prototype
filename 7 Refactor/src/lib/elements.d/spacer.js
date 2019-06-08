@@ -1,4 +1,5 @@
-CharacterSheets.register('spacer', '', {
-}, args => {
-    return `<div class='spacer'></div>`;
+'use strict';
+
+CharacterSheets.register('spacer', {
+    render: args => `<div class='spacer'></div>`
 });

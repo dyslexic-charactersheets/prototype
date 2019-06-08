@@ -1,1281 +1,7 @@
 {
   "type": "document",
-  "title": null,
+  "title": "Hallundan, Cleric",
   "contents": [
-    {
-      "type": "page",
-      "id": "permission",
-      "order": 1,
-      "flex": true,
-      "numbered": false,
-      "contents": [
-        {
-          "type": "layout",
-          "layout": "1n",
-          "contents": [
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "icon",
-                  "icon": "d20",
-                  "size": "gargantuan"
-                },
-                {
-                  "type": "p",
-                  "content": null
-                },
-                {
-                  "type": "h4",
-                  "title": "Dyslexic Character Sheets"
-                },
-                {
-                  "type": "h1",
-                  "title": "Permission to Print"
-                },
-                {
-                  "type": "p",
-                  "content": null
-                },
-                {
-                  "type": "p",
-                  "content": "This document may be freely printed, copied, reproduced and distributed.",
-                  "size": "huge"
-                },
-                {
-                  "type": "spacer"
-                },
-                {
-                  "type": "h6",
-                  "title": "Copyright &copy; Marcus Downing"
-                },
-                {
-                  "type": "p",
-                  "content": "https://www.dyslexic-charactersheets.com"
-                },
-                {
-                  "type": "hr"
-                },
-                {
-                  "type": "h6",
-                  "title": "This document is released under the Artistic License 2.0"
-                },
-                {
-                  "type": "p",
-                  "content": "https://opensource.org/licenses/Artistic-2.0"
-                },
-                {
-                  "type": "blockquote",
-                  "contents": [
-                    {
-                      "type": "p",
-                      "content": "5. You may Distribute Compiled forms of the Standard Version without the Source, provided that you include complete instructions on how to get the Source of the Standard Version. Such instructions must be valid at the time of your distribution. If these instructions, at any time while you are carrying out such distribution, become invalid, you must provide new instructions on demand or cease further distribution. If you provide valid instructions or cease distribution within thirty days after you become aware that the instructions are invalid, then you do not forfeit any of your rights under this license."
-                    }
-                  ]
-                },
-                {
-                  "type": "hr"
-                },
-                {
-                  "type": "h6",
-                  "title": "This document uses properties covered by the Open Game License v1.0a"
-                },
-                {
-                  "type": "p",
-                  "content": "http://www.opengamingfoundation.org/ogl.html"
-                },
-                {
-                  "type": "hr"
-                },
-                {
-                  "type": "h6",
-                  "title": "This document uses trademarks and/or copyrights owned by Paizo Publishing, LLC, which are used under Paizo's Community Use Policy. We are expressly prohibited from charging you to use or access this content. This document is not published, endorsed, or specifically approved by Paizo Publishing."
-                },
-                {
-                  "type": "p",
-                  "content": "https://paizo.com/paizo/about/communityuse"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "level": 1
-    },
-    {
-      "type": "page",
-      "id": "build",
-      "name": "Build A Character",
-      "order": 2,
-      "flex": true,
-      "numbered": false,
-      "contents": [
-        {
-          "type": "layout",
-          "layout": "2l",
-          "contents": [
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "logo",
-                  "source": null
-                }
-              ]
-            },
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "layout",
-                  "layout": "alignment",
-                  "contents": [
-                    {
-                      "type": "field",
-                      "id": "build-concept",
-                      "legend": "Character Concept",
-                      "width": "stretch",
-                      "repeat": 2
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-alignment",
-                      "frame": "none",
-                      "control": "alignment"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Step One",
-              "contents": [
-                {
-                  "type": "p",
-                  "content": "Pick your race and where your character comes from."
-                },
-                {
-                  "type": "spacer"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Ancestry",
-              "contents": [
-                {
-                  "type": "layout",
-                  "layout": "2e",
-                  "contents": [
-                    {
-                      "type": "field",
-                      "id": "build-ancestry",
-                      "width": "stretch",
-                      "align": "left",
-                      "label": "Ancestry"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-ancestry-heritage",
-                      "width": "stretch",
-                      "align": "left",
-                      "label": "Heritage"
-                    },
-                    {
-                      "type": "row",
-                      "layout": null,
-                      "contents": [
-                        {
-                          "type": "field",
-                          "id": "build-ancestry-hp",
-                          "label": "Hit Points",
-                          "icon": "hp",
-                          "overlay": "hp"
-                        },
-                        {
-                          "type": "field",
-                          "id": "build-ancestry-size",
-                          "label": "Size",
-                          "icon": "size",
-                          "width": "large"
-                        },
-                        {
-                          "type": "field",
-                          "id": "build-ancestry-speed",
-                          "label": "Speed",
-                          "control": "speed"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "level",
-                      "level": 1,
-                      "contents": [
-                        {
-                          "type": "field",
-                          "id": "build-heritage-feat",
-                          "width": "stretch",
-                          "align": "left",
-                          "label": "Feat"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Step Two",
-              "contents": [
-                {
-                  "type": "p",
-                  "content": "Decide how your character grew up."
-                },
-                {
-                  "type": "spacer"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Background",
-              "contents": [
-                {
-                  "type": "layout",
-                  "layout": "2e",
-                  "contents": [
-                    {
-                      "type": "field",
-                      "id": "build-background",
-                      "label": "Background",
-                      "width": "stretch",
-                      "align": "left"
-                    },
-                    {
-                      "type": "level",
-                      "level": 1,
-                      "contents": [
-                        {
-                          "type": "field",
-                          "id": "build-background-skill-feat",
-                          "label": "Skill feat",
-                          "width": "stretch",
-                          "align": "left"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Step Three",
-              "contents": [
-                {
-                  "type": "p",
-                  "content": "Pick from one of the available classes."
-                },
-                {
-                  "type": "p",
-                  "content": "You may need to pick a specialisation, such as a Sorcerer's bloodline or Cleric's domain."
-                },
-                {
-                  "type": "spacer"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Class",
-              "contents": [
-                {
-                  "type": "layout",
-                  "layout": "2r",
-                  "contents": [
-                    {
-                      "type": "row",
-                      "layout": null,
-                      "contents": [
-                        {
-                          "type": "field",
-                          "id": "build-class",
-                          "label": "Class",
-                          "width": "stretch",
-                          "align": "left"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "row",
-                      "layout": null,
-                      "contents": [
-                        {
-                          "type": "field",
-                          "id": "build-class-level",
-                          "label": "Level",
-                          "output": true,
-                          "underlay": 1
-                        },
-                        {
-                          "type": "field",
-                          "id": "build-class-hp",
-                          "label": "Hit Points",
-                          "icon": "hp",
-                          "overlay": "hp"
-                        },
-                        {
-                          "type": "field",
-                          "id": "build-class-key-ability",
-                          "label": "Key Ability"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-class-specialisation",
-                      "label": "Specialisation",
-                      "width": "stretch",
-                      "align": "left"
-                    },
-                    {
-                      "type": "row",
-                      "layout": null,
-                      "contents": [
-                        {
-                          "type": "h6",
-                          "title": "Perception"
-                        },
-                        {
-                          "type": "spacer"
-                        },
-                        {
-                          "type": "icon",
-                          "icon": "proficiency"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "hr"
-                },
-                {
-                  "type": "h4",
-                  "title": "Proficiencies"
-                },
-                {
-                  "type": "p",
-                  "content": "Refer to your ancestry, background, class and feats to find your initial proficiencies."
-                },
-                {
-                  "type": "p",
-                  "content": "Then spend the skill proficiencies your class provides to upgrade skills."
-                },
-                {
-                  "type": "layout",
-                  "layout": "5e",
-                  "narrow": true,
-                  "contents": [
-                    {
-                      "type": "field",
-                      "id": "proficiency-untrained",
-                      "label": "Untrained",
-                      "output": true,
-                      "control": "proficiency",
-                      "value": 0
-                    },
-                    {
-                      "type": "field",
-                      "id": "proficiency-trained",
-                      "label": "Trained",
-                      "output": true,
-                      "control": "proficiency",
-                      "proficiency": "trained"
-                    },
-                    {
-                      "type": "field",
-                      "id": "proficiency-expert",
-                      "label": "Expert",
-                      "output": true,
-                      "control": "proficiency",
-                      "proficiency": "expert"
-                    },
-                    {
-                      "type": "field",
-                      "id": "proficiency-master",
-                      "label": "Master",
-                      "output": true,
-                      "control": "proficiency",
-                      "proficiency": "master"
-                    },
-                    {
-                      "type": "field",
-                      "id": "proficiency-legendary",
-                      "label": "Legendary",
-                      "output": true,
-                      "control": "proficiency",
-                      "proficiency": "legendary"
-                    },
-                    {
-                      "type": "label",
-                      "label": null
-                    },
-                    {
-                      "type": "label",
-                      "label": "Level\n+2",
-                      "align": "center"
-                    },
-                    {
-                      "type": "label",
-                      "label": "Level\n+4",
-                      "align": "center"
-                    },
-                    {
-                      "type": "label",
-                      "label": "Level\n+6",
-                      "align": "center"
-                    },
-                    {
-                      "type": "label",
-                      "label": "Level\n+8",
-                      "align": "center"
-                    }
-                  ]
-                },
-                {
-                  "type": "spacer"
-                }
-              ]
-            },
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "hr"
-                },
-                {
-                  "type": "h4",
-                  "title": "Saving Throws"
-                },
-                {
-                  "type": "layout",
-                  "layout": "3e",
-                  "contents": [
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "valign": "middle",
-                          "contents": [
-                            {
-                              "type": "h6",
-                              "title": "Fortitude"
-                            },
-                            {
-                              "type": "spacer"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "merge-bottom": false,
-                      "avoid-shade": false
-                    },
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "valign": "middle",
-                          "contents": [
-                            {
-                              "type": "h6",
-                              "title": "Reflex"
-                            },
-                            {
-                              "type": "spacer"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "merge-bottom": false,
-                      "avoid-shade": false
-                    },
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "valign": "middle",
-                          "contents": [
-                            {
-                              "type": "h6",
-                              "title": "Will"
-                            },
-                            {
-                              "type": "spacer"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "merge-bottom": false,
-                      "avoid-shade": false
-                    }
-                  ]
-                },
-                {
-                  "type": "h4",
-                  "title": "Weapons"
-                },
-                {
-                  "type": "layout",
-                  "layout": "3e",
-                  "contents": [
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "merge-bottom": false,
-                      "avoid-shade": false
-                    },
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "merge-bottom": false,
-                      "avoid-shade": false
-                    },
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "merge-bottom": false,
-                      "avoid-shade": false
-                    }
-                  ]
-                },
-                {
-                  "type": "h4",
-                  "title": "Skills"
-                },
-                {
-                  "type": "layout",
-                  "layout": "3e",
-                  "contents": [
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "merge-bottom": true,
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "avoid-shade": false
-                    },
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "merge-bottom": true,
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "avoid-shade": false
-                    },
-                    {
-                      "columns": 1,
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": null,
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left"
-                            },
-                            {
-                              "type": "icon",
-                              "icon": "proficiency"
-                            }
-                          ]
-                        }
-                      ],
-                      "type": "list",
-                      "merge-bottom": true,
-                      "flowv": true,
-                      "zebra": false,
-                      "flex": false,
-                      "sort": true,
-                      "hr": false,
-                      "vr": false,
-                      "avoid-shade": false
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Step Four",
-              "contents": [
-                {
-                  "type": "h4",
-                  "title": "Ability Scores"
-                },
-                {
-                  "type": "p",
-                  "content": "Add up the ability score bonuses you get from your ancestry, background and class, each of which provides +2 or -2 to a number of abilities. You also get four free ability boosts to allocate as you wish."
-                },
-                {
-                  "type": "row",
-                  "layout": null,
-                  "contents": [
-                    {
-                      "type": "calc",
-                      "output": {
-                        "type": "label",
-                        "label": "Ability\nModifier"
-                      },
-                      "inline": true,
-                      "inputs": [
-                        {
-                          "type": "span",
-                          "content": "("
-                        },
-                        {
-                          "type": "label",
-                          "label": "Ability\nScore"
-                        },
-                        {
-                          "type": "span",
-                          "content": "- 10 ) &divide; 2"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "p",
-                  "content": "Your key ability comes from your class, and is used to determine your class DC."
-                },
-                {
-                  "type": "level",
-                  "level": 1,
-                  "contents": [
-                    {
-                      "type": "field",
-                      "id": "max-ability-score",
-                      "frame": "right",
-                      "output": true,
-                      "label": "Max ability score",
-                      "value": 18
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Details",
-              "contents": [
-                {
-                  "type": "table",
-                  "collapse": true,
-                  "zebra": true,
-                  "columns": [
-                    "",
-                    "",
-                    "Ancestry\n-2 +2",
-                    "Background\n+2",
-                    "Class\n+2",
-                    "4 Free\n+2",
-                    "",
-                    "Ability\nScore",
-                    "Ability\nModifier",
-                    "Key\nAbility"
-                  ],
-                  "rows": [
-                    {
-                      "ability": "Strength",
-                      "short": "STR"
-                    },
-                    {
-                      "ability": "Dexterity",
-                      "short": "DEX"
-                    },
-                    {
-                      "ability": "Constitution",
-                      "short": "CON"
-                    },
-                    {
-                      "ability": "Intelligence",
-                      "short": "INT"
-                    },
-                    {
-                      "ability": "Wisdom",
-                      "short": "WIS"
-                    },
-                    {
-                      "ability": "Charisma",
-                      "short": "CHA"
-                    }
-                  ],
-                  "template": [
-                    {
-                      "type": "h6",
-                      "title": "#{ability}"
-                    },
-                    {
-                      "type": "span",
-                      "content": "10 +"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-boost-#{short}-ancestry",
-                      "control": "boost",
-                      "frame": "none"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-boost-#{short}-background",
-                      "control": "boost",
-                      "minus": false,
-                      "frame": "none"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-boost-#{short}-class",
-                      "control": "boost",
-                      "minus": false,
-                      "frame": "none"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-boost-#{short}-free",
-                      "control": "boost",
-                      "minus": false,
-                      "frame": "none"
-                    },
-                    {
-                      "type": "span",
-                      "content": "&rArr;"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-#{short}-score",
-                      "frame": "none"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-#{short}-modifier",
-                      "icon": "modifier",
-                      "output": true,
-                      "underlay": "#{short}",
-                      "frame": "none"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build__key-ability",
-                      "control": "radio",
-                      "value": null,
-                      "frame": "none"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "hr"
-                },
-                {
-                  "type": "h4",
-                  "title": "Health"
-                },
-                {
-                  "type": "p",
-                  "content": "Calculate your hit points. Some of these come from your ancestry, and some each level from your chosen class."
-                }
-              ]
-            },
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "hr"
-                },
-                {
-                  "type": "calc",
-                  "output": {
-                    "type": "field",
-                    "id": "build-hp",
-                    "legend": "Hit Points",
-                    "icon": "hp",
-                    "overlay": "hp"
-                  },
-                  "inputs": [
-                    {
-                      "type": "field",
-                      "id": null,
-                      "ref": "build-ancestry-hp",
-                      "label": "Ancestry"
-                    },
-                    {
-                      "type": "span",
-                      "content": "+ ("
-                    },
-                    {
-                      "type": "field",
-                      "id": null,
-                      "ref": "build-class-hp",
-                      "label": "Class"
-                    },
-                    {
-                      "type": "span",
-                      "content": "+"
-                    },
-                    {
-                      "type": "field",
-                      "id": null,
-                      "ref": "CON",
-                      "underlay": "CON"
-                    },
-                    {
-                      "type": "span",
-                      "content": ") &times;"
-                    },
-                    {
-                      "type": "field",
-                      "id": null,
-                      "ref": "level",
-                      "label": "Level",
-                      "underlay": "1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Step Five",
-              "contents": [
-                {
-                  "type": "p",
-                  "content": "Work out what your character owns at the start of the game, including clothes and weapons."
-                },
-                {
-                  "type": "row",
-                  "layout": "split",
-                  "contents": [
-                    {
-                      "type": "field",
-                      "id": "build-starting-money",
-                      "legend": "Starting Money",
-                      "overlay": "sp",
-                      "value": "150",
-                      "output": true,
-                      "size": "huge",
-                      "width": "large"
-                    },
-                    {
-                      "type": "field",
-                      "id": "build-remaining-money",
-                      "label": "Remaining Money",
-                      "control": "money",
-                      "denomination": "silver",
-                      "digits": 4
-                    }
-                  ]
-                },
-                {
-                  "type": "spacer"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "title": "Equipment",
-              "contents": [
-                {
-                  "type": "table",
-                  "collapse": true,
-                  "rows": [
-                    {
-                      "id": "kit",
-                      "name": "Kit"
-                    },
-                    {
-                      "id": "weapons",
-                      "name": "Weapons"
-                    },
-                    {
-                      "id": "armour",
-                      "name": "Armour"
-                    },
-                    {
-                      "id": "gear",
-                      "name": "Gear"
-                    }
-                  ],
-                  "template": [
-                    {
-                      "type": "h6",
-                      "title": "#{name}"
-                    },
-                    {
-                      "type": "row",
-                      "layout": null,
-                      "contents": [
-                        {
-                          "type": "field",
-                          "id": "equipment-#{id}",
-                          "width": "stretch",
-                          "frame": "none"
-                        },
-                        {
-                          "type": "field",
-                          "id": "cost-#{id}",
-                          "control": "money",
-                          "denomination": "silver",
-                          "digits": 3,
-                          "frame": "none"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "tail"
-            },
-            {
-              "type": "tail"
-            }
-          ]
-        }
-      ],
-      "level": 1
-    },
     {
       "type": "page",
       "id": "cover",
@@ -1324,7 +50,7 @@
                           "label": "XP",
                           "underlay": "XP",
                           "width": "large",
-                          "output": true
+                          "border": "full"
                         }
                       ]
                     }
@@ -1427,14 +153,22 @@
                       "title": null,
                       "header": [
                         {
-                          "type": "h6",
-                          "title": "Human"
+                          "type": "field",
+                          "id": "ancestry",
+                          "size": "large",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none"
                         }
                       ],
                       "contents": [
                         {
-                          "type": "p",
-                          "content": "As unpredictable and varied as any the peoples on Golarion, humans have the exceptional drive and capacity to endure and expand. Though many civilizations thrived before humanity rose to prominence, humans have built some of the greatest and the most terrible societies throughout the course of history, and today they are the most populous people in the realms around the Inner Sea.\n"
+                          "type": "field",
+                          "id": "ancestry-details",
+                          "frame": "none",
+                          "width": "stretch",
+                          "align": "left",
+                          "repeat": 2
                         }
                       ]
                     },
@@ -1465,7 +199,8 @@
                           "frame": "none",
                           "width": "stretch",
                           "align": "left",
-                          "repeat": 2
+                          "repeat": 2,
+                          "merge-bottom": true
                         }
                       ]
                     },
@@ -1505,7 +240,8 @@
                                   "repeat": 2,
                                   "frame": "none",
                                   "width": "stretch",
-                                  "align": "left"
+                                  "align": "left",
+                                  "merge-bottom": true
                                 }
                               ],
                               "level": 1
@@ -1536,7 +272,8 @@
                                   "repeat": 2,
                                   "frame": "none",
                                   "width": "stretch",
-                                  "align": "left"
+                                  "align": "left",
+                                  "merge-bottom": true
                                 }
                               ],
                               "level": 5
@@ -1567,7 +304,8 @@
                                   "repeat": 2,
                                   "frame": "none",
                                   "width": "stretch",
-                                  "align": "left"
+                                  "align": "left",
+                                  "merge-bottom": true
                                 }
                               ],
                               "level": 9
@@ -1598,7 +336,8 @@
                                   "repeat": 2,
                                   "frame": "none",
                                   "width": "stretch",
-                                  "align": "left"
+                                  "align": "left",
+                                  "merge-bottom": true
                                 }
                               ],
                               "level": 13
@@ -1629,7 +368,8 @@
                                   "repeat": 2,
                                   "frame": "none",
                                   "width": "stretch",
-                                  "align": "left"
+                                  "align": "left",
+                                  "merge-bottom": true
                                 }
                               ],
                               "level": 17
@@ -1673,7 +413,8 @@
                           "repeat": 2,
                           "frame": "none",
                           "width": "stretch",
-                          "align": "left"
+                          "align": "left",
+                          "merge-bottom": true
                         }
                       ]
                     }
@@ -1700,8 +441,8 @@
                           "type": "field",
                           "id": "class-level",
                           "label": "Level",
-                          "output": true,
-                          "size": "large"
+                          "size": "large",
+                          "border": "full"
                         }
                       ]
                     },
@@ -1728,11 +469,13 @@
                               "type": "field",
                               "id": "archetype-1-name",
                               "width": "stretch",
-                              "align": "left"
+                              "align": "left",
+                              "frame": "none"
                             },
                             {
                               "type": "field",
                               "id": "archetype-1-feats",
+                              "frame": "none",
                               "control": "progression",
                               "parts": [
                                 {
@@ -1756,11 +499,13 @@
                               "type": "field",
                               "id": "archetype-2-name",
                               "width": "stretch",
-                              "align": "left"
+                              "align": "left",
+                              "frame": "none"
                             },
                             {
                               "type": "field",
                               "id": "archetype-2-feats",
+                              "frame": "none",
                               "control": "progression",
                               "parts": [
                                 {
@@ -1784,11 +529,13 @@
                               "type": "field",
                               "id": "archetype-3-name",
                               "width": "stretch",
-                              "align": "left"
+                              "align": "left",
+                              "frame": "none"
                             },
                             {
                               "type": "field",
                               "id": "archetype-3-feats",
+                              "frame": "none",
                               "control": "progression",
                               "parts": [
                                 {
@@ -1906,14 +653,13 @@
                         {
                           "type": "field",
                           "id": "#{short}-score",
-                          "box": true,
                           "frame": "none"
                         },
                         {
                           "type": "field",
                           "id": "#{short}",
-                          "output": true,
-                          "icon": "modifier",
+                          "border": "full",
+                          "icon": "dc",
                           "underlay": "#{short}",
                           "frame": "none"
                         },
@@ -1959,73 +705,104 @@
                   "id": "proficiency",
                   "contents": [
                     {
-                      "type": "layout",
-                      "layout": "5e",
-                      "narrow": true,
+                      "type": "row",
+                      "layout": "split",
+                      "valign": "top",
                       "contents": [
                         {
-                          "type": "field",
-                          "id": "proficiency-untrained",
-                          "label": "Untrained",
-                          "output": true,
-                          "control": "proficiency",
-                          "value": 0
+                          "type": "g",
+                          "valign": "top",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "proficiency-untrained",
+                              "label": "Untrained",
+                              "output": true,
+                              "control": "proficiency",
+                              "value": 0
+                            },
+                            {
+                              "type": "label",
+                              "label": "None",
+                              "align": "center"
+                            }
+                          ]
                         },
                         {
-                          "type": "field",
-                          "id": "proficiency-trained",
-                          "label": "Trained",
-                          "output": true,
-                          "control": "proficiency",
-                          "proficiency": "trained"
+                          "type": "g",
+                          "valign": "top",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "proficiency-trained",
+                              "label": "Trained",
+                              "output": true,
+                              "control": "proficiency",
+                              "value": "trained"
+                            },
+                            {
+                              "type": "label",
+                              "label": "Level\n+2",
+                              "align": "center"
+                            }
+                          ]
                         },
                         {
-                          "type": "field",
-                          "id": "proficiency-expert",
-                          "label": "Expert",
-                          "output": true,
-                          "control": "proficiency",
-                          "proficiency": "expert"
+                          "type": "g",
+                          "valign": "top",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "proficiency-expert",
+                              "label": "Expert",
+                              "output": true,
+                              "control": "proficiency",
+                              "value": "expert"
+                            },
+                            {
+                              "type": "label",
+                              "label": "Level\n+4",
+                              "align": "center"
+                            }
+                          ]
                         },
                         {
-                          "type": "field",
-                          "id": "proficiency-master",
-                          "label": "Master",
-                          "output": true,
-                          "control": "proficiency",
-                          "proficiency": "master"
+                          "type": "g",
+                          "valign": "top",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "proficiency-master",
+                              "label": "Master",
+                              "output": true,
+                              "control": "proficiency",
+                              "value": "master"
+                            },
+                            {
+                              "type": "label",
+                              "label": "Level\n+6",
+                              "align": "center"
+                            }
+                          ]
                         },
                         {
-                          "type": "field",
-                          "id": "proficiency-legendary",
-                          "label": "Legendary",
-                          "output": true,
-                          "control": "proficiency",
-                          "proficiency": "legendary"
-                        },
-                        {
-                          "type": "label",
-                          "label": null
-                        },
-                        {
-                          "type": "label",
-                          "label": "Level\n+2",
-                          "align": "center"
-                        },
-                        {
-                          "type": "label",
-                          "label": "Level\n+4",
-                          "align": "center"
-                        },
-                        {
-                          "type": "label",
-                          "label": "Level\n+6",
-                          "align": "center"
-                        },
-                        {
-                          "type": "label",
-                          "label": "Level\n+8",
-                          "align": "center"
+                          "type": "g",
+                          "valign": "top",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "proficiency-legendary",
+                              "label": "Legendary",
+                              "output": true,
+                              "control": "proficiency",
+                              "value": "legendary"
+                            },
+                            {
+                              "type": "label",
+                              "label": "Level\n+8",
+                              "align": "center"
+                            }
+                          ]
                         }
                       ]
                     },
@@ -2440,7 +1217,7 @@
                       "type": "field",
                       "id": "languages",
                       "frame": "none",
-                      "repeat": 3,
+                      "repeat": 4,
                       "align": "left",
                       "width": "stretch",
                       "merge-bottom": true
@@ -2563,6 +1340,16 @@
                           "skill": "",
                           "ability": "",
                           "acp": false
+                        },
+                        {
+                          "skill": "",
+                          "ability": "",
+                          "acp": false
+                        },
+                        {
+                          "skill": "",
+                          "ability": "",
+                          "acp": false
                         }
                       ],
                       "template": [
@@ -2580,7 +1367,7 @@
                         {
                           "type": "field",
                           "id": "#{skill}-bonus",
-                          "output": true,
+                          "border": "full",
                           "icon": "bonus",
                           "frame": "none"
                         },
@@ -2659,8 +1446,10 @@
                           "output": {
                             "type": "field",
                             "id": "perception",
+                            "frame": "left",
                             "icon": "bonus",
-                            "legend": "Perception"
+                            "label": "Perception",
+                            "width": "large"
                           },
                           "equal": "#{WIS}+#{perception-proficiency}+#{perception-item-bonus}+#{perception-misc}",
                           "inputs": [
@@ -2701,33 +1490,33 @@
                               "label": "Misc"
                             }
                           ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "layout": "left",
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "perception-low-light",
+                          "frame": "right",
+                          "control": "checkbox",
+                          "label": "Low-light vision"
                         },
                         {
-                          "type": "g",
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": "perception-low-light",
-                              "frame": "right",
-                              "control": "checkbox",
-                              "label": "Low-light vision",
-                              "value": "#{low-light-vision}"
-                            },
-                            {
-                              "type": "field",
-                              "id": "perception-darkvision",
-                              "frame": "right",
-                              "control": "checkbox",
-                              "label": "Dark vision"
-                            },
-                            {
-                              "type": "field",
-                              "id": "perception-scent",
-                              "frame": "right",
-                              "control": "checkbox",
-                              "label": "Scent"
-                            }
-                          ]
+                          "type": "field",
+                          "id": "perception-darkvision",
+                          "frame": "right",
+                          "control": "checkbox",
+                          "label": "Dark vision"
+                        },
+                        {
+                          "type": "field",
+                          "id": "perception-scent",
+                          "frame": "right",
+                          "control": "checkbox",
+                          "label": "Scent"
                         }
                       ]
                     },
@@ -3195,15 +1984,17 @@
                             "legend": "Class DC",
                             "underlay": "DC",
                             "width": "large",
-                            "icon": "modifier"
+                            "icon": "dc"
                           },
                           "equal": "#{#{key-ability}}+#{level}+#{class-dc-item-bonus}",
                           "inputs": [
                             {
                               "type": "field",
                               "id": null,
-                              "label": "Key Ability",
-                              "ref": "key-ability"
+                              "label": "WIS",
+                              "underlay": "WIS",
+                              "ref": "WIS",
+                              "replace": true
                             },
                             {
                               "type": "span",
@@ -3290,49 +2081,42 @@
                 },
                 {
                   "type": "section",
-                  "title": "Multiple Attack Penalty",
-                  "id": "attack-penalty",
+                  "title": "Focus",
                   "contents": [
                     {
-                      "type": "row",
-                      "layout": "split",
-                      "contents": [
+                      "type": "calc",
+                      "output": {
+                        "type": "field",
+                        "id": "focus",
+                        "overlay": "pts",
+                        "width": "huge",
+                        "legend": "Focus Points"
+                      },
+                      "inputs": [
                         {
                           "type": "field",
-                          "id": "map-1",
-                          "frame": "left",
-                          "label": "1st",
-                          "output": true,
-                          "width": "large",
-                          "underlay": 0
+                          "id": null,
+                          "ref": "WIS",
+                          "underlay": "WIS"
                         },
+                        "+",
                         {
                           "type": "field",
-                          "id": "map-2",
-                          "frame": "left",
-                          "label": "2nd",
-                          "output": true,
-                          "width": "large",
-                          "underlay": -5
-                        },
-                        {
-                          "type": "field",
-                          "id": "map-3",
-                          "frame": "left",
-                          "label": "3rd",
-                          "output": true,
-                          "width": "large",
-                          "underlay": -10
+                          "id": "focus-misc",
+                          "label": "Misc",
+                          "misc": true
                         }
                       ]
                     },
                     {
                       "type": "field",
-                      "id": null,
-                      "label": "Conditional",
-                      "align": "left",
+                      "id": "current-focus",
+                      "temp": true,
+                      "label": "Current Focus Points",
+                      "align": "center",
                       "width": "stretch",
-                      "merge-bottom": true
+                      "border": "full",
+                      "overlay": "pts"
                     }
                   ]
                 },
@@ -3379,8 +2163,10 @@
                             "id": "#{save}",
                             "legend": "#{legend}",
                             "icon": "bonus",
+                            "border": "full",
                             "width": "large",
-                            "underlay": "#{short}"
+                            "underlay": "#{short}",
+                            "merge-top": true
                           },
                           "equal": "#{#{ability}}+#{#{save}-proficiency}+#{#{save}-item-bonus}+#{#{save}-misc}",
                           "inputs": [
@@ -3415,7 +2201,7 @@
                       "id": "saving-throws-conditional",
                       "label": "Conditional",
                       "align": "left",
-                      "repeat": 2,
+                      "repeat": 3,
                       "merge-bottom": true,
                       "width": "stretch"
                     }
@@ -3437,6 +2223,61 @@
                       "hr": true,
                       "flex": true,
                       "contents": [
+                        {
+                          "type": "row",
+                          "layout": "split",
+                          "contents": [
+                            {
+                              "type": "h5",
+                              "title": "Multi-Attack"
+                            },
+                            {
+                              "type": "action",
+                              "action": null,
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "map-1",
+                                  "frame": "left",
+                                  "label": "1st",
+                                  "output": true,
+                                  "width": "large",
+                                  "underlay": 0
+                                }
+                              ]
+                            },
+                            {
+                              "type": "action",
+                              "action": "2nd",
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "map-2",
+                                  "frame": "left",
+                                  "label": "2nd",
+                                  "output": true,
+                                  "width": "large",
+                                  "underlay": -5
+                                }
+                              ]
+                            },
+                            {
+                              "type": "action",
+                              "action": "3rd",
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "map-3",
+                                  "frame": "left",
+                                  "label": "3rd",
+                                  "output": true,
+                                  "width": "large",
+                                  "underlay": -10
+                                }
+                              ]
+                            }
+                          ]
+                        },
                         {
                           "type": "g",
                           "contents": [
@@ -3500,20 +2341,31 @@
                                   "id": "attack-1-damage",
                                   "output": true,
                                   "label": "Damage",
-                                  "width": "small",
+                                  "width": "large",
                                   "icon": "damage",
-                                  "control": "composite",
+                                  "control": "compound",
                                   "parts": [
                                     {
                                       "subid": "ndice",
-                                      "overlay": "d"
+                                      "width": "tiny",
+                                      "align": "right"
+                                    },
+                                    {
+                                      "type": "label",
+                                      "label": "d"
                                     },
                                     {
                                       "subid": "die",
-                                      "overlay": "+"
+                                      "width": "tiny",
+                                      "align": "left"
                                     },
                                     {
-                                      "subid": "extra"
+                                      "type": "label",
+                                      "label": "+"
+                                    },
+                                    {
+                                      "subid": "extra",
+                                      "width": "tiny"
                                     }
                                   ]
                                 },
@@ -3521,12 +2373,6 @@
                                   "type": "field",
                                   "id": "attack-1-type",
                                   "label": "Type"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "attack-1-critical",
-                                  "label": "Critical Effect",
-                                  "width": "stretch"
                                 }
                               ]
                             },
@@ -3536,7 +2382,7 @@
                               "frame": "none",
                               "width": "stretch",
                               "align": "left",
-                              "unlined": true
+                              "merge-bottom": true
                             }
                           ]
                         },
@@ -3603,20 +2449,31 @@
                                   "id": "attack-2-damage",
                                   "output": true,
                                   "label": "Damage",
-                                  "width": "small",
+                                  "width": "large",
                                   "icon": "damage",
-                                  "control": "composite",
+                                  "control": "compound",
                                   "parts": [
                                     {
                                       "subid": "ndice",
-                                      "overlay": "d"
+                                      "width": "tiny",
+                                      "align": "right"
+                                    },
+                                    {
+                                      "type": "label",
+                                      "label": "d"
                                     },
                                     {
                                       "subid": "die",
-                                      "overlay": "+"
+                                      "width": "tiny",
+                                      "align": "left"
                                     },
                                     {
-                                      "subid": "extra"
+                                      "type": "label",
+                                      "label": "+"
+                                    },
+                                    {
+                                      "subid": "extra",
+                                      "width": "tiny"
                                     }
                                   ]
                                 },
@@ -3624,12 +2481,6 @@
                                   "type": "field",
                                   "id": "attack-2-type",
                                   "label": "Type"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "attack-2-critical",
-                                  "label": "Critical Effect",
-                                  "width": "stretch"
                                 }
                               ]
                             },
@@ -3639,7 +2490,7 @@
                               "frame": "none",
                               "width": "stretch",
                               "align": "left",
-                              "unlined": true
+                              "merge-bottom": true
                             }
                           ]
                         },
@@ -3706,20 +2557,31 @@
                                   "id": "attack-3-damage",
                                   "output": true,
                                   "label": "Damage",
-                                  "width": "small",
+                                  "width": "large",
                                   "icon": "damage",
-                                  "control": "composite",
+                                  "control": "compound",
                                   "parts": [
                                     {
                                       "subid": "ndice",
-                                      "overlay": "d"
+                                      "width": "tiny",
+                                      "align": "right"
+                                    },
+                                    {
+                                      "type": "label",
+                                      "label": "d"
                                     },
                                     {
                                       "subid": "die",
-                                      "overlay": "+"
+                                      "width": "tiny",
+                                      "align": "left"
                                     },
                                     {
-                                      "subid": "extra"
+                                      "type": "label",
+                                      "label": "+"
+                                    },
+                                    {
+                                      "subid": "extra",
+                                      "width": "tiny"
                                     }
                                   ]
                                 },
@@ -3727,12 +2589,6 @@
                                   "type": "field",
                                   "id": "attack-3-type",
                                   "label": "Type"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "attack-3-critical",
-                                  "label": "Critical Effect",
-                                  "width": "stretch"
                                 }
                               ]
                             },
@@ -3742,7 +2598,7 @@
                               "frame": "none",
                               "width": "stretch",
                               "align": "left",
-                              "unlined": true
+                              "merge-bottom": true
                             }
                           ]
                         },
@@ -3809,20 +2665,31 @@
                                   "id": "attack-4-damage",
                                   "output": true,
                                   "label": "Damage",
-                                  "width": "small",
+                                  "width": "large",
                                   "icon": "damage",
-                                  "control": "composite",
+                                  "control": "compound",
                                   "parts": [
                                     {
                                       "subid": "ndice",
-                                      "overlay": "d"
+                                      "width": "tiny",
+                                      "align": "right"
+                                    },
+                                    {
+                                      "type": "label",
+                                      "label": "d"
                                     },
                                     {
                                       "subid": "die",
-                                      "overlay": "+"
+                                      "width": "tiny",
+                                      "align": "left"
                                     },
                                     {
-                                      "subid": "extra"
+                                      "type": "label",
+                                      "label": "+"
+                                    },
+                                    {
+                                      "subid": "extra",
+                                      "width": "tiny"
                                     }
                                   ]
                                 },
@@ -3830,12 +2697,6 @@
                                   "type": "field",
                                   "id": "attack-4-type",
                                   "label": "Type"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "attack-4-critical",
-                                  "label": "Critical Effect",
-                                  "width": "stretch"
                                 }
                               ]
                             },
@@ -3845,7 +2706,74 @@
                               "frame": "none",
                               "width": "stretch",
                               "align": "left",
-                              "unlined": true
+                              "merge-bottom": true
+                            }
+                          ]
+                        },
+                        {
+                          "type": "layout",
+                          "layout": "2e",
+                          "contents": [
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ammo-1-type",
+                                  "legend": "Ammo",
+                                  "width": "stretch",
+                                  "align": "left",
+                                  "unlined": true
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "ammo-1",
+                                  "unlined": true,
+                                  "width": "small",
+                                  "size": "huge",
+                                  "underlay": "#",
+                                  "label": "Charges"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "ammo-1-count",
+                                  "frame": "none",
+                                  "control": "checkgrid",
+                                  "max": 20,
+                                  "depth": 3
+                                }
+                              ]
+                            },
+                            {
+                              "type": "row",
+                              "layout": null,
+                              "contents": [
+                                {
+                                  "type": "field",
+                                  "id": "ammo-2-type",
+                                  "width": "stretch",
+                                  "align": "left",
+                                  "unlined": true
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "ammo-2",
+                                  "unlined": true,
+                                  "width": "small",
+                                  "size": "huge",
+                                  "underlay": "#",
+                                  "label": "Charges"
+                                },
+                                {
+                                  "type": "field",
+                                  "id": "ammo-2-count",
+                                  "frame": "none",
+                                  "control": "checkgrid",
+                                  "max": 10,
+                                  "depth": 3
+                                }
+                              ]
                             }
                           ]
                         }
@@ -3856,150 +2784,6 @@
                       "vr": false,
                       "merge-bottom": false,
                       "avoid-shade": false
-                    },
-                    {
-                      "type": "hr"
-                    },
-                    {
-                      "type": "layout",
-                      "layout": "2e",
-                      "contents": [
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": "ammo-1-type",
-                              "legend": "Ammo",
-                              "width": "stretch",
-                              "align": "left",
-                              "unlined": true
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-1",
-                              "frame": "h-label",
-                              "unlined": true,
-                              "width": "small",
-                              "size": "huge",
-                              "underlay": "#",
-                              "label": "Charges"
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-1-count",
-                              "frame": "none",
-                              "control": "checkgrid",
-                              "max": 20,
-                              "depth": 3
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": "ammo-2-type",
-                              "width": "stretch",
-                              "align": "left",
-                              "unlined": true
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-2",
-                              "frame": "h-label",
-                              "unlined": true,
-                              "width": "small",
-                              "size": "huge",
-                              "underlay": "#",
-                              "label": "Charges"
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-2-count",
-                              "frame": "none",
-                              "control": "checkgrid",
-                              "max": 10,
-                              "depth": 3
-                            }
-                          ]
-                        },
-                        {
-                          "type": "hr"
-                        },
-                        {
-                          "type": "hr"
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "unlabelled": true,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": "ammo-3-type",
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left",
-                              "unlined": true
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-3",
-                              "frame": "h-label",
-                              "unlined": true,
-                              "width": "small",
-                              "size": "huge",
-                              "underlay": "#",
-                              "label": "Charges"
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-3-count",
-                              "frame": "none",
-                              "control": "checkgrid",
-                              "max": 20,
-                              "depth": 3
-                            }
-                          ]
-                        },
-                        {
-                          "type": "row",
-                          "layout": null,
-                          "unlabelled": true,
-                          "contents": [
-                            {
-                              "type": "field",
-                              "id": "ammo-4-type",
-                              "frame": "none",
-                              "width": "stretch",
-                              "align": "left",
-                              "unlined": true
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-4",
-                              "frame": "h-label",
-                              "unlined": true,
-                              "width": "small",
-                              "size": "huge",
-                              "underlay": "#",
-                              "label": "Charges"
-                            },
-                            {
-                              "type": "field",
-                              "id": "ammo-4-count",
-                              "frame": "none",
-                              "control": "checkgrid",
-                              "max": 10,
-                              "depth": 3
-                            }
-                          ]
-                        }
-                      ]
                     }
                   ]
                 }
@@ -4073,18 +2857,24 @@
                           ]
                         },
                         {
+                          "type": "spacer"
+                        },
+                        {
                           "type": "field",
                           "id": "dying",
                           "control": "progression",
                           "label": "Dying",
                           "parts": [
                             {
+                              "id": "dying-1",
                               "control": "checkbox"
                             },
                             {
+                              "id": "dying-2",
                               "control": "checkbox"
                             },
                             {
+                              "id": "dying-3",
                               "control": "checkbox"
                             },
                             {
@@ -4104,7 +2894,7 @@
                           "type": "field",
                           "id": "current-hp",
                           "label": "Current Hit Points",
-                          "output": true,
+                          "border": "full",
                           "temp": true,
                           "icon": "hp",
                           "overlay": "hp",
@@ -4114,7 +2904,7 @@
                           "type": "field",
                           "id": "temp-hp",
                           "label": "Temp Hit Points",
-                          "output": true,
+                          "border": "full",
                           "temp": true,
                           "overlay": "hp",
                           "width": "huge"
@@ -4123,7 +2913,7 @@
                           "type": "field",
                           "id": "shield-hp",
                           "label": "Shield Hit Points",
-                          "output": true,
+                          "border": "full",
                           "icon": "ac",
                           "temp": true,
                           "overlay": "hp",
@@ -4227,98 +3017,6 @@
                                 {
                                   "type": "field",
                                   "id": "effect-3-rounds",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 10,
-                                  "depth": 3
-                                }
-                              ]
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "unlabelled": true,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "effect-5",
-                                  "width": "stretch",
-                                  "frame": "none",
-                                  "align": "left",
-                                  "temp": true
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-5-progress",
-                                  "control": "progression",
-                                  "parts": [
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-5-nrounds",
-                                  "label": "Rounds",
-                                  "underlay": "#",
-                                  "overlay": "rds"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-5-rounds",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 10,
-                                  "depth": 3
-                                }
-                              ]
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "unlabelled": true,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "effect-7",
-                                  "width": "stretch",
-                                  "frame": "none",
-                                  "align": "left",
-                                  "temp": true
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-7-progress",
-                                  "control": "progression",
-                                  "parts": [
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-7-nrounds",
-                                  "label": "Rounds",
-                                  "underlay": "#",
-                                  "overlay": "rds"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-7-rounds",
                                   "frame": "none",
                                   "control": "checkgrid",
                                   "max": 10,
@@ -4432,98 +3130,6 @@
                                   "depth": 3
                                 }
                               ]
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "unlabelled": true,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "effect-6",
-                                  "width": "stretch",
-                                  "frame": "none",
-                                  "align": "left",
-                                  "temp": true
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-6-progress",
-                                  "control": "progression",
-                                  "parts": [
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-6-nrounds",
-                                  "label": "Rounds",
-                                  "underlay": "#",
-                                  "overlay": "rds"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-6-rounds",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 10,
-                                  "depth": 3
-                                }
-                              ]
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "unlabelled": true,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "effect-8",
-                                  "width": "stretch",
-                                  "frame": "none",
-                                  "align": "left",
-                                  "temp": true
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-8-progress",
-                                  "control": "progression",
-                                  "parts": [
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-8-nrounds",
-                                  "label": "Rounds",
-                                  "underlay": "#",
-                                  "overlay": "rds"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "effect-8-rounds",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 10,
-                                  "depth": 3
-                                }
-                              ]
                             }
                           ],
                           "type": "list",
@@ -4562,7 +3168,7 @@
                       "rows": [
                         {
                           "id": "ac",
-                          "legend": "Armour Class",
+                          "legend": "Armour\nClass",
                           "underlay": "AC"
                         },
                         {
@@ -4579,8 +3185,10 @@
                             "id": null,
                             "legend": "#{legend}",
                             "icon": "#{id}",
+                            "border": "full",
                             "width": "large",
-                            "underlay": "#{underlay}"
+                            "underlay": "#{underlay}",
+                            "merge-top": true
                           },
                           "equal": "10+#{DEX}+#{#{id}-proficiency}+#{armour-bonus}+#{shield-bonus}",
                           "inputs": [
@@ -4625,7 +3233,7 @@
                       "id": "ac-conditional",
                       "label": "Conditional",
                       "width": "stretch",
-                      "align": "left",
+                      "merge-bottom": true,
                       "repeat": 3
                     }
                   ]
@@ -5496,7 +4104,6 @@
                           "id": "weight-total",
                           "frame": "left",
                           "label": "Total weight",
-                          "output": true,
                           "control": "weight"
                         }
                       ]
@@ -5511,42 +4118,42 @@
                     {
                       "type": "field",
                       "id": "money-copper",
+                      "frame": "left",
                       "control": "money",
                       "label": "Copper",
                       "denomination": "copper",
-                      "digits": 7,
-                      "frame": "left"
+                      "digits": 7
                     },
                     {
                       "type": "field",
                       "id": "money-silver",
+                      "frame": "left",
                       "control": "money",
                       "label": "Silver",
                       "denomination": "silver",
                       "digits": 7,
-                      "shift": 1,
-                      "frame": "left"
+                      "shift": 1
                     },
                     {
                       "type": "field",
                       "id": "money-gold",
+                      "frame": "left",
                       "control": "money",
                       "label": "Gold",
                       "denomination": "gold",
                       "digits": 7,
-                      "shift": 2,
-                      "frame": "left"
+                      "shift": 2
                     },
                     {
                       "type": "field",
                       "id": "money-total",
+                      "frame": "left",
                       "output": "true",
                       "control": "money",
                       "label": "Total",
                       "denomination": "copper",
                       "digits": 10,
-                      "decimal": 1,
-                      "frame": "left"
+                      "decimal": 1
                     }
                   ]
                 },
@@ -5562,107 +4169,35 @@
                       "flex": true,
                       "contents": [
                         {
-                          "type": "article",
-                          "title": null,
+                          "type": "g",
                           "contents": [
                             {
                               "type": "field",
                               "id": "wand-1",
                               "frame": "none",
                               "width": "stretch"
-                            },
-                            {
-                              "type": "row",
-                              "layout": "right",
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "wand-1-ncharges",
-                                  "frame": "h-label",
-                                  "unlined": true,
-                                  "width": "small",
-                                  "size": "huge",
-                                  "underlay": "#",
-                                  "label": "Charges"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "wand-1-charges",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 50
-                                }
-                              ]
                             }
                           ]
                         },
                         {
-                          "type": "article",
-                          "title": null,
+                          "type": "g",
                           "contents": [
                             {
                               "type": "field",
                               "id": "wand-2",
                               "frame": "none",
                               "width": "stretch"
-                            },
-                            {
-                              "type": "row",
-                              "layout": "right",
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "wand-2-ncharges",
-                                  "frame": "h-label",
-                                  "unlined": true,
-                                  "width": "small",
-                                  "size": "huge",
-                                  "underlay": "#",
-                                  "label": "Charges"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "wand-2-charges",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 50
-                                }
-                              ]
                             }
                           ]
                         },
                         {
-                          "type": "article",
-                          "title": null,
+                          "type": "g",
                           "contents": [
                             {
                               "type": "field",
                               "id": "wand-3",
                               "frame": "none",
                               "width": "stretch"
-                            },
-                            {
-                              "type": "row",
-                              "layout": "right",
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "wand-3-ncharges",
-                                  "frame": "h-label",
-                                  "unlined": true,
-                                  "width": "small",
-                                  "size": "huge",
-                                  "underlay": "#",
-                                  "label": "Charges"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "wand-3-charges",
-                                  "frame": "none",
-                                  "control": "checkgrid",
-                                  "max": 50
-                                }
-                              ]
                             }
                           ]
                         }
@@ -6275,41 +4810,49 @@
                                 {
                                   "type": "field",
                                   "id": "potion-1",
+                                  "frame": "none",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
                                   "id": "potion-2",
+                                  "frame": "none",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
                                   "id": "potion-3",
+                                  "frame": "none",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
                                   "id": "potion-4",
+                                  "frame": "none",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
                                   "id": "potion-5",
+                                  "frame": "none",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
                                   "id": "potion-6",
+                                  "frame": "none",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
                                   "id": "potion-7",
+                                  "frame": "none",
                                   "width": "stretch"
                                 },
                                 {
                                   "type": "field",
                                   "id": "potion-8",
+                                  "frame": "none",
                                   "width": "stretch"
                                 }
                               ],
@@ -6338,8 +4881,9 @@
     },
     {
       "type": "page",
-      "id": "barbarian",
-      "name": "Barbarian",
+      "id": "cleric",
+      "name": "Cleric",
+      "flex": true,
       "order": 10,
       "contents": [
         {
@@ -6351,99 +4895,311 @@
               "contents": [
                 {
                   "type": "class-icon",
-                  "icon": "barbarian"
+                  "icon": "box"
                 },
                 {
                   "type": "h2",
-                  "title": "Barbarian"
+                  "title": "Cleric"
+                },
+                {
+                  "type": "field",
+                  "id": "cleric-deity",
+                  "width": "stretch",
+                  "legend": "of (Deity)"
+                },
+                {
+                  "type": "layout",
+                  "layout": "alignment",
+                  "contents": [
+                    {
+                      "type": "g",
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "cleric-deity-weapon",
+                          "label": "Favoured Weapon",
+                          "width": "stretch"
+                        },
+                        {
+                          "type": "field",
+                          "id": "cleric-deity-anathema",
+                          "label": "Anathema",
+                          "width": "stretch",
+                          "repeat": 3,
+                          "merge-bottom": true
+                        }
+                      ]
+                    },
+                    {
+                      "type": "field",
+                      "id": "cleric-alignment",
+                      "control": "alignment"
+                    }
+                  ]
                 },
                 {
                   "type": "section",
-                  "title": "Totem",
+                  "title": "Doctrine",
                   "primary": true,
                   "contents": [
                     {
-                      "type": "article",
-                      "title": null,
-                      "header": [
+                      "type": "field",
+                      "id": "cleric-doctrine",
+                      "frame": "none",
+                      "width": "stretch",
+                      "align": "center",
+                      "merge-bottom": true
+                    },
+                    {
+                      "type": "hr"
+                    },
+                    {
+                      "type": "list",
+                      "zebra": true,
+                      "hr": true,
+                      "contents": [
                         {
-                          "type": "field",
-                          "id": "barbarian-totem",
-                          "legend": "Totem",
-                          "width": "stretch",
-                          "align": "left"
+                          "type": "level",
+                          "level": "1",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-doctrine-#{level}",
+                              "width": "stretch",
+                              "frame": "none",
+                              "merge-bottom": true,
+                              "repeat": 2,
+                              "level": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "3",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-doctrine-#{level}",
+                              "width": "stretch",
+                              "frame": "none",
+                              "merge-bottom": true,
+                              "repeat": 2,
+                              "level": 3
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "7",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-doctrine-#{level}",
+                              "width": "stretch",
+                              "frame": "none",
+                              "merge-bottom": true,
+                              "repeat": 2,
+                              "level": 7
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "11",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-doctrine-#{level}",
+                              "width": "stretch",
+                              "frame": "none",
+                              "merge-bottom": true,
+                              "repeat": 2,
+                              "level": 11
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "15",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-doctrine-#{level}",
+                              "width": "stretch",
+                              "frame": "none",
+                              "merge-bottom": true,
+                              "repeat": 2,
+                              "level": 15
+                            }
+                          ]
+                        },
+                        {
+                          "type": "level",
+                          "level": "19",
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-doctrine-#{level}",
+                              "width": "stretch",
+                              "frame": "none",
+                              "merge-bottom": true,
+                              "repeat": 2,
+                              "level": 19
+                            }
+                          ]
                         }
                       ],
-                      "contents": [
+                      "columns": 1,
+                      "flowv": true,
+                      "flex": false,
+                      "sort": true,
+                      "vr": false,
+                      "merge-bottom": false,
+                      "avoid-shade": false
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Spells",
+                  "contents": [
+                    {
+                      "type": "table",
+                      "collapse": true,
+                      "columns": [
                         {
-                          "type": "field",
-                          "id": "barbarian-totem-anathema",
-                          "label": "Anathema",
-                          "width": "stretch",
-                          "align": "left",
-                          "repeat": 4,
-                          "merge-bottom": true
+                          "type": "level-marker",
+                          "level": 1
                         },
                         {
-                          "type": "hr"
+                          "type": "level-marker",
+                          "level": 2
                         },
                         {
-                          "type": "field",
-                          "id": "barbarian-totem-ability",
-                          "label": "Totem Ability",
-                          "width": "stretch",
-                          "align": "left",
-                          "repeat": 4,
-                          "merge-bottom": true
+                          "type": "level-marker",
+                          "level": 3
                         },
                         {
-                          "type": "hr"
+                          "type": "level-marker",
+                          "level": 4
                         },
                         {
-                          "type": "field",
-                          "id": "barbarian-totem-raging-resistance",
-                          "label": "Raging Resistance",
-                          "width": "stretch",
-                          "align": "left",
-                          "repeat": 4,
-                          "merge-bottom": true
+                          "type": "level-marker",
+                          "level": 5
+                        },
+                        {
+                          "type": "level-marker",
+                          "level": 6
+                        },
+                        {
+                          "type": "level-marker",
+                          "level": 7
+                        },
+                        {
+                          "type": "level-marker",
+                          "level": 8
+                        },
+                        {
+                          "type": "level-marker",
+                          "level": 9
                         }
+                      ],
+                      "rows": [
+                        [
+                          {
+                            "type": "field",
+                            "id": "spells-1-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-2-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-3-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-4-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-5-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-6-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-7-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-8-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          },
+                          {
+                            "type": "field",
+                            "id": "spells-9-per-day",
+                            "width": "small",
+                            "frame": "none"
+                          }
+                        ]
                       ]
                     }
                   ]
                 },
                 {
                   "type": "section",
-                  "title": "Deny Advantage",
+                  "title": "Channel Energy",
                   "contents": [
                     {
-                      "type": "level",
-                      "level": 5,
+                      "type": "row",
+                      "layout": "center",
                       "contents": [
                         {
-                          "type": "p",
-                          "content": "Never flat-footed against creatures of a lower level."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Juggernaut",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 7,
-                      "contents": [
-                        {
-                          "type": "proficiency",
-                          "proficiency": "master",
-                          "content": "Master at Fortitude saves"
+                          "type": "field",
+                          "id": "channel-energy",
+                          "value": "positive",
+                          "frame": "left",
+                          "control": "radio",
+                          "label": "Positive"
                         },
                         {
-                          "type": "p",
-                          "content": "When you succeed at a Fortitude save, treat it as a critical success."
+                          "type": "icon",
+                          "icon": "good"
+                        },
+                        {
+                          "type": "span",
+                          "content": "&nbsp;"
+                        },
+                        {
+                          "type": "icon",
+                          "icon": "evil"
+                        },
+                        {
+                          "type": "field",
+                          "id": "channel-energy",
+                          "value": "negative",
+                          "frame": "right",
+                          "control": "radio",
+                          "label": "Negative"
                         }
                       ]
                     },
@@ -6451,288 +5207,108 @@
                       "type": "hr"
                     },
                     {
-                      "type": "level",
-                      "level": 13,
-                      "contents": [
-                        {
-                          "type": "proficiency",
-                          "proficiency": "legendary",
-                          "content": "Legendary at Fortitude saves"
-                        },
-                        {
-                          "type": "p",
-                          "content": "When you critically fail a Fortitude save, treat it as a failure. When you fail a Fortitude save against an effect that deals damage, you halve the damage you take."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Weapon Fury",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 13,
-                      "contents": [
-                        {
-                          "type": "proficiency",
-                          "proficiency": "expert",
-                          "content": "Expert at simple and martial weapons, and unarmed attacks"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Indomitable Will",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 15,
-                      "contents": [
-                        {
-                          "type": "proficiency",
-                          "proficiency": "master",
-                          "content": "Master at Will saves"
-                        },
-                        {
-                          "type": "p",
-                          "content": "When you succeed at a Will save, treat it as a critical success."
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "title": "Devastating Strikes",
-                  "contents": [
-                    {
-                      "type": "level",
-                      "level": 19,
+                      "type": "row",
+                      "layout": "split",
                       "contents": [
                         {
                           "type": "calc",
                           "output": {
                             "type": "field",
-                            "id": "barbarian-raging-resistance-",
-                            "legend": "Resistance Reduction"
+                            "id": "channel-energy-per-day",
+                            "label": "Uses per day",
+                            "width": "huge"
                           },
                           "inputs": [
+                            "3 +",
                             {
                               "type": "field",
                               "id": null,
-                              "ref": "CON",
-                              "underlay": "CON"
-                            },
-                            {
-                              "type": "span",
-                              "content": "&times; 2"
+                              "ref": "CHA",
+                              "underlay": "CHA"
                             }
                           ]
                         },
                         {
-                          "type": "p",
-                          "content": "If you succeed at a melee Strike against a target with resistance against the physical damage type of the weapon or unarmed attack you’re using, reduce that resistance."
+                          "type": "field",
+                          "id": "channel-energy-today",
+                          "label": "Used today",
+                          "control": "checkgrid",
+                          "depth": 2,
+                          "max": 12
                         }
                       ]
-                    }
-                  ]
-                },
-                {
-                  "type": "tail"
-                }
-              ]
-            },
-            {
-              "type": "g",
-              "contents": [
-                {
-                  "type": "section",
-                  "title": "Rage",
-                  "contents": [
+                    },
+                    {
+                      "type": "row",
+                      "layout": "split",
+                      "contents": [
+                        {
+                          "type": "calc",
+                          "output": {
+                            "type": "field",
+                            "id": "channel-energy-dmg",
+                            "legend": "Healing /\nDamage",
+                            "overlay": "d8",
+                            "width": "huge"
+                          },
+                          "inputs": [
+                            {
+                              "type": "label",
+                              "label": "Max\nSpell\nLevel"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "spacer"
+                        },
+                        {
+                          "type": "field",
+                          "id": "channel-energy-range",
+                          "label": "Range",
+                          "border": "full",
+                          "width": "large",
+                          "value": "30",
+                          "overlay": "ft"
+                        }
+                      ]
+                    },
                     {
                       "type": "list",
                       "hr": true,
                       "contents": [
                         {
                           "type": "action",
-                          "action": null,
+                          "action": 1,
+                          "contents": [
+                            {
+                              "type": "p",
+                              "content": "Touch one ally or enemy"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "action",
+                          "action": 2,
                           "contents": [
                             {
                               "type": "row",
-                              "layout": null,
+                              "layout": "split",
                               "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "rage-rounds",
-                                  "legend": "Rage Rounds",
-                                  "control": "progression",
-                                  "parts": [
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    },
-                                    {
-                                      "control": "checkbox"
-                                    }
-                                  ]
-                                },
-                                {
-                                  "type": "spacer"
-                                },
                                 {
                                   "type": "p",
-                                  "content": "After raging, you are fatigued for 1 round."
-                                },
-                                {
-                                  "type": "spacer"
+                                  "content": "All allies or all enemies in range"
                                 }
                               ]
-                            },
+                            }
+                          ]
+                        },
+                        {
+                          "type": "action",
+                          "action": 3,
+                          "contents": [
                             {
                               "type": "p",
-                              "content": "While raging, cannot use actions that require concentration, except for Seek."
-                            },
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "barbarian-rage-damage-bonus",
-                                  "output": true,
-                                  "label": "Damage Bonus",
-                                  "width": "large"
-                                },
-                                {
-                                  "type": "p",
-                                  "content": "To melee and unarmed strikes"
-                                },
-                                {
-                                  "type": "spacer"
-                                },
-                                {
-                                  "type": "field",
-                                  "id": "barbarian-rage-ac-penalty",
-                                  "label": "AC Penalty",
-                                  "output": true,
-                                  "width": "large",
-                                  "value": "-1"
-                                },
-                                {
-                                  "type": "spacer"
-                                },
-                                {
-                                  "type": "calc",
-                                  "output": {
-                                    "type": "field",
-                                    "id": "barbarian-rage-temp-hp",
-                                    "label": "Temporary Hit Points",
-                                    "overlay": "hp",
-                                    "temp": true
-                                  },
-                                  "inputs": [
-                                    {
-                                      "type": "field",
-                                      "id": null,
-                                      "ref": "CON",
-                                      "underlay": "CON"
-                                    },
-                                    {
-                                      "type": "span",
-                                      "content": "+"
-                                    },
-                                    {
-                                      "type": "field",
-                                      "id": null,
-                                      "ref": "level",
-                                      "label": "Level"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 3,
-                          "contents": [
-                            {
-                              "type": "h5",
-                              "title": "Critical Brutality"
-                            },
-                            {
-                              "type": "p",
-                              "content": "Gain critical specialization for your melee weapon or unarmed attack."
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 9,
-                          "contents": [
-                            {
-                              "type": "row",
-                              "layout": null,
-                              "contents": [
-                                {
-                                  "type": "calc",
-                                  "output": {
-                                    "type": "field",
-                                    "id": "barbarian-raging-resistance",
-                                    "legend": "Raging Resistance",
-                                    "width": "large"
-                                  },
-                                  "inputs": [
-                                    {
-                                      "type": "field",
-                                      "id": null,
-                                      "ref": "CON",
-                                      "underlay": "CON"
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 11,
-                          "contents": [
-                            {
-                              "type": "action",
-                              "action": "free",
-                              "contents": [
-                                {
-                                  "type": "h5",
-                                  "title": "Mighty Rage"
-                                },
-                                {
-                                  "type": "p",
-                                  "content": "Use one of your rage actions as a free action."
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "level",
-                          "level": 17,
-                          "contents": [
-                            {
-                              "type": "h5",
-                              "title": "Tireless Rage"
-                            },
-                            {
-                              "type": "p",
-                              "content": "Don’t become fatigued after you stop raging. It still takes the normal amount of time before you can use Rage again."
+                              "content": "All allies and enemies in range"
                             }
                           ]
                         }
@@ -6749,8 +5325,115 @@
                   ]
                 },
                 {
+                  "type": "tail"
+                },
+                {
+                  "type": "spacer"
+                }
+              ]
+            },
+            {
+              "type": "g",
+              "contents": [
+                {
                   "type": "section",
-                  "title": "Barbarian Feats",
+                  "title": "Domain",
+                  "primary": true,
+                  "contents": [
+                    {
+                      "type": "field",
+                      "id": "cleric-domain",
+                      "label": "Domain",
+                      "width": "stretch"
+                    },
+                    {
+                      "type": "field",
+                      "id": "cleric-domain-summary",
+                      "width": "stretch",
+                      "frame": "none",
+                      "repeat": 2,
+                      "merge-bottom": true
+                    },
+                    {
+                      "type": "hr"
+                    },
+                    {
+                      "type": "layout",
+                      "layout": "2e",
+                      "contents": [
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "field",
+                              "id": "cleric-domain-power",
+                              "legend": "Domain Power",
+                              "width": "stretch"
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-domain-power-detail",
+                              "width": "stretch",
+                              "repeat": 2,
+                              "frame": "none"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "article",
+                          "title": null,
+                          "header": [
+                            {
+                              "type": "field",
+                              "id": "cleric-domain-advanced-power",
+                              "legend": "Advanced Domain Power",
+                              "width": "stretch"
+                            }
+                          ],
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "cleric-domain-advanced-power-detail",
+                              "width": "stretch",
+                              "repeat": 2,
+                              "frame": "none"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Cantrips",
+                  "contents": [
+                    {
+                      "type": "spells-list",
+                      "min": 0,
+                      "max": 0,
+                      "spells": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Spells",
+                  "contents": [
+                    {
+                      "type": "spells-list",
+                      "min": 1,
+                      "max": 9,
+                      "spells": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "title": "Cleric Feats",
                   "contents": [
                     {
                       "type": "layout",
@@ -6761,7 +5444,7 @@
                           "contents": [
                             {
                               "type": "level",
-                              "level": "1",
+                              "level": "2",
                               "contents": [
                                 {
                                   "type": "article",
@@ -6769,7 +5452,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-1",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6778,19 +5461,20 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-1-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
+                                      "repeat": 2
                                     }
-                                  ]
+                                  ],
+                                  "level": 2
                                 }
                               ]
                             },
                             {
                               "type": "level",
-                              "level": "4",
+                              "level": "6",
                               "contents": [
                                 {
                                   "type": "article",
@@ -6798,7 +5482,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-4",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6807,19 +5491,20 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-4-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
+                                      "repeat": 2
                                     }
-                                  ]
+                                  ],
+                                  "level": 6
                                 }
                               ]
                             },
                             {
                               "type": "level",
-                              "level": "8",
+                              "level": "10",
                               "contents": [
                                 {
                                   "type": "article",
@@ -6827,7 +5512,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-8",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6836,19 +5521,20 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-8-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
+                                      "repeat": 2
                                     }
-                                  ]
+                                  ],
+                                  "level": 10
                                 }
                               ]
                             },
                             {
                               "type": "level",
-                              "level": "12",
+                              "level": "18",
                               "contents": [
                                 {
                                   "type": "article",
@@ -6856,7 +5542,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-12",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6865,71 +5551,14 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-12-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "type": "level",
-                              "level": "16",
-                              "contents": [
-                                {
-                                  "type": "article",
-                                  "title": null,
-                                  "header": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level-16",
-                                      "width": "stretch",
-                                      "frame": "none",
-                                      "align": "left"
+                                      "repeat": 2
                                     }
                                   ],
-                                  "contents": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level-16-details",
-                                      "width": "stretch",
-                                      "align": "left",
-                                      "frame": "none",
-                                      "repeat": 3
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "type": "level",
-                              "level": "20",
-                              "contents": [
-                                {
-                                  "type": "article",
-                                  "title": null,
-                                  "header": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level-20",
-                                      "width": "stretch",
-                                      "frame": "none",
-                                      "align": "left"
-                                    }
-                                  ],
-                                  "contents": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level-20-details",
-                                      "width": "stretch",
-                                      "align": "left",
-                                      "frame": "none",
-                                      "repeat": 3
-                                    }
-                                  ]
+                                  "level": 18
                                 }
                               ]
                             }
@@ -6949,7 +5578,7 @@
                           "contents": [
                             {
                               "type": "level",
-                              "level": "2",
+                              "level": "4",
                               "contents": [
                                 {
                                   "type": "article",
@@ -6957,7 +5586,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-2",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6966,19 +5595,20 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-2-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
+                                      "repeat": 2
                                     }
-                                  ]
+                                  ],
+                                  "level": 4
                                 }
                               ]
                             },
                             {
                               "type": "level",
-                              "level": "6",
+                              "level": "8",
                               "contents": [
                                 {
                                   "type": "article",
@@ -6986,7 +5616,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-6",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -6995,42 +5625,14 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-6-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "type": "level",
-                              "level": "10",
-                              "contents": [
-                                {
-                                  "type": "article",
-                                  "title": null,
-                                  "header": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level-10",
-                                      "width": "stretch",
-                                      "frame": "none",
-                                      "align": "left"
+                                      "repeat": 2
                                     }
                                   ],
-                                  "contents": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level-10-details",
-                                      "width": "stretch",
-                                      "align": "left",
-                                      "frame": "none",
-                                      "repeat": 3
-                                    }
-                                  ]
+                                  "level": 8
                                 }
                               ]
                             },
@@ -7044,7 +5646,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-14",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -7053,19 +5655,20 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-14-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
+                                      "repeat": 2
                                     }
-                                  ]
+                                  ],
+                                  "level": 14
                                 }
                               ]
                             },
                             {
                               "type": "level",
-                              "level": "18",
+                              "level": "20",
                               "contents": [
                                 {
                                   "type": "article",
@@ -7073,7 +5676,7 @@
                                   "header": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-18",
+                                      "id": "wizard-feat-level-#{level}",
                                       "width": "stretch",
                                       "frame": "none",
                                       "align": "left"
@@ -7082,42 +5685,14 @@
                                   "contents": [
                                     {
                                       "type": "field",
-                                      "id": "barbarian-feat-level-18-details",
+                                      "id": "cleric-feat-level-#{level}-details",
                                       "width": "stretch",
                                       "align": "left",
                                       "frame": "none",
-                                      "repeat": 3
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "type": "level",
-                              "level": " ",
-                              "contents": [
-                                {
-                                  "type": "article",
-                                  "title": null,
-                                  "header": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level- ",
-                                      "width": "stretch",
-                                      "frame": "none",
-                                      "align": "left"
+                                      "repeat": 2
                                     }
                                   ],
-                                  "contents": [
-                                    {
-                                      "type": "field",
-                                      "id": "barbarian-feat-level- -details",
-                                      "width": "stretch",
-                                      "align": "left",
-                                      "frame": "none",
-                                      "repeat": 3
-                                    }
-                                  ]
+                                  "level": 20
                                 }
                               ]
                             }
@@ -7138,6 +5713,818 @@
                 },
                 {
                   "type": "tail"
+                },
+                {
+                  "type": "spacer"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "level": 1
+    },
+    {
+      "type": "page",
+      "id": "spellbook",
+      "order": 16,
+      "flex": true,
+      "numbered": false,
+      "contents": [
+        {
+          "type": "h2",
+          "title": "Spellbook"
+        },
+        {
+          "type": "layout",
+          "layout": "3e",
+          "contents": [
+            {
+              "type": "g",
+              "contents": [
+                {
+                  "type": "row",
+                  "layout": null,
+                  "contents": [
+                    {
+                      "type": "spacer"
+                    },
+                    {
+                      "type": "field",
+                      "id": "spellbook-col-1-level",
+                      "border": "full",
+                      "frame": "none",
+                      "size": "large"
+                    },
+                    {
+                      "type": "spacer"
+                    }
+                  ]
+                },
+                {
+                  "type": "hr"
+                },
+                {
+                  "type": "list",
+                  "zebra": true,
+                  "hr": true,
+                  "flex": true,
+                  "contents": [
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-1",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-1-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-2",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-2-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-3",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-3-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-4",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-4-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-5",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-5-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-6",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-6-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-7",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-7-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-8",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-8-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-9",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-9-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "columns": 1,
+                  "flowv": true,
+                  "sort": true,
+                  "vr": false,
+                  "merge-bottom": false,
+                  "avoid-shade": false
+                },
+                {
+                  "type": "hr"
+                },
+                {
+                  "type": "spacer"
+                }
+              ]
+            },
+            {
+              "type": "g",
+              "contents": [
+                {
+                  "type": "row",
+                  "layout": null,
+                  "contents": [
+                    {
+                      "type": "spacer"
+                    },
+                    {
+                      "type": "field",
+                      "id": "spellbook-col-2-level",
+                      "border": "full",
+                      "frame": "none",
+                      "size": "large"
+                    },
+                    {
+                      "type": "spacer"
+                    }
+                  ]
+                },
+                {
+                  "type": "hr"
+                },
+                {
+                  "type": "list",
+                  "zebra": true,
+                  "hr": true,
+                  "flex": true,
+                  "contents": [
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-1",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-1-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-2",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-2-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-3",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-3-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-4",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-4-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-5",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-5-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-6",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-6-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-7",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-7-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-8",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-8-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-9",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-9-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "columns": 1,
+                  "flowv": true,
+                  "sort": true,
+                  "vr": false,
+                  "merge-bottom": false,
+                  "avoid-shade": false
+                },
+                {
+                  "type": "hr"
+                },
+                {
+                  "type": "spacer"
+                }
+              ]
+            },
+            {
+              "type": "g",
+              "contents": [
+                {
+                  "type": "row",
+                  "layout": null,
+                  "contents": [
+                    {
+                      "type": "spacer"
+                    },
+                    {
+                      "type": "field",
+                      "id": "spellbook-col-3-level",
+                      "border": "full",
+                      "frame": "none",
+                      "size": "large"
+                    },
+                    {
+                      "type": "spacer"
+                    }
+                  ]
+                },
+                {
+                  "type": "hr"
+                },
+                {
+                  "type": "list",
+                  "zebra": true,
+                  "hr": true,
+                  "flex": true,
+                  "contents": [
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-1",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-1-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-2",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-2-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-3",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-3-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-4",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-4-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-5",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-5-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-6",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-6-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-7",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-7-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-8",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-8-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-9",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-9-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "columns": 1,
+                  "flowv": true,
+                  "sort": true,
+                  "vr": false,
+                  "merge-bottom": false,
+                  "avoid-shade": false
+                },
+                {
+                  "type": "hr"
+                },
+                {
+                  "type": "spacer"
                 }
               ]
             }

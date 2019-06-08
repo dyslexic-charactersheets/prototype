@@ -179,7 +179,10 @@ function toDataURL (data, base64, filename) {
     switch (mime) {
         case MIME_SVG:
             // log("data", "Returning data for", filename);
-            if (_.isNull(data)) return '';
+            if (_.isNull(data) || _.isEmpty(data)) {
+                warn("data", 'No data for file:', filename);
+                return '';
+            }
             data = processSVG(data);
             return 'data:'+mime+','+data;
 

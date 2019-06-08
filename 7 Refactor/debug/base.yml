@@ -53,7 +53,7 @@ inc:
                             label: XP
                             underlay: XP
                             width: large
-                            output: true
+                            border: full
                   - type: hr
                     swash: true
                   - type: portrait
@@ -157,6 +157,7 @@ inc:
                               width: stretch
                               align: left
                               repeat: 2
+                              merge-bottom: true
                       - type: hr
                       - type: h5
                         title: Ancestry Feats
@@ -200,6 +201,7 @@ inc:
                                         frame: none
                                         width: stretch
                                         align: left
+                                        merge-bottom: true
                   - type: section
                     title: Background
                     id: background
@@ -229,6 +231,7 @@ inc:
                                 frame: none
                                 width: stretch
                                 align: left
+                                merge-bottom: true
                   - type: section
                     title: Class
                     id: class
@@ -245,8 +248,8 @@ inc:
                           - type: field
                             id: class-level
                             label: Level
-                            output: true
                             size: large
+                            border: full
                       - type: field
                         id: specialisation
                         label: Specialisation
@@ -268,8 +271,10 @@ inc:
                                     id: archetype-#{i}-name
                                     width: stretch
                                     align: left
+                                    frame: none
                                   - type: field
                                     id: archetype-#{i}-feats
+                                    frame: none
                                     control: progression
                                     parts:
                                       - control: checkbox
@@ -333,11 +338,10 @@ inc:
                             title: "#{ability}"
                           - type: field
                             id: "#{short}-score"
-                            box: true
                           - type: field
                             id: "#{short}"
-                            output: true
-                            icon: modifier
+                            border: full
+                            icon: dc
                             underlay: "#{short}"
                           - type: field
                             id: key-ability
@@ -365,62 +369,78 @@ inc:
                     title: Proficiency
                     id: proficiency
                     contents:
-                      - type: layout
-                        layout: 5e
-                        narrow: true
+                      - type: row
+                        layout: split
+                        valign: top
                         contents:
-                          - type: field
-                            id: proficiency-untrained
-                            label: Untrained
-                            output: true
-                            control: proficiency
-                            value: 0
-                          - type: field
-                            id: proficiency-trained
-                            label: Trained
-                            output: true
-                            control: proficiency
-                            proficiency: trained
-                          - type: field
-                            id: proficiency-expert
-                            label: Expert
-                            output: true
-                            control: proficiency
-                            proficiency: expert
-                          - type: field
-                            id: proficiency-master
-                            label: Master
-                            output: true
-                            control: proficiency
-                            proficiency: master
-                          - type: field
-                            id: proficiency-legendary
-                            label: Legendary
-                            output: true
-                            control: proficiency
-                            proficiency: legendary
-                          - type: label
-                            label: null
-                          - type: label
-                            label: |-
-                              Level
-                              +2
-                            align: center
-                          - type: label
-                            label: |-
-                              Level
-                              +4
-                            align: center
-                          - type: label
-                            label: |-
-                              Level
-                              +6
-                            align: center
-                          - type: label
-                            label: |-
-                              Level
-                              +8
-                            align: center
+                          - type: g
+                            valign: top
+                            contents:
+                              - type: field
+                                id: proficiency-untrained
+                                label: Untrained
+                                output: true
+                                control: proficiency
+                                value: 0
+                              - type: label
+                                label: None
+                                align: center
+                          - type: g
+                            valign: top
+                            contents:
+                              - type: field
+                                id: proficiency-trained
+                                label: Trained
+                                output: true
+                                control: proficiency
+                                value: trained
+                              - type: label
+                                label: |-
+                                  Level
+                                  +2
+                                align: center
+                          - type: g
+                            valign: top
+                            contents:
+                              - type: field
+                                id: proficiency-expert
+                                label: Expert
+                                output: true
+                                control: proficiency
+                                value: expert
+                              - type: label
+                                label: |-
+                                  Level
+                                  +4
+                                align: center
+                          - type: g
+                            valign: top
+                            contents:
+                              - type: field
+                                id: proficiency-master
+                                label: Master
+                                output: true
+                                control: proficiency
+                                value: master
+                              - type: label
+                                label: |-
+                                  Level
+                                  +6
+                                align: center
+                          - type: g
+                            valign: top
+                            contents:
+                              - type: field
+                                id: proficiency-legendary
+                                label: Legendary
+                                output: true
+                                control: proficiency
+                                value: legendary
+                              - type: label
+                                label: |-
+                                  Level
+                                  +8
+                                align: center
                       - type: list
                         zebra: true
                         collapse: true
@@ -494,7 +514,7 @@ inc:
                       - type: field
                         id: languages
                         frame: none
-                        repeat: 3
+                        repeat: 4
                         align: left
                         width: stretch
                         merge-bottom: true
@@ -581,6 +601,12 @@ inc:
                           - skill: ""
                             ability: ""
                             acp: false
+                          - skill: ""
+                            ability: ""
+                            acp: false
+                          - skill: ""
+                            ability: ""
+                            acp: false
                         template:
                           - type: h6
                             title: "#{skill}"
@@ -590,7 +616,7 @@ inc:
                             align: right
                           - type: field
                             id: "#{skill}-bonus"
-                            output: true
+                            border: full
                             icon: bonus
                           - type: span
                             content: =
@@ -633,8 +659,10 @@ inc:
                             output:
                               type: field
                               id: perception
+                              frame: left
                               icon: bonus
-                              legend: Perception
+                              label: Perception
+                              width: large
                             equal: "#{WIS}+#{perception-proficiency}+#{perception-it\
                               em-bonus}+#{perception-misc}"
                             inputs:
@@ -660,24 +688,24 @@ inc:
                                 id: perception-misc
                                 misc: true
                                 label: Misc
-                          - type: g
-                            contents:
-                              - type: field
-                                id: perception-low-light
-                                frame: right
-                                control: checkbox
-                                label: Low-light vision
-                                value: "#{low-light-vision}"
-                              - type: field
-                                id: perception-darkvision
-                                frame: right
-                                control: checkbox
-                                label: Dark vision
-                              - type: field
-                                id: perception-scent
-                                frame: right
-                                control: checkbox
-                                label: Scent
+                      - type: row
+                        layout: left
+                        contents:
+                          - type: field
+                            id: perception-low-light
+                            frame: right
+                            control: checkbox
+                            label: Low-light vision
+                          - type: field
+                            id: perception-darkvision
+                            frame: right
+                            control: checkbox
+                            label: Dark vision
+                          - type: field
+                            id: perception-scent
+                            frame: right
+                            control: checkbox
+                            label: Scent
                       - type: field
                         id: perception-other
                         label: Conditional
@@ -763,13 +791,16 @@ inc:
                               legend: Class DC
                               underlay: DC
                               width: large
-                              icon: modifier
+                              icon: dc
                             equal: "#{#{key-ability}}+#{level}+#{class-dc-item-bonus}"
                             inputs:
-                              - type: field
-                                id: null
-                                label: Key Ability
-                                ref: key-ability
+                              - type: zone
+                                zone: "@key-ability-field"
+                                contents:
+                                  - type: field
+                                    id: null
+                                    label: Key Ability
+                                    ref: key-ability
                               - type: span
                                 content: +
                               - type: field
@@ -819,39 +850,33 @@ inc:
                             label: Fly Speed
                             control: speed
                   - type: section
-                    title: Multiple Attack Penalty
-                    id: attack-penalty
+                    title: Focus
                     contents:
-                      - type: row
-                        layout: split
-                        contents:
+                      - type: calc
+                        output:
+                          type: field
+                          id: focus
+                          overlay: pts
+                          width: huge
+                          legend: Focus Points
+                        inputs:
                           - type: field
-                            id: map-1
-                            frame: left
-                            label: 1st
-                            output: true
-                            width: large
-                            underlay: 0
+                            id: null
+                            ref: WIS
+                            underlay: WIS
+                          - +
                           - type: field
-                            id: map-2
-                            frame: left
-                            label: 2nd
-                            output: true
-                            width: large
-                            underlay: -5
-                          - type: field
-                            id: map-3
-                            frame: left
-                            label: 3rd
-                            output: true
-                            width: large
-                            underlay: -10
+                            id: focus-misc
+                            label: Misc
+                            misc: true
                       - type: field
-                        id: null
-                        label: Conditional
-                        align: left
+                        id: current-focus
+                        temp: true
+                        label: Current Focus Points
+                        align: center
                         width: stretch
-                        merge-bottom: true
+                        border: full
+                        overlay: pts
                   - type: section
                     title: Saving Throws
                     id: saving-throws
@@ -886,8 +911,10 @@ inc:
                               id: "#{save}"
                               legend: "#{legend}"
                               icon: bonus
+                              border: full
                               width: large
                               underlay: "#{short}"
+                              merge-top: true
                             equal: "#{#{ability}}+#{#{save}-proficiency}+#{#{save}-i\
                               tem-bonus}+#{#{save}-misc}"
                             inputs:
@@ -909,7 +936,7 @@ inc:
                         id: saving-throws-conditional
                         label: Conditional
                         align: left
-                        repeat: 2
+                        repeat: 3
                         merge-bottom: true
                         width: stretch
               - type: g
@@ -923,6 +950,41 @@ inc:
                         hr: true
                         flex: true
                         contents:
+                          - type: row
+                            layout: split
+                            contents:
+                              - type: h5
+                                title: Multi-Attack
+                              - type: action
+                                action: null
+                                contents:
+                                  - type: field
+                                    id: map-1
+                                    frame: left
+                                    label: 1st
+                                    output: true
+                                    width: large
+                                    underlay: 0
+                              - type: action
+                                action: 2nd
+                                contents:
+                                  - type: field
+                                    id: map-2
+                                    frame: left
+                                    label: 2nd
+                                    output: true
+                                    width: large
+                                    underlay: -5
+                              - type: action
+                                action: 3rd
+                                contents:
+                                  - type: field
+                                    id: map-3
+                                    frame: left
+                                    label: 3rd
+                                    output: true
+                                    width: large
+                                    underlay: -10
                           - type: repeat
                             repeat: 4
                             contents:
@@ -969,127 +1031,77 @@ inc:
                                         id: attack-#{i}-damage
                                         output: true
                                         label: Damage
-                                        width: small
+                                        width: large
                                         icon: damage
-                                        control: composite
+                                        control: compound
                                         parts:
                                           - subid: ndice
-                                            overlay: d
+                                            width: tiny
+                                            align: right
+                                          - type: label
+                                            label: d
                                           - subid: die
-                                            overlay: +
+                                            width: tiny
+                                            align: left
+                                          - type: label
+                                            label: +
                                           - subid: extra
+                                            width: tiny
                                       - type: field
                                         id: attack-#{i}-type
                                         label: Type
-                                      - type: field
-                                        id: attack-#{i}-critical
-                                        label: Critical Effect
-                                        width: stretch
                                   - type: field
                                     id: attack-#{i}-details
                                     frame: none
                                     width: stretch
                                     align: left
+                                    merge-bottom: true
+                          - type: layout
+                            layout: 2e
+                            contents:
+                              - type: row
+                                layout: null
+                                contents:
+                                  - type: field
+                                    id: ammo-1-type
+                                    legend: Ammo
+                                    width: stretch
+                                    align: left
                                     unlined: true
-                      - type: hr
-                      - type: layout
-                        layout: 2e
-                        contents:
-                          - type: row
-                            layout: null
-                            contents:
-                              - type: field
-                                id: ammo-1-type
-                                legend: Ammo
-                                width: stretch
-                                align: left
-                                unlined: true
-                              - type: field
-                                id: ammo-1
-                                frame: h-label
-                                unlined: true
-                                width: small
-                                size: huge
-                                underlay: "#"
-                                label: Charges
-                              - type: field
-                                id: ammo-1-count
-                                frame: none
-                                control: checkgrid
-                                max: 20
-                                depth: 3
-                          - type: row
-                            layout: null
-                            contents:
-                              - type: field
-                                id: ammo-2-type
-                                width: stretch
-                                align: left
-                                unlined: true
-                              - type: field
-                                id: ammo-2
-                                frame: h-label
-                                unlined: true
-                                width: small
-                                size: huge
-                                underlay: "#"
-                                label: Charges
-                              - type: field
-                                id: ammo-2-count
-                                frame: none
-                                control: checkgrid
-                                max: 10
-                                depth: 3
-                          - type: hr
-                          - type: hr
-                          - type: row
-                            layout: null
-                            unlabelled: true
-                            contents:
-                              - type: field
-                                id: ammo-3-type
-                                frame: none
-                                width: stretch
-                                align: left
-                                unlined: true
-                              - type: field
-                                id: ammo-3
-                                frame: h-label
-                                unlined: true
-                                width: small
-                                size: huge
-                                underlay: "#"
-                                label: Charges
-                              - type: field
-                                id: ammo-3-count
-                                frame: none
-                                control: checkgrid
-                                max: 20
-                                depth: 3
-                          - type: row
-                            layout: null
-                            unlabelled: true
-                            contents:
-                              - type: field
-                                id: ammo-4-type
-                                frame: none
-                                width: stretch
-                                align: left
-                                unlined: true
-                              - type: field
-                                id: ammo-4
-                                frame: h-label
-                                unlined: true
-                                width: small
-                                size: huge
-                                underlay: "#"
-                                label: Charges
-                              - type: field
-                                id: ammo-4-count
-                                frame: none
-                                control: checkgrid
-                                max: 10
-                                depth: 3
+                                  - type: field
+                                    id: ammo-1
+                                    unlined: true
+                                    width: small
+                                    size: huge
+                                    underlay: "#"
+                                    label: Charges
+                                  - type: field
+                                    id: ammo-1-count
+                                    frame: none
+                                    control: checkgrid
+                                    max: 20
+                                    depth: 3
+                              - type: row
+                                layout: null
+                                contents:
+                                  - type: field
+                                    id: ammo-2-type
+                                    width: stretch
+                                    align: left
+                                    unlined: true
+                                  - type: field
+                                    id: ammo-2
+                                    unlined: true
+                                    width: small
+                                    size: huge
+                                    underlay: "#"
+                                    label: Charges
+                                  - type: field
+                                    id: ammo-2-count
+                                    frame: none
+                                    control: checkgrid
+                                    max: 10
+                                    depth: 3
           - type: layout
             layout: 2r
             contents:
@@ -1133,14 +1145,18 @@ inc:
                                 id: null
                                 ref: level
                                 label: Level
+                          - type: spacer
                           - type: field
                             id: dying
                             control: progression
                             label: Dying
                             parts:
-                              - control: checkbox
-                              - control: checkbox
-                              - control: checkbox
+                              - id: dying-1
+                                control: checkbox
+                              - id: dying-2
+                                control: checkbox
+                              - id: dying-3
+                                control: checkbox
                               - type: icon
                                 icon: evil
                                 size: small
@@ -1150,7 +1166,7 @@ inc:
                           - type: field
                             id: current-hp
                             label: Current Hit Points
-                            output: true
+                            border: full
                             temp: true
                             icon: hp
                             overlay: hp
@@ -1158,14 +1174,14 @@ inc:
                           - type: field
                             id: temp-hp
                             label: Temp Hit Points
-                            output: true
+                            border: full
                             temp: true
                             overlay: hp
                             width: huge
                           - type: field
                             id: shield-hp
                             label: Shield Hit Points
-                            output: true
+                            border: full
                             icon: ac
                             temp: true
                             overlay: hp
@@ -1178,7 +1194,7 @@ inc:
                         merge-bottom: true
                         contents:
                           - type: repeat
-                            repeat: 8
+                            repeat: 4
                             contents:
                               - type: row
                                 layout: null
@@ -1225,7 +1241,9 @@ inc:
                           - Misc
                         rows:
                           - id: ac
-                            legend: Armour Class
+                            legend: |-
+                              Armour
+                              Class
                             underlay: AC
                           - id: tac
                             legend: Touch AC
@@ -1237,8 +1255,10 @@ inc:
                               id: null
                               legend: "#{legend}"
                               icon: "#{id}"
+                              border: full
                               width: large
                               underlay: "#{underlay}"
+                              merge-top: true
                             equal: 10+#{DEX}+#{#{id}-proficiency}+#{armour-bonus}+#{shield-bonus}
                             inputs:
                               - type: span
@@ -1263,7 +1283,7 @@ inc:
                         id: ac-conditional
                         label: Conditional
                         width: stretch
-                        align: left
+                        merge-bottom: true
                         repeat: 3
                   - type: tail
               - type: g
@@ -1361,21 +1381,21 @@ inc:
                             id: weight-total
                             frame: left
                             label: Total weight
-                            output: true
                             control: weight
                   - type: section
                     title: Money
                     id: money
-                    field_frame: left
                     contents:
                       - type: field
                         id: money-copper
+                        frame: left
                         control: money
                         label: Copper
                         denomination: copper
                         digits: 7
                       - type: field
                         id: money-silver
+                        frame: left
                         control: money
                         label: Silver
                         denomination: silver
@@ -1383,6 +1403,7 @@ inc:
                         shift: 1
                       - type: field
                         id: money-gold
+                        frame: left
                         control: money
                         label: Gold
                         denomination: gold
@@ -1390,6 +1411,7 @@ inc:
                         shift: 2
                       - type: field
                         id: money-total
+                        frame: left
                         output: "true"
                         control: money
                         label: Total
@@ -1408,29 +1430,12 @@ inc:
                           - type: repeat
                             repeat: 3
                             contents:
-                              - type: article
-                                title: null
+                              - type: g
                                 contents:
                                   - type: field
                                     id: wand-#{i}
                                     frame: none
                                     width: stretch
-                                  - type: row
-                                    layout: right
-                                    contents:
-                                      - type: field
-                                        id: wand-#{i}-ncharges
-                                        frame: h-label
-                                        unlined: true
-                                        width: small
-                                        size: huge
-                                        underlay: "#"
-                                        label: Charges
-                                      - type: field
-                                        id: wand-#{i}-charges
-                                        frame: none
-                                        control: checkgrid
-                                        max: 50
                   - type: tail
               - type: g
                 contents:
@@ -1612,6 +1617,7 @@ inc:
                                     contents:
                                       - type: field
                                         id: potion-#{i}
+                                        frame: none
                                         width: stretch
                           - type: tail
 id: base

@@ -49,9 +49,14 @@ require('../elements.d/p.js');
 require('../elements.d/table.js');
 require('../elements.d/hr.js');
 require('../elements.d/calc.js');
-require('../elements.d/field-frame.js');
-require('../elements.d/field-control.js');
-require('../elements.d/field.js');
+// require('../elements.d/field-frame.js');
+// require('../elements.d/field-control.js');
+// require('../elements.d/field.js');
+
+require('../elements.d/field2.js');
+require('../elements.d/field2-frame.js');
+require('../elements.d/field2-control.js');
+
 require('../elements.d/span.js');
 require('../elements.d/label.js');
 require('../elements.d/icon.js');

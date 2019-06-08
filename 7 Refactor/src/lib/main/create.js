@@ -11,6 +11,7 @@ CharacterSheets.create = function (options) {
     })
 
     var characterSheet = {
+        characterName: options.name,
         game: options.game,
         documentColour: options.documentColour,
         accentColour: options.accentColour,
@@ -52,13 +53,17 @@ CharacterSheets.create = function (options) {
             if (_.has(unit, "inc")) {
                 _.each(unit.inc, include => {
                     if (_.has(include, "at")) {
-                        document.addAt(include.at, include.add);
+                        if (_.has(include, "add"))
+                            document.addAt(include.at, include.add);
+                        if (_.has(include, "replace"))
+                            document.replaceAt(include.at, include.replace);
                     }
                 });
             }
         });
         var doc = document.document();
         doc = CharacterSheets.applyContext(doc);
+        doc.title = characterSheet.characterName;
         return doc;
     }
 
@@ -99,7 +104,7 @@ CharacterSheets.stylesheet = function() {
     if (characterSheet.background) {
         var backgroundURL = getDataURL("core", characterSheet.background);
         if (backgroundURL) {
-            stylesheet += ".page{background-image:url('"+backgroundURL+"');background-size:cover;}";
+            stylesheet += ".page{background-image:url('"+backgroundURL+"'); background-size: 100% 100%;}";
         }
     }
 

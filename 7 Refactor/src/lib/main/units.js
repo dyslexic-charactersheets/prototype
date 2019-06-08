@@ -96,7 +96,10 @@ module.exports = function (unit_ids) {
                 }
                 unit.inc.forEach(include => {
                     if (_.has(include, "at")) {
-                        document.addAt(include.at, include.add);
+                        if (_.has(include, "add"))
+                            document.addAt(include.at, include.add);
+                        if (_.has(include, "replace"))
+                            document.replaceAt(include.at, include.replace);
                     }
                     if (_.has(include, "define")) {
                         var defaults = _.has(include, "defaults") ? include.defaults : {};

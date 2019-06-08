@@ -7,6 +7,7 @@ inc:
       - type: page
         id: build
         name: Build A Character
+        no-bg: true
         order: 2
         flex: true
         numbered: false
@@ -16,8 +17,8 @@ inc:
             contents:
               - type: g
                 contents:
-                  - type: logo
-                    source: null
+                  - type: h2
+                    title: Build a Character
               - type: g
                 contents:
                   - type: layout
@@ -167,62 +168,78 @@ inc:
                   - type: p
                     content: Then spend the skill proficiencies your class provides to
                       upgrade skills.
-                  - type: layout
-                    layout: 5e
-                    narrow: true
+                  - type: row
+                    layout: split
+                    valign: top
                     contents:
-                      - type: field
-                        id: proficiency-untrained
-                        label: Untrained
-                        output: true
-                        control: proficiency
-                        value: 0
-                      - type: field
-                        id: proficiency-trained
-                        label: Trained
-                        output: true
-                        control: proficiency
-                        proficiency: trained
-                      - type: field
-                        id: proficiency-expert
-                        label: Expert
-                        output: true
-                        control: proficiency
-                        proficiency: expert
-                      - type: field
-                        id: proficiency-master
-                        label: Master
-                        output: true
-                        control: proficiency
-                        proficiency: master
-                      - type: field
-                        id: proficiency-legendary
-                        label: Legendary
-                        output: true
-                        control: proficiency
-                        proficiency: legendary
-                      - type: label
-                        label: null
-                      - type: label
-                        label: |-
-                          Level
-                          +2
-                        align: center
-                      - type: label
-                        label: |-
-                          Level
-                          +4
-                        align: center
-                      - type: label
-                        label: |-
-                          Level
-                          +6
-                        align: center
-                      - type: label
-                        label: |-
-                          Level
-                          +8
-                        align: center
+                      - type: g
+                        valign: top
+                        contents:
+                          - type: field
+                            id: proficiency-untrained
+                            label: Untrained
+                            output: true
+                            control: proficiency
+                            value: 0
+                          - type: label
+                            label: None
+                            align: center
+                      - type: g
+                        valign: top
+                        contents:
+                          - type: field
+                            id: proficiency-trained
+                            label: Trained
+                            output: true
+                            control: proficiency
+                            value: trained
+                          - type: label
+                            label: |-
+                              Level
+                              +2
+                            align: center
+                      - type: g
+                        valign: top
+                        contents:
+                          - type: field
+                            id: proficiency-expert
+                            label: Expert
+                            output: true
+                            control: proficiency
+                            value: expert
+                          - type: label
+                            label: |-
+                              Level
+                              +4
+                            align: center
+                      - type: g
+                        valign: top
+                        contents:
+                          - type: field
+                            id: proficiency-master
+                            label: Master
+                            output: true
+                            control: proficiency
+                            value: master
+                          - type: label
+                            label: |-
+                              Level
+                              +6
+                            align: center
+                      - type: g
+                        valign: top
+                        contents:
+                          - type: field
+                            id: proficiency-legendary
+                            label: Legendary
+                            output: true
+                            control: proficiency
+                            value: legendary
+                          - type: label
+                            label: |-
+                              Level
+                              +8
+                            align: center
                   - type: spacer
               - type: g
                 contents:
@@ -334,7 +351,7 @@ inc:
                       - type: field
                         id: max-ability-score
                         frame: right
-                        output: true
+                        border: full
                         label: Max ability score
                         value: 18
               - type: section
@@ -393,28 +410,28 @@ inc:
                       - type: field
                         id: build-boost-#{short}-background
                         control: boost
-                        minus: false
+                        down: false
                       - type: field
                         id: build-boost-#{short}-class
                         control: boost
-                        minus: false
+                        down: false
                       - type: field
                         id: build-boost-#{short}-free
                         control: boost
-                        minus: false
+                        down: false
                       - type: span
                         content: "&rArr;"
                       - type: field
                         id: build-#{short}-score
                       - type: field
                         id: build-#{short}-modifier
-                        icon: modifier
-                        output: true
+                        icon: dc
+                        border: full
                         underlay: "#{short}"
                       - type: field
                         id: build__key-ability
                         control: radio
-                        value: null
+                        value: "#{short}"
               - type: g
                 contents:
                   - type: hr
@@ -433,6 +450,7 @@ inc:
                       legend: Hit Points
                       icon: hp
                       overlay: hp
+                      width: large
                     inputs:
                       - type: field
                         id: null
@@ -468,15 +486,22 @@ inc:
                     contents:
                       - type: field
                         id: build-starting-money
-                        legend: Starting Money
+                        legend: |-
+                          Starting
+                          Money
                         overlay: sp
                         value: "150"
-                        output: true
+                        border: full
                         size: huge
-                        width: large
+                        width: huge
+                        align: right
+                        editable: false
+                      - type: spacer
                       - type: field
                         id: build-remaining-money
-                        label: Remaining Money
+                        label: |-
+                          Remaining
+                          Money
                         control: money
                         denomination: silver
                         digits: 4
@@ -509,7 +534,7 @@ inc:
                             id: cost-#{id}
                             control: money
                             denomination: silver
-                            digits: 3
+                            digits: 4
               - type: tail
               - type: tail
 id: option/build

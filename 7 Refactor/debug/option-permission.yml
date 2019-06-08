@@ -8,6 +8,7 @@ inc:
         id: permission
         order: 1
         flex: true
+        no-bg: true
         numbered: false
         contents:
           - type: layout

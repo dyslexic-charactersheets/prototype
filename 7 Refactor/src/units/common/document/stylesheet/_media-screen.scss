@@ -45,16 +45,78 @@ main {
 
     text-align: center;
     z-index: 100;
+
+    #left-buttons {
+        position: absolute;
+        top: 0.52cm;
+        left: 0.52cm;
+        text-align: left;
+        
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+
+        button {
+            margin-right: 0.5cm;
+            cursor: pointer;
+
+            color: black;
+            span {
+                color: black;
+            }
+        }
+    }
 }
 
 button {
-    background: $colour_screen_print_button;
-    color: white;
-    font-weight: bold;
-    width: 4cm;
-    padding: 5pt;
-    border: 0 none;
-    border-radius: 2pt;
-    cursor: pointer;
-    box-shadow: 0 2pt 10pt rgba(0,0,0,0.4);
+    $button_size: 24px;
+
+    &#button--print {
+        background: $colour_screen_print_button;
+        color: white !important;
+        font-weight: bold;
+        width: 4cm;
+        padding: 5pt;
+        border: 0 none;
+        border-radius: 2pt;
+        cursor: pointer;
+        box-shadow: 0 2pt 10pt rgba(0,0,0,0.4);
+    }
+
+    &.btn {
+        height: $button_size;
+        line-height: $button_size;
+
+        padding: 0 0 0;
+        border-style: none;
+        background-color: transparent;
+
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+
+        i {
+            display: inline;
+            height: $button_size;
+            width: $button_size;
+
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            margin-right: 0.2cm;
+        }
+    }
+
+    &#button--large {
+        i {
+            background-image: url('{{{dataurl "images/text-height.svg"}}}');
+        }
+    }
+
+    &#button--high-contrast {
+        i {
+            background-image: url('{{{dataurl "images/adjust.svg"}}}');
+        }
+    }
 }

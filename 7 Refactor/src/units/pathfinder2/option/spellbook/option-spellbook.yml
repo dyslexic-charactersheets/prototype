@@ -19,7 +19,7 @@ inc:
                         contents:
                           - spacer:
                           - field: spellbook-col-#{i}-level
-                            output: true
+                            border: full
                             frame: none
                             size: large
                           - spacer:
