@@ -251,6 +251,18 @@ table td .field { margin-left: 2pt; margin-right: 2pt; }
 
 .field__control--control_icon input[type=checkbox] { display: none; }
 
+.field.field--control_icon { width: 1.6rem; }
+
+.field.field--control_icon label { left: 0 !important; }
+
+.field.field--control_icon .field__frame { padding-left: 0 !important; }
+
+.field.field--control_icon .field__box { padding-left: 0 !important; justify-content: center; }
+
+.field.field--control_icon .field__control--control_icon { width: 1.3rem; margin-left: 0 !important; }
+
+.field.field--control_icon .field__control--control_icon .icon { margin-left: 0 !important; }
+
 .field__overlay { padding-right: 2pt; }
 
 .field.field--control_checkgrid { width: auto !important; flex: 0 0 auto !important; }
@@ -426,7 +438,7 @@ h4 + .g p, h5 + .g p, h6 + .g p, article header + .g p { margin-top: 0; }
 .page--landscape .page__contents:after { content: " "; position: absolute; top: 0; left: 50%; bottom: 0; width: 0; border-left: 1pt dashed #c0c0c0; }
 
 /* A row of elements */
-.row { margin: 3pt 0; display: flex; flex-direction: column; justify-content: flex-start; }
+.row { margin: 2pt 0; display: flex; flex-direction: column; justify-content: center; }
 
 .row > .row__inner { min-height: 1.5rem; flex: 0 1 auto; display: flex; flex-direction: row; align-items: flex-end; }
 
@@ -500,6 +512,8 @@ table th span, table td span { font-size: 1rem; line-height: 2.2rem; }
 
 table th h6, table td h6 { margin-left: 3pt; line-height: 2.2rem; }
 
+table th .field, table td .field { margin-left: auto; margin-right: auto; }
+
 table th > .field--width_stretch input, table th > .field--width_stretch output, table td > .field--width_stretch input, table td > .field--width_stretch output { width: 100%; }
 
 table tr.hr td, table tr.hr th { border-top: 1pt solid black; }
@@ -542,4 +556,4 @@ table.table--layout_2r-80-20 td:nth-child(2) { width: 20%; }
 
 .page.page--flex section, .page.page--flex .section__inner, .page.page--flex .section__inner > .g, .page.page--flex .list, .page.page--flex article, .page.page--flex article > header, .page.page--flex article > .g { flex: 1 1 auto; display: flex; flex-direction: column; }
 
-.page.page--flex .calc, .page.page--flex .row { flex: 1 1 auto; }
+.page.page--flex .row { flex: 1 1 auto; }

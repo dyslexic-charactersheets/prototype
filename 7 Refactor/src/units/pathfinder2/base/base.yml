@@ -418,6 +418,7 @@ inc:
                                   - field: "proficiency-#{i}-value"
                                     frame: none
                                     control: proficiency
+                      - spacer:
 
                   - section: "General feats"
                     id: general-feats
@@ -539,9 +540,9 @@ inc:
                           - skill: ''
                             ability: ''
                             acp: false
-                          - skill: ''
-                            ability: ''
-                            acp: false
+                          # - skill: ''
+                          #   ability: ''
+                          #   acp: false
                         template:
                           - h6: "#{skill}"
                           - field: "#{skill}-assurance"
@@ -562,9 +563,9 @@ inc:
                             misc: true
                           - field: "#{skill}-acp"
                             ref: acp
-                            output: true
+                            border: full
                             exists: "#{acp}"
-                      - hr:
+                      # - hr:
                       - layout: 2e
                         contents:
                           - level: 7
@@ -590,7 +591,7 @@ inc:
                               - span: "+"
                               - field: perception-proficiency
                                 label: "Proficiency"
-                                icon: proficiency
+                                control: proficiency
                               - span: "+"
                               - field: perception-item-bonus
                                 label: "Item"
@@ -653,7 +654,6 @@ inc:
                                 contents:
                                   - zone: @skill-feats
                   - tail:
-                  # - spacer:
 
       - page: combat
         name: "Combat"
@@ -718,35 +718,6 @@ inc:
                           - field: speed-fly
                             label: "Fly Speed"
                             control: speed
-                  # - section: "Multiple Attack Penalty"
-                  #   id: attack-penalty
-                  #   contents:
-                  #     - row: split
-                  #       contents:
-                  #         - field: map-1
-                  #           frame: left
-                  #           label: "1st"
-                  #           output: true
-                  #           width: large
-                  #           underlay: 0
-                  #         - field: map-2
-                  #           frame: left
-                  #           label: "2nd"
-                  #           output: true
-                  #           width: large
-                  #           underlay: -5
-                  #         - field: map-3
-                  #           frame: left
-                  #           label: "3rd"
-                  #           output: true
-                  #           width: large
-                  #           underlay: -10
-                  #     - field:
-                  #       label: "Conditional"
-                  #       align: left
-                  #       width: stretch
-                  #       # repeat: 2
-                  #       merge-bottom: true
 
                   - section: "Focus"
                     contents:
@@ -757,20 +728,24 @@ inc:
                           width: huge
                           legend: "Focus Points"
                         inputs:
-                          - field:
-                            ref: "WIS"
-                            underlay: "WIS"
+                          - zone: @key-ability-field
+                            contents:
+                              - field:
+                                label: "Key Ability"
+                                ref: key-ability
                           - "+"
                           - field: focus-misc
                             label: "Misc"
                             misc: true
-                      - field: current-focus
-                        temp: true
-                        label: "Current Focus Points"
-                        align: center
-                        width: stretch
-                        border: full
-                        overlay: "pts"
+                      - row:
+                        contents:
+                          - field: current-focus
+                            temp: true
+                            label: "Current Focus Points"
+                            align: center
+                            width: stretch
+                            border: full
+                            overlay: "pts"
 
                   - section: "Saving Throws"
                     id: saving-throws
@@ -837,30 +812,28 @@ inc:
                           - row: split
                             contents:
                               - h5: Multi-Attack
-                              - action: 
-                                contents:
-                                  - field: map-1
-                                    frame: left
-                                    label: "1st"
-                                    output: true
-                                    width: large
-                                    underlay: 0
-                              - action: 2nd
-                                contents:
-                                  - field: map-2
-                                    frame: left
-                                    label: "2nd"
-                                    output: true
-                                    width: large
-                                    underlay: -5
-                              - action: 3rd
-                                contents:
-                                  - field: map-3
-                                    frame: left
-                                    label: "3rd"
-                                    output: true
-                                    width: large
-                                    underlay: -10
+                              - spacer:
+                              - icon: action
+                              - field: map-1
+                                frame: left
+                                label: "1st"
+                                output: true
+                                width: large
+                                underlay: 0
+                              - icon: action2nd
+                              - field: map-2
+                                frame: left
+                                label: "2nd"
+                                output: true
+                                width: large
+                                underlay: -5
+                              - icon: action3rd
+                              - field: map-3
+                                frame: left
+                                label: "3rd"
+                                output: true
+                                width: large
+                                underlay: -10
 
                           - repeat: 4
                             contents:
@@ -868,9 +841,8 @@ inc:
                                 contents:
                                   - row:
                                     contents:
-                                      - field: attack-#{i}-proficiency
-                                        control: proficiency
-                                        label: "Item Bonus"
+                                      - field: attack-#{i}-level
+                                        label: "Level"
                                       - field: attack-#{i}
                                         width: stretch
                                         frame: none
@@ -888,13 +860,22 @@ inc:
                                         inputs:
                                           - field:
                                             ref: true
+                                            misc: true
                                             label: "Ability"
                                           - field: attack-#{i}-proficiency
                                             control: proficiency
                                             label: "Proficiency"
-                                          - field: attack-#{i}-item-bonus
-                                            ref: true
-                                            label: "Item"
+                                          - field: attack-#{i}-quality
+                                            control: icon
+                                            label: "Quality"
+                                            icon: quality
+                                          - field: attack-#{i}-potency
+                                            control: icon
+                                            label: "Potency"
+                                            icon: potency
+                                          # - field: attack-#{i}-item-bonus
+                                          #   ref: true
+                                          #   label: "Item"
                                       - field: attack-#{i}-damage
                                         output: true
                                         label: "Damage"
@@ -1207,7 +1188,7 @@ inc:
                         collapse: true
                         field_frame: none
                         contents:
-                          - repeat: 23
+                          - repeat: 25
                             contents:
                               - row:
                                 contents:
@@ -1280,21 +1261,8 @@ inc:
                                   - field: wand-#{i}
                                     frame: none
                                     width: stretch
-                                    # repeat: 2
-
-                                    # - row: right
-                                  #   contents:
-                                  #     - field: wand-#{i}-ncharges
-                                  #       frame: h-label
-                                  #       unlined: true
-                                  #       width: small
-                                  #       size: huge
-                                  #       underlay: "#"
-                                  #       label: "Charges"
-                                  #     - field: wand-#{i}-charges
-                                  #       frame: none
-                                  #       control: checkgrid
-                                  #       max: 50
+                                    repeat: 2
+                                    merge-bottom: true
                   - tail:
               - g:
                 contents:

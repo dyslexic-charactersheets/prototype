@@ -462,6 +462,7 @@ inc:
                                     id: proficiency-#{i}-value
                                     frame: none
                                     control: proficiency
+                      - type: spacer
                   - type: section
                     title: General feats
                     id: general-feats
@@ -604,9 +605,6 @@ inc:
                           - skill: ""
                             ability: ""
                             acp: false
-                          - skill: ""
-                            ability: ""
-                            acp: false
                         template:
                           - type: h6
                             title: "#{skill}"
@@ -635,9 +633,8 @@ inc:
                           - type: field
                             id: "#{skill}-acp"
                             ref: acp
-                            output: true
+                            border: full
                             exists: "#{acp}"
-                      - type: hr
                       - type: layout
                         layout: 2e
                         contents:
@@ -676,7 +673,7 @@ inc:
                               - type: field
                                 id: perception-proficiency
                                 label: Proficiency
-                                icon: proficiency
+                                control: proficiency
                               - type: span
                                 content: +
                               - type: field
@@ -860,23 +857,29 @@ inc:
                           width: huge
                           legend: Focus Points
                         inputs:
-                          - type: field
-                            id: null
-                            ref: WIS
-                            underlay: WIS
+                          - type: zone
+                            zone: "@key-ability-field"
+                            contents:
+                              - type: field
+                                id: null
+                                label: Key Ability
+                                ref: key-ability
                           - +
                           - type: field
                             id: focus-misc
                             label: Misc
                             misc: true
-                      - type: field
-                        id: current-focus
-                        temp: true
-                        label: Current Focus Points
-                        align: center
-                        width: stretch
-                        border: full
-                        overlay: pts
+                      - type: row
+                        layout: null
+                        contents:
+                          - type: field
+                            id: current-focus
+                            temp: true
+                            label: Current Focus Points
+                            align: center
+                            width: stretch
+                            border: full
+                            overlay: pts
                   - type: section
                     title: Saving Throws
                     id: saving-throws
@@ -955,36 +958,34 @@ inc:
                             contents:
                               - type: h5
                                 title: Multi-Attack
-                              - type: action
-                                action: null
-                                contents:
-                                  - type: field
-                                    id: map-1
-                                    frame: left
-                                    label: 1st
-                                    output: true
-                                    width: large
-                                    underlay: 0
-                              - type: action
-                                action: 2nd
-                                contents:
-                                  - type: field
-                                    id: map-2
-                                    frame: left
-                                    label: 2nd
-                                    output: true
-                                    width: large
-                                    underlay: -5
-                              - type: action
-                                action: 3rd
-                                contents:
-                                  - type: field
-                                    id: map-3
-                                    frame: left
-                                    label: 3rd
-                                    output: true
-                                    width: large
-                                    underlay: -10
+                              - type: spacer
+                              - type: icon
+                                icon: action
+                              - type: field
+                                id: map-1
+                                frame: left
+                                label: 1st
+                                output: true
+                                width: large
+                                underlay: 0
+                              - type: icon
+                                icon: action2nd
+                              - type: field
+                                id: map-2
+                                frame: left
+                                label: 2nd
+                                output: true
+                                width: large
+                                underlay: -5
+                              - type: icon
+                                icon: action3rd
+                              - type: field
+                                id: map-3
+                                frame: left
+                                label: 3rd
+                                output: true
+                                width: large
+                                underlay: -10
                           - type: repeat
                             repeat: 4
                             contents:
@@ -994,9 +995,8 @@ inc:
                                     layout: null
                                     contents:
                                       - type: field
-                                        id: attack-#{i}-proficiency
-                                        control: proficiency
-                                        label: Item Bonus
+                                        id: attack-#{i}-level
+                                        label: Level
                                       - type: field
                                         id: attack-#{i}
                                         width: stretch
@@ -1018,15 +1018,22 @@ inc:
                                           - type: field
                                             id: null
                                             ref: true
+                                            misc: true
                                             label: Ability
                                           - type: field
                                             id: attack-#{i}-proficiency
                                             control: proficiency
                                             label: Proficiency
                                           - type: field
-                                            id: attack-#{i}-item-bonus
-                                            ref: true
-                                            label: Item
+                                            id: attack-#{i}-quality
+                                            control: icon
+                                            label: Quality
+                                            icon: quality
+                                          - type: field
+                                            id: attack-#{i}-potency
+                                            control: icon
+                                            label: Potency
+                                            icon: potency
                                       - type: field
                                         id: attack-#{i}-damage
                                         output: true
@@ -1348,7 +1355,7 @@ inc:
                         field_frame: none
                         contents:
                           - type: repeat
-                            repeat: 23
+                            repeat: 25
                             contents:
                               - type: row
                                 layout: null
@@ -1436,6 +1443,8 @@ inc:
                                     id: wand-#{i}
                                     frame: none
                                     width: stretch
+                                    repeat: 2
+                                    merge-bottom: true
                   - type: tail
               - type: g
                 contents:

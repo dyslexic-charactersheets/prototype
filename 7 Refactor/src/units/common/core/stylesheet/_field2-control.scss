@@ -50,6 +50,28 @@
     }
 }
 
+// fields that are all icon get centred; cancel out the effects of --icon
+.field.field--control_icon {
+    width: 1.6rem;
+    label {
+        left: 0 !important;
+    }
+    .field__frame {
+        padding-left: 0 !important;
+    }
+    .field__box {
+        padding-left: 0 !important;
+        justify-content: center;
+    }
+    .field__control--control_icon {
+        width: 1.3rem;
+        margin-left: 0 !important;
+        .icon {
+            margin-left: 0 !important;
+        }
+    }
+}
+
 
 .field__overlay {
     padding-right: 2pt;

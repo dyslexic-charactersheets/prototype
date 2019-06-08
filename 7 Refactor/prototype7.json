@@ -1029,6 +1029,9 @@
                       "hr": false,
                       "vr": false,
                       "avoid-shade": false
+                    },
+                    {
+                      "type": "spacer"
                     }
                   ]
                 },
@@ -1345,11 +1348,6 @@
                           "skill": "",
                           "ability": "",
                           "acp": false
-                        },
-                        {
-                          "skill": "",
-                          "ability": "",
-                          "acp": false
                         }
                       ],
                       "template": [
@@ -1399,14 +1397,11 @@
                           "type": "field",
                           "id": "#{skill}-acp",
                           "ref": "acp",
-                          "output": true,
+                          "border": "full",
                           "exists": "#{acp}",
                           "frame": "none"
                         }
                       ]
-                    },
-                    {
-                      "type": "hr"
                     },
                     {
                       "type": "layout",
@@ -1468,7 +1463,7 @@
                               "type": "field",
                               "id": "perception-proficiency",
                               "label": "Proficiency",
-                              "icon": "proficiency"
+                              "control": "proficiency"
                             },
                             {
                               "type": "span",
@@ -2096,8 +2091,10 @@
                         {
                           "type": "field",
                           "id": null,
+                          "label": "WIS",
+                          "underlay": "WIS",
                           "ref": "WIS",
-                          "underlay": "WIS"
+                          "replace": true
                         },
                         "+",
                         {
@@ -2109,14 +2106,20 @@
                       ]
                     },
                     {
-                      "type": "field",
-                      "id": "current-focus",
-                      "temp": true,
-                      "label": "Current Focus Points",
-                      "align": "center",
-                      "width": "stretch",
-                      "border": "full",
-                      "overlay": "pts"
+                      "type": "row",
+                      "layout": null,
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "current-focus",
+                          "temp": true,
+                          "label": "Current Focus Points",
+                          "align": "center",
+                          "width": "stretch",
+                          "border": "full",
+                          "overlay": "pts"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -2232,49 +2235,46 @@
                               "title": "Multi-Attack"
                             },
                             {
-                              "type": "action",
-                              "action": null,
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "map-1",
-                                  "frame": "left",
-                                  "label": "1st",
-                                  "output": true,
-                                  "width": "large",
-                                  "underlay": 0
-                                }
-                              ]
+                              "type": "spacer"
                             },
                             {
-                              "type": "action",
-                              "action": "2nd",
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "map-2",
-                                  "frame": "left",
-                                  "label": "2nd",
-                                  "output": true,
-                                  "width": "large",
-                                  "underlay": -5
-                                }
-                              ]
+                              "type": "icon",
+                              "icon": "action"
                             },
                             {
-                              "type": "action",
-                              "action": "3rd",
-                              "contents": [
-                                {
-                                  "type": "field",
-                                  "id": "map-3",
-                                  "frame": "left",
-                                  "label": "3rd",
-                                  "output": true,
-                                  "width": "large",
-                                  "underlay": -10
-                                }
-                              ]
+                              "type": "field",
+                              "id": "map-1",
+                              "frame": "left",
+                              "label": "1st",
+                              "output": true,
+                              "width": "large",
+                              "underlay": 0
+                            },
+                            {
+                              "type": "icon",
+                              "icon": "action2nd"
+                            },
+                            {
+                              "type": "field",
+                              "id": "map-2",
+                              "frame": "left",
+                              "label": "2nd",
+                              "output": true,
+                              "width": "large",
+                              "underlay": -5
+                            },
+                            {
+                              "type": "icon",
+                              "icon": "action3rd"
+                            },
+                            {
+                              "type": "field",
+                              "id": "map-3",
+                              "frame": "left",
+                              "label": "3rd",
+                              "output": true,
+                              "width": "large",
+                              "underlay": -10
                             }
                           ]
                         },
@@ -2287,9 +2287,8 @@
                               "contents": [
                                 {
                                   "type": "field",
-                                  "id": "attack-1-proficiency",
-                                  "control": "proficiency",
-                                  "label": "Item Bonus"
+                                  "id": "attack-1-level",
+                                  "label": "Level"
                                 },
                                 {
                                   "type": "field",
@@ -2320,6 +2319,7 @@
                                       "type": "field",
                                       "id": null,
                                       "ref": true,
+                                      "misc": true,
                                       "label": "Ability"
                                     },
                                     {
@@ -2330,9 +2330,17 @@
                                     },
                                     {
                                       "type": "field",
-                                      "id": "attack-1-item-bonus",
-                                      "ref": true,
-                                      "label": "Item"
+                                      "id": "attack-1-quality",
+                                      "control": "icon",
+                                      "label": "Quality",
+                                      "icon": "quality"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "attack-1-potency",
+                                      "control": "icon",
+                                      "label": "Potency",
+                                      "icon": "potency"
                                     }
                                   ]
                                 },
@@ -2395,9 +2403,8 @@
                               "contents": [
                                 {
                                   "type": "field",
-                                  "id": "attack-2-proficiency",
-                                  "control": "proficiency",
-                                  "label": "Item Bonus"
+                                  "id": "attack-2-level",
+                                  "label": "Level"
                                 },
                                 {
                                   "type": "field",
@@ -2428,6 +2435,7 @@
                                       "type": "field",
                                       "id": null,
                                       "ref": true,
+                                      "misc": true,
                                       "label": "Ability"
                                     },
                                     {
@@ -2438,9 +2446,17 @@
                                     },
                                     {
                                       "type": "field",
-                                      "id": "attack-2-item-bonus",
-                                      "ref": true,
-                                      "label": "Item"
+                                      "id": "attack-2-quality",
+                                      "control": "icon",
+                                      "label": "Quality",
+                                      "icon": "quality"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "attack-2-potency",
+                                      "control": "icon",
+                                      "label": "Potency",
+                                      "icon": "potency"
                                     }
                                   ]
                                 },
@@ -2503,9 +2519,8 @@
                               "contents": [
                                 {
                                   "type": "field",
-                                  "id": "attack-3-proficiency",
-                                  "control": "proficiency",
-                                  "label": "Item Bonus"
+                                  "id": "attack-3-level",
+                                  "label": "Level"
                                 },
                                 {
                                   "type": "field",
@@ -2536,6 +2551,7 @@
                                       "type": "field",
                                       "id": null,
                                       "ref": true,
+                                      "misc": true,
                                       "label": "Ability"
                                     },
                                     {
@@ -2546,9 +2562,17 @@
                                     },
                                     {
                                       "type": "field",
-                                      "id": "attack-3-item-bonus",
-                                      "ref": true,
-                                      "label": "Item"
+                                      "id": "attack-3-quality",
+                                      "control": "icon",
+                                      "label": "Quality",
+                                      "icon": "quality"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "attack-3-potency",
+                                      "control": "icon",
+                                      "label": "Potency",
+                                      "icon": "potency"
                                     }
                                   ]
                                 },
@@ -2611,9 +2635,8 @@
                               "contents": [
                                 {
                                   "type": "field",
-                                  "id": "attack-4-proficiency",
-                                  "control": "proficiency",
-                                  "label": "Item Bonus"
+                                  "id": "attack-4-level",
+                                  "label": "Level"
                                 },
                                 {
                                   "type": "field",
@@ -2644,6 +2667,7 @@
                                       "type": "field",
                                       "id": null,
                                       "ref": true,
+                                      "misc": true,
                                       "label": "Ability"
                                     },
                                     {
@@ -2654,9 +2678,17 @@
                                     },
                                     {
                                       "type": "field",
-                                      "id": "attack-4-item-bonus",
-                                      "ref": true,
-                                      "label": "Item"
+                                      "id": "attack-4-quality",
+                                      "control": "icon",
+                                      "label": "Quality",
+                                      "icon": "quality"
+                                    },
+                                    {
+                                      "type": "field",
+                                      "id": "attack-4-potency",
+                                      "control": "icon",
+                                      "label": "Potency",
+                                      "icon": "potency"
                                     }
                                   ]
                                 },
@@ -4012,6 +4044,50 @@
                           "contents": [
                             {
                               "type": "field",
+                              "id": "inventory-24",
+                              "width": "stretch",
+                              "frame": "none"
+                            },
+                            {
+                              "type": "field",
+                              "id": "inventory-24-value",
+                              "frame": "none"
+                            },
+                            {
+                              "type": "field",
+                              "id": "inventory-24-weight",
+                              "frame": "none"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "row",
+                          "layout": null,
+                          "contents": [
+                            {
+                              "type": "field",
+                              "id": "inventory-25",
+                              "width": "stretch",
+                              "frame": "none"
+                            },
+                            {
+                              "type": "field",
+                              "id": "inventory-25-value",
+                              "frame": "none"
+                            },
+                            {
+                              "type": "field",
+                              "id": "inventory-25-weight",
+                              "frame": "none"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "row",
+                          "layout": null,
+                          "contents": [
+                            {
+                              "type": "field",
                               "id": "expendable-1",
                               "width": "stretch",
                               "frame": "none"
@@ -4175,7 +4251,9 @@
                               "type": "field",
                               "id": "wand-1",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "repeat": 2,
+                              "merge-bottom": true
                             }
                           ]
                         },
@@ -4186,7 +4264,9 @@
                               "type": "field",
                               "id": "wand-2",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "repeat": 2,
+                              "merge-bottom": true
                             }
                           ]
                         },
@@ -4197,7 +4277,9 @@
                               "type": "field",
                               "id": "wand-3",
                               "frame": "none",
-                              "width": "stretch"
+                              "width": "stretch",
+                              "repeat": 2,
+                              "merge-bottom": true
                             }
                           ]
                         }
@@ -5754,7 +5836,8 @@
                       "id": "spellbook-col-1-level",
                       "border": "full",
                       "frame": "none",
-                      "size": "large"
+                      "size": "large",
+                      "width": "large"
                     },
                     {
                       "type": "spacer"
@@ -5985,6 +6068,30 @@
                           "repeat": 3
                         }
                       ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-10",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-1,i-spell-10-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
                     }
                   ],
                   "columns": 1,
@@ -5995,10 +6102,7 @@
                   "avoid-shade": false
                 },
                 {
-                  "type": "hr"
-                },
-                {
-                  "type": "spacer"
+                  "type": "tail"
                 }
               ]
             },
@@ -6017,7 +6121,8 @@
                       "id": "spellbook-col-2-level",
                       "border": "full",
                       "frame": "none",
-                      "size": "large"
+                      "size": "large",
+                      "width": "large"
                     },
                     {
                       "type": "spacer"
@@ -6248,6 +6353,30 @@
                           "repeat": 3
                         }
                       ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-10",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-2,i-spell-10-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
                     }
                   ],
                   "columns": 1,
@@ -6258,10 +6387,7 @@
                   "avoid-shade": false
                 },
                 {
-                  "type": "hr"
-                },
-                {
-                  "type": "spacer"
+                  "type": "tail"
                 }
               ]
             },
@@ -6280,7 +6406,8 @@
                       "id": "spellbook-col-3-level",
                       "border": "full",
                       "frame": "none",
-                      "size": "large"
+                      "size": "large",
+                      "width": "large"
                     },
                     {
                       "type": "spacer"
@@ -6511,6 +6638,30 @@
                           "repeat": 3
                         }
                       ]
+                    },
+                    {
+                      "type": "article",
+                      "title": null,
+                      "header": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-10",
+                          "width": "stretch",
+                          "size": "large",
+                          "frame": "none",
+                          "align": "left"
+                        }
+                      ],
+                      "contents": [
+                        {
+                          "type": "field",
+                          "id": "spellbook-col-3,i-spell-10-details",
+                          "width": "stretch",
+                          "align": "left",
+                          "frame": "none",
+                          "repeat": 3
+                        }
+                      ]
                     }
                   ],
                   "columns": 1,
@@ -6521,10 +6672,7 @@
                   "avoid-shade": false
                 },
                 {
-                  "type": "hr"
-                },
-                {
-                  "type": "spacer"
+                  "type": "tail"
                 }
               ]
             }

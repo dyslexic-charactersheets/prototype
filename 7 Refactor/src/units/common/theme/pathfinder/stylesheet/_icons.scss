@@ -73,6 +73,9 @@ i.icon {
     &.icon_evil { @include icon('evil'); }
     &.icon_lawful { @include icon('lawful'); }
     &.icon_chaotic { @include icon('chaotic'); }
+
+    &.icon_quality { @include icon('quality'); }
+    &.icon_potency { @include icon('potency'); }
 }
 
 .hr--swash {

@@ -317,10 +317,12 @@ CharacterSheets.registerFieldControl('alignment', {
 CharacterSheets.registerFieldControl('icon', {
     defaults: {
         value: '',
+        border: 'none',
+        icon: '',
     },
     render: args => {
-        var cls = elementClass("field", "control", args, [ "icon" ], [ ]);
-        var iconcls = elementClass("i", "icon", { icon: args.icon }, [], [ "icon" ]);
+        var cls = elementClass("field", "control", args, [], [ "control" ]);
+        var iconcls = elementClass("icon", null, { icon: args.icon }, [], [ "icon" ]);
         return `<div${cls}><i${iconcls}></i></div>`;
     }
 });

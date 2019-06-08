@@ -22,6 +22,7 @@ inc:
                             border: full
                             frame: none
                             size: large
+                            width: large
                           - spacer:
                       - hr:
                       - list:
@@ -29,7 +30,7 @@ inc:
                         hr: true
                         flex: true
                         contents:
-                          - repeat: 9
+                          - repeat: 10
                             index: j
                             contents:
                               - article:
@@ -45,5 +46,5 @@ inc:
                                     align: left
                                     frame: none
                                     repeat: 3
-                      - hr:
-                      - spacer:
+                      - tail:
+                      # - spacer:

@@ -29,6 +29,7 @@ inc:
                             border: full
                             frame: none
                             size: large
+                            width: large
                           - type: spacer
                       - type: hr
                       - type: list
@@ -37,7 +38,7 @@ inc:
                         flex: true
                         contents:
                           - type: repeat
-                            repeat: 9
+                            repeat: 10
                             index: j
                             contents:
                               - type: article
@@ -56,6 +57,5 @@ inc:
                                     align: left
                                     frame: none
                                     repeat: 3
-                      - type: hr
-                      - type: spacer
+                      - type: tail
 id: option/spellbook

@@ -47,6 +47,9 @@
 
     .field--ref & {
         border-bottom: 0.75pt dashed $colour_main;
+        &.field__box--border_full {
+            border: 0.75pt dashed $colour_main;
+        }
     }
 
     &.field__box--border_none {
